@@ -11,20 +11,20 @@ public class MyInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		log.info("preHandle Token HandlerInterceptor(TokenInterceptor.preHandle) !!!");
+		log.info("preHandle MyInterceptor HandlerInterceptor(MyInterceptor.preHandle) !!!");
 		return true;
 		}
 		 
 	@Override
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3)
 			throws Exception {
-		log.info("postHandle !!!");
+	//	log.info("postHandle !!!");
 	}
 
 	@Override
 	public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3)
 			throws Exception {
-		log.info("afterCompletion HandlerInterceptor(TokenInterceptor.preHandle) excute success !!!");
+	//	log.info("afterCompletion HandlerInterceptor(TokenInterceptor.preHandle) excute success !!!");
 	}
 }
 

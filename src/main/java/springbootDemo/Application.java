@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author moss
  */
-@ComponentScan({"com.hl","config"})
+//@ComponentScan({"com.hl","config","entity"})
+@ServletComponentScan
 @SpringBootApplication
 @RestController
 public class Application {

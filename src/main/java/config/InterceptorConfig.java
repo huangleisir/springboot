@@ -11,16 +11,17 @@ import com.hl.interceptor.MyInterceptor;
 @Configuration
 public class InterceptorConfig extends WebMvcConfigurerAdapter {
 
-	/*@Autowired
-	MyInterceptor myInterceptor  ;*/
+	@Autowired
+	MyInterceptor myInterceptor  ;
 	
 	
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        /*InterceptorRegistration csrfInterceptorRegistration = registry.addInterceptor(myInterceptor);
-        csrfInterceptorRegistration.addPathPatterns("/**");*/
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**");
+        
+        
+        InterceptorRegistration csrfInterceptorRegistration = registry.addInterceptor(myInterceptor);
+        csrfInterceptorRegistration.addPathPatterns("/**");
         super.addInterceptors(registry);
 
     }
