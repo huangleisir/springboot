@@ -13,6 +13,7 @@ public class HomeController {
 	/**
 	 * http://localhost:8080/中文    不错，是可以支持中文的
 	 * http://localhost:8080/中文?name=黑妹&age=19&desc=美女一位
+	 * http://localhost:8080/中文?name=黑妹&age=19&desc=美女一位&hobbies=sdfs,werwr,rtwret,ertwert,ertwert
 	 * @param value
 	 * @return
 	 */
