@@ -6,17 +6,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import entity.Entity;
+
 @RestController
 public class HomeController {
 	/**
 	 * http://localhost:8080/中文    不错，是可以支持中文的
+	 * http://localhost:8080/中文?name=黑妹&age=19&desc=美女一位
 	 * @param value
 	 * @return
 	 */
 	@RequestMapping(value = "/{value}", method = RequestMethod.GET)
 	@ResponseBody
-	public String demo(@PathVariable String value){
+	public String demo(@PathVariable String value,Entity entity){
 		
-		return "welcome to us  "+value;
+		
+		
+		
+		return "welcome to us , "+entity.toString();
 	}
 }
