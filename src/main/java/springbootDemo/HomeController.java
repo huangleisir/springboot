@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import entity.Entity;
 
-@Controller
+@RestController
 public class HomeController {
 	 private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	/**
