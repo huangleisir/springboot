@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * @author  hl
  * @create    2017年07月14日
  */
-/*@WebFilter(filterName="myFilter",urlPatterns="/*")
+@WebFilter(filterName="myFilter",urlPatterns="/**")
 public class MyFilter implements Filter {
 	 private static final Logger logger = LoggerFactory.getLogger(MyFilter.class);
     @Override
@@ -38,4 +38,4 @@ public class MyFilter implements Filter {
     	logger.info("过滤器初始化");
     }
 
-}*/
+}
