@@ -1,15 +1,11 @@
 package springbootDemo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import entity.Entity;
 
 @RestController
 public class HomeController {
@@ -22,13 +18,13 @@ public class HomeController {
 	 * @param value
 	 * @return
 	 */
-	@RequestMapping(value = "/{value}", method = RequestMethod.GET)
+	@RequestMapping(value = "/demo", method = RequestMethod.GET)
 	@ResponseBody
-	public String demo(@PathVariable String value,Entity entity,@RequestParam("bodyDesc") String bodyDesc){
+	public String demo(){
 		
 		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		
 		
-		return "welcome to us , "+entity.toString();
+		return "welcome to demo ";
 	}
 }
