@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 /**
  * @author  huanglei
+ * http://localhost:8080/demo
  */
 @SpringBootApplication
 @RestController
