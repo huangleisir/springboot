@@ -4,8 +4,9 @@
  * http://www.okchem.com
  *
  *******************************************************************************/
-package springbootDemo;
+package com.hl;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -19,16 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author moss
  */
 //@ComponentScan({"com.hl","config","entity"})
-@ServletComponentScan
+@ServletComponentScan //扫描Servlet
 @SpringBootApplication
 @RestController
+@MapperScan("com.hl.mapper")//这里mapper是你的mybatis的mapper目录。
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 	    
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
-	@ResponseBody
 	public String demo(){
 		return "hello world!";
 	}
