@@ -1,4 +1,6 @@
 package com.hl;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.annotation.MapperScan;
@@ -34,7 +36,8 @@ public class HomeController {
 	}
 	
 	@Resource  
-	    private CityMapper cityMapper;  
+	    private CityMapper cityMapper; 
+	
 	    @RequestMapping("/test")  
 	    String test1(){  
 	        return "hello,test1()";  
@@ -43,5 +46,8 @@ public class HomeController {
 	    City findCity2(@RequestParam String id){  
 	        return cityMapper.findCityById(id);  
 	    } 
-
+	    @RequestMapping("/list")  
+	    List<City> selectAll(){
+	    	return cityMapper.selectAll();  
+	    }
 }

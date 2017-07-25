@@ -1,5 +1,7 @@
 package com.hl.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,5 +13,7 @@ public interface CityMapper {
 	City findCityById(@Param("id") String id);
 	
 	City findById(@Param("id") String id);
+	
+	List<City> selectAll();
 }
 
