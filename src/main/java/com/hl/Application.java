@@ -4,7 +4,7 @@
  * http://www.okchem.com
  *
  *******************************************************************************/
-package springbootDemo;
+package com.hl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
