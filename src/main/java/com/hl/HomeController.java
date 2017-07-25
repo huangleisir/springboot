@@ -13,7 +13,7 @@ public class HomeController {
 	 * @param value
 	 * @return
 	 */
-	@RequestMapping(value = "/demo", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	@ResponseBody
 	public String demo(){
 		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
