@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hl.mapper.master.CityMapper"> 
+<!-- //namespace这里是指向什么地方的 -->
+<!-- typeAliases标签 是写实体类的别名，写了之后可以在写Sql配置文件例如<select>
+标签中的属性就可以不用写实体的具体路径直接用别名就可以了，可以简化代码给你看个例子：没有别名这样写
+<select resultType="com.sjh.entity.VoteUser"> 写了别名就可以这样写<select  resultType="VoteUsers"> 
+直接写别名就可以不用再写实体的路径了，VoteUsers就能在任何地方代替“com.sjh.entity.VoteUser”被使用。如果很多属性涉及到实体类，
+直接写别名很方便的。你说你删了程序照样跑，写配置的时候你一定是没有应用到别名，都写得实体路径。希望通过我的一番解释你能明白这个标签的用途。
+我的建议是不要写别名，直接在xml映射 rsultType写带路径的完整java类名称，这样省得去维护typealias
+ -->
+	<select id="selectById" resultType="com.hl.entity.City">
+		select
+			id ,
+			name ,
+			province
+		from
+			city
+		where
+			id = #{id}
+	</select>
+	<select id="selectAll" resultType="com.hl.entity.City">
+		select
+			id ,
+			name ,
+			province 
+		from
+			city
+	</select>
+	<select id="selectCount" resultType="int">
+		select
+			count(1)
+		from
+			city
+	</select>
+	<!-- <insert id="insert" useGeneratedKeys="true">
+		insert into actor (first_name, last_name)
+		values (#{firstName}, #{lastName})
+	</insert> -->
+</mapper>

@@ -1,4 +1,4 @@
-package com.hl.mapper;
+package com.hl.mapper.master;
 
 import java.util.List;
 
@@ -15,5 +15,7 @@ public interface CityMapper {
 	City findById(@Param("id") String id);
 	
 	List<City> selectAll();
+	
+	int selectCount();
 }
 

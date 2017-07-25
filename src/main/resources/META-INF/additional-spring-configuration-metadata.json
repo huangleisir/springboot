@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "cluster.datasource.type",
+    "type": "java.lang.String",
+    "description": "A description for 'cluster.datasource.type'"
+  },
+  {
+    "name": "master.datasource.username",
+    "type": "java.lang.String",
+    "description": "A description for 'master.datasource.username'"
+  }
+]}

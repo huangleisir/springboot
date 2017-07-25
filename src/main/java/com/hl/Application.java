@@ -20,10 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author moss
  */
 //@ComponentScan({"com.hl","config","entity"})
-@ServletComponentScan //扫描Servlet
+//@ServletComponentScan //扫描Servlet
 @SpringBootApplication
 @RestController
-@MapperScan("com.hl.mapper")//这里mapper是你的mybatis的mapper目录。这行去掉依赖会报错
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hl.entity.City;
-import com.hl.mapper.CityMapper;
+import com.hl.entity.User;
+import com.hl.mapper.cluster.UserMapper;
+import com.hl.mapper.master.CityMapper;
 
 
 @RestController
@@ -38,6 +40,9 @@ public class HomeController {
 	@Resource  
 	    private CityMapper cityMapper; 
 	
+	@Resource  
+    private UserMapper userMapper; 
+	
 	    @RequestMapping("/test")  
 	    String test1(){  
 	        return "hello,test1()";  
@@ -49,5 +54,17 @@ public class HomeController {
 	    @RequestMapping("/list")  
 	    List<City> selectAll(){
 	    	return cityMapper.selectAll();  
+	    }
+	    @RequestMapping("/user")  
+	    Object selectUsers(){
+	    	List userList = userMapper.selectAll();
+	    	List<City> listCity = cityMapper.selectAll();  
+	    	 userList.add(listCity); 
+	    	return userList;
+	    }
+	    
+	    @RequestMapping("/cc")  
+	    int selectCityCount(){
+	    	return cityMapper.selectCount();
 	    }
 }
