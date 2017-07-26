@@ -6,18 +6,13 @@
             http://code.alibabatech.com/schema/dubbo
             http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="demo-provider" />
-
-    <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="localhost:2181" />
-
-    <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880" />
-
-    <!-- 用户服务接口 -->
-    <dubbo:service interface="com.hl.service.Service" ref="myService" />
-
-    <bean id="myService" class="com.hl.service.impl.ServiceImpl"/>
+    <!--消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="demo-consumer"/>
+    <!--zookeeper注册中心 -->
+    <dubbo:registry  protocol="zookeeper" address="10.101.130.9:2181" />
+    <!--使用multicast广播注册中心暴露的服务地址 -->
+    <!--<dubbo:registryaddress="multicast://10.57.41.19:1234" /> -->
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService-->
+    <dubbo:reference id="service" interface="com.hl.service.Service" />
 
 </beans>
