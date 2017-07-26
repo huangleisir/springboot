@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.1.xsd
             http://code.alibabatech.com/schema/dubbo
             http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-
+	<context:component-scan base-package="com.hl.service.*">  
+        <context:exclude-filter type="annotation"  
+            expression="org.springframework.stereotype.Controller" />  
+    </context:component-scan>  <!-- 这个扫描加跟不加实际结果没区别 -->
     <!--消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
-    <dubbo:application name="demo-consumer"/>
+    <dubbo:application name="${dubbo.application.name}"/>
     <!--zookeeper注册中心 -->
-    <dubbo:registry  protocol="zookeeper" address="10.101.130.9:2181" />
+    <dubbo:registry  protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" />
     <!--使用multicast广播注册中心暴露的服务地址 -->
     <!--<dubbo:registryaddress="multicast://10.57.41.19:1234" /> -->
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService-->
-    <dubbo:reference id="service" interface="com.hl.service.Service" />
+    <dubbo:reference id="service" interface="com.hl.service.Service"
+    retries="${dubbo.reference.retries}" timeout="${dubbo.reference.timeout}" />
 
 </beans>
