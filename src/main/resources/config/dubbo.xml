@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.1.xsd
             http://code.alibabatech.com/schema/dubbo
             http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<context:component-scan base-package="com.hl.service.*">  
+        <context:exclude-filter type="annotation"  
+            expression="org.springframework.stereotype.Controller" />  
+    </context:component-scan><!-- 这个扫描加跟不加实际结果没区别 -->
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="demo-provider" />
+    <dubbo:application name="${dubbo.application.name}" />
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="localhost:2181" />
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" />
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}" />
 
     <!-- 用户服务接口 -->
-    <dubbo:service interface="com.hl.service.Service" ref="myService" />
+    <dubbo:service interface="com.hl.service.Service" ref="myService"
+     retries="${dubbo.service.retries}" timeout="${dubbo.service.timeout}" />
 
     <bean id="myService" class="com.hl.service.impl.ServiceImpl"/>
 
