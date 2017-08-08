@@ -30,6 +30,7 @@ public class Application {
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
 	@ResponseBody
 	public String demo(){
+		System.out.println("~~~~~~~~~demo invoke~~~~~~~~~");
 		return "hello world!";
 	}
 }
