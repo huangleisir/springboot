@@ -22,7 +22,7 @@ public class HomeController {
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	@ResponseBody
 	public String demo(){
-		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~这是dubbo调用端：马上就要调用dubbo服务咯~~");
 		 int result = service.plus(3, 5);
 		return result+"";
 	}
