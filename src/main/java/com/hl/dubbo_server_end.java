@@ -24,9 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 @ImportResource("classpath:config/dubbo.xml")
 @SpringBootApplication
 @RestController
-public class Application {
+public class dubbo_server_end {
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(dubbo_server_end.class, args);
 	}
 	    
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
