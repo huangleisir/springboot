@@ -5,31 +5,98 @@
  *
  *******************************************************************************/
 package com.hl;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.Date;
 
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Bean;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
-import com.hl.interceptor.MyInterceptor;
-
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hl.entity.Entity;
+ 
 /**
- * @author moss
+ *
+ * @author Angel --守护天使
+ * @version v.0.1
+ * @date 2016年8月23日
  */
-//@ComponentScan({"com.hl","config","entity"})
 @SpringBootApplication
-@RestController
-@ServletComponentScan
-public class Application {
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
-	     
-	
+@EnableScheduling//启用任务调度.
+//@RabbitListener(queues="foo")//启用Rabbit队列监听foo key.
+public class App {
+   
+    //rabbit操作类;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+      
+    @Scheduled(fixedDelay=3000)//3s执行1次此方法;
+    public void send(){
+    	MessageProperties messageProperties = new MessageProperties() ;
+		messageProperties.setExpiration("345234");
+		Message message = new Message(JSON.toJSONString(new Entity("qqq",System.currentTimeMillis(),"123")).getBytes(), messageProperties) ;
+       rabbitTemplate.convertAndSend("foo2",message);
+    }
+   
+    @Bean
+    public Queue fooQueue(){
+       return new  Queue("foo2");
+    }
+       
+    //接收到消息处理.
+   /* @RabbitHandler
+    public void onMessage(@Payload String foo){
+       System.out.println(" >>> "+new Date() + ": " + foo);
+    }*/
+    
+    //接收到消息处理.
+    @RabbitListener(queues = "${queueName}")
+    public void onMessage(Message msg) throws JsonParseException, JsonMappingException, IOException{
+    	ObjectMapper objectMapper = new ObjectMapper();
+    	Entity entity = objectMapper.readValue(new String(msg.getBody()), Entity.class);
+       System.out.println(" >new>> "+new Date() + ": " +entity.toString());
+    }
+    /** 
+     * 数组转对象 
+     * @param bytes 
+     * @return 
+     */  
+    public Object toObject (byte[] bytes) {     
+        Object obj = null;     
+        try {       
+            ByteArrayInputStream bis = new ByteArrayInputStream (bytes);       
+            ObjectInputStream ois = new ObjectInputStream (bis);       
+            obj = ois.readObject();     
+            ois.close();  
+            bis.close();  
+        } catch (IOException ex) {       
+            ex.printStackTrace();  
+        } catch (ClassNotFoundException ex) {       
+            ex.printStackTrace();  
+        }     
+        return obj;   
+    } 
+    
+   
+   
+    public static void main(String[] args) {
+       SpringApplication.run(App.class, args);
+    }
 }
 
 
