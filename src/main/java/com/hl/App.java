@@ -48,7 +48,7 @@ public class App {
     	MessageProperties messageProperties = new MessageProperties() ;
 		messageProperties.setExpiration("345234");
 		Message message = new Message(JSON.toJSONString(new Entity("qqq",System.currentTimeMillis(),"123")).getBytes(), messageProperties) ;
-       rabbitTemplate.convertAndSend("foo2",message);
+       rabbitTemplate.convertAndSend("exchange","foo2",message);
     }
    //创建Queue，只有先创建了Queue实例，生产者才能向该Queue实例发送消息
     @Bean
@@ -67,7 +67,7 @@ public class App {
        System.out.println(" >>> "+new Date() + ": " + foo);
     }*/
     
-    //接收到消息处理.
+    //接收到消息处理.消费端不需要去管exchange，routingkey，只需要知道从哪一个对列名下面 的queue取消息就行了
     @RabbitListener(queues = "${queueName}")
     public void onMessage(Message msg) throws JsonParseException, JsonMappingException, IOException{
     	ObjectMapper objectMapper = new ObjectMapper();
