@@ -56,7 +56,7 @@ public class App {
 		//messageProperties.put("x-max-priority", Integer.MAX_VALUE) ;
 		Message message = new Message(JSON.toJSONString(new Entity("qqq",System.currentTimeMillis(),"123")).getBytes(), messageProperties) ;
        rabbitTemplate.convertAndSend("exchange","foo2",message);
-       
+         
        PayDelay5QueueConfig.send("延时消息3s~~~~~~~~~~"+new Date()+"~~~~~~~");
        
     }
