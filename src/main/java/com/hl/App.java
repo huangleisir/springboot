@@ -9,13 +9,19 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +32,7 @@ import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hl.config.PayDelay5QueueConfig;
 import com.hl.entity.Entity;
  
 /**
@@ -43,18 +50,33 @@ public class App {
     @Autowired
     private RabbitTemplate rabbitTemplate;
       
-    @Scheduled(fixedDelay=3000)//3s执行1次此方法;
+    @Scheduled(fixedDelay=1000)//3s执行1次此方法;
     public void send(){
     	MessageProperties messageProperties = new MessageProperties() ;
-		messageProperties.setExpiration("345234");
+		//messageProperties.put("x-max-priority", Integer.MAX_VALUE) ;
 		Message message = new Message(JSON.toJSONString(new Entity("qqq",System.currentTimeMillis(),"123")).getBytes(), messageProperties) ;
        rabbitTemplate.convertAndSend("exchange","foo2",message);
+       
+       PayDelay5QueueConfig.send("延时消息3s~~~~~~~~~~"+new Date()+"~~~~~~~");
+       
     }
    //创建Queue，只有先创建了Queue实例，生产者才能向该Queue实例发送消息
     @Bean
     public Queue fooQueue(){
-       return new  Queue("foo2");
+       return new  Queue("foo");
     }
+    
+   
+    
+    /*@Bean
+    DirectExchange marketDirectExchange() {
+        return new DirectExchange("exchange", true, false);
+    }
+    
+    @Bean
+    Binding parkNoCustomerQueueKey(Queue queue,DirectExchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with("foo2");
+    }*/
     
     /*@Bean
     public Receiver receiver(){
@@ -72,7 +94,7 @@ public class App {
     public void onMessage(Message msg) throws JsonParseException, JsonMappingException, IOException{
     	ObjectMapper objectMapper = new ObjectMapper();
     	Entity entity = objectMapper.readValue(new String(msg.getBody()), Entity.class);
-       System.out.println(" >new>> "+new Date() + ": " +entity.toString());
+       System.out.println(System.currentTimeMillis()+" >new>> "+new Date() + ": " +entity.toString());
     }
     /** 
      * 数组转对象 
