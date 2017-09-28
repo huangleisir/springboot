@@ -50,16 +50,16 @@ public class App {
 		Message message = new Message(JSON.toJSONString(new Entity("qqq",System.currentTimeMillis(),"123")).getBytes(), messageProperties) ;
        rabbitTemplate.convertAndSend("foo2",message);
     }
-   
+   //创建Queue，只有先创建了Queue实例，生产者才能向该Queue实例发送消息
     @Bean
     public Queue fooQueue(){
        return new  Queue("foo2");
     }
     
-    @Bean
+    /*@Bean
     public Receiver receiver(){
        return new  Receiver();
-    }
+    }*/
        
     //接收到消息处理.
    /* @RabbitHandler
@@ -67,13 +67,13 @@ public class App {
        System.out.println(" >>> "+new Date() + ": " + foo);
     }*/
     
-    /*//接收到消息处理.
+    //接收到消息处理.
     @RabbitListener(queues = "${queueName}")
     public void onMessage(Message msg) throws JsonParseException, JsonMappingException, IOException{
     	ObjectMapper objectMapper = new ObjectMapper();
     	Entity entity = objectMapper.readValue(new String(msg.getBody()), Entity.class);
        System.out.println(" >new>> "+new Date() + ": " +entity.toString());
-    }*/
+    }
     /** 
      * 数组转对象 
      * @param bytes 
