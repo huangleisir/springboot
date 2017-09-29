@@ -32,6 +32,7 @@ import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hl.config.DemoQueue;
 import com.hl.config.PayDelay5QueueConfig;
 import com.hl.entity.Entity;
  
@@ -58,6 +59,7 @@ public class App {
        rabbitTemplate.convertAndSend("exchange","foo2",message);
          
        PayDelay5QueueConfig.send("延时消息3s~~~~~~~~~~"+new Date()+"~~~~~~~");
+       DemoQueue.send("--------8888888888888--------");
        
     }
    //创建Queue，只有先创建了Queue实例，生产者才能向该Queue实例发送消息
