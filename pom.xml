@@ -25,11 +25,11 @@
 
 		
 		<!-- 分布式图片服务器 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.csource</groupId>
 			<artifactId>fastdfs_client</artifactId>
 			<version>1.26</version>
-		</dependency>
+		</dependency> -->
 		
 		<dependency>
 
@@ -47,11 +47,11 @@
      </exclusions>
 		</dependency>
 
-<dependency>
+<!-- <dependency>
   <groupId>com.jst.prodution</groupId>
   <artifactId>jst-finance-upay</artifactId>
   <version>1.0</version>
-</dependency>
+</dependency> -->
 
 <dependency>
     <groupId>com.rabbitmq</groupId>
@@ -176,11 +176,11 @@
 		</dependency>
 		
 		
-<!-- 		 <dependency>
+		 <dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.23</version>
-		</dependency>   -->
+		</dependency>  
 		<dependency>
 		    <groupId>com.google.code.gson</groupId>
 		    <artifactId>gson</artifactId>

@@ -8,20 +8,21 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.alibaba.fastjson.JSON;
+//import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jst.prodution.base.bean.BaseBean;
-import com.jst.prodution.constants.ApiConstants;
-import com.jst.prodution.util.ILogger;
 
 //@Repository
 @SuppressWarnings("unchecked")
 public class BaseDao extends SqlSessionDaoSupport {
-    private static ILogger log = new ILogger(ApiConstants.JST_PARK, BaseDao.class);
+    Logger log = LoggerFactory.getLogger(getClass());
 
     /*@Resource
     public void setSqlSessionTemplate(SqlSessionTemplate sqlSession) {

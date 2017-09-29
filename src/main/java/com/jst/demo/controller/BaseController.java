@@ -11,19 +11,18 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 
-import com.alibaba.fastjson.JSON;
 import com.jst.demo.bean.RequestFile;
 import com.jst.demo.config.ConfigSetting;
 //import com.jst.framework.common.util.FastDfsUtils;
-import com.jst.prodution.constants.ApiConstants;
-import com.jst.prodution.util.ILogger;
 
 public class BaseController {
 
-    private static ILogger log = new ILogger(ApiConstants.JST_PARK, BaseController.class);
+  Logger log = LoggerFactory.getLogger(BaseController.class);
 
     private String fastDfsUrl = ConfigSetting.getProperty("appconfig.fastDfsUrl");
 
@@ -76,7 +75,7 @@ public class BaseController {
 //                    String fileurl = fastDfsUrl + FastDfsUtils.upload(fileMap.get(name).getBytes(), requestFile
 //                            .getFileName(), fileMap.get(name).getSize());
 //                    log.info("FastDfs上传文件后路径：fileurl = "+ fileurl);
-                    log.info("上传文件信息 requestFile = "+ JSON.toJSONString(requestFiles));
+//                    log.info("上传文件信息 requestFile = "+ JSON.toJSONString(requestFiles));
                     
 //                    requestFile.setFileUrl(fileurl);
                     requestFiles.add(requestFile);

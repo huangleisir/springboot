@@ -2,8 +2,6 @@ package com.jst.framework.common.bean;
 
 import java.io.Serializable;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 /**
@@ -88,8 +86,10 @@ public void setPage(Page page) {
 	this.page = page;
 }
 
-public String toString()
-  {
-    return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-  }
+@Override
+public String toString() {
+	return "Result [code=" + code + ", msg=" + msg + ", data=" + data + ", page=" + page + "]";
+}
+
+
 }
