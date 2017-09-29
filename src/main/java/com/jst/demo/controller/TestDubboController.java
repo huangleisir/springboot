@@ -41,7 +41,7 @@ public class TestDubboController {
         Result result = new Result();
         BaseBean input = new BaseBean();
         input.setAppVersion("8.8.8.8");
-        testDuService.action(input);
+//        testDuService.action(input);
         return result;
     }
 }
