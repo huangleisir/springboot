@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiParam;
 @RequestMapping("d")
 public class TestDubboController {
 	/**
-	 * 注意这个方法的请求，：     http://localhost:8866/demo/test/testdemo 
+	 * 注意这个方法的请求，：     http://127.0.0.1:8866/demo/d/dubbo
 	 * postman 用raw，请求体用json，{"appVersion":"34234"} contentType ： Json(application/json)
 	 * @param baseBo
 	 * @return
@@ -34,14 +34,25 @@ public class TestDubboController {
 	@Reference
 	private TestDuService testDuService;
 	
-	
+	/**
+	 * http://127.0.0.1:8866/demo/d/plus
+	 * @param baseBo
+	 * @return
+	 */
+ 	@RequestMapping(value = "/plus", method = RequestMethod.POST)
+    public int plus(int a,int b) {
+        return testDuService.plus(a, b);
+    }
+ 	
  	@RequestMapping(value = "/dubbo", method = RequestMethod.POST)
     @ResponseBody
     public Result test(@ApiParam(name="BaseBo",value="测试baseBo",required=true)@RequestBody BaseBo baseBo) {
         Result result = new Result();
         BaseBean input = new BaseBean();
         input.setAppVersion("8.8.8.8");
-//        testDuService.action(input);
+        
+        testDuService.action(input);
+        result.setData(input);
         return result;
     }
 }

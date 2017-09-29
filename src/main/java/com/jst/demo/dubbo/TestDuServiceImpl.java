@@ -23,6 +23,12 @@ public class TestDuServiceImpl implements TestDuService {
 		return testService.action(input);
 	}
 
+	@Override
+	public int plus(int a, int b) {
+		// TODO Auto-generated method stub
+		return a+b;
+	}
+
 
 
 }
