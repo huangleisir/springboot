@@ -24,7 +24,7 @@ public class DubboConfig {
 	@Bean
     public static AnnotationBean annotationBean() {
         AnnotationBean annotationBean = new AnnotationBean();
-        annotationBean.setPackage("com.jst.demo.dubbo.service,com.jst.prodution.demo,com.jst.demo.service,com.jst.demo.controller");
+        annotationBean.setPackage("com.jst.demo.dubbo.service,com.jst.prodution.demo,com.jst.demo.service,com.jst.demo.controller,com.jst.demo.dubbo");
         return annotationBean;
     }
 	

@@ -14,6 +14,8 @@ import io.swagger.annotations.ApiParam;
 @RestController
 @RequestMapping("/test")
 public class TestController {
+	
+	
 		/**
 		 * 注意这个方法的请求，：     http://localhost:8866/demo/test/testdemo 
 		 * postman 用raw，请求体用json，{"appVersion":"34234"} contentType ： Json(application/json)
