@@ -1,4 +1,5 @@
-/*package com.jst.demo.controller;
+
+package com.jst.demo.controller;
 
 import javax.annotation.Resource;
 
@@ -20,16 +21,18 @@ import com.jst.prodution.demo.service.TestDuService;
 import io.swagger.annotations.ApiParam;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("d")
 public class TestDubboController {
-	*//**
+	/**
 	 * 注意这个方法的请求，：     http://localhost:8866/demo/test/testdemo 
 	 * postman 用raw，请求体用json，{"appVersion":"34234"} contentType ： Json(application/json)
 	 * @param baseBo
 	 * @return
-	 *//*
-	@Resource
-	private TestDuServiceImpl testDuService;
+	 */
+	/*@Resource
+	private TestDuServiceImpl testDuService;*/
+	@Reference
+	private TestDuService testDuService;
 	
 	
  	@RequestMapping(value = "/dubbo", method = RequestMethod.POST)
@@ -38,8 +41,7 @@ public class TestDubboController {
         Result result = new Result();
         BaseBean input = new BaseBean();
         input.setAppVersion("8.8.8.8");
-//        testDuService.action(input);
+        testDuService.action(input);
         return result;
     }
 }
-*/
