@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import com.jst.demo.dao.filter.JsonFilter;
 
 
-
-@Configuration
+/** 放开这里的注解就不能访问静态资源了  */
+//@Configuration
 public class FilterConfig {
 
 	
