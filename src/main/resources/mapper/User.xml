@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="User">  
+
+ <resultMap id="BaseResultMap" type="com.jst.demo.bean.User" >
+    <result column="name" property="name" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    name
+  </sql>
+	
+  <select id="selectAll" parameterType="java.lang.String"  resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+  </select>
+  
+  <update id="updateAll" parameterType="java.lang.String"  >
+   update user set name='test_update'
+  </update>
+ 
+</mapper>
