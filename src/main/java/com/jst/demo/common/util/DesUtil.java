@@ -1,4 +1,4 @@
-package com.jst.demo.common.util;
+/*package com.jst.demo.common.util;
 
 import java.security.SecureRandom;
 
@@ -10,18 +10,18 @@ import javax.crypto.spec.DESKeySpec;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
+*//**
  * Created by asus on 2016/9/11.
- */
+ *//*
 public class DesUtil {
 
-	/**
+	*//**
 	 * 数据加密，算法（DES）
 	 * 
 	 * @param data
 	 *            要进行加密的数据
 	 * @return 加密后的数据
-	 */
+	 *//*
 	public static String encryptBasedDes(String data, String keyStr) {
 		keyStr = StringUtils.leftPad(keyStr, 16, "0");
 		byte[] DES_KEY = ByteUtil.hexStr2Byte(keyStr);
@@ -45,13 +45,13 @@ public class DesUtil {
 		return encryptedData;
 	}
 
-	/**
+	*//**
 	 * 数据解密，算法（DES）
 	 * 
 	 * @param cryptData
 	 *            加密数据
 	 * @return 解密后的数据
-	 */
+	 *//*
 	public static String decryptBasedDes(String cryptData, String keyStr) {
 		keyStr = StringUtils.leftPad(keyStr, 16, "0");
 		byte[] DES_KEY = ByteUtil.hexStr2Byte(keyStr);
@@ -98,3 +98,4 @@ public class DesUtil {
 	}
 
 }
+*/
