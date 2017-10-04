@@ -54,7 +54,7 @@ public class HomeController {
 	 * @param value
 	 * @return
 	 */
-	    @GetMapping(value = "/{value}")
+	/*    @GetMapping(value = "/{value}")
 	@ResponseBody
 	public String demo(@PathVariable String value,Entity entity,@RequestParam("bodyDesc") String bodyDesc){
 		
@@ -70,5 +70,5 @@ public class HomeController {
 		@ResponseBody
 		public String demo(){
 			return "hello world!";
-		}
+		}*/
 }
