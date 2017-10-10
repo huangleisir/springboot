@@ -65,7 +65,7 @@ public class PayDelay5QueueConfig {
 	    @Bean
 		public Queue payDelay5Queue() {
 				Map<String, Object> arguments = new HashMap<String, Object>() ;
-				arguments.put("x-message-ttl", Long.valueOf("30000000")) ;
+				arguments.put("x-message-ttl", Long.valueOf("30000000")) ;//单位毫秒
 				//定义死信路由
 				arguments.put("x-dead-letter-exchange", ConfigSetting.getProperty("mq.exchange.payDelay5DirectExchange")) ;
 				arguments.put("x-dead-letter-routing-key", ConfigSetting.getProperty("mq.key.payDelay5Key")+"_target") ;
