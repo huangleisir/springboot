@@ -1,5 +1,6 @@
 package com.jst.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jst.demo.bo.BaseBo;
+import com.jst.demo.service.test.TestServiceOne;
 import com.jst.framework.common.bean.Result;
 
 import io.swagger.annotations.ApiParam;
@@ -15,6 +17,8 @@ import io.swagger.annotations.ApiParam;
 @RequestMapping("/test")
 public class TestController {
 	
+	@Autowired
+	TestServiceOne serviceOne;
 	
 		/**
 		 * 注意这个方法的请求，：     http://localhost:8866/demo/test/testdemo 
@@ -28,4 +32,17 @@ public class TestController {
 	        Result result = new Result();
 	        return result;
 	    }
+	 	
+	 	
+	 	
+	 //	http://localhost:8866/demo/test/t
+	 	@RequestMapping(value = "/t", method = RequestMethod.GET)
+	    @ResponseBody
+	    public Result t() {
+	 		serviceOne.serviceOne();
+	        Result result = new Result();
+	        return result;
+	    }
+	 	
+	 	
 }
