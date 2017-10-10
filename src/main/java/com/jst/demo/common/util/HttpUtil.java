@@ -1,4 +1,4 @@
-package com.jst.demo.common.util;
+/*package com.jst.demo.common.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -31,16 +31,16 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-/**
+*//**
  * 类名: HttpUtils</br>
  * 作者: linyuanq
  * 描述: http/https模拟请求
  * 创建时间: 2017年4月20日上午11:41:02
  * 版权及版本: Copyright(C)2017 jst版权所有
- */
+ *//*
 public class HttpUtil {
 	
-	/**
+	*//**
 	 * get
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -51,7 +51,7 @@ public class HttpUtil {
 	 * @param querys 请求参数
 	 * @return  
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doGet(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys)
@@ -67,7 +67,7 @@ public class HttpUtil {
         return httpClient.execute(request);
     }
 	
-	/**
+	*//**
 	 * post form
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -79,7 +79,7 @@ public class HttpUtil {
 	 * @param bodys  请求参数  可选
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doPost(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys, 
@@ -106,7 +106,7 @@ public class HttpUtil {
         return httpClient.execute(request);
     }	
 	
-	/**
+	*//**
 	 * Post String
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -118,7 +118,7 @@ public class HttpUtil {
 	 * @param bodys  请求参数  可选
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doPost(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys, 
@@ -138,7 +138,7 @@ public class HttpUtil {
         return httpClient.execute(request);
     }
 	
-	/**
+	*//**
 	 * Post stream
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -150,7 +150,7 @@ public class HttpUtil {
 	 * @param bodys  请求参数  可选
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doPost(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys, 
@@ -170,7 +170,7 @@ public class HttpUtil {
         return httpClient.execute(request);
     }
 	
-	/**
+	*//**
 	 * Put String
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -182,7 +182,7 @@ public class HttpUtil {
 	 * @param bodys  请求参数  可选
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doPut(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys, 
@@ -202,7 +202,7 @@ public class HttpUtil {
         return httpClient.execute(request);
     }
 	
-	/**
+	*//**
 	 * Put stream
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -214,7 +214,7 @@ public class HttpUtil {
 	 * @param bodys  请求参数  可选
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doPut(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys, 
@@ -234,7 +234,7 @@ public class HttpUtil {
         return httpClient.execute(request);
     }
 	
-	/**
+	*//**
 	 * Delete
 	 * 说明：调用上面的方法得到response对象后，利用EntityUtils.toString(response.getEntity())可获取到响应数据，
 	 * 同时不要忘了在使用完后关闭，一般我们直接用try(){}的方式即可自动关闭
@@ -245,7 +245,7 @@ public class HttpUtil {
 	 * @param bodys  请求参数  可选
 	 * @return
 	 * @throws Exception
-	 */
+	 *//*
 	public static HttpResponse doDelete(String host, String path, String method, 
 			Map<String, String> headers, 
 			Map<String, String> querys)
@@ -327,3 +327,4 @@ public class HttpUtil {
         }
     }
 }
+*/

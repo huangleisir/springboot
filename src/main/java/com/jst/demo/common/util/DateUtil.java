@@ -1,4 +1,4 @@
-package com.jst.demo.common.util;
+/*package com.jst.demo.common.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 
 
-/**
+*//**
  * 
  * 
  * @Package: com.jst.message.util  
@@ -21,7 +21,7 @@ import org.apache.commons.lang3.time.DateUtils;
  * @author: tudq 
  * @date: 2016年12月19日 上午10:06:40 
  * @version V1.0
- */
+ *//*
 public class DateUtil
 {
 	public static final String PATTERN_DATE = "yyyy-MM-dd";
@@ -79,21 +79,21 @@ public class DateUtil
 		return formatter.format(date);
 	}
 
-	/**
+	*//**
 	 * 按照格式返回日期
 	 * 
 	 * @param args
-	 */
+	 *//*
 	public static Date parseFormatDate(String aDateStr)
 	{
 		return parseFormatDate(aDateStr, PATTERN_DATE);
 	}
 
-	/**
+	*//**
 	 * 按照格式返回日期
 	 * 
 	 * @param args
-	 */
+	 *//*
 	public static Date parseFormatDate(String aDateStr, String aDateFmtStr)
 	{
 		SimpleDateFormat smt = new SimpleDateFormat(aDateFmtStr);
@@ -112,26 +112,26 @@ public class DateUtil
 		return ret;
 	}
 
-	/**
+	*//**
 	 * 取得指定月份的第一天
 	 * 
 	 * @param strdate
 	 *            String
 	 * @return String
-	 */
+	 *//*
 	public static String getMonthBegin(String strdate)
 	{
 		Date date = parseFormatDate(strdate);
 		return formatDateByFormat(date, "yy-MM") + "-01";
 	}
 
-	/**
+	*//**
 	 * 取得指定月份的最后一天
 	 * 
 	 * @param strdate
 	 *            String
 	 * @return String
-	 */
+	 *//*
 	public static String getMonthEnd(String strdate)
 	{
 		Date date = parseFormatDate(getMonthBegin(strdate));
@@ -142,19 +142,19 @@ public class DateUtil
 		return formatDate(calendar.getTime());
 	}
 
-	/**
+	*//**
 	 * 常用的格式化日期
 	 * 
 	 * @param date
 	 *            Date
 	 * @return String
-	 */
+	 *//*
 	public static String formatDate(Date date)
 	{
 		return formatDateByFormat(date, PATTERN_DATE);
 	}
 
-	/**
+	*//**
 	 * 以指定的格式来格式化日期
 	 * 
 	 * @param date
@@ -162,7 +162,7 @@ public class DateUtil
 	 * @param format
 	 *            String
 	 * @return String
-	 */
+	 *//*
 	public static String formatDateByFormat(Date date, String format)
 	{
 		String result = "";
@@ -182,7 +182,7 @@ public class DateUtil
 		return result;
 	}
 
-	/**
+	*//**
 	 * 字符串日期格式转换成其他格式 如 “2017-01-01 10:20:20” 转换成 “10:20:20”
 	 * 方法名: formatStrDateToOther
 	 * 描述: TODO
@@ -191,7 +191,7 @@ public class DateUtil
 	 * @param outPutFormat
 	 * @return
 	 * 创建时间: 2017年4月14日上午10:28:42
-	 */
+	 *//*
 	public static String formatStrDateToOtherFt(String StrDate,String StrConvertDateFt,String outPutFormat){
 		if(StringUtils.isNotEmpty(StrDate) && StringUtils.isNotEmpty(StrConvertDateFt) && StringUtils.isNotEmpty(outPutFormat)){
 			Date dt = DateUtil.parseFormatDate(StrDate,StrConvertDateFt);
@@ -201,11 +201,11 @@ public class DateUtil
 		return null;
 	}
 	
-	/**
+	*//**
 	 * 得到当月倒数第i天的最后时间,精确到秒
 	 * 
 	 * @param date
-	 */
+	 *//*
 	public static Date getLastDateOfMonth(Date date, int i)
 	{
 		Calendar c = Calendar.getInstance();
@@ -226,11 +226,11 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * 得到上月倒数第i天的最后时间,精确到秒
 	 * 
 	 * @param date
-	 */
+	 *//*
 	public static Date getLastDateOfLastMonth(Date date, int i)
 	{
 		Calendar c = Calendar.getInstance();
@@ -250,13 +250,13 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * 得到月中的指定某天的日期
 	 * 
 	 * @param date
 	 * @param i
 	 * @return
-	 */
+	 *//*
 	public static Date getDateOfMonth(Date date, int i)
 	{
 		Calendar c = Calendar.getInstance();
@@ -273,13 +273,13 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * 得到年中的指定的某月 lu
 	 * 
 	 * @param date
 	 * @param i
 	 * @return
-	 */
+	 *//*
 	public static Date getDateOfYear(Date date, int i)
 	{
 		Calendar c = Calendar.getInstance();
@@ -296,12 +296,12 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * 得到所给时间当前季度的开始和结束时间
 	 * 
 	 * @param date
 	 * @return
-	 */
+	 *//*
 	public static Date[] getSeason(Date date)
 	{
 		if (date != null)
@@ -346,12 +346,12 @@ public class DateUtil
 		return null;
 	}
 
-	/**
+	*//**
 	 * 得到所给日期的当月第一天和最后一天,精确到天
 	 * 
 	 * @param date
 	 * @return
-	 */
+	 *//*
 	public static Date[] getMonth(Date date)
 	{
 		Date[] dates = new Date[2];
@@ -373,14 +373,14 @@ public class DateUtil
 		return dates;
 	}
 
-	/**
+	*//**
 	 * 得到相差relative天的日期,style决定了 取到的精度
 	 * 
 	 * @param now
 	 * @param relative
 	 * @param style
 	 * @return
-	 */
+	 *//*
 	public static Date getRelativeDate(Date now, int relative, String style)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat(style);
@@ -400,12 +400,12 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * @param now
 	 * @param relative
 	 * @param style
 	 * @return
-	 */
+	 *//*
 	public static Date getRelativeMonth(Date now, int relative)
 	{
 		Calendar c = Calendar.getInstance();
@@ -417,12 +417,12 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * @param now
 	 * @param relative
 	 * @param style
 	 * @return
-	 */
+	 *//*
 	public static String getRelativeMonth(Date now, int relative, String style)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat(style);
@@ -442,12 +442,12 @@ public class DateUtil
 		return sdf.format(c.getTime());
 	}
 
-	/**
+	*//**
 	 * @param now
 	 * @param relative
 	 * @param style
 	 * @return
-	 */
+	 *//*
 	public static String getRelativeMonth(String now, int relative, String style)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat(style);
@@ -541,12 +541,12 @@ public class DateUtil
 		return dateList;
 	}
 
-	/**
+	*//**
 	 * yyyy-MM-dd
 	 * 
 	 * @param date
 	 * @return
-	 */
+	 *//*
 	public static int getMonthEndInt(String date)
 	{
 		int endDayInt = -1;
@@ -592,9 +592,9 @@ public class DateUtil
 		return ret;
 	}
 
-	/**
+	*//**
 	 * 上一天
-	 */
+	 *//*
 	public static Date getLastDay(Date date)
 	{
 		Calendar c = Calendar.getInstance();
@@ -611,9 +611,9 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * 下一天
-	 */
+	 *//*
 	public static Date getNextDay(Date date)
 	{
 		Calendar c = Calendar.getInstance();
@@ -630,9 +630,9 @@ public class DateUtil
 		return c.getTime();
 	}
 
-	/**
+	*//**
 	 * 日期转换成命令字符串
-	 */
+	 *//*
 	public static String dateToString(String date)
 	{
 		String[] dateArr = date.split("-");
@@ -682,9 +682,9 @@ public class DateUtil
 		return result.toString();
 	}
 
-	/**
+	*//**
 	 * 获取当前年份 月份 日期
-	 */
+	 *//*
 	public static int getCurrentMonth()
 	{
 		Calendar c = Calendar.getInstance();
@@ -692,3 +692,4 @@ public class DateUtil
 		return month;
 	}
 }
+*/
