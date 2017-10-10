@@ -102,16 +102,17 @@ public class PayDelay5QueueConfig {
     }
 
 	
-	public static void send(String msg) {
-		logger.info("---mqsend---300000--------"+msg);
+	public static void send(String msg,String expiration,int priority) {
+		logger.info("---mqsend---3000--------"+msg);
 		MessageProperties messageProperties = new MessageProperties() ;
-		messageProperties.setExpiration("30000");
+		messageProperties.setExpiration(expiration);
+		messageProperties.setPriority(priority);
 		Message message = new Message(msg.getBytes(), messageProperties) ;
 		localAmqpTemplate.convertAndSend(ConfigSetting.getProperty("mq.exchange.payDelay5DirectExchange"),ConfigSetting.getProperty("mq.key.payDelay5Key"),message);
 	}
 	
 	public static void main(String[] args) {
-		send("延时");
+		send("延时","10000",100);
 	}
 
 }
