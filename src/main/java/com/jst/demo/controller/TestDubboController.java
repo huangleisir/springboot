@@ -44,4 +44,15 @@ public class TestDubboController {
 //        testDuService.action(input);
         return result;
     }
+ 	
+ 	/**
+	 * http://127.0.0.1:8866/demo/d/plus?a=5&b=7
+	 * @param baseBo
+	 * @return
+	 */
+ 	@RequestMapping(value = "/plus", method = RequestMethod.GET)
+    public int plus(int a,int b) {
+        return testDuService.plus(a, b);
+    }
+ 	
 }

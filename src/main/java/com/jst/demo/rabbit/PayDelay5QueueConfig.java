@@ -25,7 +25,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.jst.demo.config.ConfigSetting;
+import com.jst.prodution.demo.service.TestDuService;
 
 
 
@@ -48,6 +50,9 @@ public class PayDelay5QueueConfig {
 	
 	 @Autowired
 	private AmqpTemplate amqpTemplate;
+	 
+	 @Autowired
+		private HatService hatService;
 	 
 	 private static AmqpTemplate localAmqpTemplate;
 	 
@@ -98,6 +103,8 @@ public class PayDelay5QueueConfig {
 	 //监听延时队列的死信队列达到延时的效果
 	@RabbitListener(queues="${mq.queue.payDelay5Queue}"+"_target")
     public void processMessage(Message message) {
+		
+		System.out.println(hatService.plus(3, 8));
 		        logger.info("=======================收到mq信息："+new String(message.getBody()));
     }
 
