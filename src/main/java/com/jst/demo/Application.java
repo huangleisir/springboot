@@ -30,7 +30,6 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource(locations={"classpath:spring-beans.xml"})
 public class Application extends SpringBootServletInitializer {
 
-
 	
 	
 	
