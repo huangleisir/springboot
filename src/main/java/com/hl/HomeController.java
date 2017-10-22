@@ -40,6 +40,10 @@ public class HomeController {
 	 
 	 @Autowired
 	    private Environment env;
+	 /**
+	  *http://localhost:9080/springboot/profile
+	  * @return
+	  */
 	        
 	    @RequestMapping("/profile")
 	    public String testProfile(){
