@@ -3,16 +3,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 public class MyInterceptor implements HandlerInterceptor {
 	static Logger log = Logger.getLogger(MyInterceptor.class);
-	 public static void main(String[] args) {
-			SpringApplication.run(MyInterceptor.class, args);
-		}
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
