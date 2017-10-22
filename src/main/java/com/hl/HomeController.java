@@ -44,6 +44,7 @@ public class HomeController {
 	  *http://localhost:9080/springboot/profile
 	  *有点意思： 当logs目录，或者src目录下面有要提交的内容的时候，但是此时又不想提交这些路径下面的东西的时候，可以选中logs,右键，team，ignore
 	  * @return
+	  * 
 	  */
 	        
 	    @RequestMapping("/profile")
