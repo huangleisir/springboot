@@ -20,7 +20,7 @@ import com.hl.entity.Entity;
 public class WeixinController {
 	 private static final Logger log = LoggerFactory.getLogger(WeixinController.class);
 	
-	    
+	    //http://127.0.0.1:9080/springboot/weixin/textMsg
 	    @RequestMapping(value = "/textMsg", method = RequestMethod.GET)
 		@ResponseBody
 		public String textMsg(){
