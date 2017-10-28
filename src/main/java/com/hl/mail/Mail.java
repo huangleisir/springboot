@@ -157,7 +157,7 @@ public class Mail {
    return false;
   return true;
  }
- public static void main(String[] args) {
+/* public static void main(String[] args) {
   String smtp = "smtp.126.com";// smtp服务器
   String from = "huangleisir@126.com";// 邮件显示名称
   String to = "huangleisir@qq.com";// 收件人的邮件地址，必须是真实地址
@@ -167,5 +167,5 @@ public class Mail {
   String username = "huangleisir@126.com";// 发件人真实的账户名
   String password = "13579huanglei";// 发件人密码
   Mail.sendAndCc(smtp, from, to, copyto, subject, content, username, password);
- }
+ }*/
 }
