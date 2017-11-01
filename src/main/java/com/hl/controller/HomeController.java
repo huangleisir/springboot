@@ -20,7 +20,7 @@ import com.hl.entity.Entity;
 @RestController
 public class HomeController {
 	 private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	 
+	 static int count = 0;
 	 @Value("${com.bluecoffee.space.author}")
 	    private String blogAuthor;
 
@@ -80,6 +80,7 @@ public class HomeController {
 	    @RequestMapping(value = "/demo", method = RequestMethod.GET)
 		@ResponseBody
 		public String demo(){
-			return "hello world!"+"    " + new Date();
+	    	logger.info("");
+			return "hello world!   "+ (count++) +"    " + new Date() ;
 		}
 }
