@@ -80,7 +80,7 @@ public class HomeController {
 	    @RequestMapping(value = "/demo", method = RequestMethod.GET)
 		@ResponseBody
 		public String demo(){
-	    	logger.info("hello world!  【 "+ (count++) +"】    " + new Date());
+	    	logger.info("hello world!  【 "+ (count++) +"】    " + new Date()); 
 			return "hello world!   "+ (count++) +"    " + new Date() ;
 		}
 }
