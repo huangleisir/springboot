@@ -74,7 +74,7 @@ public class HomeController {
 		return "welcome to us , "+entity.toString() +"    "+"随机字符串"+randomStr+ " 随机数："+bigNumber+" 随机number:"+randomNumber +"  randomTest1"+randomTest1;
 	}
 	    /**
-	     * http://localhost:9080/demo
+	     * http://localhost:9080/springboot/demo
 	     * @return
 	     */
 	    @RequestMapping(value = "/demo", method = RequestMethod.GET)
