@@ -1,4 +1,6 @@
 package com.hl.controller;
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,10 +73,13 @@ public class HomeController {
 		
 		return "welcome to us , "+entity.toString() +"    "+"随机字符串"+randomStr+ " 随机数："+bigNumber+" 随机number:"+randomNumber +"  randomTest1"+randomTest1;
 	}
-	    
+	    /**
+	     * http://localhost:9080/demo
+	     * @return
+	     */
 	    @RequestMapping(value = "/demo", method = RequestMethod.GET)
 		@ResponseBody
 		public String demo(){
-			return "hello world!";
+			return "hello world!"+"    " + new Date();
 		}
 }
