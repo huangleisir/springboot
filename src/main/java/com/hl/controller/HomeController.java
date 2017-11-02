@@ -81,6 +81,6 @@ public class HomeController {
 		@ResponseBody
 		public String demo(){
 	    	logger.info("hello world!  【 "+ (count++) +"】    " + new Date()); 
-			return "hello world!   "+ (count++) +"    " + new Date() ;
+			return "hello world!   "+ (count) +"    " + new Date() ;
 		}
 }
