@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.moss</groupId>
-  <artifactId>springboo</artifactId>
+  <artifactId>springboot</artifactId>
   <name>springbootDemo</name>
   <description>springboot demo for learning other project</description>
   
@@ -26,4 +26,5 @@
       </dependency>
       <!-- 邮件end -->
   </dependencies>
+  <version>1.0</version>
 </project>
