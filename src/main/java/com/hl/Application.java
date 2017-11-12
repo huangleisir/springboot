@@ -6,16 +6,19 @@
  *******************************************************************************/
 package com.hl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hl.interceptor.MyInterceptor;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.hl.config.AccessTokenInfo;
+import com.hl.config.ConfigSetting;
+import com.hl.entity.AccessToken;
+import com.hl.util.NetWorkHelper;
 
 /**
  * @author moss
@@ -25,9 +28,75 @@ import com.hl.interceptor.MyInterceptor;
 @RestController
 @ServletComponentScan
 public class Application {
+	private final static Logger log = LoggerFactory.getLogger(Application.class);
 	public static void main(String[] args) {
+		
 		SpringApplication.run(Application.class, args);
+		getAccessToken();
 	}
+
+	private static void getAccessToken() {
+        final String appId = ConfigSetting.getProperty("appId");
+        final String appSecret = ConfigSetting.getProperty("appSecret");
+
+        //开启一个新的线程
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                	log.info("重新获取ACCESS_TOKEN~~~~~~~~");
+                    try {
+                        //获取accessToken
+                        AccessTokenInfo.accessToken = getAccessToken(appId, appSecret);
+                        //获取成功
+                        if (AccessToken.accessToken != null) {
+                        	log.info("重新获取到accesstoken值："+AccessToken.accessToken.toString());
+                            //获取到access_token 休眠7000秒,大约2个小时左右
+                            Thread.sleep(7000 * 1000);
+//                            Thread.sleep(10 * 1000);//10秒钟获取一次
+                        } else {
+                            //获取失败
+                            Thread.sleep(1000 * 3); //获取的access_token为空 休眠3秒
+                        }
+                    } catch (Exception e) {
+                        System.out.println("发生异常：" + e.getMessage());
+                        e.printStackTrace();
+                        try {
+                            Thread.sleep(1000 * 10); //发生异常休眠1秒
+                        } catch (Exception e1) {
+
+                        }
+                    }
+                }
+
+            }
+        }).start();
+		
+	}
+
+	/**
+     * 获取access_token
+     *
+     * @return AccessToken
+     */
+    private static AccessToken getAccessToken(String appId, String appSecret) {
+        NetWorkHelper netHelper = new NetWorkHelper();
+        /**
+         * 接口地址为https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET，其中grant_type固定写为client_credential即可。
+         */
+        String Url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s", appId, appSecret);
+        //此请求为https的get请求，返回的数据格式为{"access_token":"ACCESS_TOKEN","expires_in":7200}
+        String result = netHelper.getHttpsResponse(Url, "");
+        System.out.println("获取到的access_token="+result);
+        //使用FastJson将Json字符串解析成Json对象
+        JSONObject json = JSON.parseObject(result);
+        AccessToken token = new AccessToken();
+        token.setAccessToken(json.getString("access_token"));
+        token.setExpiresin(json.getInteger("expires_in"));
+        return token;
+    }
+	
+	
 	     
 	
 }
