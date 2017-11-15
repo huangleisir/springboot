@@ -26,4 +26,10 @@ public class StandardRestController {
 		log.info(config.getProperty("self.company.name"));
 		return result;
 	}
+	@RequestMapping(value = "/demo",method = RequestMethod.GET)
+	private Object demo(){
+		ResultBean result = new ResultBean("00", "success", null);
+		log.info(config.getProperty("self.company.name"));
+		return result;
+	}
 }
