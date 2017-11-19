@@ -33,7 +33,7 @@ public class WeixinController {
 		}
 	    
 	    //http://127.0.0.1:8888/springboot/weixin/rukou
-	    @RequestMapping(value = "/rukou", method = RequestMethod.GET)
+	    @RequestMapping(value = "/msg", method = RequestMethod.GET)
 		@ResponseBody
 		public void rukou(HttpServletRequest request, HttpServletResponse response) throws IOException{
 	    	log.info("----receive textMsg msg---------");
@@ -58,31 +58,7 @@ public class WeixinController {
 	        }
 		}
 	    
-	    /*
-	     * 
-	     // TODO 接收、处理、响应由微信服务器转发的用户发送给公众帐号的消息
-        // 将请求、响应的编码均设置为UTF-8（防止中文乱码）
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        System.out.println("请求进入");
-        String responseMessage;
-        try {
-            //解析微信发来的请求,将解析后的结果封装成Map返回
-            Map<String,String> map = MessageHandlerUtil.parseXml(request);
-            System.out.println("开始构造响应消息");
-            responseMessage = MessageHandlerUtil.buildResponseMessage(map);
-            System.out.println(responseMessage);
-            if(responseMessage.equals("")){
-                responseMessage ="未正确响应";
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("发生异常："+ e.getMessage());
-            responseMessage ="未正确响应";
-        }
-        //发送响应消息
-        response.getWriter().println(responseMessage);  */
-	    @RequestMapping(value = "", method = RequestMethod.POST)
+	    @RequestMapping(value = "/rukou", method = RequestMethod.POST)
 	 		@ResponseBody
 	 		public void msg(HttpServletRequest request, HttpServletResponse response) throws IOException{
 	 	    	log.info("----receive textMsg msg---------");
@@ -90,11 +66,12 @@ public class WeixinController {
 	 	        // 将请求、响应的编码均设置为UTF-8（防止中文乱码）
 	 	        request.setCharacterEncoding("UTF-8");
 	 	        response.setCharacterEncoding("UTF-8");
-	 	        System.out.println("请求进入");
+	 	       log.info("请求进入");
 	 	        String responseMessage;
 	 	        try {
 	 	            //解析微信发来的请求,将解析后的结果封装成Map返回
 	 	            Map<String,String> map = MessageHandlerUtil.parseXml(request);
+	 	           log.info("~~~~~~~~~~~~~~~~~~~~~~~~"+map.toString());
 	 	            System.out.println("开始构造响应消息");
 	 	            responseMessage = MessageHandlerUtil.buildResponseMessage(map);
 	 	            System.out.println(responseMessage);
