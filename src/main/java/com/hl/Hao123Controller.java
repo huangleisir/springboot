@@ -47,4 +47,75 @@ public class Hao123Controller {
 		} 
 	}
 	
+	@RequestMapping(value = "/qq", method = RequestMethod.GET)
+	public void tencentIndex(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("http://www.qq.com"); 
+		} catch (IOException e) {
+			logger.info("跳转到网易门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/douyu", method = RequestMethod.GET)
+	public void douyu(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("http://www.douyu.com"); 
+		} catch (IOException e) {
+			logger.info("跳转到网易门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/iqiyi", method = RequestMethod.GET)
+	public void iqiyi(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("http://www.iqiyi.com"); 
+		} catch (IOException e) {
+			logger.info("跳转到爱奇艺门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/youku", method = RequestMethod.GET)
+	public void youku(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("http://www.youku.com"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/imooc", method = RequestMethod.GET)
+	public void imooc(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("https://www.imooc.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/panda", method = RequestMethod.GET)
+	public void panda(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("https://www.panda.tv"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/yizhibo", method = RequestMethod.GET)
+	public void yizhibo(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("http://new.yizhibo.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
+	
 }
