@@ -117,5 +117,15 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}
+	@RequestMapping(value = "/38hao", method = RequestMethod.GET)
+	public void hao38(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("http://www.hellozz.cn/"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
 	
 }
