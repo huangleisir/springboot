@@ -59,7 +59,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/douyu", method = RequestMethod.GET)
 	public void douyu(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~douyu~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("http://www.douyu.com"); 
 		} catch (IOException e) {
@@ -69,7 +69,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/iqiyi", method = RequestMethod.GET)
 	public void iqiyi(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~iqiyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("http://www.iqiyi.com"); 
 		} catch (IOException e) {
@@ -79,7 +79,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/youku", method = RequestMethod.GET)
 	public void youku(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~youku~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("http://www.youku.com"); 
 		} catch (IOException e) {
@@ -89,7 +89,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/imooc", method = RequestMethod.GET)
 	public void imooc(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~imooc~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("https://www.imooc.com/"); 
 		} catch (IOException e) {
@@ -99,7 +99,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/panda", method = RequestMethod.GET)
 	public void panda(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~panda~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("https://www.panda.tv"); 
 		} catch (IOException e) {
@@ -109,7 +109,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/yizhibo", method = RequestMethod.GET)
 	public void yizhibo(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~yizhibo~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("http://new.yizhibo.com/"); 
 		} catch (IOException e) {
@@ -119,7 +119,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/38hao", method = RequestMethod.GET)
 	public void hao38(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		logger.info("---------------~~~~~~~~~~~~38hao~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		try {
 			resp.sendRedirect("http://www.hellozz.cn/"); 
 		} catch (IOException e) {
@@ -127,5 +127,24 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}
-	
+	@RequestMapping(value = "/taobao", method = RequestMethod.GET)
+	public void taobao(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~taobao~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("https://www.taobao.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
+	@RequestMapping(value = "/jd", method = RequestMethod.GET)
+	public void jd(HttpServletRequest req,HttpServletResponse resp){
+		logger.info("---------------~~~~~~~~~~~~jd~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		try {
+			resp.sendRedirect("https://www.taobao.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
 }
