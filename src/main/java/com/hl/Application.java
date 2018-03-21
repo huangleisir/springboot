@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 @ServletComponentScan
 @SpringBootApplication
 @RestController
-public class Hao123Application {
+public class Application {
 	public static void main(String[] args) {
-		SpringApplication.run(Hao123Application.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 	    
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
