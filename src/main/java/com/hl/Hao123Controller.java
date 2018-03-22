@@ -29,7 +29,7 @@ public class Hao123Controller {
 	public void baidu(HttpServletRequest req,HttpServletResponse resp){
 		logger.info("---------------~~~~~~~~~~~~baidu~~~~~"+getIpAddress(req));
 		try {
-			resp.sendRedirect(new Date()+"http://www.baidu.com"); 
+			resp.sendRedirect("http://www.baidu.com"); 
 		} catch (IOException e) {
 			logger.info("跳转到网易门户失败");
 			e.printStackTrace();
@@ -167,6 +167,30 @@ public class Hao123Controller {
 			resp.sendRedirect("http://www.bjsxt.com/"); 
 		} catch (IOException e) {
 			logger.info("跳转到北京尚学堂门户失败");
+			e.printStackTrace();
+		} 
+	}
+	
+//	http://study.163.com/
+	@RequestMapping(value = "/study163", method = RequestMethod.GET)
+	public void study163(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0  ~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("http://study.163.com"); 
+		} catch (IOException e) {
+			logger.info("跳转到网易云课堂门户失败");
+			e.printStackTrace();
+		} 
+	}
+	
+//	https://www.tmall.com
+	@RequestMapping(value = "/tmall", method = RequestMethod.GET)
+	public void tmall(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0  ~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("https://www.tmall.com"); 
+		} catch (IOException e) {
+			logger.info("跳转到网易云课堂门户失败");
 			e.printStackTrace();
 		} 
 	}
