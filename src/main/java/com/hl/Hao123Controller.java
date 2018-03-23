@@ -194,6 +194,19 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}
+	//  https://coding.net/user
+	@RequestMapping(value = "/coding", method = RequestMethod.GET)
+	public void coding(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"---------------~~~~~~~~~~~~coding    https://coding.net/user ~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("https://coding.net/user"); 
+		} catch (IOException e) {
+			logger.info("跳转到网易云课堂门户失败");
+			e.printStackTrace();
+		} 
+	}	
+	
+	
 	
     /** 
      * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址, 
