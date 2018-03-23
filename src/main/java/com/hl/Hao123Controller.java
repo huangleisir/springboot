@@ -201,12 +201,21 @@ public class Hao123Controller {
 		try {
 			resp.sendRedirect("https://coding.net/user"); 
 		} catch (IOException e) {
-			logger.info("跳转到网易云课堂门户失败");
+			logger.info("跳转到码云门户失败");
 			e.printStackTrace();
 		} 
 	}	
-	
-	
+//	http://finance.sina.com.cn/stock/usstock/
+	@RequestMapping(value = "/usstock", method = RequestMethod.GET)
+	public void usstock(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"---------------~~~~~~~~~~~~usstock http://finance.sina.com.cn/stock/usstock/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("http://finance.sina.com.cn/stock/usstock/"); 
+		} catch (IOException e) {
+			logger.info("跳转到美道门户失败");
+			e.printStackTrace();
+		} 
+	}	
 	
     /** 
      * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址, 
