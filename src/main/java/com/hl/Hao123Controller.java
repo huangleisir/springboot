@@ -188,12 +188,11 @@ public class Hao123Controller {
 //	https://www.tmall.com
 	@RequestMapping(value = "/tmall", method = RequestMethod.GET)
 	public void tmall(HttpServletRequest req,HttpServletResponse resp){
-		logger.info(new Date()+"---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0  ~~~~"+getIpAddress(req));
+		logger.info(new Date()+"---------------~~~~~~~~~~~~tmall    https://www.tmall.com  ~~~~"+getIpAddress(req));
 		RateLimiter limiter = RateLimiter.create(1); // 每秒不超过10个任务被提交  
-        for (int i = 0; i < 10; i++) {  
+        for (int i = 0; i < 3; i++) {  
             limiter.acquire(); // 请求RateLimiter, 超过permits会被阻塞  
-            System.out.println("call execute.." + i);  
-              
+            logger.info("call execute.." + i);  
         }  
 		try {
 			resp.sendRedirect("https://www.tmall.com"); 
