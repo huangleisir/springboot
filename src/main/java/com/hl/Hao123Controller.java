@@ -230,7 +230,7 @@ public class Hao123Controller {
 		try {
 			resp.sendRedirect("http://www.ximalaya.com/explore/"); 
 		} catch (IOException e) {
-			logger.info("跳转到美道门户失败");
+			logger.info("跳转到ximalaya门户失败");
 			e.printStackTrace();
 		} 
 	}	
@@ -242,6 +242,29 @@ public class Hao123Controller {
 			resp.sendRedirect("http://www.qingting.fm/"); 
 		} catch (IOException e) {
 			logger.info("跳转到qingting门户失败");
+			e.printStackTrace();
+		} 
+	}	
+	//https://www.lagou.com/
+	@RequestMapping(value = "/lagou", method = RequestMethod.GET)
+	public void lagou(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~拉勾    https://www.lagou.com/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("https://www.lagou.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到拉勾门户失败");
+			e.printStackTrace();
+		} 
+	}	
+	
+	//https://www.lagou.com/
+	@RequestMapping(value = "/recaihotline", method = RequestMethod.GET)
+	public void recaihotline(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~recaihotline    http://www.cjol.com/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("http://www.cjol.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到人才热线门户失败");
 			e.printStackTrace();
 		} 
 	}	
