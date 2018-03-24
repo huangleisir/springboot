@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.google.common.util.concurrent.RateLimiter;
 @RestController
 public class Hao123Controller {
 	 private static final Logger logger = LoggerFactory.getLogger(Hao123Controller.class);
@@ -187,6 +189,12 @@ public class Hao123Controller {
 	@RequestMapping(value = "/tmall", method = RequestMethod.GET)
 	public void tmall(HttpServletRequest req,HttpServletResponse resp){
 		logger.info(new Date()+"---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0  ~~~~"+getIpAddress(req));
+		RateLimiter limiter = RateLimiter.create(1); // 每秒不超过10个任务被提交  
+        for (int i = 0; i < 10; i++) {  
+            limiter.acquire(); // 请求RateLimiter, 超过permits会被阻塞  
+            System.out.println("call execute.." + i);  
+              
+        }  
 		try {
 			resp.sendRedirect("https://www.tmall.com"); 
 		} catch (IOException e) {
