@@ -223,6 +223,29 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}	
+	//http://www.ximalaya.com/explore/
+	@RequestMapping(value = "/ximalaya", method = RequestMethod.GET)
+	public void ximalaya(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~ximalaya http://www.ximalaya.com/explore/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("http://www.ximalaya.com/explore/"); 
+		} catch (IOException e) {
+			logger.info("跳转到美道门户失败");
+			e.printStackTrace();
+		} 
+	}	
+	//http://www.qingting.fm/
+	@RequestMapping(value = "/qingting", method = RequestMethod.GET)
+	public void qingting(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~qingting http://www.qingting.fm/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("http://www.ximalaya.com/explore/"); 
+		} catch (IOException e) {
+			logger.info("跳转到qingting门户失败");
+			e.printStackTrace();
+		} 
+	}	
+	
 	
     /** 
      * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址, 
