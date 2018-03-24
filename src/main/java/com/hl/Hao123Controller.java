@@ -239,7 +239,7 @@ public class Hao123Controller {
 	public void qingting(HttpServletRequest req,HttpServletResponse resp){
 		logger.info(new Date()+"~~~~~~~qingting http://www.qingting.fm/~~~~"+getIpAddress(req));
 		try {
-			resp.sendRedirect("http://www.ximalaya.com/explore/"); 
+			resp.sendRedirect("http://www.qingting.fm/"); 
 		} catch (IOException e) {
 			logger.info("跳转到qingting门户失败");
 			e.printStackTrace();
