@@ -91,7 +91,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/imooc", method = RequestMethod.GET)
 	public void imooc(HttpServletRequest req,HttpServletResponse resp){
-		logger.info(new Date()+"---------------~~~~~~~~~~~~imooc~~~~~~~"+getIpAddress(req));
+		logger.info(new Date()+"~~~~~~imooc~~~~~~~"+getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.imooc.com/"); 
 		} catch (IOException e) {
@@ -101,9 +101,9 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/panda", method = RequestMethod.GET)
 	public void panda(HttpServletRequest req,HttpServletResponse resp){
-		logger.info("---------------~~~~~~~~~~~~panda~~~~~~~~"+getIpAddress(req));
+		logger.info("~~~panda~~~~~~~~"+getIpAddress(req));
 		try {
-			resp.sendRedirect(new Date()+"https://www.panda.tv"); 
+			resp.sendRedirect("https://www.panda.tv"); 
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -111,7 +111,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/yizhibo", method = RequestMethod.GET)
 	public void yizhibo(HttpServletRequest req,HttpServletResponse resp){
-		logger.info(new Date()+"---------------~~~~~~~~~~~~yizhibo~~~~~~~~"+getIpAddress(req));
+		logger.info(new Date()+"~~~~yizhibo~~~~~~~~"+getIpAddress(req));
 		try {
 			resp.sendRedirect("http://new.yizhibo.com/"); 
 		} catch (IOException e) {
@@ -121,7 +121,7 @@ public class Hao123Controller {
 	}
 	@RequestMapping(value = "/38hao", method = RequestMethod.GET)
 	public void hao38(HttpServletRequest req,HttpServletResponse resp){
-		logger.info(new Date()+"---------------~~~~~~~~~~~~38hao~~~~~~~~"+getIpAddress(req));
+		logger.info(new Date()+"~~~~~38hao~~~~~~~~"+getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.hellozz.cn/"); 
 		} catch (IOException e) {
@@ -215,7 +215,7 @@ public class Hao123Controller {
 //	http://finance.sina.com.cn/stock/usstock/
 	@RequestMapping(value = "/usstock", method = RequestMethod.GET)
 	public void usstock(HttpServletRequest req,HttpServletResponse resp){
-		logger.info(new Date()+"---------------~~~~~~~~~~~~usstock http://finance.sina.com.cn/stock/usstock/~~~~"+getIpAddress(req));
+		logger.info(new Date()+"~~~~~~~usstock http://finance.sina.com.cn/stock/usstock/~~~~"+getIpAddress(req));
 		try {
 			resp.sendRedirect("http://finance.sina.com.cn/stock/usstock/"); 
 		} catch (IOException e) {
