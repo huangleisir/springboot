@@ -268,6 +268,17 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}	
+	//https://gitee.com/
+	@RequestMapping(value = "/gitee", method = RequestMethod.GET)
+	public void gitee(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~gitee    https://gitee.com/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("https://gitee.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到gitee门户失败");
+			e.printStackTrace();
+		} 
+	}	
 	
 	
     /** 
