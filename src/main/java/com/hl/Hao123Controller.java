@@ -279,6 +279,17 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}	
+	//https://gitee.com/
+	@RequestMapping(value = "/github", method = RequestMethod.GET)
+	public void github(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~github    https://github.com/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("https://github.com/"); 
+		} catch (IOException e) {
+			logger.info("跳转到github门户失败");
+			e.printStackTrace();
+		} 
+	}	
 	
 	
     /** 
