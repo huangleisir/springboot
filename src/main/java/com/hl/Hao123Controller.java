@@ -290,6 +290,17 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}	
+	//https://www.autohome.com.cn/ 
+	@RequestMapping(value = "/autoHome", method = RequestMethod.GET)
+	public void autohome(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~~~autohome    https://www.autohome.com.cn/~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("https://www.autohome.com.cn/"); 
+		} catch (IOException e) {
+			logger.info("跳转到autohome门户失败");
+			e.printStackTrace();
+		} 
+	}	
 	
 	
     /** 
