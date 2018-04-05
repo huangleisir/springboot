@@ -5,49 +5,48 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=0.8, minimum-scale=0.6">
 <style type="text/css">
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
 }
+
 body {
-    line-height: 1;
+	line-height: 1;
 }
+
 ol, ul {
-    list-style: none;
+	list-style: none;
 }
+
 blockquote, q {
-    quotes: none;
+	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
 }
+
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
+
 .inline {
 	display: inline;
 }
@@ -66,93 +65,102 @@ h3 {
 }
 
 .red-back {
-	background-color: rgb(251,17,17);
+	background-color: rgb(251, 17, 17);
 }
-.huang{
-	color:rgb(255,255,0);
-	font-size:70px;
-	line-height:120px;
+
+.huang {
+	color: rgb(255, 255, 0);
+	font-size: 80px;
+	line-height: 120px;
 	font-family: 微软雅黑;
 	font-weight: bold;
 }
 
-.huang-date{
-	color:rgb(255,255,0);
-	font-size:50px;
-	line-height:120px;
+.huang-date {
+	color: rgb(255, 255, 0);
+	font-size: 70px;
+	line-height: 120px;
 	font-family: 微软雅黑;
 	font-weight: bold;
 }
 
-.huang-time{
-	color:rgb(255,255,0);
-	font-size:50px;
-	line-height:110px;
+.huang-time {
+	color: rgb(255, 255, 0);
+	font-size: 50px;
+	line-height: 110px;
 	font-family: 微软雅黑;
 	font-weight: bold;
 }
-.huang-num{
-	color:rgb(255,255,0);
-	font-size:110px;
-	line-height:100px;
+
+.huang-num {
+	color: rgb(255, 255, 0);
+	font-size: 110px;
+	line-height: 100px;
 	font-family: 微软雅黑;
 	font-weight: bold;
 }
 
 .tc {
 	text-align: center;
-	
 }
 </style>
 </head>
 <body class="red-back" onload="init()">
 
-	<div class="white-bg"  style="height: 70px;position:relative;font-size: 45px;font-family:微软雅黑; ">
-	<span style="position: absolute;left: 0%;top: 20%;"><img alt="" src="./back.png" /> </span>
-	<span style="position: absolute;top: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出 票</span></div>
+	<div class="white-bg"
+		style="height: 70px; position: relative; font-size: 40px; font-family: 微软雅黑;">
+		<span style="position: absolute; left: 0%; top: 20%;"><img
+			alt="" src="./back.png" /> </span> <span
+			style="position: absolute; top: 20%; color: rgb(100, 100, 100);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出票</span>
+	</div>
 
 	<div>
-		<div class="tc "><label class="huang">P171-1</label> </div>
-		<div class="tc"><label class="huang">粤BCH895</label> </div>
-		<div class="tc"><label class="huang-date" id="date">date</label> </div>
-		<div class="tc"><label class="huang-time" id="time">time</label>&nbsp;&nbsp;&nbsp;&nbsp;<span id="num" class="huang-num">6</span> </div>
-		<div class="tc"> <label class="huang">未支付</label></div>
+		<div class="tc ">
+			<label class="huang">P171-1</label>
+		</div>
+		<div class="tc">
+			<label class="huang">粤BCH895</label>
+		</div>
+		<div class="tc">
+			<label class="huang-date" id="date">date</label>
+		</div>
+		<div class="tc">
+			<label class="huang-time" id="time">time</label>&nbsp;&nbsp;&nbsp;&nbsp;<span
+				id="num" class="huang-num">6</span>
+		</div>
+		<div class="tc">
+			<label class="huang">未支付</label>
+		</div>
 	</div>
 </body>
 <script type="text/javascript">
-var i = 0;
-	function init(){
-		setInterval(function(){
+	var i = 0;
+	function init() {
+		setInterval(function() {
 			var nowDate = new Date();
-			 var year = nowDate.getFullYear();
-			 var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1)
-			  : nowDate.getMonth() + 1;
-			 var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate
-			  .getDate();
-			 var dateStr = year + "-" + month + "-" + day;
-			 var hour = nowDate.getHours() + 1 < 10 ? "0" + (nowDate.getHours())
-					 : nowDate.getHours() ;
-			 var min = nowDate.getMinutes() + 1 < 10 ? "0" + (nowDate.getMinutes())
-					 : nowDate.getMinutes() ;
-			 var sec = nowDate.getSeconds() + 1 < 10 ? "0" + (nowDate.getSeconds())
-					 : nowDate.getSeconds() ;
+			var year = nowDate.getFullYear();
+			var month = nowDate.getMonth() + 1 < 10 ? "0"
+					+ (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;
+			var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate()
+					: nowDate.getDate();
+			var dateStr = year + "-" + month + "-" + day;
+			var hour = nowDate.getHours() + 1 < 10 ? "0" + (nowDate.getHours())
+					: nowDate.getHours();
+			var min = nowDate.getMinutes() + 1 < 10 ? "0"
+					+ (nowDate.getMinutes()) : nowDate.getMinutes();
+			var sec = nowDate.getSeconds() + 1 < 10 ? "0"
+					+ (nowDate.getSeconds()) : nowDate.getSeconds();
 			var time = hour + ":" + min + ":" + sec;
-			 
-			document.getElementById("date").innerHTML= dateStr;
-			document.getElementById("time").innerHTML= time;
-			if(i>=9){
-				i=0;
+
+			document.getElementById("date").innerHTML = dateStr;
+			document.getElementById("time").innerHTML = time;
+			if (i >= 9) {
+				i = 0;
 			}
-			document.getElementById("num").innerHTML= i++;
-			},
-			100);
-		
-		
+			document.getElementById("num").innerHTML = i++;
+		}, 100);
+
 	}
-	
-	
-
-
 </script>
 </html>
