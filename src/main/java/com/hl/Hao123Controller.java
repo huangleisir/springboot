@@ -302,6 +302,19 @@ public class Hao123Controller {
 		} 
 	}	
 	
+	//
+		@RequestMapping(value = "/scBaidu", method = RequestMethod.GET)
+		public void scBaidu(HttpServletRequest req,HttpServletResponse resp){
+			logger.info(new Date()+"~~~~通过调用springcloud~~~~~~~"+getIpAddress(req));
+			String  str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/baidu?name=2423&token=234234", null);
+			try {
+				resp.sendRedirect(str); 
+			} catch (IOException e) {
+				logger.info("跳转到autohome门户失败");
+				e.printStackTrace();
+			} 
+		}
+	
 	
     /** 
      * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址, 
@@ -336,5 +349,18 @@ public class Hao123Controller {
         }  
         return ip;  
     }  
+    
+    // 从这里从springcloud拿到url
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	
 }

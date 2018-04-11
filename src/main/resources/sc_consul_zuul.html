@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" /> 
+<link rel="shortcut icon" href="fa.ico" type="image/x-icon" />
+<style type="text/css">
+ .inline{display: inline;}
+ 
+ h3{display: inline; margin-right: 30px;}
+
+</style>
+<script  type="text/JavaScript" src="jquery-3.3.1.js" ></script>
+<script  type="text/JavaScript" src="jquery-jsonp.js" ></script>
+</head>
+<title >sc-zuul-consul</title>
+<body>
+ <h1>我的123网址之家</h1> 
+ <br/>
+ 
+<h3><a onclick="fuck()"  href="javascript:void(0);">网易</a></h3>
+<h3><a href="">百度</a></h3>
+<h3><a href="">腾讯</a></h3>
+<h3><a href="">慕课</a></h3>
+
+<hr />
+<h3><a href="http://116.85.53.248:9080/lagou">拉勾</a></h3>
+<h3><a href="http://116.85.53.248:9080/recaihotline">人才热线</a></h3>
+<h3><a href="http://116.85.53.248:9080/autoHome">汽车之家</a></h3>
+
+
+
+</body>
+<script type="text/javascript">
+function fuck(){
+	$.jsonp({
+		  type: 'GET',
+		  url: "http://www.nightcatfun.xyz:8769/hello",
+		  dataType:'jsonp',
+		  data:{"name":"23","token":"1"},
+		  success: function(url){
+			  alert(url);
+		  }
+		});
+}
+
+</script>
+</html>
