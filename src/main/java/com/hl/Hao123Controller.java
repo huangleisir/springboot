@@ -314,6 +314,41 @@ public class Hao123Controller {
 				e.printStackTrace();
 			} 
 		}
+		//
+		@RequestMapping(value = "/scQQ", method = RequestMethod.GET)
+		public void scQQ(HttpServletRequest req,HttpServletResponse resp){
+			logger.info(new Date()+"~~~~通过调用springcloud~~~~~~~"+getIpAddress(req));
+			String  str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/qq?name=2423&token=234234", null);
+			try {
+				resp.sendRedirect(str); 
+			} catch (IOException e) {
+				logger.info("跳转到autohome门户失败");
+				e.printStackTrace();
+			} 
+		}
+		//
+		@RequestMapping(value = "/sc163", method = RequestMethod.GET)
+		public void sc163(HttpServletRequest req,HttpServletResponse resp){
+			logger.info(new Date()+"~~~~通过调用springcloud~~~~~~~"+getIpAddress(req));
+			String  str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/163?name=2423&token=234234", null);
+			try {
+				resp.sendRedirect(str); 
+			} catch (IOException e) {
+				logger.info("跳转到autohome门户失败");
+				e.printStackTrace();
+			} 
+		}
+		@RequestMapping(value = "/scImooc", method = RequestMethod.GET)
+		public void scImooc(HttpServletRequest req,HttpServletResponse resp){
+			logger.info(new Date()+"~~~~通过调用springcloud~~~~~~~"+getIpAddress(req));
+			String  str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/imooc?name=2423&token=234234", null);
+			try {
+				resp.sendRedirect(str); 
+			} catch (IOException e) {
+				logger.info("跳转到autohome门户失败");
+				e.printStackTrace();
+			} 
+		}
 	
 	
     /** 
