@@ -360,12 +360,23 @@ public class Hao123Controller {
 		}
 		@RequestMapping(value = "/scImooc", method = RequestMethod.GET)
 		public void scImooc(HttpServletRequest req,HttpServletResponse resp){
-			logger.info(new Date()+"~~~~通过调用springcloud~~~~~~~"+getIpAddress(req));
+			logger.info(new Date()+"~~~~通过调用springcloud~~scImooc~~~~~"+getIpAddress(req));
 			String  str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/imooc?name=2423&token=234234", null);
 			try {
 				resp.sendRedirect(str); 
 			} catch (IOException e) {
 				logger.info("跳转到autohome门户失败");
+				e.printStackTrace();
+			} 
+		}
+		
+		@RequestMapping(value = "/bilibili", method = RequestMethod.GET)
+		public void bilibili(HttpServletRequest req,HttpServletResponse resp){
+			logger.info(new Date()+"~~~~通过调用springcloud~~~bilibili~~~~"+getIpAddress(req));
+			try {
+				resp.sendRedirect("https://www.bilibili.com/");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
 		}
