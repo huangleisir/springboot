@@ -129,6 +129,16 @@ public class Hao123Controller {
 			e.printStackTrace();
 		} 
 	}
+	@RequestMapping(value = "/38haoBigFish", method = RequestMethod.GET)
+	public void hao38BigFish(HttpServletRequest req,HttpServletResponse resp){
+		logger.info(new Date()+"~~~~~38hao~~~~~~~~"+getIpAddress(req));
+		try {
+			resp.sendRedirect("http://i.youku.com/u/UMTUxMTg3NjU0MA==?spm=a2h0k.11417342.soresults.dtitle"); 
+		} catch (IOException e) {
+			logger.info("跳转到youku门户失败");
+			e.printStackTrace();
+		} 
+	}
 	@RequestMapping(value = "/taobao", method = RequestMethod.GET)
 	public void taobao(HttpServletRequest req,HttpServletResponse resp){
 		logger.info(new Date()+"---------------~~~~~~~~~~~~taobao~~~~~~~~"+getIpAddress(req));
