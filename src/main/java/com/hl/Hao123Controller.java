@@ -170,7 +170,7 @@ public class Hao123Controller {
 		try {
 			resp.sendRedirect("https://www.taobao.com/");
 		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
+			logger.error("跳转到taobao门户失败");
 			e.printStackTrace();
 		}
 	}
