@@ -186,6 +186,17 @@ public class Hao123Controller {
 		}
 	}
 
+	@RequestMapping(value = "/tianya", method = RequestMethod.GET)
+	public void tianya(HttpServletRequest req, HttpServletResponse resp) {
+		logger.info(new Date() + "---------------~~~~~~~~~~~~jd~~~~" + getIpAddress(req));
+		try {
+			resp.sendRedirect("http://focus.tianya.cn/");
+		} catch (IOException e) {
+			logger.info("跳转到tianya门户失败");
+			e.printStackTrace();
+		}
+	}
+
 	// http://edu.51cto.com/?wwwdh0
 	@RequestMapping(value = "/cto51", method = RequestMethod.GET)
 	public void cto51(HttpServletRequest req, HttpServletResponse resp) {
