@@ -213,7 +213,7 @@ public class Hao123Controller {
 	// http://edu.51cto.com/?wwwdh0
 	@RequestMapping(value = "/bjsxt", method = RequestMethod.GET)
 	public void bjsxt(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0  ~~~~"
+		logger.info(new Date() + "---------------~~~~~~~~~~~~bjsxt    http://edu.51cto.com/?wwwdh0  ~~~~"
 				+ getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.bjsxt.com/");
