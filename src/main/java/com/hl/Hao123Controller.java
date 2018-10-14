@@ -424,6 +424,17 @@ public class Hao123Controller {
 		}
 	}
 
+	@RequestMapping(value = "/beitaiYouku", method = RequestMethod.GET)
+	public void beitaiYouku(HttpServletRequest req, HttpServletResponse resp) {
+		logger.info(new Date() + "~~~~通过调用springcloud~~~bilibili~~~~" + getIpAddress(req));
+		try {
+			resp.sendRedirect("http://i.youku.com/u/UMzU4MjIwMTcy?spm=a2h0k.11417342.soresults.dtitle");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	/**
 	 * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址,
 	 * 
