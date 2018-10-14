@@ -426,7 +426,7 @@ public class Hao123Controller {
 
 	@RequestMapping(value = "/beitaiYouku", method = RequestMethod.GET)
 	public void beitaiYouku(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "~~~~通过调用springcloud~~~bilibili~~~~" + getIpAddress(req));
+		logger.info(new Date() + "~~~~通过调用springcloud~~~beitaiYouku~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://i.youku.com/u/UMzU4MjIwMTcy?spm=a2h0k.11417342.soresults.dtitle");
 		} catch (IOException e) {
@@ -437,7 +437,7 @@ public class Hao123Controller {
 
 	@RequestMapping(value = "/zealerChina", method = RequestMethod.GET)
 	public void zealerChina(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "~~~~通过调用springcloud~~~bilibili~~~~" + getIpAddress(req));
+		logger.info(new Date() + "~~~~通过调用springcloud~~~zealerChina~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://i.youku.com/u/UMjI0ODEwMzQ4?spm=a2h0k.11417342.soresults.dtitle");
 		} catch (IOException e) {
