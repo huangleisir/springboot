@@ -52,15 +52,25 @@ public class Hao123Controller {
 
 	}
 
+	void asyncHandle(HttpServletResponse resp, String url) {
+		SimpleThreadPoolUtils.getInstance().asyncThreadHandler(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					resp.sendRedirect(url);
+				} catch (IOException e) {
+					logger.info("跳转到网易门户失败");
+					e.printStackTrace();
+				}
+
+			}
+		});
+	}
+
 	@RequestMapping(value = "/wangyi", method = RequestMethod.GET)
 	public void wangyi(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "---------------~~~~~~~~~~~~wangyi~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.163.com");
-		} catch (IOException e) {
-			logger.info("跳转到网易门户失败");
-			e.printStackTrace();
-		}
+		logger.info(new Date() + "---------------asyncHandle~~~~~~~~~~~~wangyi~~~~~" + getIpAddress(req));
+		asyncHandle(resp, "https://www.163.com/");
 	}
 
 	@RequestMapping(value = "/qq", method = RequestMethod.GET)
