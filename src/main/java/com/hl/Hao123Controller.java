@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.util.concurrent.RateLimiter;
 
+import util.SimpleThreadPoolUtils;
+
 @RestController
 public class Hao123Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Hao123Controller.class);
@@ -35,12 +37,19 @@ public class Hao123Controller {
 	@RequestMapping(value = "/baidu", method = RequestMethod.GET)
 	public void baidu(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info("---------------~~~~~~~~~~~~baidu~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.baidu.com");
-		} catch (IOException e) {
-			logger.info("跳转到网易门户失败");
-			e.printStackTrace();
-		}
+		SimpleThreadPoolUtils.getInstance().asyncThreadHandler(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					resp.sendRedirect("http://www.baidu.com");
+				} catch (IOException e) {
+					logger.info("跳转到网易门户失败");
+					e.printStackTrace();
+				}
+
+			}
+		});
+
 	}
 
 	@RequestMapping(value = "/wangyi", method = RequestMethod.GET)
