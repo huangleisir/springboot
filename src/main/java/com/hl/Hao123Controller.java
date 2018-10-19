@@ -93,8 +93,9 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.qq.com");
+			asyncSkipToPage("腾讯门户");
 		} catch (IOException e) {
-			logger.info("跳转到网易门户失败");
+			logger.info("跳转到腾讯门户失败");
 			e.printStackTrace();
 		}
 	}
@@ -104,6 +105,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~douyu~~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.douyu.com");
+			asyncSkipToPage("douyu");
 		} catch (IOException e) {
 			logger.info("跳转到网易门户失败");
 			e.printStackTrace();
