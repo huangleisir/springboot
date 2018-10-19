@@ -62,7 +62,7 @@ public class Hao123Controller {
 		SimpleThreadPoolUtils.getInstance().asyncThreadHandler(new Runnable() {
 			@Override
 			public void run() {
-				logger.info(Thread.currentThread().getName() + "---跳转到 " + name);
+				logger.info("多线程，异步调用" + Thread.currentThread().getName() + "---跳转到 " + name);
 			}
 		});
 	}
