@@ -104,6 +104,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~douyu~~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.douyu.com");
+			asyncSkipToPage("douyu");
 		} catch (IOException e) {
 			logger.info("跳转到网易门户失败");
 			e.printStackTrace();
