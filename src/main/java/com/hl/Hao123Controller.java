@@ -25,6 +25,7 @@ public class Hao123Controller {
 	 * 
 	 * @param value
 	 * @return
+	 * @throws IOException
 	 */
 	/*
 	 * @RequestMapping(value = "/home", method = RequestMethod.GET)
@@ -35,21 +36,35 @@ public class Hao123Controller {
 	 */
 
 	@RequestMapping(value = "/baidu", method = RequestMethod.GET)
-	public void baidu(HttpServletRequest req, HttpServletResponse resp) {
+	public void baidu(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		logger.info("---------------~~~~~~~~~~~~baidu~~~~~" + getIpAddress(req));
+		resp.sendRedirect("http://www.baidu.com");
+		asyncSkipToPage("baidu");
+	}
+
+	@RequestMapping(value = "/gitchat", method = RequestMethod.GET)
+	public void gitchat(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		logger.info("---------------~~~~~~~~~~~~gitchat~~~~~" + getIpAddress(req));
+		resp.sendRedirect("https://gitbook.cn");
+		asyncSkipToPage("gitchat");
+	}
+
+	@RequestMapping(value = "/cheshier", method = RequestMethod.GET)
+	public void cheshier(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		logger.info(Thread.currentThread().getName() + "---------线程池,调用------~~~~~~~~~~~~cheshier~~~~~"
+				+ getIpAddress(req));
+		resp.sendRedirect(
+				"https://so.youku.com/search_video/q_%E8%BD%A6%E4%BA%8B%E5%84%BF?spm=a2h0k.11417342.searcharea.dbutton&_t=1539874305401");
+		asyncSkipToPage("cheshier");
+	}
+
+	private void asyncSkipToPage(String name) {
 		SimpleThreadPoolUtils.getInstance().asyncThreadHandler(new Runnable() {
 			@Override
 			public void run() {
-				try {
-					resp.sendRedirect("http://www.baidu.com");
-				} catch (IOException e) {
-					logger.info("跳转到网易门户失败");
-					e.printStackTrace();
-				}
-
+				logger.info(Thread.currentThread().getName() + "---跳转到 " + name);
 			}
 		});
-
 	}
 
 	void asyncHandle(HttpServletResponse resp, String url) {

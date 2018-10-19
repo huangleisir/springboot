@@ -17,7 +17,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 public class SimpleThreadPoolUtils {
 
 	/**
-	 * * 定义一个固定线程大小的线程池
+	 * * 定义一个固定线程大小的线程池 corePoolSize 10 maximumPoolSize 10
 	 */
 	private static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS,
 			new LinkedBlockingQueue<Runnable>(1024), new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build(),

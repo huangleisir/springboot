@@ -1,22 +1,22 @@
 package util;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
- 
+
 public class Base64Test {
-	public static void main(String[] args) {
-//		String strImg = GetImageStr();
-//		System.out.println(strImg);
-		long t1 = System.currentTimeMillis();
-		GenerateImage("Base64编码");
-//		String str = GetImageStr();
-	System.out.println("---end---cost time:"+(System.currentTimeMillis()-t1));
-//	System.out.println(str);
-	}
+	/*
+	 * public static void main(String[] args) { // String strImg = GetImageStr(); //
+	 * System.out.println(strImg); long t1 = System.currentTimeMillis();
+	 * GenerateImage("Base64编码"); // String str = GetImageStr();
+	 * System.out.println("---end---cost time:"+(System.currentTimeMillis()-t1)); //
+	 * System.out.println(str); }
+	 */
 
 	// 图片转化成base64字符串
 	public static String GetImageStr() {// 将图片文件转化为字节数组字符串，并对其进行Base64编码处理
@@ -63,4 +63,3 @@ public class Base64Test {
 		}
 	}
 }
-
