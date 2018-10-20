@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>我的123网址之家</title>
 <meta charset="UTF-8" />
-<link rel="shortcut icon" href="fa.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="Z.ico" type="image/x-icon" />
 <style type="text/css">
 .inline {
 	display: inline;
@@ -11,6 +12,7 @@
 h3 {
 	display: inline;
 	margin-right: 30px;
+	cursor:pointer;
 }
 
 body {
@@ -21,118 +23,138 @@ font-family:"微软雅黑";font-weight:bold;
 }
 
 </style>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+function func(value){
+	$.ajax({
+		  type: 'GET',
+		  url: '/'+value,
+		  success:function(data){
+			  window.open(data.url);
+		  }
+		});
+}
+</script>
 </head>
+
 <body>
 	<h1>我的123网址之家</h1>
 	<br />
 
-	<h3>
-		<a href="http://localhost:9080/wangyi"><span >网易</span></a>
+	<h3 onclick="func('wangyi')">
+		<a ><span >网易</span></a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/baidu">百度</a>
+	<h3 onclick="func('baidu')">
+		<a >百度</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/qq">腾讯</a>
+	<h3 onclick="func('wangyi')">
+		<a >腾讯</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/douyu">斗鱼</a>
+	<h3 onclick="func('douyu')">
+		<a >斗鱼</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/iqiyi">爱奇艺</a>
+	<h3 onclick="func('iqiyi')">
+		<a >爱奇艺</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/youku">优酷</a>
+	<h3 onclick="func('youku')">
+		<a >优酷</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/imooc">慕课</a>
+	<h3 onclick="func('imooc')">
+		<a >慕课</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/panda">熊猫</a>
+	<h3 onclick="func('panda')">
+		<a >熊猫</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/yizhibo">一直播</a>
+	<h3 onclick="func('yizhibo')">
+		<a >一直播</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/38hao">38号</a>
+	<h3 onclick="func('38hao')">
+		<a >38号</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/38haoBigFish">38号-大鱼</a>
+	<h3 onclick="func('38haoBigFish')">
+		<a >38号-大鱼</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/lilaoshuBigFish">李老鼠说车-大鱼</a>
+	<h3 onclick="func('lilaoshuBigFish')">
+		<a >李老鼠说车-大鱼</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/beitaiYouku">备胎说车-优酷</a>
+	<h3 onclick="func('beitaiYouku')">
+		<a >备胎说车-优酷</a>
 	</h3>
 	
-	<h2>
-		<a href="http://localhost:9080/taobao">淘宝</a>
+	<h2 onclick="func('taobao')">
+		<a >淘宝</a>
 	</h2>
-	<h3>
-		<a href="http://localhost:9080/tmall">天猫</a>
+	<h3 onclick="func('tmall')">
+		<a >天猫</a>
 	</h3>
-	<h1>
-		<a href="http://localhost:9080/jd">京东</a>
+	<h1 onclick="func('jd')">
+		<a >京东</a>
 	</h1>
-	<h3>
-		<a href="http://localhost:9080/cto51">51CTO</a>
+	<h3 onclick="func('cto51')">
+		<a >51CTO</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/bjsxt">北京尚学堂</a>
+	<h3 onclick="func('bjsxt')">
+		<a >北京尚学堂</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/study163">网易云课堂</a>
+	<h3 onclick="func('study163')">
+		<a >网易云课堂</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/github">github</a>
+	<h3 onclick="func('github')">
+		<a >github</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/coding">coding</a>
+	<h3 onclick="func('coding')">
+		<a >coding</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/gitee">gitee</a>
+	<h3 onclick="func('gitee')">
+		<a >gitee</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/usstock">美道</a>
+	<h3 onclick="func('usstock')">
+		<a >美道</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/ximalaya">喜马拉雅</a>
+	<h3 onclick="func('ximalaya')">
+		<a >喜马拉雅</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/qingting">蜻蜓</a>
+	<h3 onclick="func('qingting')">
+		<a >蜻蜓</a>
 	</h3>
 	<hr />
-	<h3>
-		<a href="http://localhost:9080/lagou">拉勾</a>
+	<h3 onclick="func('lagou')">
+		<a >拉勾</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/recaihotline">人才热线</a>
+	<h3 onclick="func('recaihotline')">
+		<a >人才热线</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/autoHome">汽车之家</a>
+	<h3 onclick="func('autoHome')">
+		<a >汽车之家</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/bilibili">哔哩哔哩动画</a>
+	<h3 onclick="func('bilibili')">
+		<a >哔哩哔哩动画</a>
 	</h3>
-	<h3>
-		<a href="http://localhost:9080/tianya">天涯</a>
+	<h3 onclick="func('tianya')">
+		<a >天涯</a>
 	</h3>
 	
 	<hr />
 	
-	<h3 style="color:red;">
-		<a href="http://localhost:9080/zealerChina">zealerChina</a>
+	<h3 style="color:red;" onclick="func('zealerChina')">
+		<a >zealerChina</a>
 	</h3>
-	<h3 style="color:red;">
-		<a href="http://localhost:9080/cheshier">车事儿</a>
+	<h3 style="color:red;" onclick="func('cheshier')">
+		<a >车事儿</a>
 	</h3>
 	<hr />
 	
-	<h3 style="color:red;">
+	<h3 style="color:red;" onclick="func('gitchat')">
+		<a >gitchat</a>
 	</h3>
-	<h3 style="color:red;">
-		<a href="http://localhost:9080/gitchat">gitchat</a>
+	<h3 style="color:red;" onclick="func('ershouchezhishidajiangtang')">
+		<a >二手车知识大讲堂</a>
+	</h3>
+	<h3 style="color:red;" onclick="func('caijinglangxianping')">
+		<a >财经郎咸平</a>
+	</h3>
+	<h3  style="color:red;" onclick="func('zhangxiaoxiangMultiThread')">
+		<a >张孝祥多线程</a>
 	</h3>
 	
 

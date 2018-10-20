@@ -19,7 +19,7 @@ public class SimpleThreadPoolUtils {
 	/**
 	 * * 定义一个固定线程大小的线程池 corePoolSize 10 maximumPoolSize 10
 	 */
-	private static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS,
+	private static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 3, 0L, TimeUnit.MILLISECONDS,
 			new LinkedBlockingQueue<Runnable>(1024), new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build(),
 			new ThreadPoolExecutor.AbortPolicy() {
 				// 队列已满,而且当前线程数已经超过最大线程数时的异常处理策略

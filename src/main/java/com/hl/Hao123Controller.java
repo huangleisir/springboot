@@ -2,6 +2,8 @@ package com.hl;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.util.concurrent.RateLimiter;
@@ -36,26 +39,33 @@ public class Hao123Controller {
 	 */
 
 	@RequestMapping(value = "/baidu", method = RequestMethod.GET)
-	public void baidu(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	public Object baidu(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		logger.info("---------------~~~~~~~~~~~~baidu~~~~~" + getIpAddress(req));
-		resp.sendRedirect("http://www.baidu.com");
 		asyncSkipToPage("baidu");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.baidu.com");
+		return map;
 	}
 
 	@RequestMapping(value = "/gitchat", method = RequestMethod.GET)
-	public void gitchat(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	public Object gitchat(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		logger.info("---------------~~~~~~~~~~~~gitchat~~~~~" + getIpAddress(req));
-		resp.sendRedirect("https://gitbook.cn");
 		asyncSkipToPage("gitchat");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.baidu.com");
+		return map;
+
 	}
 
 	@RequestMapping(value = "/cheshier", method = RequestMethod.GET)
-	public void cheshier(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	public Object cheshier(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		logger.info(Thread.currentThread().getName() + "---------线程池,调用------~~~~~~~~~~~~cheshier~~~~~"
 				+ getIpAddress(req));
-		resp.sendRedirect(
-				"https://so.youku.com/search_video/q_%E8%BD%A6%E4%BA%8B%E5%84%BF?spm=a2h0k.11417342.searcharea.dbutton&_t=1539874305401");
 		asyncSkipToPage("cheshier");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url",
+				"https://so.youku.com/search_video/q_%E8%BD%A6%E4%BA%8B%E5%84%BF?spm=a2h0k.11417342.searcharea.dbutton&_t=1539874305401");
+		return map;
 	}
 
 	private void asyncSkipToPage(String name) {
@@ -83,434 +93,321 @@ public class Hao123Controller {
 	}
 
 	@RequestMapping(value = "/wangyi", method = RequestMethod.GET)
-	public void wangyi(HttpServletRequest req, HttpServletResponse resp) {
+	@ResponseBody
+	public Object wangyi(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------asyncHandle~~~~~~~~~~~~wangyi~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.163.com");
-			asyncSkipToPage("网易门户");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		asyncSkipToPage("网易门户");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.163.com");
+		return map;
 	}
 
 	@RequestMapping(value = "/qq", method = RequestMethod.GET)
-	public void tencentIndex(HttpServletRequest req, HttpServletResponse resp) {
+	public Object tencentIndex(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~qq~~~~~~~~~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.qq.com");
-			asyncSkipToPage("腾讯门户");
-		} catch (IOException e) {
-			logger.info("跳转到腾讯门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("腾讯门户");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.qq.com");
+		return map;
 	}
 
 	@RequestMapping(value = "/douyu", method = RequestMethod.GET)
-	public void douyu(HttpServletRequest req, HttpServletResponse resp) {
+	public Object douyu(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~douyu~~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.douyu.com");
-			asyncSkipToPage("douyu");
-		} catch (IOException e) {
-			logger.info("跳转到网易门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("douyu");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.douyu.com");
+		return map;
 	}
 
 	@RequestMapping(value = "/iqiyi", method = RequestMethod.GET)
-	public void iqiyi(HttpServletRequest req, HttpServletResponse resp) {
+	public Object iqiyi(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~iqiyi~~~~~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.iqiyi.com");
-			asyncSkipToPage("aiqiyi");
-		} catch (IOException e) {
-			logger.info("跳转到爱奇艺门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("aiqiyi");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.iqiyi.com");
+		return map;
 	}
 
 	@RequestMapping(value = "/youku", method = RequestMethod.GET)
-	public void youku(HttpServletRequest req, HttpServletResponse resp) {
+	public Object youku(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~youku~~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.youku.com");
-			asyncSkipToPage("youku");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("youku");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.youku.com");
+		return map;
 	}
 
 	@RequestMapping(value = "/imooc", method = RequestMethod.GET)
-	public void imooc(HttpServletRequest req, HttpServletResponse resp) {
+	public Object imooc(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~imooc~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.imooc.com/");
-			asyncSkipToPage("imooc");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("imooc");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.imooc.com/");
+		return map;
 	}
 
 	@RequestMapping(value = "/panda", method = RequestMethod.GET)
-	public void panda(HttpServletRequest req, HttpServletResponse resp) {
+	public Object panda(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info("~~~panda~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.panda.tv");
-			asyncSkipToPage("panda");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("panda");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.panda.tv");
+		return map;
 	}
 
 	@RequestMapping(value = "/yizhibo", method = RequestMethod.GET)
-	public void yizhibo(HttpServletRequest req, HttpServletResponse resp) {
+	public Object yizhibo(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~yizhibo~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://new.yizhibo.com/");
-			asyncSkipToPage("yizhibo");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("yizhibo");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://new.yizhibo.com/");
+		return map;
+	}
+
+	@RequestMapping(value = "/ershouchezhishidajiangtang", method = RequestMethod.GET)
+	public Object ershouchezhishidajiangtang(HttpServletRequest req, HttpServletResponse resp) {
+		logger.info(new Date() + "~~~~ershouchezhishidajiangtang~~~~~~~~" + getIpAddress(req));
+		asyncSkipToPage("二手车知识大讲堂");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.iqiyi.com/u/1350641189");
+		return map;
+	}
+
+	@RequestMapping(value = "/caijinglangxianping", method = RequestMethod.GET)
+	public Object caijinglangxianping(HttpServletRequest req, HttpServletResponse resp) {
+		logger.info(new Date() + "~~~~caijinglangxianping~~~~~~~~" + getIpAddress(req));
+		asyncSkipToPage("财经郎咸平");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.iqiyi.com/a_19rrgu9qmt.html");
+		return map;
 	}
 
 	@RequestMapping(value = "/38hao", method = RequestMethod.GET)
-	public void hao38(HttpServletRequest req, HttpServletResponse resp) {
+	public Object hao38(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~38hao~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.hellozz.cn/");
-			asyncSkipToPage("38hao");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("38hao");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.hellozz.cn/");
+		return map;
 	}
 
 	@RequestMapping(value = "/38haoBigFish", method = RequestMethod.GET)
-	public void hao38BigFish(HttpServletRequest req, HttpServletResponse resp) {
+	public Object hao38BigFish(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~38hao~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://i.youku.com/u/UMTUxMTg3NjU0MA==?spm=a2h0k.11417342.soresults.dtitle");
-			asyncSkipToPage("38haoBigFish");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("38haoBigFish");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://i.youku.com/u/UMTUxMTg3NjU0MA==?spm=a2h0k.11417342.soresults.dtitle");
+		return map;
 	}
 
 	@RequestMapping(value = "/lilaoshuBigFish", method = RequestMethod.GET)
-	public void lilaoshuBigFish(HttpServletRequest req, HttpServletResponse resp) {
+	public Object lilaoshuBigFish(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~38hao~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://i.youku.com/u/UMzA3ODE3NjcxNg==?spm=a2h0k.11417342.soresults.dtitle");
-			asyncSkipToPage("lilaoshuBigFish");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("lilaoshuBigFish");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://i.youku.com/u/UMzA3ODE3NjcxNg==?spm=a2h0k.11417342.soresults.dtitle");
+		return map;
 	}
 
 	@RequestMapping(value = "/taobao", method = RequestMethod.GET)
-	public void taobao(HttpServletRequest req, HttpServletResponse resp) {
+	public Object taobao(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~taobao~~~~~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.taobao.com/");
-			asyncSkipToPage("taobao");
-		} catch (IOException e) {
-			logger.error("跳转到taobao门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("taobao");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.taobao.com/");
+		return map;
 	}
 
 	@RequestMapping(value = "/jd", method = RequestMethod.GET)
-	public void jd(HttpServletRequest req, HttpServletResponse resp) {
+	public Object jd(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~jd~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.jd.com/");
-			asyncSkipToPage("京东");
-		} catch (IOException e) {
-			logger.info("跳转到youku门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("京东");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.jd.com/");
+		return map;
 	}
 
 	@RequestMapping(value = "/tianya", method = RequestMethod.GET)
-	public void tianya(HttpServletRequest req, HttpServletResponse resp) {
+	public Object tianya(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~jd~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://focus.tianya.cn/");
-			asyncSkipToPage("天涯");
-		} catch (IOException e) {
-			logger.info("跳转到tianya门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("天涯");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://focus.tianya.cn/");
+		return map;
 	}
 
 	// http://edu.51cto.com/?wwwdh0
 	@RequestMapping(value = "/cto51", method = RequestMethod.GET)
-	public void cto51(HttpServletRequest req, HttpServletResponse resp) {
+	public Object cto51(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0   ~~~~~~"
 				+ getIpAddress(req));
-		try {
-			resp.sendRedirect("http://edu.51cto.com/?wwwdh0");
-			asyncSkipToPage("cto51");
-		} catch (IOException e) {
-			logger.info("跳转到51cto门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("cto51");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.hellozz.cn/");
+		return map;
 	}
 
 	// http://edu.51cto.com/?wwwdh0
 	@RequestMapping(value = "/bjsxt", method = RequestMethod.GET)
-	public void bjsxt(HttpServletRequest req, HttpServletResponse resp) {
+	public Object bjsxt(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~bjsxt    http://edu.51cto.com/?wwwdh0  ~~~~"
 				+ getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.bjsxt.com/");
-			asyncSkipToPage("北京尚学堂");
-		} catch (IOException e) {
-			logger.info("跳转到北京尚学堂门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("北京尚学堂");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.bjsxt.com/");
+		return map;
 	}
 
 	// http://study.163.com/
 	@RequestMapping(value = "/study163", method = RequestMethod.GET)
-	public void study163(HttpServletRequest req, HttpServletResponse resp) {
+	public Object study163(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~cto51    http://edu.51cto.com/?wwwdh0  ~~~~"
 				+ getIpAddress(req));
-		try {
-			resp.sendRedirect("http://study.163.com");
-			asyncSkipToPage("网易课堂");
-		} catch (IOException e) {
-			logger.info("跳转到网易云课堂门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("网易课堂");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://study.163.com");
+		return map;
 	}
 
 	// https://www.tmall.com
 	@RequestMapping(value = "/tmall", method = RequestMethod.GET)
-	public void tmall(HttpServletRequest req, HttpServletResponse resp) {
+	public Object tmall(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~tmall    https://www.tmall.com  ~~~~" + getIpAddress(req));
 		RateLimiter limiter = RateLimiter.create(1); // 每秒不超过10个任务被提交
 		for (int i = 0; i < 3; i++) {
 			limiter.acquire(); // 请求RateLimiter, 超过permits会被阻塞
 			logger.info("call execute.." + i);
 		}
-		try {
-			resp.sendRedirect("https://www.tmall.com");
-			asyncSkipToPage("天猫");
-		} catch (IOException e) {
-			logger.info("跳转到天猫失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("天猫");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.tmall.com");
+		return map;
 	}
 
 	// https://coding.net/user
 	@RequestMapping(value = "/coding", method = RequestMethod.GET)
-	public void coding(HttpServletRequest req, HttpServletResponse resp) {
+	public Object coding(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(
 				new Date() + "---------------~~~~~~~~~~~~coding    https://coding.net/user ~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://coding.net/user");
-		} catch (IOException e) {
-			logger.info("跳转到码云门户失败");
-			e.printStackTrace();
-		}
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://coding.net/user");
+		return map;
 	}
 
 	// http://finance.sina.com.cn/stock/usstock/
 	@RequestMapping(value = "/usstock", method = RequestMethod.GET)
-	public void usstock(HttpServletRequest req, HttpServletResponse resp) {
+	public Object usstock(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~usstock http://finance.sina.com.cn/stock/usstock/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://finance.sina.com.cn/stock/usstock/");
-		} catch (IOException e) {
-			logger.info("跳转到美道门户失败");
-			e.printStackTrace();
-		}
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://finance.sina.com.cn/stock/usstock/");
+		return map;
 	}
 
 	// http://www.ximalaya.com/explore/
 	@RequestMapping(value = "/ximalaya", method = RequestMethod.GET)
-	public void ximalaya(HttpServletRequest req, HttpServletResponse resp) {
+	public Object ximalaya(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~ximalaya http://www.ximalaya.com/explore/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.ximalaya.com/explore/");
-			asyncSkipToPage("ximalaya");
-		} catch (IOException e) {
-			logger.info("跳转到ximalaya门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("ximalaya");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.ximalaya.com/explore/");
+		return map;
 	}
 
 	// http://www.qingting.fm/
 	@RequestMapping(value = "/qingting", method = RequestMethod.GET)
-	public void qingting(HttpServletRequest req, HttpServletResponse resp) {
+	public Object qingting(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~qingting http://www.qingting.fm/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.qingting.fm/");
-			asyncSkipToPage("qingting");
-		} catch (IOException e) {
-			logger.info("跳转到qingting门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("qingting");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.qingting.fm/");
+		return map;
 	}
 
 	// https://www.lagou.com/
 	@RequestMapping(value = "/lagou", method = RequestMethod.GET)
-	public void lagou(HttpServletRequest req, HttpServletResponse resp) {
+	public Object lagou(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~拉勾    https://www.lagou.com/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.lagou.com/");
-			asyncSkipToPage("lagou");
-		} catch (IOException e) {
-			logger.info("跳转到拉勾门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("lagou");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.lagou.com/");
+		return map;
 	}
 
 	// https://www.lagou.com/
 	@RequestMapping(value = "/recaihotline", method = RequestMethod.GET)
-	public void recaihotline(HttpServletRequest req, HttpServletResponse resp) {
+	public Object recaihotline(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~recaihotline    http://www.cjol.com/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://www.cjol.com/");
-			asyncSkipToPage("人才热线门户");
-		} catch (IOException e) {
-			logger.info("跳转到人才热线门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("人才热线门户");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.cjol.com/");
+		return map;
 	}
 
 	// https://gitee.com/
 	@RequestMapping(value = "/gitee", method = RequestMethod.GET)
-	public void gitee(HttpServletRequest req, HttpServletResponse resp) {
+	public Object gitee(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~gitee    https://gitee.com/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://gitee.com/");
-			asyncSkipToPage("gitee");
-		} catch (IOException e) {
-			logger.info("跳转到gitee门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("gitee");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://gitee.com/");
+		return map;
 	}
 
 	// https://gitee.com/
 	@RequestMapping(value = "/github", method = RequestMethod.GET)
-	public void github(HttpServletRequest req, HttpServletResponse resp) {
+	public Object github(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~github    https://github.com/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://github.com/");
-			asyncSkipToPage("github");
-		} catch (IOException e) {
-			logger.info("跳转到github门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("github");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://github.com/");
+		return map;
 	}
 
 	// https://www.autohome.com.cn/
 	@RequestMapping(value = "/autoHome", method = RequestMethod.GET)
-	public void autohome(HttpServletRequest req, HttpServletResponse resp) {
+	public Object autohome(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~~~~autohome    https://www.autohome.com.cn/~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.autohome.com.cn/");
-			asyncSkipToPage("autoHome");
-		} catch (IOException e) {
-			logger.info("跳转到autohome门户失败");
-			e.printStackTrace();
-		}
-	}
-
-	//
-	@RequestMapping(value = "/scBaidu", method = RequestMethod.GET)
-	public void scBaidu(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "~~~~通过调用springcloud~~~~~~~" + getIpAddress(req));
-		String str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/baidu?name=2423&token=234234", null);
-		try {
-			resp.sendRedirect(str);
-			asyncSkipToPage("scBaidu");
-		} catch (IOException e) {
-			logger.info("跳转到autohome门户失败");
-			e.printStackTrace();
-		}
-	}
-
-	//
-	@RequestMapping(value = "/scQQ", method = RequestMethod.GET)
-	public void scQQ(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "~~~~通过调用springcloud~~~~~~~" + getIpAddress(req));
-		String str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/qq?name=2423&token=234234", null);
-		try {
-			resp.sendRedirect(str);
-		} catch (IOException e) {
-			logger.info("跳转到autohome门户失败");
-			e.printStackTrace();
-		}
-	}
-
-	//
-	@RequestMapping(value = "/sc163", method = RequestMethod.GET)
-	public void sc163(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "~~~~通过调用springcloud~~~~~~~" + getIpAddress(req));
-		String str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/163?name=2423&token=234234", null);
-		try {
-			resp.sendRedirect(str);
-		} catch (IOException e) {
-			logger.info("跳转到autohome门户失败");
-			e.printStackTrace();
-		}
-	}
-
-	@RequestMapping(value = "/scImooc", method = RequestMethod.GET)
-	public void scImooc(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "~~~~通过调用springcloud~~scImooc~~~~~" + getIpAddress(req));
-		String str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/imooc?name=2423&token=234234", null);
-		try {
-			resp.sendRedirect(str);
-		} catch (IOException e) {
-			logger.info("跳转到autohome门户失败");
-			e.printStackTrace();
-		}
+		asyncSkipToPage("autoHome");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.autohome.com.cn/");
+		return map;
 	}
 
 	@RequestMapping(value = "/bilibili", method = RequestMethod.GET)
-	public void bilibili(HttpServletRequest req, HttpServletResponse resp) {
+	public Object bilibili(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~通过调用springcloud~~~bilibili~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("https://www.bilibili.com/");
-			asyncSkipToPage("bilibili");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		asyncSkipToPage("bilibili");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "https://www.bilibili.com/");
+		return map;
 	}
 
 	@RequestMapping(value = "/beitaiYouku", method = RequestMethod.GET)
-	public void beitaiYouku(HttpServletRequest req, HttpServletResponse resp) {
+	public Object beitaiYouku(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~通过调用springcloud~~~beitaiYouku~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://i.youku.com/u/UMzU4MjIwMTcy?spm=a2h0k.11417342.soresults.dtitle");
-			asyncSkipToPage("备胎说车-优酷");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		asyncSkipToPage("备胎说车-优酷");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://i.youku.com/u/UMzU4MjIwMTcy?spm=a2h0k.11417342.soresults.dtitle");
+		return map;
 	}
 
 	@RequestMapping(value = "/zealerChina", method = RequestMethod.GET)
-	public void zealerChina(HttpServletRequest req, HttpServletResponse resp) {
+	public Object zealerChina(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "~~~~通过调用springcloud~~~zealerChina~~~~" + getIpAddress(req));
-		try {
-			resp.sendRedirect("http://i.youku.com/u/UMjI0ODEwMzQ4?spm=a2h0k.11417342.soresults.dtitle");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		asyncSkipToPage("zealerChina");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://i.youku.com/u/UMjI0ODEwMzQ4?spm=a2h0k.11417342.soresults.dtitle");
+		return map;
+	}
+
+	@RequestMapping(value = "/zhangxiaoxiangMultiThread", method = RequestMethod.GET)
+	public Object zhangxiaoxiangMultiThread(HttpServletRequest req, HttpServletResponse resp) {
+		logger.info(new Date() + "~~~~通过调用springcloud~~~zealerChina~~~~" + getIpAddress(req));
+		asyncSkipToPage("张孝祥-多线程");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("url", "http://www.icoolxue.com/album/show/109");
+		return map;
 	}
 
 	/**
