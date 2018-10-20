@@ -85,12 +85,18 @@ public class Hao123Controller {
 	@RequestMapping(value = "/wangyi", method = RequestMethod.GET)
 	public void wangyi(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info(new Date() + "---------------asyncHandle~~~~~~~~~~~~wangyi~~~~~" + getIpAddress(req));
-		asyncHandle(resp, "https://www.163.com/");
+		try {
+			resp.sendRedirect("http://www.163.com");
+			asyncSkipToPage("网易门户");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@RequestMapping(value = "/qq", method = RequestMethod.GET)
 	public void tencentIndex(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info(new Date() + "---------------~~~~~~~~~~~~wangyi~~~~~~~~~~~~~~~~" + getIpAddress(req));
+		logger.info(new Date() + "---------------~~~~~~~~~~~~qq~~~~~~~~~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.qq.com");
 			asyncSkipToPage("腾讯门户");
@@ -117,6 +123,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~iqiyi~~~~~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.iqiyi.com");
+			asyncSkipToPage("aiqiyi");
 		} catch (IOException e) {
 			logger.info("跳转到爱奇艺门户失败");
 			e.printStackTrace();
@@ -128,6 +135,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~youku~~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.youku.com");
+			asyncSkipToPage("youku");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -139,6 +147,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~imooc~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.imooc.com/");
+			asyncSkipToPage("imooc");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -150,6 +159,7 @@ public class Hao123Controller {
 		logger.info("~~~panda~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.panda.tv");
+			asyncSkipToPage("panda");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -161,6 +171,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~yizhibo~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://new.yizhibo.com/");
+			asyncSkipToPage("yizhibo");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -172,6 +183,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~38hao~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.hellozz.cn/");
+			asyncSkipToPage("38hao");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -183,6 +195,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~38hao~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://i.youku.com/u/UMTUxMTg3NjU0MA==?spm=a2h0k.11417342.soresults.dtitle");
+			asyncSkipToPage("38haoBigFish");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -194,6 +207,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~38hao~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://i.youku.com/u/UMzA3ODE3NjcxNg==?spm=a2h0k.11417342.soresults.dtitle");
+			asyncSkipToPage("lilaoshuBigFish");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -205,6 +219,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~taobao~~~~~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.taobao.com/");
+			asyncSkipToPage("taobao");
 		} catch (IOException e) {
 			logger.error("跳转到taobao门户失败");
 			e.printStackTrace();
@@ -216,6 +231,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~jd~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.jd.com/");
+			asyncSkipToPage("京东");
 		} catch (IOException e) {
 			logger.info("跳转到youku门户失败");
 			e.printStackTrace();
@@ -227,6 +243,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "---------------~~~~~~~~~~~~jd~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://focus.tianya.cn/");
+			asyncSkipToPage("天涯");
 		} catch (IOException e) {
 			logger.info("跳转到tianya门户失败");
 			e.printStackTrace();
@@ -240,6 +257,7 @@ public class Hao123Controller {
 				+ getIpAddress(req));
 		try {
 			resp.sendRedirect("http://edu.51cto.com/?wwwdh0");
+			asyncSkipToPage("cto51");
 		} catch (IOException e) {
 			logger.info("跳转到51cto门户失败");
 			e.printStackTrace();
@@ -253,6 +271,7 @@ public class Hao123Controller {
 				+ getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.bjsxt.com/");
+			asyncSkipToPage("北京尚学堂");
 		} catch (IOException e) {
 			logger.info("跳转到北京尚学堂门户失败");
 			e.printStackTrace();
@@ -266,6 +285,7 @@ public class Hao123Controller {
 				+ getIpAddress(req));
 		try {
 			resp.sendRedirect("http://study.163.com");
+			asyncSkipToPage("网易课堂");
 		} catch (IOException e) {
 			logger.info("跳转到网易云课堂门户失败");
 			e.printStackTrace();
@@ -283,8 +303,9 @@ public class Hao123Controller {
 		}
 		try {
 			resp.sendRedirect("https://www.tmall.com");
+			asyncSkipToPage("天猫");
 		} catch (IOException e) {
-			logger.info("跳转到网易云课堂门户失败");
+			logger.info("跳转到天猫失败");
 			e.printStackTrace();
 		}
 	}
@@ -320,6 +341,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~ximalaya http://www.ximalaya.com/explore/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.ximalaya.com/explore/");
+			asyncSkipToPage("ximalaya");
 		} catch (IOException e) {
 			logger.info("跳转到ximalaya门户失败");
 			e.printStackTrace();
@@ -332,6 +354,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~qingting http://www.qingting.fm/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.qingting.fm/");
+			asyncSkipToPage("qingting");
 		} catch (IOException e) {
 			logger.info("跳转到qingting门户失败");
 			e.printStackTrace();
@@ -344,6 +367,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~拉勾    https://www.lagou.com/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.lagou.com/");
+			asyncSkipToPage("lagou");
 		} catch (IOException e) {
 			logger.info("跳转到拉勾门户失败");
 			e.printStackTrace();
@@ -356,6 +380,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~recaihotline    http://www.cjol.com/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://www.cjol.com/");
+			asyncSkipToPage("人才热线门户");
 		} catch (IOException e) {
 			logger.info("跳转到人才热线门户失败");
 			e.printStackTrace();
@@ -368,6 +393,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~gitee    https://gitee.com/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://gitee.com/");
+			asyncSkipToPage("gitee");
 		} catch (IOException e) {
 			logger.info("跳转到gitee门户失败");
 			e.printStackTrace();
@@ -380,6 +406,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~github    https://github.com/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://github.com/");
+			asyncSkipToPage("github");
 		} catch (IOException e) {
 			logger.info("跳转到github门户失败");
 			e.printStackTrace();
@@ -392,6 +419,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~~~~autohome    https://www.autohome.com.cn/~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.autohome.com.cn/");
+			asyncSkipToPage("autoHome");
 		} catch (IOException e) {
 			logger.info("跳转到autohome门户失败");
 			e.printStackTrace();
@@ -405,6 +433,7 @@ public class Hao123Controller {
 		String str = HttpClientUtil.doGet("http://116.85.22.96:8769/hello/baidu?name=2423&token=234234", null);
 		try {
 			resp.sendRedirect(str);
+			asyncSkipToPage("scBaidu");
 		} catch (IOException e) {
 			logger.info("跳转到autohome门户失败");
 			e.printStackTrace();
@@ -454,6 +483,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~通过调用springcloud~~~bilibili~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("https://www.bilibili.com/");
+			asyncSkipToPage("bilibili");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -465,6 +495,7 @@ public class Hao123Controller {
 		logger.info(new Date() + "~~~~通过调用springcloud~~~beitaiYouku~~~~" + getIpAddress(req));
 		try {
 			resp.sendRedirect("http://i.youku.com/u/UMzU4MjIwMTcy?spm=a2h0k.11417342.soresults.dtitle");
+			asyncSkipToPage("备胎说车-优酷");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
