@@ -52,7 +52,7 @@ public class Hao123Controller {
 		logger.info("---------------~~~~~~~~~~~~gitchat~~~~~" + getIpAddress(req));
 		asyncSkipToPage("gitchat");
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("url", "http://www.baidu.com");
+		map.put("url", "http://www.gitbook.com");
 		return map;
 
 	}
