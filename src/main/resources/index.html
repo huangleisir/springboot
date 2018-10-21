@@ -28,7 +28,7 @@ font-family:"微软雅黑";font-weight:bold;
 function func(value){
 	$.ajax({
 		  type: 'GET',
-		  url: '/'+value,
+		  url: '/skip/'+value,
 		  success:function(data){
 			  window.open(data.url);
 		  }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,6 +39,29 @@ public class Hao123Controller {
 	 * return "welcome to us , demo"; }
 	 */
 
+	@RequestMapping(value = "/skip/{name}", method = RequestMethod.GET)
+	public Object skip(@PathVariable("name") String name, HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		logger.info("---------------~~~~~~~~~~~~name~~~~~" + name);
+		Map<String, String> map = new HashMap<String, String>();
+		switch (name) {
+		case "baidu":
+			asyncSkipToPage("baidu");
+			map.put("url", "http://www.baidu.com");
+			break;
+		case "github":
+			asyncSkipToPage("github");
+			map.put("url", "https://github.com/huangleisir");
+			break;
+		default:
+			asyncSkipToPage("gitbook");
+			map.put("url", "http://www.gitbook.cn");
+			break;
+		}
+
+		return map;
+	}
+
 	@RequestMapping(value = "/baidu", method = RequestMethod.GET)
 	public Object baidu(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		logger.info("---------------~~~~~~~~~~~~baidu~~~~~" + getIpAddress(req));
@@ -52,7 +76,7 @@ public class Hao123Controller {
 		logger.info("---------------~~~~~~~~~~~~gitchat~~~~~" + getIpAddress(req));
 		asyncSkipToPage("gitchat");
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("url", "http://www.gitbook.com");
+		map.put("url", "http://www.gitbook.cn");
 		return map;
 
 	}
