@@ -151,7 +151,7 @@ public class Hao123Controller {
 			break;
 		case "study163":
 			asyncSkipToPage("study163");
-			map.put("url", "http://www.bjsxt.com/");
+			map.put("url", "http://www.study163.com/");
 			break;
 		case "tmall":
 			asyncSkipToPage("tmall");
