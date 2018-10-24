@@ -178,19 +178,19 @@ public class Hao123Controller {
 			map.put("url", "https://www.lagou.com/");
 			break;
 		case "gitee":
-			asyncSkipToPage("lagou");
+			asyncSkipToPage("gitee");
 			map.put("url", "https://gitee.com/");
 			break;
 		case "recaihotline":
-			asyncSkipToPage("lagou");
+			asyncSkipToPage("recaihotline");
 			map.put("url", "http://www.cjol.com/");
 			break;
 		case "autoHome":
-			asyncSkipToPage("lagou");
+			asyncSkipToPage("autoHome");
 			map.put("url", "https://www.autohome.com.cn/");
 			break;
 		case "zealerChina":
-			asyncSkipToPage("lagou");
+			asyncSkipToPage("zealerChina");
 			map.put("url", "http://i.youku.com/u/UMjI0ODEwMzQ4?spm=a2h0k.11417342.soresults.dtitle");
 			break;
 		default:
