@@ -189,6 +189,10 @@ public class Hao123Controller {
 			asyncSkipToPage("recaihotline");
 			map.put("url", "http://www.cjol.com/");
 			break;
+		case "dangdang":
+			asyncSkipToPage("dangdang");
+			map.put("url", "http://book.dangdang.com/");
+			break;
 		case "autoHome":
 			asyncSkipToPage("autoHome");
 			map.put("url", "https://www.autohome.com.cn/");
@@ -220,6 +224,14 @@ public class Hao123Controller {
 		case "zk":
 			asyncSkipToPage("zookeeper");
 			map.put("url", "https://zookeeper.apache.org/");
+			break;
+		case "wangzherongyao":
+			asyncSkipToPage("王者荣耀职业赛");
+			map.put("url", "http://pvp.qq.com/match/center.shtml?ADTAG=pvp.index.nav.matchcenter");
+			break;
+		case "yingxionglianmeng":
+			asyncSkipToPage("英雄联盟职业赛");
+			map.put("url", "http://lpl.qq.com/es/worlds/2018/index.html");
 			break;
 		default:
 			asyncSkipToPage("gitbook");

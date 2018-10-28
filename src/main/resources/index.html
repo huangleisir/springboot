@@ -16,7 +16,7 @@ h3 {
 	cursor:pointer;
 	color:red; transition:0.1s;
 }
-a:hover { color:#ff9990; }
+a:hover { color:#FFBB00; }
 
 body {
 	background-color: #e0ffff;
@@ -31,7 +31,9 @@ font-family:"微软雅黑";font-weight:bold;
 function func(value){
 	$.ajax({
 		  type: 'GET',
-		  url: '/skip/'+value,
+		  url: '/skip/'+value+'?name='+value,
+		  data:{'name':value},
+		  dataType:'json',
 		  success:function(data){
 			  window.open(data.url);
 		  }
@@ -50,7 +52,7 @@ function func(value){
 	<h3 onclick="func('baidu')">
 		<a >百度</a>
 	</h3>
-	<h3 onclick="func('wangyi')">
+	<h3 onclick="func('qq')">
 		<a >腾讯</a>
 	</h3>
 	<h3 onclick="func('douyu')">
@@ -187,6 +189,15 @@ function func(value){
 	<hr>
 	<h3  style="color:blue;" onclick="func('pconline')">
 		<a >太平洋电脑</a>
+	</h3>
+	<h3  style="color:blue;" onclick="func('dangdang')">
+		<a >当当</a>
+	</h3>
+	<h3  style="color:blue;" onclick="func('wangzherongyao')">
+		<a >王者荣耀职业赛</a>
+	</h3>
+	<h3  style="color:blue;" onclick="func('yingxionglianmeng')">
+		<a >英雄联盟职业赛</a>
 	</h3>
 
 
