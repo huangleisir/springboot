@@ -3,6 +3,7 @@
 <head>
 <title>我的123网址之家</title>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link rel="shortcut icon" href="Z.ico" type="image/x-icon" />
 <style type="text/css">
 .inline {
@@ -13,7 +14,9 @@ h3 {
 	display: inline;
 	margin-right: 30px;
 	cursor:pointer;
+	color:red; transition:0.1s;
 }
+a:hover { color:#ff9990; }
 
 body {
 	background-color: #e0ffff;
@@ -81,15 +84,15 @@ function func(value){
 		<a >备胎说车-优酷</a>
 	</h3>
 	
-	<h2 onclick="func('taobao')">
+	<h3 onclick="func('taobao')">
 		<a >淘宝</a>
-	</h2>
+	</h3>
 	<h3 onclick="func('tmall')">
 		<a >天猫</a>
 	</h3>
-	<h1 onclick="func('jd')">
+	<h3 onclick="func('jd')">
 		<a >京东</a>
-	</h1>
+	</h3>
 	<h3 onclick="func('cto51')">
 		<a >51CTO</a>
 	</h3>
@@ -99,6 +102,7 @@ function func(value){
 	<h3 onclick="func('study163')">
 		<a >网易云课堂</a>
 	</h3>
+	<hr>
 	<h3 onclick="func('github')">
 		<a >github</a>
 	</h3>
@@ -160,6 +164,30 @@ function func(value){
 		<a >张孝祥多线程</a>
 	</h3>
 	
+	<hr>
+	
+	<h3  style="color:red;" onclick="func('springDotIO')">
+		<a >spring.io</a>
+	</h3>
+	<h3  style="color:red;" onclick="func('startSpringIO')">
+		<a >start.spring.io</a>
+	</h3>
+	<h3  style="color:red;" onclick="func('redisDotIO')">
+		<a >redis.io</a>
+	</h3>
+	<h3  style="color:purple;" onclick="func('dubboOfficial')">
+		<a >dubboOfficial</a>
+	</h3>
+	<h3  style="color:purple;" onclick="func('mybatis')">
+		<a >mybatis3</a>
+	</h3>
+	<h3  style="color:purple;" onclick="func('zk')">
+		<a >zookeeper</a>
+	</h3>
+	<hr>
+	<h3  style="color:blue;" onclick="func('pconline')">
+		<a >太平洋电脑</a>
+	</h3>
 
 
 

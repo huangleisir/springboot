@@ -57,7 +57,7 @@ public class Hao123Controller {
 			map.put("url", "https://www.panda.tv");
 			break;
 		case "beitaiYouku":
-			asyncSkipToPage("panda");
+			asyncSkipToPage("beitaiYouku");
 			map.put("url", "http://i.youku.com/u/UMzU4MjIwMTcy?spm=a2h0k.11417342.soresults.dtitle");
 			break;
 		case "ershouchezhishidajiangtang":
@@ -151,7 +151,7 @@ public class Hao123Controller {
 			break;
 		case "study163":
 			asyncSkipToPage("study163");
-			map.put("url", "http://www.study163.com/");
+			map.put("url", "https://study.163.com/");
 			break;
 		case "tmall":
 			asyncSkipToPage("tmall");
@@ -164,6 +164,10 @@ public class Hao123Controller {
 		case "usstock":
 			asyncSkipToPage("usstock");
 			map.put("url", "http://finance.sina.com.cn/stock/usstock/");
+			break;
+		case "pconline":
+			asyncSkipToPage("pconline");
+			map.put("url", "https://www.pconline.com.cn/");
 			break;
 		case "ximalaya":
 			asyncSkipToPage("ximalaya");
@@ -192,6 +196,30 @@ public class Hao123Controller {
 		case "zealerChina":
 			asyncSkipToPage("zealerChina");
 			map.put("url", "http://i.youku.com/u/UMjI0ODEwMzQ4?spm=a2h0k.11417342.soresults.dtitle");
+			break;
+		case "springDotIO":
+			asyncSkipToPage("springDotIO");
+			map.put("url", "https://spring.io/");
+			break;
+		case "startSpringIO":
+			asyncSkipToPage("startSpringIO");
+			map.put("url", "https://start.spring.io/");
+			break;
+		case "redisDotIO":
+			asyncSkipToPage("redisDotIO");
+			map.put("url", "https://redis.io/");
+			break;
+		case "dubboOfficial":
+			asyncSkipToPage("dubboOfficial");
+			map.put("url", "http://dubbo.apache.org/en-us/index.html");
+			break;
+		case "mybatis":
+			asyncSkipToPage("mybatis");
+			map.put("url", "http://www.mybatis.org/mybatis-3/zh/source-repository.html");
+			break;
+		case "zk":
+			asyncSkipToPage("zookeeper");
+			map.put("url", "https://zookeeper.apache.org/");
 			break;
 		default:
 			asyncSkipToPage("gitbook");
