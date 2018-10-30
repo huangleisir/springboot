@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.util.concurrent.RateLimiter;
 
+import util.GsonUtil;
 import util.SimpleThreadPoolUtils;
 
 @RestController
@@ -42,7 +43,7 @@ public class Hao123Controller {
 	public Object skip(@PathVariable("name") String name, HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		logger.info("---------------~~~~~~~~~~~~name~~~~~" + name);
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		switch (name) {
 		case "baidu":
 			asyncSkipToPage("baidu");
@@ -232,6 +233,16 @@ public class Hao123Controller {
 		case "yingxionglianmeng":
 			asyncSkipToPage("英雄联盟职业赛");
 			map.put("url", "http://lpl.qq.com/es/worlds/2018/index.html");
+			break;
+		case "weather":
+			asyncSkipToPage("weather");
+			String str = HttpClientUtil.doGet(
+					"http://api.k780.com/?app=weather.today&weaid=1&appkey=37513&sign=03ece6e534315f18bb18cca05465217f&format=json",
+					null);
+			Map<String, String> map2 = GsonUtil.GsonToMaps(str);
+			Map<String, String> resultMap = GsonUtil.GsonToMaps(GsonUtil.GsonString(map2.get("result")));
+			logger.info(GsonUtil.GsonString(resultMap));
+			map.put("resultMap", resultMap);
 			break;
 		default:
 			asyncSkipToPage("gitbook");

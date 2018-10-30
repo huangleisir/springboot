@@ -2,8 +2,10 @@
 <html>
 <head>
 <title>我的123网址之家</title>
+<script type="text/javascript" src="./jquery-3.3.1.js"></script>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link rel="shortcut icon" href="Z.ico" type="image/x-icon" />
 <style type="text/css">
 .inline {
@@ -13,20 +15,25 @@
 h3 {
 	display: inline;
 	margin-right: 30px;
-	cursor:pointer;
-	color:red; transition:0.1s;
+	cursor: pointer;
+	color: red;
+	transition: 0.1s;
 }
-a:hover { color:#FFBB00; }
+
+a:hover {
+	color: #FFBB00;
+}
 
 body {
 	background-color: #e0ffff;
 }
-span{
-font-family:"微软雅黑";font-weight:bold;
-}
 
+span {
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
 </style>
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
 <script type="text/javascript">
 function func(value){
 	$.ajax({
@@ -39,165 +46,186 @@ function func(value){
 		  }
 		});
 }
+function init(){
+	$.ajax({
+		  type: 'GET',
+		  url: '/skip/weather?name=weather',
+		  data:{'name':'weather'},
+		  dataType:'json',
+		  success:function(data){
+			  if(data.success!='1'){
+				  debugger;
+	                alert(data.msgid+' '+data.msg);
+	                exit;
+	            }
+			  debugger;
+			  $("#bj").html(data.resultMap.citynm+'   '+data.resultMap.weather+'    '+data.resultMap.temperature_curr+'   '
+					  +data.resultMap.temperature
+					  +data.resultMap.days + '  '+data.resultMap.week);
+		  }
+		});
+}
 </script>
+
 </head>
 
-<body>
-	<h1>我的123网址之家</h1>
+<body onload="init()">
+	<label></label>
+	<span id="bj"></span>
 	<br />
 
 	<h3 onclick="func('wangyi')">
-		<a ><span >网易</span></a>
+		<a><span>网易</span></a>
 	</h3>
 	<h3 onclick="func('baidu')">
-		<a >百度</a>
+		<a>百度</a>
 	</h3>
 	<h3 onclick="func('qq')">
-		<a >腾讯</a>
+		<a>腾讯</a>
 	</h3>
 	<h3 onclick="func('douyu')">
-		<a >斗鱼</a>
+		<a>斗鱼</a>
 	</h3>
 	<h3 onclick="func('iqiyi')">
-		<a >爱奇艺</a>
+		<a>爱奇艺</a>
 	</h3>
 	<h3 onclick="func('youku')">
-		<a >优酷</a>
+		<a>优酷</a>
 	</h3>
 	<h3 onclick="func('imooc')">
-		<a >慕课</a>
+		<a>慕课</a>
 	</h3>
 	<h3 onclick="func('panda')">
-		<a >熊猫</a>
+		<a>熊猫</a>
 	</h3>
 	<h3 onclick="func('yizhibo')">
-		<a >一直播</a>
+		<a>一直播</a>
 	</h3>
 	<h3 onclick="func('38hao')">
-		<a >38号</a>
+		<a>38号</a>
 	</h3>
 	<h3 onclick="func('38haoBigFish')">
-		<a >38号-大鱼</a>
+		<a>38号-大鱼</a>
 	</h3>
 	<h3 onclick="func('lilaoshuBigFish')">
-		<a >李老鼠说车-大鱼</a>
+		<a>李老鼠说车-大鱼</a>
 	</h3>
 	<h3 onclick="func('beitaiYouku')">
-		<a >备胎说车-优酷</a>
+		<a>备胎说车-优酷</a>
 	</h3>
-	
+
 	<h3 onclick="func('taobao')">
-		<a >淘宝</a>
+		<a>淘宝</a>
 	</h3>
 	<h3 onclick="func('tmall')">
-		<a >天猫</a>
+		<a>天猫</a>
 	</h3>
 	<h3 onclick="func('jd')">
-		<a >京东</a>
+		<a>京东</a>
 	</h3>
 	<h3 onclick="func('cto51')">
-		<a >51CTO</a>
+		<a>51CTO</a>
 	</h3>
 	<h3 onclick="func('bjsxt')">
-		<a >北京尚学堂</a>
+		<a>北京尚学堂</a>
 	</h3>
 	<h3 onclick="func('study163')">
-		<a >网易云课堂</a>
+		<a>网易云课堂</a>
 	</h3>
 	<hr>
 	<h3 onclick="func('github')">
-		<a >github</a>
+		<a>github</a>
 	</h3>
 	<h3 onclick="func('coding')">
-		<a >coding</a>
+		<a>coding</a>
 	</h3>
 	<h3 onclick="func('gitee')">
-		<a >gitee</a>
+		<a>gitee</a>
 	</h3>
 	<h3 onclick="func('usstock')">
-		<a >美道</a>
+		<a>美道</a>
 	</h3>
 	<h3 onclick="func('ximalaya')">
-		<a >喜马拉雅</a>
+		<a>喜马拉雅</a>
 	</h3>
 	<h3 onclick="func('qingting')">
-		<a >蜻蜓</a>
+		<a>蜻蜓</a>
 	</h3>
 	<hr />
 	<h3 onclick="func('lagou')">
-		<a >拉勾</a>
+		<a>拉勾</a>
 	</h3>
 	<h3 onclick="func('recaihotline')">
-		<a >人才热线</a>
+		<a>人才热线</a>
 	</h3>
 	<h3 onclick="func('autoHome')">
-		<a >汽车之家</a>
+		<a>汽车之家</a>
 	</h3>
 	<h3 onclick="func('bilibili')">
-		<a >哔哩哔哩动画</a>
+		<a>哔哩哔哩动画</a>
 	</h3>
 	<h3 onclick="func('tianya')">
-		<a >天涯</a>
+		<a>天涯</a>
 	</h3>
 	<h3 onclick="func('kaikeba')">
-		<a >开课吧</a>
+		<a>开课吧</a>
 	</h3>
-	
+
 	<hr />
-	
-	<h3 style="color:red;" onclick="func('zealerChina')">
-		<a >zealerChina</a>
+
+	<h3 style="color: red;" onclick="func('zealerChina')">
+		<a>zealerChina</a>
 	</h3>
-	<h3 style="color:red;" onclick="func('cheshier')">
-		<a >车事儿</a>
+	<h3 style="color: red;" onclick="func('cheshier')">
+		<a>车事儿</a>
 	</h3>
 	<hr />
-	
-	<h3 style="color:red;" onclick="func('gitchat')">
-		<a >gitchat</a>
+
+	<h3 style="color: red;" onclick="func('gitchat')">
+		<a>gitchat</a>
 	</h3>
-	<h3 style="color:red;" onclick="func('ershouchezhishidajiangtang')">
-		<a >二手车知识大讲堂</a>
+	<h3 style="color: red;" onclick="func('ershouchezhishidajiangtang')">
+		<a>二手车知识大讲堂</a>
 	</h3>
-	<h3 style="color:red;" onclick="func('caijinglangxianping')">
-		<a >财经郎咸平</a>
+	<h3 style="color: red;" onclick="func('caijinglangxianping')">
+		<a>财经郎咸平</a>
 	</h3>
-	<h3  style="color:red;" onclick="func('zhangxiaoxiangMultiThread')">
-		<a >张孝祥多线程</a>
+	<h3 style="color: red;" onclick="func('zhangxiaoxiangMultiThread')">
+		<a>张孝祥多线程</a>
 	</h3>
-	
+
 	<hr>
-	
-	<h3  style="color:red;" onclick="func('springDotIO')">
-		<a >spring.io</a>
+
+	<h3 style="color: red;" onclick="func('springDotIO')">
+		<a>spring.io</a>
 	</h3>
-	<h3  style="color:red;" onclick="func('startSpringIO')">
-		<a >start.spring.io</a>
+	<h3 style="color: red;" onclick="func('startSpringIO')">
+		<a>start.spring.io</a>
 	</h3>
-	<h3  style="color:red;" onclick="func('redisDotIO')">
-		<a >redis.io</a>
+	<h3 style="color: red;" onclick="func('redisDotIO')">
+		<a>redis.io</a>
 	</h3>
-	<h3  style="color:purple;" onclick="func('dubboOfficial')">
-		<a >dubboOfficial</a>
+	<h3 style="color: purple;" onclick="func('dubboOfficial')">
+		<a>dubboOfficial</a>
 	</h3>
-	<h3  style="color:purple;" onclick="func('mybatis')">
-		<a >mybatis3</a>
+	<h3 style="color: purple;" onclick="func('mybatis')">
+		<a>mybatis3</a>
 	</h3>
-	<h3  style="color:purple;" onclick="func('zk')">
-		<a >zookeeper</a>
+	<h3 style="color: purple;" onclick="func('zk')">
+		<a>zookeeper</a>
 	</h3>
 	<hr>
-	<h3  style="color:blue;" onclick="func('pconline')">
-		<a >太平洋电脑</a>
+	<h3 style="color: blue;" onclick="func('pconline')">
+		<a>太平洋电脑</a>
 	</h3>
-	<h3  style="color:blue;" onclick="func('dangdang')">
-		<a >当当</a>
+	<h3 style="color: blue;" onclick="func('dangdang')">
+		<a>当当</a>
 	</h3>
-	<h3  style="color:blue;" onclick="func('wangzherongyao')">
-		<a >王者荣耀职业赛</a>
+	<h3 style="color: blue;" onclick="func('wangzherongyao')">
+		<a>王者荣耀职业赛</a>
 	</h3>
-	<h3  style="color:blue;" onclick="func('yingxionglianmeng')">
-		<a >英雄联盟职业赛</a>
+	<h3 style="color: blue;" onclick="func('yingxionglianmeng')">
+		<a>英雄联盟职业赛</a>
 	</h3>
 
 

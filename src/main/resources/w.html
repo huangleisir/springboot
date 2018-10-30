@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript" src="https://www.nowapi.com/style/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+     $.ajax({
+        type          : 'get',
+        async         : false,
+        url           : 'http://api.k780.com/?app=weather.today&weaid=1&appkey=37513&sign=03ece6e534315f18bb18cca05465217f&format=json&jsoncallback=data',
+        dataType      : 'jsonp',
+        jsonp         : 'callback',
+        jsonpCallback : 'data',
+        success       : function(data){
+        	debugger;
+            if(data.success!='1'){
+                alert(data.msgid+' '+data.msg);
+                exit;
+            }
+            //遍历
+            var description = "";
+			debugger;
+                var property=data.result.citynm +'     '+ data.result.weather+'       '+data.result.temperature;
+            $('#w').html(property);
+        },
+        error:function(){
+            alert('fail');
+        }
+    });
+});
+</script>
+</head>
+<body>
+<span id="w"></span>
+</body>
+</html>
