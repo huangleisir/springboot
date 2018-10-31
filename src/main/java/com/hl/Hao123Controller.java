@@ -234,6 +234,10 @@ public class Hao123Controller {
 			asyncSkipToPage("英雄联盟职业赛");
 			map.put("url", "http://lpl.qq.com/es/worlds/2018/index.html");
 			break;
+		case "baihuaqiche":
+			asyncSkipToPage("白话汽车");
+			map.put("url", "https://i.youku.com/u/UMTMzMDc3NjgyOA==?spm=a2h0k.11417342.soresults.dname");
+			break;
 		case "weather":
 			asyncSkipToPage("weather");
 			String str = HttpClientUtil.doGet(

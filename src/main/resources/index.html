@@ -53,15 +53,10 @@ function init(){
 		  data:{'name':'weather'},
 		  dataType:'json',
 		  success:function(data){
-			  if(data.success!='1'){
-				  debugger;
-	                alert(data.msgid+' '+data.msg);
-	                exit;
-	            }
-			  debugger;
-			  $("#bj").html(data.resultMap.citynm+'   '+data.resultMap.weather+'    '+data.resultMap.temperature_curr+'   '
-					  +data.resultMap.temperature
-					  +data.resultMap.days + '  '+data.resultMap.week);
+			  $("#bj").html(data.resultMap.citynm+'  		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    '+data.resultMap.weather
+			  +'  		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     '+data.resultMap.temperature_curr+'   		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    '
+					  +data.resultMap.temperature + '  &nbsp;&nbsp;&nbsp;    '
+					  +data.resultMap.days + '  		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    '+data.resultMap.week);
 		  }
 		});
 }
@@ -178,6 +173,9 @@ function init(){
 	</h3>
 	<h3 style="color: red;" onclick="func('cheshier')">
 		<a>车事儿</a>
+	</h3>
+	<h3 style="color: red;" onclick="func('baihuaqiche')">
+		<a>白话汽车</a>
 	</h3>
 	<hr />
 

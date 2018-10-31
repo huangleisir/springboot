@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <script type="text/javascript" src="https://www.nowapi.com/style/jquery/1.11.3/jquery.min.js"></script>
+<link rel="shortcut icon" href="snow.ico" type="image/x-icon" />
 <script>
 $(document).ready(function(){
      $.ajax({
@@ -22,7 +23,8 @@ $(document).ready(function(){
             //遍历
             var description = "";
 			debugger;
-                var property=data.result.citynm +'     '+ data.result.weather+'       '+data.result.temperature;
+                var property=data.result.citynm +'  		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    '+ 
+                data.result.weather+'       		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      '+data.result.temperature;
             $('#w').html(property);
         },
         error:function(){
