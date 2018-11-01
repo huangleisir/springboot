@@ -39,7 +39,7 @@ public class Hao123Controller {
 	 * return "welcome to us , demo"; }
 	 */
 
-	@RequestMapping(value = "/skip/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/skip/{name}", method = RequestMethod.POST)
 	public Object skip(@PathVariable("name") String name, HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		logger.info("---------------~~~~~~~~~~~~name~~~~~" + name);
@@ -237,6 +237,14 @@ public class Hao123Controller {
 		case "baihuaqiche":
 			asyncSkipToPage("白话汽车");
 			map.put("url", "https://i.youku.com/u/UMTMzMDc3NjgyOA==?spm=a2h0k.11417342.soresults.dname");
+			break;
+		case "ceshihao":
+			asyncSkipToPage("微信测试号");
+			map.put("url", "https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index");
+			break;
+		case "sina":
+			asyncSkipToPage("sina");
+			map.put("url", "https://www.sina.com.cn/");
 			break;
 		case "weather":
 			asyncSkipToPage("weather");

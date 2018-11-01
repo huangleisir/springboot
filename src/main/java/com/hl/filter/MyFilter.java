@@ -1,8 +1,7 @@
 package com.hl.filter;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.Charset;
 import java.util.Map;
 
 import javax.servlet.Filter;
@@ -13,12 +12,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-import org.apache.commons.lang3.StringUtils;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
-import org.springframework.util.StreamUtils;
 
 @WebFilter(filterName = "myFilter", urlPatterns = "/*")
 @Order(Integer.MAX_VALUE)
@@ -34,23 +30,22 @@ public class MyFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		System.out.println("MyFilter doFilter.........before");
-		String name = request.getParameter("name");
-		if (StringUtils.isNotEmpty(name) && (name.startsWith("yingxiong") || name.startsWith("wangzhe"))) {
-			logger.info("游戏生活丰富多彩啊");
+		/*
+		 * String name = request.getParameter("name"); if (StringUtils.isNotEmpty(name)
+		 * && (name.startsWith("yingxiong") || name.startsWith("wangzhe"))) {
+		 * logger.info("游戏生活丰富多彩啊"); }
+		 */
+
+		logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
+		BufferedReader br = request.getReader();
+		String str, wholeStr = "";
+		while ((str = br.readLine()) != null) {
+			wholeStr += str;
 		}
+		System.out.println("====================" + wholeStr);
 		chain.doFilter(request, response);
 		System.out.println("MyFilter doFilter.........after");
-
-		InputStream in = request.getInputStream();
-		String reqBbody = StreamUtils.copyToString(in, Charset.forName("UTF-8"));
-		// 打印userId，获取其他用户信息
-		if (reqBbody != null) {
-			// JSONOBJECT JSON = JSONOBJECT.FROMOBJECT(REQBBODY);
-			// OBJECT USERID = JSON.GET("USerId");
-			// if (userId != null) {
-			logger.info("request params:\t" + JSONObject.valueToString(reqBbody));
-			// }
-		}
+		logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
 		// 打印请求方法，路径
 		logger.info("request url:\t" + "\t" + request.getRemoteAddr());
 		Map<String, String[]> map = request.getParameterMap();
@@ -63,17 +58,13 @@ public class MyFilter implements Filter {
 			}
 			logger.info(sb.toString());
 		}
-		// 打印请求json参数
-		if (reqBbody != null) {
-			logger.info("request body:\t" + reqBbody);
-		}
 
-		// 打印response
-		InputStream out = request.getInputStream();
-		String outBody = StreamUtils.copyToString(out, Charset.forName("UTF-8"));
-		if (outBody != null) {
-			logger.info("response body:\t" + outBody);
-		}
+		// // 打印response
+		// InputStream out = request.getInputStream();
+		// String outBody = StreamUtils.copyToString(out, Charset.forName("UTF-8"));
+		// if (outBody != null) {
+		// logger.info("response body:\t" + outBody);
+		// }
 
 		// response.setResponseBody(outBody);// 重要！！！
 	}
