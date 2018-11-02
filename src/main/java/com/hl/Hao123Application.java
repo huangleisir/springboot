@@ -6,6 +6,18 @@
  *******************************************************************************/
 package com.hl;
 
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.lang.math.RandomUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -13,6 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import util.GsonUtil;
 
 /**
  * @author moss
@@ -22,14 +36,79 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class Hao123Application {
+	static Logger log = LoggerFactory.getLogger(Hao123Application.class);
+
+	static Map<String, String> tokenMap = new HashMap<String, String>();
+
 	public static void main(String[] args) {
 		SpringApplication.run(Hao123Application.class, args);
+		/////////////////////////////////////////////////////////////////////
+		ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+		// 参数：1、任务体 2、首次执行的延时时间
+		// 3、任务执行间隔 4、间隔时间单位
+		service.scheduleAtFixedRate(() -> {
+			System.out.println("更新access_token, " + new Date());
+			try {
+				String str = HttpClientUtil.doGet(
+						"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx63e923c37a90e24e&secret=58e8da3e42d3e3b04db36af5dae8fdb1",
+						null);
+				log.info("-----------" + str);
+				Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
+				String token = (String) retMap.get("access_token");
+				log.info("更新access_token, {}", token);
+				tokenMap.put("access_token", token);
+			} catch (Exception e) {
+				log.info("更新access_token failed");
+				e.printStackTrace();
+			}
+
+		}, 0, 7, TimeUnit.MINUTES);
+		ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
+		// 参数：1、任务体 2、首次执行的延时时间
+		// 3、任务执行间隔 4、间隔时间单位
+
+		service2.scheduleAtFixedRate(() -> {
+			/*
+			 * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
+			 * content + " \" }}"
+			 */
+			String content = randomShiti();
+			try {
+				log.info("22222222222222, " + new Date());
+				String token = tokenMap.get("access_token");
+				Map<String, String> map = new HashMap<String, String>();
+				map.put("touser", "orR4l1sSeLPOQRpLkCC57sBU1fE0");
+				map.put("msgtype", "text");
+				Map<String, Object> map2 = new HashMap<String, Object>();
+				map2.put("content", "123");
+				map.put("text", GsonUtil.GsonString(map2));
+				log.info("11111111111111, {}", GsonUtil.GsonString(map));
+				String str = HttpClientUtil.httpPostWithJSON(
+						"https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + token,
+						"{\"touser\": \"orR4l1rIdRi1-xsJxWJezAA2QrXE\", \"msgtype\": \"text\", \"text\": {\"content\": \" "
+								+ content + " \" }}");
+				log.info("2222222222result2222, {}" + str);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+
+			}
+		}, 3, 11, TimeUnit.MINUTES);
+
 	}
 
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
 	@ResponseBody
 	public String demo() {
 		return "hello world!";
+	}
+
+	static String randomShiti() {
+		List<String> list = Arrays.asList("1你能讲讲jvm内存模型吗，eden，S1,S2,年轻代，年老代，永久代，垃圾回收算法吗？", "2你能说出几种设计模式", "3并发包下面的类",
+				"4集合框架", "5SpringMVC原理", "6多线程几种实现方式", "7dubbo原理源码", "8shiro", "9oauth2", "10mybatis原理", "11mysql隔离级别",
+				"12mysql优化", "13分布式锁", "15redis,复制,分布式锁,哈希环", "16讲讲现公司的架构", "17数据结构和算法  冒择入希快归堆", "18dubbo",
+				"19zookepper", "20分布式事务", "21敏捷开发");
+		int i = RandomUtils.nextInt(list.size());
+		return list.get(i);
 	}
 }
 
@@ -180,9 +259,9 @@ public class Hao123Application {
  *             </body> </html> th:text="'Hello, ' + ${name} +
  *             '!'"也就是将我们之前在@Controller方法里添加至Model的属性name进行渲染，并放入
  *             <p>
- * 			标签中（因为th:text是
+ *             标签中（因为th:text是
  *             <p>
- * 			标签的属性）。模板渲染还有更多的用法，请参考Thymeleaf官方文档。
+ *             标签的属性）。模板渲染还有更多的用法，请参考Thymeleaf官方文档。
  * 
  *             处理静态文件
  * 
