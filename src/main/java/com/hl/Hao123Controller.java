@@ -246,6 +246,10 @@ public class Hao123Controller {
 			asyncSkipToPage("sina");
 			map.put("url", "https://www.sina.com.cn/");
 			break;
+		case "yeshengchufang":
+			asyncSkipToPage("sina");
+			map.put("url", "https://www.mgtv.com/b/326658/4667728.html?cxid=95kqkw8n6");
+			break;
 		case "weather":
 			asyncSkipToPage("weather");
 			String str = HttpClientUtil.doGet(
