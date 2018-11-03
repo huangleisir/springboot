@@ -92,7 +92,7 @@ public class Hao123Application {
 				// TODO Auto-generated catch block
 
 			}
-		}, 3, 11, TimeUnit.MINUTES);
+		}, 3, 31, TimeUnit.MINUTES);
 
 	}
 
