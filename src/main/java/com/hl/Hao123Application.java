@@ -106,7 +106,10 @@ public class Hao123Application {
 		List<String> list = Arrays.asList("1你能讲讲jvm内存模型吗，eden，S1,S2,年轻代，年老代，永久代，垃圾回收算法吗？", "2你能说出几种设计模式", "3并发包下面的类",
 				"4集合框架", "5SpringMVC原理", "6多线程几种实现方式", "7dubbo原理源码", "8shiro", "9oauth2", "10mybatis原理", "11mysql隔离级别",
 				"12mysql优化", "13分布式锁", "15redis,复制,分布式锁,哈希环", "16讲讲现公司的架构", "17数据结构和算法  冒择入希快归堆", "18dubbo",
-				"19zookepper", "20分布式事务", "21敏捷开发", "22linux命令，根据端口找进程");
+				"19zookepper", "20分布式事务", "21敏捷开发", "22linux命令，根据端口找进程", "23zookeeper选举原理", "24consul跟zk有什么区别",
+				"25最新版JDK HashMap的结构", "26springmvc的原理", "27oracle sql实现递归", "28mysql优化", "29执行计划看什么,是否有全表扫描,索引是否生效",
+				"30jvm的数据模型,年代划分,gc算法", "32set是怎么实现不重复的", "33lock锁与synchronize的差别", "34ConcurrentHashMap实现原理",
+				"35一致性hash");
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
