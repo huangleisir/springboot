@@ -23,27 +23,25 @@ public class MyFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		System.out.println("MyFilter init............");
+		logger.info("MyFilter init............");
 	}
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		System.out.println("MyFilter doFilter.........before");
-		/*
-		 * String name = request.getParameter("name"); if (StringUtils.isNotEmpty(name)
-		 * && (name.startsWith("yingxiong") || name.startsWith("wangzhe"))) {
-		 * logger.info("游戏生活丰富多彩啊"); }
-		 */
-
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException {
+		logger.info("MyFilter doFilter.........before");
 		logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
-		BufferedReader br = request.getReader();
-		String str, wholeStr = "";
-		while ((str = br.readLine()) != null) {
-			wholeStr += str;
+		try {
+			BufferedReader br = request.getReader();
+			String str, wholeStr = "";
+			while ((str = br.readLine()) != null) {
+				wholeStr += str;
+			}
+			logger.info("====================" + wholeStr);
+			chain.doFilter(request, response);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		System.out.println("====================" + wholeStr);
-		chain.doFilter(request, response);
 		System.out.println("MyFilter doFilter.........after");
 		logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
 		// 打印请求方法，路径
@@ -82,6 +80,6 @@ public class MyFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		System.out.println("MyFilter destroy..........");
+		logger.info("MyFilter destroy..........");
 	}
 }

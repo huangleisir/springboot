@@ -92,7 +92,7 @@ public class Hao123Application {
 				// TODO Auto-generated catch block
 
 			}
-		}, 3, 31, TimeUnit.MINUTES);
+		}, 2, 51, TimeUnit.MINUTES);
 
 	}
 
@@ -104,12 +104,48 @@ public class Hao123Application {
 
 	static String randomShiti() {
 		List<String> list = Arrays.asList("1你能讲讲jvm内存模型吗，eden，S1,S2,年轻代，年老代，永久代，垃圾回收算法吗？", "2你能说出几种设计模式", "3并发包下面的类",
-				"4集合框架", "5SpringMVC原理", "6多线程几种实现方式", "7dubbo原理源码", "8shiro", "9oauth2", "10mybatis原理", "11mysql隔离级别",
-				"12mysql优化", "13分布式锁", "15redis,复制,分布式锁,哈希环", "16讲讲现公司的架构", "17数据结构和算法  冒择入希快归堆", "18dubbo",
-				"19zookepper", "20分布式事务", "21敏捷开发", "22linux命令，根据端口找进程", "23zookeeper选举原理", "24consul跟zk有什么区别",
-				"25最新版JDK HashMap的结构", "26springmvc的原理", "27oracle sql实现递归", "28mysql优化", "29执行计划看什么,是否有全表扫描,索引是否生效",
-				"30jvm的数据模型,年代划分,gc算法", "32set是怎么实现不重复的", "33lock锁与synchronize的差别", "34ConcurrentHashMap实现原理",
-				"35一致性hash");
+				"4集合框架1.java集合 集合的好处：1是可变容量 2.是可以存放不同类型的元素 3.增删改查算法优化 4.部分支持线程安全 Collections - List接口 -Map接口 -Queue接口 HashMap 源码解读  http://blog.csdn.net/mrb1289798400/article/details/76761423  第一层是数组，第二层是Node元素的单向链表 ConcurrentHashMap源码解读  http://www.importnew.com/16142.html 用到了segment，然后更重要的是在segment里面用到了重入锁，用读写所，在 读多写少的情况下，性能有显著提升，如果写多读少到不见得比synchrnized能好到哪里去。\n"
+						+ "List接口 ： 有序可重复 Arraylist 查快 增删改慢（用挪动其他元素） LinkedList 查比较慢 增删改快（不用挪动其他元素） Vector 3个 可以用List的特性做队列和栈容器 用addLast/First pollFirst/Last removeFirst/Last（）在在集合为空的时候会报空指针异常。 List接口里面有contains()方法，不要傻逼比再去用for循环一个元素一个元素在那里比较了了。 set接口 : 无序不可重复 HashSet treeSet 2个\n"
+						+ "\n" + "Map 接口 ： treeMap HashMap HashTable 3个\n"
+						+ "也很重要，能装逼的类：ArrayQueue， Stack（Verctor子类） WeakHashMap() SortedMap() SortedSet() EnumHashMap EnumHashSet LinkedHashMap LinkedHashSet NavigableMap NavigableSet RegularEnumSet 还有并发包下面的集合\n"
+						+ "BlockingQueue BlockingDequeue ArrayBlockingQueue 还有SynchronousQueue （用在缓冲线程池里面） ConcurrentHashMap ConcurrentLinkedDequeue ConcurrentLinkedQueue ConcurrentSkipListMap ConcurrentSkipListSet CopyOnWriteArrayList CopyOnWriteArraySet DelayQueue",
+				"5SpringMVC原理1、  用户发送请求至前端控制器DispatcherServlet。\n"
+						+ "2、  DispatcherServlet收到请求调用HandlerMapping处理器映射器。\n"
+						+ "3、  处理器映射器找到具体的处理器(可以根据xml配置、注解进行查找)，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet。\n"
+						+ "4、  DispatcherServlet调用HandlerAdapter处理器适配器。\n"
+						+ "5、  HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)。\n"
+						+ "6、  Controller执行完成返回ModelAndView。\n"
+						+ "7、  HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet。\n"
+						+ "8、  DispatcherServlet将ModelAndView传给ViewReslover视图解析器。\n" + "9、  ViewReslover解析后返回具体View。\n"
+						+ "10、DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中）。\n" + "11、 DispatcherServlet响应用户。",
+				"6多线程几种实现方式  继承Thread接口，实现Runnable,使用线程池",
+				"7dubbo原理源码  \n  https://www.cnblogs.com/gotodsp/p/6532856.html", "8shiro", "9oauth2", "10mybatis原理",
+				"11mysql隔离级别  读未提交 读已提交  可重复读(锁行)  串行化(锁表)  1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据\n" + "\n"
+						+ "　　2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。（事务 A在这一次事务里面多次读了同一批数据）\n"
+						+ "　　3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。\n"
+						+ "　　小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表事务隔离级别 	脏读 	不可重复读 	幻读\n"
+						+ "读未提交（read-uncommitted） 	是 	是 	是\n" + "不可重复读（read-committed） 	否 	是 	是\n"
+						+ "可重复读（repeatable-read） 	否 	否 	是\n" + "串行化（serializable） 	否 	否 	否",
+				"12mysql优化：sql优化；索引优化，执行计划，配置参数优化", "13分布式锁", "15redis,复制,分布式锁,哈希环", "16讲讲现公司的架构", "17数据结构和算法  冒择入希快归堆",
+				"18dubbo", "19zookepper", "20分布式事务", "21敏捷开发", "22linux命令，根据端口找进程", "23zookeeper选举原理",
+				"24consul跟zk有什么区别", "25最新版JDK HashMap的结构", "26springmvc的原理", "27oracle sql实现递归", "28mysql优化",
+				"29执行计划看什么,是否有全表扫描,索引是否生效",
+				"30jvm的数据模型,年代划分,gc算法 \n   https://www.cnblogs.com/kingszelda/p/7226080.html", "32set是怎么实现不重复的",
+				"33lock锁与synchronize的差别", "34ConcurrentHashMap实现原理", "35一致性hash",
+				"36RabbitMQ:ACK机制 MQ三个作用，异步，解耦，削峰，\n    Consumer可能需要一段时间才能处理完收到的数据。如果在这个过程中，Consumer出错了，异常退出了，而数据还没有处理完成，这段数据就丢失了。如果我们采用no-ack的方式进行确认，也就是说，每次Consumer接到数据后，而不管是否处理完成，RabbitMQ Server会立即把这个Message标记为完成，然后从queue中删除了。\n"
+						+ "为了保证数据不被丢失，RabbitMQ支持消息确认机制，即ack。为了保证数据能被正确处理而不仅仅是被Consumer收到，我们就不能采用no-ack或者auto-ack，我们需要手动ack(manual-ack)。在数据处理完成后手动发送ack，这个时候Server才将Message删除。"
+						+ "如何设置？",
+				"37zookeeper实现服务注册与发现原理", "38工厂模式如何实现",
+				"39单例模式如何实现？ 饱汉模式，饥饿模式，1构造器私有化，2持有一个私有的该对象的实例作为成员变量3.获取实例时判断当前成员变量实例是否为空",
+				"40实现动态代理有几种方式,cglib1. 动态代理是指在运行时，动态生成代理类。代理类的字节码将在运行时生成并载入当前的ClassLoader.\n"
+						+ "生成动态代理类的方法很多，如JDK自带的动态代理、CGLIB、Javassist或者ASM库。\n"
+						+ "JDK动态代理使用简单，它内置在JDK中，因此不需要引入第三方Jar包，但相对功能比较弱。CGLIB和Javassist都是高级的字节码生成库，总体性能比JDK自带的动态代理好，而且功能十分强大。ASM是低级的字节码生成工具，使用ASM已经近乎在于使用Javabytecode编程，对开发人员要求较高，也是性能最好的一种动态代理生辰工具。但ASM的使用是在过于繁琐，而且性能也没有数量级的提升，与CGLIB等高级字节码生成工具相比，ASM程序的可维护性也较差。\n"
+						+ "JDK实现\n" + "1、步骤\n" + "1）通过实现InvocationHandler接口创建自己的调用处理器\n"
+						+ "2）通过为Proxy类指定ClassLoader对象和一组interface来创建动态代理类\n"
+						+ "3）通过反射机制获得动态代理类的构造函数，其唯一参数类型是调用处理器接口类型\n" + "4）通过构造函数创建动态代理类实例，构造时调用处理器对象作为参数被传入",
+				"41适配器模式如何实现", "42桥接模式如何实现", "43策略模式如何实现",
+				"44门面模式如何实现 \n  https://blog.csdn.net/xingjiarong/article/details/50066133", "45命令行模式如何实现",
+				"46过滤器中如何重新整理请求头，请求体中的数据 用Servlet" + "RequestWrapper,因为用了new来创建Wrapper实例，所以不会影响原始的request，和response");
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
