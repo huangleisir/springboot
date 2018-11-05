@@ -57,8 +57,21 @@ function init(){
 			  +'  		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     '+data.resultMap.temperature_curr+'   		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    '
 					  +data.resultMap.temperature + '  &nbsp;&nbsp;&nbsp;    '
 					  +data.resultMap.days + '  		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    '+data.resultMap.week);
+			  
 		  }
 		});
+	
+	
+	$.ajax({
+		  type: 'POST',
+		  url: '/skip/token?name=token',
+		  data:{'name':'token'},
+		  dataType:'json',
+		  success:function(data){
+			  $("#token").html(data.url);
+		  }
+		});
+	
 }
 </script>
 
@@ -66,7 +79,7 @@ function init(){
 
 <body onload="init()">
 	<label></label>
-	<span id="bj"></span>
+	<span id="bj"></span>     <span id="token" style="color:blue;" ></span>
 	<br />
 
 	<h3 onclick="func('wangyi')">

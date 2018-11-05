@@ -40,6 +40,8 @@ public class Hao123Application {
 
 	static Map<String, String> tokenMap = new HashMap<String, String>();
 
+	static String tokenShow = "";
+
 	public static void main(String[] args) {
 		SpringApplication.run(Hao123Application.class, args);
 		/////////////////////////////////////////////////////////////////////
@@ -55,6 +57,7 @@ public class Hao123Application {
 				log.info("-----------" + str);
 				Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
 				String token = (String) retMap.get("access_token");
+				tokenShow = token;
 				log.info("更新access_token, {}", token);
 				tokenMap.put("access_token", token);
 			} catch (Exception e) {
@@ -62,7 +65,7 @@ public class Hao123Application {
 				e.printStackTrace();
 			}
 
-		}, 0, 7, TimeUnit.MINUTES);
+		}, 3, 459, TimeUnit.SECONDS);
 		ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
 		// 参数：1、任务体 2、首次执行的延时时间
 		// 3、任务执行间隔 4、间隔时间单位
@@ -92,7 +95,7 @@ public class Hao123Application {
 				// TODO Auto-generated catch block
 
 			}
-		}, 2, 11, TimeUnit.MINUTES);
+		}, 2, 21, TimeUnit.MINUTES);
 
 	}
 
@@ -216,7 +219,74 @@ public class Hao123Application {
 						+ "              net.ipv4.ip_local_port_range = 1024 65000\n"
 						+ "              net.ipv4.tcp_tw_recycle = 1\n" + "              net.ipv4.tcp_tw_reuse = 1\n"
 						+ "              net.ipv4.tcp_syncookies = 1\n" + "              net.core.somaxconn = 262144\n"
-						+ "          以上解决，高并发下linux访问流量上不去的问题   \n" + "");
+						+ "          以上解决，高并发下linux访问流量上不去的问题   \n",
+				"57详细描述：\n" + "1.负责系统技术平台和产品整体的架构设计、规划和实施。技术架构研究选型,功能模块设计,数据库设计等；\n"
+						+ "2.负责公司项目的重构规划和实施,采用分而治之的思想对整个系统基于springboot+dubbo(2.5.4/6/8)+zookeeper+Redis+rabbitMQ+druid 进行模块化,服务化。对于公共部分进行抽象隔离组件化。\n"
+						+ "3.负责公司基础设施的建设和完善,包括团队协作和知识共享的知识协同管理平台 的搭建和整个公司的推行;基于项目对象模型的项目构建管理平台maven+nexus 的搭建、培训和推行实施;\n"
+						+ "4.基于分布式源代码管理平台gitlab的搭建、培训和推行;基于自动化持续集成平台jenkins 的搭建、培训和推行实施。\n"
+						+ "5.负责公司基础规范的制定,包括java 编码规范,关系型数据库设计使用规范和非关系型数据库设计使用规范等,并进行统一的培训和落实。 对于代码规范进行监控,完善代码持续集成和审核机制,基于maven集成findbug,pmd,checkstyle 等代码静态检测工具并定期组织代码检视；\n"
+						+ "6.负责系统性能调优，基于Linux，JVM性能参数，各中间件，DataBase性能调试，代码重构及性能优化，压力测试脚本编写，压测报告输出。\n"
+						+ "7.研究行业最新产品的技术发展方向,引进新的技术理念和技术模型,设计和落实高效稳定的互联网大型分布式,高可用, 高可靠,高并发的系统平台架构。",
+				"58详细描述：\n" + "项目介绍：\n" + "该项目为生鲜电商平台，O2O模式，包括前端app电商以及后台运营管理系统。\n" + "工作职责：\n"
+						+ "1.完成项目从立项，需求分析，框架选型，架构设计，后端数据表结构设计，接口规范设计和编码实施，测试用例库建立，测试实施及生产灰度发布与验证，交付使用，以及后期维护与新需求的实现；\n"
+						+ "2.使用SpringMVC+hessian+Mybatis+Oracle+Tomca+ActiveMQ/kafka搭建电商平台的移动端和后台运营端的系统平台；\n"
+						+ "3.前端采用android、ios嵌入html5的方式，后台使用JSP,easyUI,Jquery,Ajax等工具;\n"
+						+ "3.承担架构设计，核心编码工作以及部分调优任务，如SQL优化，多线程使用，代码性能优化等等。",
+				"59详细描述：\n" + "项目介绍：\n" + "第三方支付平台项目。\n" + "工作职责：\n"
+						+ "1.银行卡绑定业务以及营销系统服务端接收接收移动客户端请求的接口文档设计和编写，业务需求分析，代码设计和编码实现。还包括数据的签名验证，业务数据解密，生成签名等报文接收，发送，后台核心模块调用，异常处理以及非业务数据持久化；\n"
+						+ "2.移动客户端html5网页制作及各手机型号，浏览器的内容样式兼容性匹配；\n"
+						+ "3.消息平台的搭建，目前使用极光推送以及其他第三方推送平台搭建本APP平台的推送模块，实现富客户端，多媒体推送；\n"
+						+ "4.主要使用SpringMVC，myBatis,hessian，activeMQ，html5等工具。",
+				"60详细描述：\n" + "项目介绍：\n" + "加拿大BMO银行信用卡运营管理，该项目完成该银行信用卡消费记录测试数据的导入，信用卡消费记录的查询。\n" + "工作职责：\n"
+						+ "1.运用SAX解析XML数据文档，完成测试数据导入，并验证导入数据正确性；\n"
+						+ "2.运用Java Web（Hibernate，Struts，Spring）技术完成信用卡消费记录的查询；\n"
+						+ "3.完成优化查询性能，改善java，SQL代码，存储过程等提升数据库性能的工作。\n" + "\n" + "项目介绍：\n"
+						+ "香港汇丰银行理财产品开发，完成汇丰银行理财产品的第一期开发，实现客户投资前向客户演示保险，基金等理财产品的购买，收益获取的演示功能。\n" + "工作职责：\n"
+						+ "主要负责客户需求分析，代码实现以及单元测试，文档编写，完成理财演示功能中收益预估。主要技术：Hibernate3，struts2，Spring3，webService。",
+				"61 jps -l 好东西",
+				"62  Java多线程：线程安全和非线程安全的集合对象一、概念：\n"
+						+ "    线程安全：就是当多线程访问时，采用了加锁的机制；即当一个线程访问该类的某个数据时，会对这个数据进行保护，其他线程不能对其访问，直到该线程读取完之后，其他线程才可以使用。防止出现数据不一致或者数据被污染的情况。\n"
+						+ "    线程不安全：就是不提供数据访问时的数据保护，多个线程能够同时操作某个数据，从而出现数据不一致或者数据污染的情况。\n"
+						+ "    对于线程不安全的问题，一般会使用synchronized关键字加锁同步控制。\n"
+						+ "    线程安全 工作原理： jvm中有一个main memory对象，每一个线程也有自己的working memory，一个线程对于一个变量variable进行操作的时候， 都需要在自己的working memory里创建一个copy,操作完之后再写入main memory。\n"
+						+ "    当多个线程操作同一个变量variable，就可能出现不可预知的结果。\n"
+						+ "    而用synchronized的关键是建立一个监控monitor，这个monitor可以是要修改的变量，也可以是其他自己认为合适的对象(方法)，然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完加载load到working memory 到 use && 指派assign 到 存储store 再到 main memory的过程。才会释放它得到的锁。这样就实现了所谓的线程安全。\n"
+						+ "二、线程安全(Thread-safe)的集合对象：\n" + "    Vector 线程安全：\n" + "    HashTable 线程安全：\n"
+						+ "    StringBuffer 线程安全：\n" + "三、非线程安全的集合对象：\n" + "    ArrayList ：\n" + "    LinkedList：\n"
+						+ "    HashMap：\n" + "    HashSet：\n" + "    TreeMap：\n" + "    TreeSet：\n"
+						+ "    StringBulider：\n" + "https://blog.csdn.net/u011389474/article/details/54602812",
+				"63String s1=”ab”, String s2=”a”+”b”, String s3=”a”, String s4=”b”, s5=s3+s4请问s5==s2返回什么？\n"
+						+ "返回false。在编译过程中，编译器会将s2直接优化为”ab”，会将其放置在常量池当中，s5则是被创建在堆区，相当于s5=new String(“ab”);",
+				"64java中==和eqauls()的区别,equals()和`hashcode的区别\n"
+						+ "==是运算符，用于比较两个变量是否相等，而equals是Object类的方法，用于比较两个对象是否相等。默认Object类的equals方法是比较两个对象的地址，此时和==的结果一样。换句话说：基本类型比较用==，比较的是他们的值。默认下，对象用==比较时，比较的是内存地址，如果需要比较对象内容，需要重写equal方法。",
+				"65equals()和hashcode()的联系\n" + "\n"
+						+ "hashCode()是Object类的一个方法，返回一个哈希值。如果两个对象根据equal()方法比较相等，那么调用这两个对象中任意一个对象的hashCode()方法必须产生相同的哈希值。\n"
+						+ "如果两个对象根据eqaul()方法比较不相等，那么产生的哈希值不一定相等(碰撞的情况下还是会相等的。)",
+				"66a.hashCode()有什么用?与a.equals(b)有什么关系\n" + "\n"
+						+ "hashCode() 方法是相应对象整型的 hash 值。它常用于基于 hash 的集合类，如 Hashtable、HashMap、LinkedHashMap等等。它与 equals() 方法关系特别紧密。根据 Java 规范，使用 equal() 方法来判断两个相等的对象，必须具有相同的 hashcode。\n"
+						+ "将对象放入到集合中时，首先判断要放入对象的hashcode是否已经在集合中存在，不存在则直接放入集合。如果hashcode相等，然后通过equal()方法判断要放入对象与集合中的任意对象是否相等：如果equal()判断不相等，直接将该元素放入集合中，否则不放入。",
+				"67有没有可能两个不相等的对象有相同的hashcode\n"
+						+ "有可能，两个不相等的对象可能会有相同的 hashcode 值，这就是为什么在 hashmap 中会有冲突。如果两个对象相等，必须有相同的hashcode 值，反之不成立。",
+				"68可以在hashcode中使用随机数字吗?\n" + "\n" + "不行，因为同一对象的 hashcode 值必须是相同的",
+				"69   a==b与a.equals(b)有什么区别\n" + "\n"
+						+ "如果a 和b 都是对象，则 a==b 是比较两个对象的引用，只有当 a 和 b 指向的是堆中的同一个对象才会返回 true，而 a.equals(b) 是进行逻辑比较，所以通常需要重写该方法来提供逻辑一致性的比较。例如，String 类重写 equals() 方法，所以可以用于两个不同对象，但是包含的字母相同的比较。",
+				"70 String, StringBuffer和StringBuilder区别\n" + "\n" + "String是字符串常量，final修饰：StringBuffer字符串变量(线程安全)；\n"
+						+ "StringBuilder 字符串变量(线程不安全)。\n" + "String和StringBuffer\n" + "\n"
+						+ "String和StringBuffer主要区别是性能：String是不可变对象，每次对String类型进行操作都等同于产生了一个新的String对象，然后指向新的String对象。所以尽量不在对String进行大量的拼接操作，否则会产生很多临时对象，导致GC开始工作，影响系统性能。\n"
+						+ "\n" + "StringBuffer是对对象本身操作，而不是产生新的对象，因此在有大量拼接的情况下，我们建议使用StringBuffer。\n" + "\n"
+						+ "但是需要注意现在JVM会对String拼接做一定的优化：\n"
+						+ "String s=“This is only ”+”simple”+”test”会被虚拟机直接优化成String s=“This is only simple test”，此时就不存在拼接过程。",
+				"71    StringBuffer和StringBuilder\n" + "\n"
+						+ "StringBuffer是线程安全的可变字符串，其内部实现是可变数组。StringBuilder是jdk 1.5新增的，其功能和StringBuffer类似，但是非线程安全。因此，在没有多线程问题的前提下，使用StringBuilder会取得更好的性能。",
+				"72  java当中使用什么类型表示价格比较好?\n" + "\n" + "如果不是特别关心内存和性能的话，使用BigDecimal，否则使用预定义精度的 double 类型。",
+				"73关于垃圾回收\n" + "你知道哪些垃圾回收算法?\n" + "\n" + "垃圾回收从理论上非常容易理解,具体的方法有以下几种: \n" + "1. 标记-清除 \n" + "2. 标记-复制 \n"
+						+ "3. 标记-整理 \n" + "4. 分代回收 \n" + "更详细的内容参见深入理解垃圾回收算法：\n" + "\n"
+						+ "http://blog.csdn.net/dd864140130/article/details/50084471\n" + "如何判断一个对象是否应该被回收\n" + "\n"
+						+ "这就是所谓的对象存活性判断，常用的方法有两种：1.引用计数法;　2.对象可达性分析。由于引用计数法存在互相引用导致无法进行GC的问题，所以目前JVM虚拟机多使用对象可达性分析算法。\n"
+						+ "简单的解释一下垃圾回收\n" + "\n"
+						+ "Java 垃圾回收机制最基本的做法是分代回收。内存中的区域被划分成不同的世代，对象根据其存活的时间被保存在对应世代的区域中。一般的实现是划分成3个世代：年轻、年老和永久。内存的分配是发生在年轻世代中的。当一个对象存活时间足够长的时候，它就会被复制到年老世代中。对于不同的世代可以使用不同的垃圾回收算法。进行世代划分的出发点是对应用中对象存活时间进行研究之后得出的统计规律。一般来说，一个应用中的大部分对象的存活时间都很短。比如局部变量的存活时间就只在方法的执行过程中。基于这一点，对于年轻世代的垃圾回收算法就可以很有针对性。\n"
+						+ "调用System.gc()会发生什么?\n" + "\n" + "通知GC开始工作，但是GC真正开始的时间不确定。",
+				"74  链接给到这里吧  https://blog.csdn.net/linzhiqiang0316/article/details/80473906");
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}

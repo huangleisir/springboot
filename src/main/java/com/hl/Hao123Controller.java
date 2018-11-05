@@ -250,6 +250,10 @@ public class Hao123Controller {
 			asyncSkipToPage("sina");
 			map.put("url", "https://www.mgtv.com/b/326658/4667728.html?cxid=95kqkw8n6");
 			break;
+		case "token":
+			asyncSkipToPage("测试号access_token");
+			map.put("url", Hao123Application.tokenShow);
+			break;
 		case "weather":
 			asyncSkipToPage("weather");
 			String str = HttpClientUtil.doGet(
