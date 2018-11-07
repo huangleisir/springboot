@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -38,9 +39,11 @@ import util.GsonUtil;
 public class Hao123Application {
 	static Logger log = LoggerFactory.getLogger(Hao123Application.class);
 
-	static Map<String, String> tokenMap = new HashMap<String, String>();
+	static Map<String, String> tokenMap = new ConcurrentHashMap<String, String>();
 
 	static String tokenShow = "";
+
+	static String token_time = "";
 
 	public static void main(String[] args) {
 		SpringApplication.run(Hao123Application.class, args);
@@ -58,8 +61,10 @@ public class Hao123Application {
 				Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
 				String token = (String) retMap.get("access_token");
 				tokenShow = token;
+				token_time = new Date() + "";
 				log.info("更新access_token, {}", token);
 				tokenMap.put("access_token", token);
+				// tokenMap.put("token_time", new Date() + "");
 			} catch (Exception e) {
 				log.info("更新access_token failed");
 				e.printStackTrace();
@@ -295,7 +300,34 @@ public class Hao123Application {
 						+ "简单的解释一下垃圾回收\n" + "\n"
 						+ "Java 垃圾回收机制最基本的做法是分代回收。内存中的区域被划分成不同的世代，对象根据其存活的时间被保存在对应世代的区域中。一般的实现是划分成3个世代：年轻、年老和永久。内存的分配是发生在年轻世代中的。当一个对象存活时间足够长的时候，它就会被复制到年老世代中。对于不同的世代可以使用不同的垃圾回收算法。进行世代划分的出发点是对应用中对象存活时间进行研究之后得出的统计规律。一般来说，一个应用中的大部分对象的存活时间都很短。比如局部变量的存活时间就只在方法的执行过程中。基于这一点，对于年轻世代的垃圾回收算法就可以很有针对性。\n"
 						+ "调用System.gc()会发生什么?\n" + "\n" + "通知GC开始工作，但是GC真正开始的时间不确定。",
-				"74  链接给到这里吧  https://blog.csdn.net/linzhiqiang0316/article/details/80473906");
+				"74  链接给到这里吧  https://blog.csdn.net/linzhiqiang0316/article/details/80473906",
+				"75    策略模式  今天看这个类图   感觉无比简单啊  https://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html",
+				"76 String.format(\"%s ￥%s\", tornCake.getDesc(), tornCake.price()  这也是一种拼接字符串的方式  JAVA字符串格式化-String.format()和MessageFormat的使用 https://blog.csdn.net/candyguy242/article/details/80782244",
+				"77 https://www.cnblogs.com/stonefeng/p/5693560.html   观察者模式",
+				"78  https://www.cnblogs.com/stonefeng/p/5679638.html   装饰器模式",
+				"79  https://blog.csdn.net/yeguxin/article/details/77337838   这个把桥接模式讲得通俗易懂",
+				"80  https://www.cnblogs.com/V1haoge/p/6542449.html   这个把享元模式 讲得够简单了",
+				"81 https://www.cnblogs.com/ysw-go/p/5384516.html  迭代器模式",
+				"82  https://www.cnblogs.com/taosim/articles/4238674.html   redis集群 使用一致性哈希算法",
+				"83  https://www.cnblogs.com/felixzh/p/5869212.html                       Zookeeper的功能以及工作原理",
+				"84  https://www.cnblogs.com/yjd_hycf_space/p/7730690.html     Linux常用命令大全（非常全！！！）\n"
+						+ "最近都在和Linux打交道，感觉还不错。我觉得Linux相比windows比较麻烦的就是很多东西都要用命令来控制，当然，这也是很多人喜欢linux的原因，比较短小但却功能强大。我将我了解到的命令列举一下，仅供大家参考：\n"
+						+ "系统信息 \n" + "arch 显示机器的处理器架构(1) \n" + "uname -m 显示机器的处理器架构(2) \n" + "uname -r 显示正在使用的内核版本 \n"
+						+ "dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) \n" + "hdparm -i /dev/hda 罗列一个磁盘的架构特性 \n"
+						+ "hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 \n" + "cat /proc/cpuinfo 显示CPU info的信息 \n"
+						+ "cat /proc/interrupts 显示中断 \n" + "cat /proc/meminfo 校验内存使用 \n"
+						+ "cat /proc/swaps 显示哪些swap被使用 \n" + "cat /proc/version 显示内核的版本 \n"
+						+ "cat /proc/net/dev 显示网络适配器及统计 \n" + "cat /proc/mounts 显示已加载的文件系统 \n"
+						+ "lspci -tv 罗列 PCI 设备 \n" + "lsusb -tv 显示 USB 设备 \n" + "date 显示系统日期 \n"
+						+ "cal 2007 显示2007年的日历表 \n" + "date 041217002007.00 设置日期和时间 - 月日时分年.秒 \n"
+						+ "clock -w 将时间修改保存到 BIOS \n" + "\n" + "\n" + "\n" + "关机 (系统的关机、重启以及登出 ) \n"
+						+ "shutdown -h now 关闭系统(1) \n" + "init 0 关闭系统(2) \n" + "telinit 0 关闭系统(3) \n"
+						+ "shutdown -h hours:minutes & 按预定时间关闭系统 \n" + "shutdown -c 取消按预定时间关闭系统 \n"
+						+ "shutdown -r now 重启(1) \n" + "reboot 重启(2) \n" + "logout 注销 ",
+				"85  https://blog.csdn.net/tanga842428/article/details/73822905    eureka简介与原理    ",
+				"86 java 方法 methodA(int ... ids)\n" + "2017年07月26日 18:23:55 wide288 阅读数：704更多所属专栏： Java 编程技巧\n"
+						+ "版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/wide288/article/details/76158798\n"
+						+ "ids 就是数组 int 类型的。\n" + "int ... ids 等价于 int[] ids");
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}

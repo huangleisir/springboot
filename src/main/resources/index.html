@@ -69,7 +69,9 @@ function init(){
 		  dataType:'json',
 		  success:function(data){
 			  $("#token").css("width",data.url.length*8+"px");
+			  $("#token_time").css("width",data.token_time.length*8+"px");
 			  $("#token").val(data.url);
+			  $("#token_time").val(data.token_time);
 			  
 		  }
 		});
@@ -83,6 +85,7 @@ function init(){
 	<label></label>
 	<span id="bj"></span>  
 	<br/>   <input id="token" style="color:orange;font: normal;" ></input>
+	<br/>   <input id="token_time" style="color:orange;font: normal;" ></input>
 	<br />
 
 	<h3 onclick="func('wangyi')">
