@@ -82,6 +82,10 @@ public class Hao123Controller {
 			asyncSkipToPage("38haoBigFish");
 			map.put("url", "http://i.youku.com/u/UMTUxMTg3NjU0MA==?spm=a2h0k.11417342.soresults.dtitle");
 			break;
+		case "daVkai8":
+			asyncSkipToPage("daVkai8");
+			map.put("url", "https://www.iqiyi.com/v_19rr3l9sac.html");
+			break;
 		case "gitchat":
 			asyncSkipToPage("gitchat");
 			map.put("url", "http://www.gitbook.cn");
