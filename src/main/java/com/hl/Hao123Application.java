@@ -96,7 +96,7 @@ public class Hao123Application {
 						"https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + token,
 						"{\"touser\": \"orR4l1rIdRi1-xsJxWJezAA2QrXE\", \"msgtype\": \"text\", \"text\": {\"content\": \" "
 								+ content + " \" }}");
-				log.info("2222222222result2222, {}" + str);
+				log.info("2222222222result2222, {}", str);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 
