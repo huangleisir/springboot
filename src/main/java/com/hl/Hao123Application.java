@@ -91,6 +91,7 @@ public class Hao123Application {
 				map2.put("content", "123");
 				map.put("text", GsonUtil.GsonString(map2));
 				log.info("11111111111111, {}", GsonUtil.GsonString(map));
+				log.info("发送的内容,发送不易，且读且珍惜, {}", content);
 				String str = HttpClientUtil.httpPostWithJSON(
 						"https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + token,
 						"{\"touser\": \"orR4l1rIdRi1-xsJxWJezAA2QrXE\", \"msgtype\": \"text\", \"text\": {\"content\": \" "
