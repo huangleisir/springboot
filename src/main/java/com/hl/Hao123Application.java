@@ -100,7 +100,7 @@ public class Hao123Application {
 				// TODO Auto-generated catch block
 
 			}
-		}, 2, 19, TimeUnit.MINUTES);
+		}, 2, 3, TimeUnit.MINUTES);
 
 	}
 
@@ -327,7 +327,72 @@ public class Hao123Application {
 				"85  https://blog.csdn.net/tanga842428/article/details/73822905    eureka简介与原理    ",
 				"86 java 方法 methodA(int ... ids)\n" + "2017年07月26日 18:23:55 wide288 阅读数：704更多所属专栏： Java 编程技巧\n"
 						+ "版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/wide288/article/details/76158798\n"
-						+ "ids 就是数组 int 类型的。\n" + "int ... ids 等价于 int[] ids");
+						+ "ids 就是数组 int 类型的。\n" + "int ... ids 等价于 int[] ids",
+				"87     @RequestMapping(value = \"/showCodes\", method = RequestMethod.POST)\n" + "    @ResponseBody\n"
+						+ "    public Object showCodes(HttpServletRequest req, HttpServletResponse resp) throws IOException {\n"
+						+ "        Map<String, String> map = new HashMap<String, String>();\n"
+						+ "        map.put(\"code1\", apiCode900500RetNo);\n"
+						+ "        map.put(\"code2\", apiCode900510RetNo);\n"
+						+ "        // OutputStream out = resp.getOutputStream();\n"
+						+ "        // out.write((\"{\\\"code2\\\":\" + apiCode900510RetNo + \",\\\"code1\\\":\" + apiCode900500RetNo + \"}\").getBytes());\n"
+						+ "        // out.flush();\n" + "        // out.close();\n" + "        return map;\n"
+						+ "    }    这两种传值给前端的方法是等效的",
+				"88 能不能用一句话总结HTTPS？\n" + "答案是不能，因为HTTPS本身实在太复杂。但是我还是尝试使用一段话来总结HTTPS:\n"
+						+ "HTTPS要使客户端与服务器端的通信过程得到安全保证，必须使用的对称加密算法，但是协商对称加密算法的过程，需要使用非对称加密算法来保证安全，然而直接使用非对称加密的过程本身也不安全，会有中间人篡改公钥的可能性，所以客户端与服务器不直接使用公钥，而是使用数字证书签发机构颁发的证书来保证非对称加密过程本身的安全。这样通过这些机制协商出一个对称加密算法，就此双方使用该算法进行加密解密。从而解决了客户端与服务器端之间的通信安全问题。\n"
+						+ "\n" + "好长的一段话。",
+				"89    排序算法  时间空间复杂度  https://blog.csdn.net/yushiyi6453/article/details/76407640 ",
+				"90 o(1), o(n), o(logn), o(nlogn)\n"
+						+ "2017年07月15日 21:32:09 Mars93 阅读数：20454 标签： o-1-o-n 更多个人分类： tomcat\n"
+						+ "在描述算法复杂度时,经常用到o(1), o(n), o(logn), o(nlogn)来表示对应算法的时间复杂度, 这里进行归纳一下它们代表的含义: \n"
+						+ "这是算法的时空复杂度的表示。不仅仅用于表示时间复杂度，也用于表示空间复杂度。 \n"
+						+ "O后面的括号中有一个函数，指明某个算法的耗时/耗空间与数据增长量之间的关系。其中的n代表输入数据的量。 \n"
+						+ "比如时间复杂度为O(n)，就代表数据量增大几倍，耗时也增大几倍。比如常见的遍历算法。 \n"
+						+ "再比如时间复杂度O(n^2)，就代表数据量增大n倍时，耗时增大n的平方倍，这是比线性更高的时间复杂度。比如冒泡排序，就是典型的O(n^2)的算法，对n个数排序，需要扫描n×n次。 \n"
+						+ "再比如O(logn)，当数据增大n倍时，耗时增大logn倍（这里的log是以2为底的，比如，当数据增大256倍时，耗时只增大8倍，是比线性还要低的时间复杂度）。二分查找就是O(logn)的算法，每找一次排除一半的可能，256个数据中查找只要找8次就可以找到目标。 \n"
+						+ "O(nlogn)同理，就是n乘以logn，当数据增大256倍时，耗时增大256*8=2048倍。这个复杂度高于线性低于平方。归并排序就是O(nlogn)的时间复杂度。 \n"
+						+ "O(1)就是最低的时空复杂度了，也就是耗时/耗空间与输入数据大小无关，无论输入数据增大多少倍，耗时/耗空间都不变。 哈希算法就是典型的O(1)时间复杂度，无论数据规模多大，都可以在一次计算后找到目标（不考虑冲突的话）  ",
+				"90 LinkedList的是单向链表还是双向?\n" + "双向循环列表，具体实现自行查阅源码。\n" + "TreeMap是实现原理\n" + "采用红黑树实现，具体实现自行查阅源码。\n"
+						+ "遍历ArrayList时如何正确移除一个元素\n"
+						+ "该问题的关键在于面试者使用的是 ArrayList 的 remove() 还是 Iterator 的 remove()方法。这有一段示例代码，是使用正确的方式来实现在遍历的过程中移除元素，而不会出现 ConcurrentModificationException 异常的示例代码。\n"
+						+ "什么是ArrayMap?它和HashMap有什么区别?\n" + "ArrayMap是Android SDK中提供的，非Android开发者可以略过。\n"
+						+ "ArrayMap是用两个数组来模拟map，更少的内存占用空间,更高的效率。\n"
+						+ "具体参考这篇文章：ArrayMap VS HashMap：http://lvable.com/?p=217%5D\n" + "HashMap的实现原理\n"
+						+ "1. HashMap概述： HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 \n"
+						+ "2. HashMap的数据结构： 在java编程语言中，最基本的结构就是两种，一个是数组，另外一个是模拟指针（引用），所有的数据结构都可以用这两个基本结构来构造的，HashMap也不例外。HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。\n"
+						+ "当我们往Hashmap中put元素时,首先根据key的hashcode重新计算hash值,根绝hash值得到这个元素在数组中的位置(下标),如果该数组在该位置上已经存放了其他元素,那么在这个位置上的元素将以链表的形式存放,新加入的放在链头,最先加入的放入链尾.如果数组中该位置没有元素,就直接将该元素放到数组的该位置上.\n"
+						+ "需要注意Jdk 1.8中对HashMap的实现做了优化,当链表中的节点数据超过八个之后,该链表会转为红黑树来提高查询效率,从原来的O(n)到O(logn)",
+				"91 java中的++操作符线程安全么?\n" + "不是线程安全的操作。它涉及到多个指令，如读取变量值，增加，然后存储回内存，这个过程可能会出现多个线程交差。\n"
+						+ "你有哪些多线程开发良好的实践?\n" + "给线程命名\n" + "最小化同步范围\n" + "优先使用volatile\n"
+						+ "尽可能使用更高层次的并发工具而非wait和notify()来实现线程通信,如BlockingQueue,Semeaphore\n" + "优先使用并发容器而非同步容器.\n"
+						+ "考虑使用线程池",
+				"92 CyclicBarrier和CountDownLatch区别\n" + "这两个类非常类似，都在java.util.concurrent下，都可以用来表示代码运行到某个点上，二者的区别在于：\n"
+						+ "CyclicBarrier的某个线程运行到某个点上之后，该线程即停止运行，直到所有的线程都到达了这个点，所有线程才重新运行；CountDownLatch则不是，某线程运行到某个点上之后，只是给某个数值-1而已，该线程继续运行。\n"
+						+ "CyclicBarrier只能唤起一个任务，CountDownLatch可以唤起多个任务\n"
+						+ "CyclicBarrier可重用，CountDownLatch不可重用，计数值为0该CountDownLatch就不可再用了。",
+				"93 ConcurrentHashMap的并发度是什么?\n"
+						+ "ConcurrentHashMap的并发度就是segment的大小，默认为16，这意味着最多同时可以有16条线程操作ConcurrentHashMap，这也是ConcurrentHashMap对Hashtable的最大优势，任何情况下，Hashtable能同时有两条线程获取Hashtable中的数据吗？\n"
+						+ "ConcurrentHashMap的工作原理\n" + "ConcurrentHashMap在jdk 1.6和jdk 1.8实现原理是不同的。\n" + "jdk 1.6:\n"
+						+ "ConcurrentHashMap是线程安全的，但是与Hashtablea相比，实现线程安全的方式不同。Hashtable是通过对hash表结构进行锁定，是阻塞式的，当一个线程占有这个锁时，其他线程必须阻塞等待其释放锁。ConcurrentHashMap是采用分离锁的方式，它并没有对整个hash表进行锁定，而是局部锁定，也就是说当一个线程占有这个局部锁时，不影响其他线程对hash表其他地方的访问。 \n"
+						+ "具体实现:ConcurrentHashMap内部有一个Segment.\n" + "jdk 1.8\n"
+						+ "在jdk 8中，ConcurrentHashMap不再使用Segment分离锁，而是采用一种乐观锁CAS算法来实现同步问题，但其底层还是“数组+链表->红黑树”的实现。",
+				"94 什么是乐观锁和悲观锁\n"
+						+ "乐观锁：乐观锁认为竞争不总是会发生，因此它不需要持有锁，将比较-替换这两个动作作为一个原子操作尝试去修改内存中的变量，如果失败则表示发生冲突，那么就应该有相应的重试逻辑。\n"
+						+ "悲观锁：悲观锁认为竞争总是会发生，因此每次对某资源进行操作时，都会持有一个独占的锁，就像synchronized，不管三七二十一，直接上了锁就操作资源了。"
+						+ "乐观锁是可以让你读，但是你先取版本号，update的时候版本号对不上,update语句后面的条件不满足，不让你update,这就是乐观锁；悲观锁，让你先取锁，拿到锁再来读，没拿到，读都不让你读，更不用说写了",
+				"95 https://blog.csdn.net/u013305783/article/details/78563389   SpringBoot使用PageHelper进行分页   // 使用分页插件,核心代码就这一行\n"
+						+ "        PageHelper.startPage(page, perCount);\n"
+						+ "        List<AppNoticeDO> appNoticeDOList = appNoticeMapper.getAppNoticeDOList(appNoticeDTO);\n"
+						+ "        return new PageInfo<>(appNoticeDOList);",
+				"96  【深圳】【今日头条深圳研发中心】这真的是一封很认真的招聘贴~~~\n" + "liuyaqiu_150 · 3月之前 · 1595 次点击\n"
+						+ "我们是谁？ Developing a company as a product 是我们的理念 公司是我们团队的产品，员工是我们的用户 我们的工作是打造强大的效率工具和系统，支撑和推动公司更快更好地发展 业务范围涉及企业沟通工具、在线文档、共享日历、人力资源系统等 未来我们会推向市场，帮助更多优秀企业成长 甚至推动全球企业办公模式的变革\n"
+						+ "我们希望你来， 但我们希望吸引你来的不是免费的咖啡、漂亮的办公室和精美的下午茶 我们希望你和我们一样，最看重的是：『和优秀的人，做有挑战的事』 我们需要一群有才华、有志向的产品、技术、设计人才 能够像今日头条成立之初一样，从零开始打造一个团队\n"
+						+ "目前效率工程团队已经有数百人的规模 我们的管理理念是 【和优秀的人做有挑战的事，保持简单灵活的机制。提高透明度和信息分享效率，基于愿景目标自我驱动】 我们需要大量的leader、前后端高级工程师、客户端工程师、产品经理和UI设计师 如果你认同我们的价值观 如果你也期望加入这个推动字节跳动高速发展的团队 请和我们联系：liuyaqiu@bytedance.com\n"
+						+ "需求岗位： 服务端 /后台开发工程师 前端开发工程师 移动端（ Android 、 iOS ）开发工程师 产品经理 UI设计师\n" + "工作经验： 2 年以上\n"
+						+ "工作地点：深圳市南山区南海大道 2163 号来福士广场 15 层\n" + "简历投递邮箱：liuyaqiu@bytedance.com",
+				"97单例模式三种模式，饿汉、饱汉、双重锁模式，实例及优劣详解   https://blog.csdn.net/zhangliangzi/article/details/52438401\n" + " ",
+				"98 面向对象三大特性 六大原则  https://www.cnblogs.com/xijie/p/6068786.html ",
+				"99 https://www.cnblogs.com/butterfly100/p/9034281.html   分库分表思路",
+				"100  浅谈我对DDD领域驱动设计的理解  https://blog.csdn.net/heweimingming/article/details/78661540");
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
