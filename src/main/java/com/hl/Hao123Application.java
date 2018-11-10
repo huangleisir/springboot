@@ -303,7 +303,7 @@ public class Hao123Application {
 						+ "调用System.gc()会发生什么?\n" + "\n" + "通知GC开始工作，但是GC真正开始的时间不确定。",
 				"74  链接给到这里吧  https://blog.csdn.net/linzhiqiang0316/article/details/80473906",
 				"75    策略模式  今天看这个类图   感觉无比简单啊  https://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html",
-				"76 String.format(\"%s ￥%s\", tornCake.getDesc(), tornCake.price()  这也是一种拼接字符串的方式  JAVA字符串格式化-String.format()和MessageFormat的使用 https://blog.csdn.net/candyguy242/article/details/80782244",
+				"76 String.format(\" %s ￥ %s\", tornCake.getDesc(), tornCake.price()  这也是一种拼接字符串的方式  JAVA字符串格式化-String.format()和MessageFormat的使用   https://blog.csdn.net/candyguy242/article/details/80782244",
 				"77 https://www.cnblogs.com/stonefeng/p/5693560.html   观察者模式",
 				"78  https://www.cnblogs.com/stonefeng/p/5679638.html   装饰器模式",
 				"79  https://blog.csdn.net/yeguxin/article/details/77337838   这个把桥接模式讲得通俗易懂",
