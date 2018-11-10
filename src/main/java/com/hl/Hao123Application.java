@@ -392,7 +392,190 @@ public class Hao123Application {
 				"97单例模式三种模式，饿汉、饱汉、双重锁模式，实例及优劣详解   https://blog.csdn.net/zhangliangzi/article/details/52438401\n" + " ",
 				"98 面向对象三大特性 六大原则  https://www.cnblogs.com/xijie/p/6068786.html ",
 				"99 https://www.cnblogs.com/butterfly100/p/9034281.html   分库分表思路",
-				"100  浅谈我对DDD领域驱动设计的理解  https://blog.csdn.net/heweimingming/article/details/78661540");
+				"100  浅谈我对DDD领域驱动设计的理解  https://blog.csdn.net/heweimingming/article/details/78661540" + new Date(),
+				"101  Condition有点意思\n" + "Condition con1 = new Condition.newCondition();\n"
+						+ "con1.await();   //让当前线程在这里wait();\n"
+						+ "con1.signal();  //唤醒一个被con1.await()的线程，继续执行后面的代码   \n"
+						+ "我很想写一个demo，按顺序让线程1，2，3分别执行1，2，3圈，循环往复，一个线程任务不能被其他线程断，可以用重入锁。或者synchronized" + new Date(),
+				"102 JAVA并行框架学习之ForkJoin\\n\" + \"https://www.cnblogs.com/jiyuqi/p/4547082.html\" " + new Date(),
+				"103  package concurrent;\n" + "public class JoinDemo implements Runnable {\n"
+						+ "	public void run() {\n" + "		for (int i = 0; i < 100; i++) {\n" + "			try {\n"
+						+ "				Thread.sleep(1);\n" + "			} catch (InterruptedException e) {\n"
+						+ "				e.printStackTrace();\n" + "			}\n"
+						+ "			System.out.println(\"join \"+i);\n" + "		}\n" + "	}\n"
+						+ "	public static void main(String[] args) throws InterruptedException {\n"
+						+ "		Thread t = new Thread(new JoinDemo());\n" + "		t.start();\n"
+						+ "		for (int i = 0; i < 100; i++) {\n" + "			if(i==50){\n"
+						+ "				t.join();\n" + "			}\n"
+						+ "			System.out.println(\"main \"+i);\n" + "		}\n"
+						+ "	}  你注意这里t.join()方法的出现一定是在t线程之外的另一个线程的代码中，就是让这个线程等一等，跟join的含义有什么区别，你可以把它理解为嫁接中的结合， 而且优先级比那个线程t.join()之后的代码执行优先级还要高。这个很有意思。 让我想起来了，那年过年在曹武大幺家里吃饭，张飞几个小家伙，菜都抢光。呵呵。 源码里面的注释 比较搞笑，一直要等到这个客人死亡，才能执行自己的代码，这么悲催。 /** * Waits for this thread to die. *     跟人家抢不赢了，就找个人去人家家里去说一声，等我执行完了，你再执行。 main 0 join 0 main 1 main 2 main 3 main 4 main 5 main 6 main 7 main 8 main 9 join 1 main 10 join 2 main 11 main 12 join 3 main 13 main 14 main 15 main 16 main 17 main 18 main 19 main 20 main 21 join 4 main 22 join 5 main 23 join 6 main 24 join 7 main 25 join 8 main 26 join 9 main 27 join 10 main 28 join 11 main 29 join 12 main 30 join 13 main 31 join 14 main 32 join 15 main 33 join 16 main 34 join 17 main 35 join 18 main 36 join 19 main 37 join 20 join 21 join 22 main 38 join 23 join 24 join 25 join 26 join 27 join 28 main 39 main 40 main 41 main 42 main 43 join 29 main 44 join 30 main 45 join 31 join 32 main 46 join 33 join 34 join 35 join 36 join 37 join 38 join 39 main 47 join 40 join 41 join 42 join 43 join 44 join 45 join 46 join 47 join 48 join 49 main 48 join 50 main 49 join 51 join 52 join 53 join 54 join 55 join 56 join 57 join 58 join 59 join 60 join 61 join 62 join 63 join 64 join 65 join 66 join 67 join 68 join 69 join 70 join 71 join 72 join 73 join 74 join 75 join 76 join 77 join 78 join 79 join 80 join 81 join 82 join 83 join 84 join 85 join 86 join 87 join 88 join 89 join 90 join 91 join 92 join 93 join 94 join 95 join 96 join 97 join 98 join 99 main 50 main 51 main 52 main 53 main 54 main 55 main 56 main 57 main 58 main 59 main 60 main 61 main 62 main 63 main 64 main 65 main 66 main 67 main 68 main 69 main 70 main 71 main 72 main 73 main 74 main 75 main 76 main 77 main 78 main 79 main 80 main 81 main 82 main 83 main 84 main 85 main 86 main 87 main 88 main 89 main 90 main 91 main 92 main 93 main 94 main 95 main 96 main 97 main 98 main 99"
+						+ new Date(),
+				"104 Synchronized\n"
+						+ "这篇文章讲的特别好，还特别讲了为什么 “synchronized加持的方法或者代码块有可能多个线程可以同时执行，在锁对象的时候，而却对象非单例，而且多个线程并不是\n"
+						+ "公用一个实例的时候，其实这时候多个线程之间没有竞争关系的，当然可以多个线程同时执行这段代码块啊”\n" + "http://www.importnew.com/20444.html"
+						+ new Date(),
+				"105 import java.util.concurrent.ExecutorService;\n" + "import java.util.concurrent.Executors;\n"
+						+ "public class ThreadA {\n" + "	static int i = 1;\n"
+						+ "	public static void main(String[] args) {\n" + "		fixedThreadPool();\n"
+						+ "		singleThreadPool();\n" + "		cachedThreadPool();\n" + "	}\n"
+						+ "	public static void fixedThreadPool() {\n"
+						+ "		ExecutorService es = Executors.newFixedThreadPool(3);\n"
+						+ "		for (int i = 1; i <= 10; i++) {\n" + "			final int task = i ;\n"
+						+ "			es.execute(new Runnable() {\n" + "				@Override\n"
+						+ "				public void run() {\n"
+						+ "					for (int j = 1; j <= 5; j++) { //假设j代表绕操场跑几圈\n"
+						+ "						System.out.println(Thread.currentThread().getName()+\"目前正在跑第\"+task+\"个任务中的第\"+j+\"圈\");\n"
+						+ "					}\n" + "				}\n" + "			});\n" + "		}\n" + "	}\n"
+						+ "	public static void singleThreadPool() {\n"
+						+ "		ExecutorService es = Executors.newSingleThreadExecutor();\n"
+						+ "		for (int i = 1; i <= 10; i++) {\n" + "			final int task = i ;\n"
+						+ "			es.execute(new Runnable() {\n" + "				@Override\n"
+						+ "				public void run() {\n"
+						+ "					for (int j = 1; j <= 5; j++) { //假设j代表绕操场跑几圈\n"
+						+ "						System.out.println(Thread.currentThread().getName()+\"目前正在跑第\"+task+\"个任务中的第\"+j+\"圈\");\n"
+						+ "					}\n" + "				}\n" + "			});\n" + "		}\n" + "	}\n"
+						+ "	public static void cachedThreadPool() {\n"
+						+ "		ExecutorService es = Executors.newCachedThreadPool();\n"
+						+ "		for (int i = 1; i <= 10; i++) {\n" + "			final int task = i ;\n"
+						+ "			es.execute(new Runnable() {\n" + "				@Override\n"
+						+ "				public void run() {\n"
+						+ "					for (int j = 1; j <= 5; j++) { //假设j代表绕操场跑几圈\n"
+						+ "						System.out.println(Thread.currentThread().getName()+\"目前正在跑第\"+task+\"个任务中的第\"+j+\"圈\");\n"
+						+ "					}\n" + "				}\n" + "			});\n" + "		}\n" + "	}\n"
+						+ "}\n" + "" + new Date(),
+				"106 \n" + "\n" + "这种搞法太粗犷了，每次都新建一个线程，太浪费了，迟早会崩掉的。 看ThreadB1\n" + "\n" + "public class ThreadB {\n"
+						+ "	static int i = 1;\n" + "	public static void main(String[] args) {\n"
+						+ "		while(true) {\n" + "		 new Thread(new Runnable() {\n" + "			@Override\n"
+						+ "			public void run() {\n" + "				synchronized (ThreadA.class) {\n"
+						+ "					if(i<=0) {\n" + "						try {\n"
+						+ "							Thread.currentThread();\n"
+						+ "							Thread.sleep(200);\n"
+						+ "						} catch (InterruptedException e) {\n"
+						+ "							e.printStackTrace();\n" + "						}\n"
+						+ "						System.out.println(\"生产者：\"+(++i));\n" + "					}\n"
+						+ "				}\n" + "			}\n" + "		}).start();\n"
+						+ "		 new Thread(new Runnable() {\n" + "				@Override\n"
+						+ "				public void run() {\n" + "					synchronized (ThreadA.class) {\n"
+						+ "						if(i>=1) {\n" + "							try {\n"
+						+ "								Thread.currentThread();\n"
+						+ "								Thread.sleep(200);\n"
+						+ "							} catch (InterruptedException e) {\n"
+						+ "								e.printStackTrace();\n" + "							}\n"
+						+ "							System.out.println(\"消费者：\"+(--i));\n" + "						}\n"
+						+ "					}\n" + "				}\n" + "			}).start();\n" + "		}\n"
+						+ "	}\n" + "}\n" + "\n" + "" + new Date(),
+				"107  ThreadLocal钻进去看原理钻进范冰冰也就这么回事.md\n"
+						+ "https://github.com/huangleisir/captain_diary/blob/master/Concurrent/ThreadLocal%E9%92%BB%E8%BF%9B%E5%8E%BB%E7%9C%8B%E5%8E%9F%E7%90%86%E9%92%BB%E8%BF%9B%E8%8C%83%E5%86%B0%E5%86%B0%E4%B9%9F%E5%B0%B1%E8%BF%99%E4%B9%88%E5%9B%9E%E4%BA%8B.md"
+						+ new Date(),
+				"108  java 多线程同步工具这个讲的最好\n" + "http://blog.csdn.net/hejingyuan6/article/details/47070443\n"
+						+ "可惜没有代码 跟上 这是个遗憾" + new Date(),
+				"109 java并发编程读后感\n"
+						+ "  http://blog.csdn.net/songxinjianqwe/article/details/72789899?locationNum=15&fps=1\n"
+						+ "以后还是尽量别贴url, 文字贴到这里来。" + new Date(),
+				"110 java5里面的读写锁跟mysql里面的读写锁是不是异曲同工之妙\n"
+						+ "mysql里面的读写锁，昨天配置这个mysql主从配置的时候，还配置了这个读写锁，先给主库上read lock,从库配置完重启后，再释放主库的锁用unlock lock\n"
+						+ "\n" + "命令吧好像。\n" + "\n"
+						+ "java5的读写锁的妙用，用在缓存的读写里面。是怕出现脏读，幻读。仅仅是get，set操作倒还好，就是怕前面还有if条件判断，那就有可能出现中间wait（if判断完\n"
+						+ "wait（），\n" + "不能马上执行后面的语句，这就完了）" + new Date(),
+				"111 java并发编程读后感\n"
+						+ "http://blog.csdn.net/songxinjianqwe/article/details/72789899?locationNum=15&fps=1\n"
+						+ "以后还是尽量别贴url, 文字贴到这里来。" + new Date(),
+				"112 notify()和notifyAll()区别\n" + " http://blog.csdn.net/cloudeagle_bupt/article/details/21378283\n"
+						+ "想想yield()方法怎么用的。感觉这方法没啥用，notify()  notifyAll()还有点意思\n" + "改造一下 更新意思" + new Date(),
+				"113 \n" + "volatile关键字解析\n"
+						+ "http://www.cnblogs.com/dolphin0520/p/3920373.html 这一篇对volatile的解读算挖到根了  \n"
+						+ "这里面引入了intel CPU 的一个高速缓存的概念\n" + "我的理解没错，这个高速缓存是属于CPU的一部分的。\n"
+						+ "https://jingyan.baidu.com/article/d169e1866d0e6d436711d87d.html\n"
+						+ "它如何保证它修饰的变量在线程之间的可见性。\n" + "缓存里面用的也是Lock机制，当一个线程修改该变量时候，其他等待若要读取该变量只能等待。知道update过程结束，锁释放。\n"
+						+ "那既然加了锁为什么还是不能解决线程安全性呢，因为这个锁控制的力度太细并不是在业务代码上保证原子性。\n"
+						+ "比如i++,这个命令的操作是分两部完成的，先读取i的值，然后加1，可是中间有可能被另一个线程干扰。\n"
+						+ "你刚读完值，别的线程已经将该值修改了，你再加1并不是在新值上面加，为什么呢，如果你重新读取这个值你可以读到update 后的值，问题是你以及你给读过了，\n"
+						+ "不可能重复读第二回。\n"
+						+ "再举个例子，火车票多线程出售，if(count>0){count--;} if判断跟后面的count-- 操作有可能被截胡。被干扰。count被其他线程修改了。"
+						+ new Date(),
+				"114" + new Date(), "115" + new Date(), "116" + new Date(), "117" + new Date(),
+				"118  https://news.html5.qq.com/share/768397206588282402?ch=060000&tabId=0&tagId=0&docId=768397206588282402&url=http%3A%2F%2Fkuaibao.qq.com%2Fs%2F20180106G000P100&clientWidth=360&dataSrc=&sc_id=xkeHgtC  这篇是写的不错的 volatile 关键字只能保证共享变量对各线程的可见性，也就是各个线程都能读到这个变量的最新值，但是并不能保证线程安全性，这是两个概念。需要办证安全性 一是在读写这个变量的时候加锁，各种锁都可以，另外可以用原子类。 https://www.cnblogs.com/zhengbin/p/5657707.html   这篇文章里面讲的很好，备战阿里，不错，小伙子，阿里不要你要谁\n"
+						+ "\n" + "关于原子类，张孝祥讲的很好，atomic下面的原子类可以操作基本数据，数组中的基本数据，以及类中的基本数据。\n" + "\n"
+						+ "atomic原子类操作类中的成员变量" + new Date(),
+				"119  我记得在oppo面试的时候，问了一个这样的问题，10个写线程，只有一个读线程，那么这个时候有必要加读锁吗。 其实是要加的，加读锁是为了跟写锁互斥。\n" + "\n"
+						+ "类图是这样的， ReadWriteLock接口（这个接口跟Lock接口没有半毛钱关系）下面的实现类RenentrantReadWriteLock 张孝祥：读写锁卡农控制粒度比synchronized更加细致，且他只能在代码块上加锁，也就是说她锁的是对象，不能锁类。两个线程要达到互斥的效果，必须用同一个读写锁，那么用ReentrantLock行不行，达不到读写锁这么细颗粒度的控制。\n"
+						+ "\n"
+						+ "对象下面的读锁和写锁。锁是要上在共享的任务实例的内部方法中的代码块上的，而不是线程代码上。 读锁与读锁不互斥，读锁与写锁互斥，写锁与读锁互斥，写锁与写锁互斥。前提是都是同一个读写锁啊。面试题用读写锁写一个缓存类。 我在总结一下：一个线程读的时候，另一个线程不能写但可以读（正是因为这个特性使得写多读少的场景下提升了性能，因为面试经常问到）， 一个线程写的时候，另一个线程也不能读，夜不能写。欧拉。 从代码语句执行的角度来讲，就是一个线程执行了读锁语句，另一个线程还能执行读锁语句，但不能执行上写锁语句以及后面的代码，一个线程执行了上写锁语句， 另一个线程既不能执行上读锁语句以及后面的语句，也不能执行上写锁以及后面的语句。 我的一个疑问是，既然读锁与读锁不互斥，那么所线程都是读的情况下，还有加读锁的必要吗，那确实没必要，但是如果读的时候不希望有写锁包围的代码被执行， 那就必须要 加读锁，另外一块代码要加写锁。另外，我觉得不要被这个读写的名字局限了，凡是需要用到这个互斥特性的地方都可以使用读写锁。"
+						+ new Date(),
+				"120 \n" + "并发编程的目的是为了让程序运行得更快，但是，并不是启动更多的线程就能让程序最大限度地并发执行。在进行并发编程时，\n"
+						+ "如果希望通过多线程执行任务让程序运行得更快，会面临非常多的挑战，比如上下文切换的问题、死锁的问题，以及受限于硬件和软件的资源限制问题，\n"
+						+ "本章会介绍几种并发编程的挑战以及解决方案。\n" + "\n" + "对于多核CPU，多线程才起优化作用" + new Date(),
+				"121 " + new Date(), "122" + new Date(), "123" + new Date(), "124" + new Date(), "125" + new Date(),
+				"126  面试是一次双向的沟通过程，对求职者而言是找到心仪的东家，对公司而言是招揽合适的人才。面试官的目的是考察求职者能力，评估和岗位的匹配程度，\n" + "绝非用稀奇古怪的题目面倒求职者。\n"
+						+ "\n" + "本人近两年面试大几十位求职者，深感作为一个面试者不易，做好一个面试官更难，如何在极其有限的时间内准确的考察出求职的技术能力，对面试官的考验很大。\n"
+						+ "本文关注服务端技术能力的考察，包括考察的范围、方式和注意事项。性格、合作能力、抗压能力等的考察不在本文讨论范围内。\n" + "\n" + "态度指南\n" + "\n"
+						+ "古有周公吐哺、三顾茅庐的佳话，优秀的人才从来不乏东家，所以请尊重求职者，纵然无缘招揽优秀的人才，也要赢得面试者的好评和名声：\n" + "\n"
+						+ "求职者慕名而来至少出门迎接、给瓶解渴水吧\n" + "营造宽松良好的面试氛围，让求职者正常发挥\n" + "控制好时间，不予太长，亦不宜太短\n"
+						+ "面试的过程请保持耐心，认真听取，切勿打断求职者，切勿过分争论和反驳\n" + "面试结束后尽快给予求职者反馈\n" + "技术考察\n" + "\n"
+						+ "技术考察主要覆盖基础知识、专业知识和逻辑思维三方面。首先了解求职者经历的项目以及在该项目中承担的角色和工作内容，再以项目为切入点，由浅入深的提出和\n"
+						+ "基础知识以及专业知识相关的问题，要特别注意这些问题的连贯性，从而考察面试者的功底、逻辑性和解决问题的思路。为了缓和氛围，还可以提一些开放的问题，\n"
+						+ "那些钟情于技术的 geek 们，在这类问题往往能回答的深入和透彻。\n" + "\n" + "基础知识\n" + "熟练掌握一门语言\n" + "熟悉基本的数据结构和算法\n"
+						+ "熟练使用 Linux(Windows)，对操作系统原理的理解\n" + "Optional: 数据库、Web Server 和 TCP/IP 等\n" + "专业 & 经验\n"
+						+ "专业知识的考察因业务而异，求职者应该需要了解整个项目的功能，明白自己模块承担的角色，熟悉模块的业务流程以及针对该业务使用到的技术框架，\n" + "某些特殊的业务可能会用到算法。\n"
+						+ "开放问题\n" + "你使用过哪些语言，对比它们的异同，谈谈你的感受？\n" + "你喜欢哪些技术书籍(博客)？\n" + "哪些软件你觉得很棒，为什么？\n"
+						+ "你通过什么渠道学习新技术知识？\n" + "你解决过哪些令你难忘的 bug，并说说解决的过程？\n" + "谈谈个人计算机(互联网网络)的发展历史？\n"
+						+ "谈谈你敬佩的工程师？\n" + "谈谈测试的重要性？\n" + "一点感受\n" + "\n" + "不推荐纯粹的数学题、智力题等考察题目\n"
+						+ "不推荐压力面试，群面等面试方式\n" + "不推荐做题、现场写代码(时间成本太高，伪代码除外)，不推荐询问杂而无连贯的问题\n"
+						+ "能给出 github 的求职者往往具有更强的竞争力\n"
+						+ "面试的方式和考察重点因人而异，本人认为这种方式的面试效率较高，既适合现场面试、又适合电话面试，非常注重基础功底，基础功底扎实的工程师编程能力、\n"
+						+ "学习能力和调试能力都比较强悍，因为外部各异的技术归根结底总是有诸多相通之处。" + new Date(),
+				"127  https://github.com/huangleisir/captain_diary/blob/master/Concurrent/%E8%81%94%E6%98%93%E8%9E%8D%E9%9D%A2%E8%AF%95%E6%8C%91%E6%88%9830k.md"
+						+ new Date(),
+				"128 自己实现BlockingQueue\n" + "  张孝祥应该就是这么写阻塞队列的吧\n"
+						+ "http://blog.csdn.net/chenchaofuck1/article/details/51660119\n"
+						+ "其实也不难，用condition下面的await()和signal（）" + new Date(),
+				"129 昨晚睡觉又做噩梦高考，没有背作文\n" + "没有背诵三五十篇作文，怎么敢去高考\n" + "这就跟现在面试前没有去背面试题一样\n" + "噩梦拯救行动    高考作文拯救行动\n"
+						+ "这样 先把面试题背下来" + new Date(),
+				"130 一门研究数据之间关系的学问，目的是为了提高插入，读取，更新，删除效率\n" + "\n" + "分为两种关系\n" + " 逻辑关系\n" + "\n"
+						+ "    集合：同在一个范围内，数据之间没有关系\n" + "    线性：1对1 怎么举例子呢\n" + "    树形 1对多  比如文件夹就是树形结构\n" + "\n"
+						+ "物理关系 物理存储" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
+				"" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
