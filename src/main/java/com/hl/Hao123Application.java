@@ -101,7 +101,7 @@ public class Hao123Application {
 				// TODO Auto-generated catch block
 
 			}
-		}, 2, 3, TimeUnit.MINUTES);
+		}, 2, 61, TimeUnit.SECONDS);
 
 	}
 
@@ -495,7 +495,13 @@ public class Hao123Application {
 						+ "不可能重复读第二回。\n"
 						+ "再举个例子，火车票多线程出售，if(count>0){count--;} if判断跟后面的count-- 操作有可能被截胡。被干扰。count被其他线程修改了。"
 						+ new Date(),
-				"114" + new Date(), "115" + new Date(), "116" + new Date(), "117" + new Date(),
+				"114  dubbo 服务端用的注解@Service  客户端用的注解 @Refrence" + new Date(), "115" + new Date(),
+				"116 //重定向，不会共享request  \n" + "        //以下写法错误,该 \"/\"代表了8080端口  \n"
+						+ "        //response.sendRedirect(\"/student_list.jsp\");  \n"
+						+ "        response.sendRedirect(request.getContextPath() + \"/student_list.jsp\");        //转发,转发是在服务器端转发的，客户端是不知道的  \n"
+						+ "request.getRequestDispatcher(\"/student_list.jsp\").forward(request, response);   重定向 前一个request携带的参数就带不过去了"
+						+ new Date(),
+				"117 如何保证队列中消息的顺序  用同一个队列名  也就是将消息按顺序放进同一个队列中" + new Date(),
 				"118  https://news.html5.qq.com/share/768397206588282402?ch=060000&tabId=0&tagId=0&docId=768397206588282402&url=http%3A%2F%2Fkuaibao.qq.com%2Fs%2F20180106G000P100&clientWidth=360&dataSrc=&sc_id=xkeHgtC  这篇是写的不错的 volatile 关键字只能保证共享变量对各线程的可见性，也就是各个线程都能读到这个变量的最新值，但是并不能保证线程安全性，这是两个概念。需要办证安全性 一是在读写这个变量的时候加锁，各种锁都可以，另外可以用原子类。 https://www.cnblogs.com/zhengbin/p/5657707.html   这篇文章里面讲的很好，备战阿里，不错，小伙子，阿里不要你要谁\n"
 						+ "\n" + "关于原子类，张孝祥讲的很好，atomic下面的原子类可以操作基本数据，数组中的基本数据，以及类中的基本数据。\n" + "\n"
 						+ "atomic原子类操作类中的成员变量" + new Date(),
@@ -536,6 +542,9 @@ public class Hao123Application {
 				"130 一门研究数据之间关系的学问，目的是为了提高插入，读取，更新，删除效率\n" + "\n" + "分为两种关系\n" + " 逻辑关系\n" + "\n"
 						+ "    集合：同在一个范围内，数据之间没有关系\n" + "    线性：1对1 怎么举例子呢\n" + "    树形 1对多  比如文件夹就是树形结构\n" + "\n"
 						+ "物理关系 物理存储" + new Date(),
+				"131  一看就懂的模板方法模式  https://blog.csdn.net/u013565163/article/details/79285617" + new Date(),
+				"132 一次 HashSet 所引起的并发问题  https://mp.weixin.qq.com/s/-_6fDP6OSse-tL-ptjcbJw    HashSet的本质还是HashMap  如何线程安全的使用HashSet 使用ConcurrentHashMap   value写死成null"
+						+ new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
@@ -576,8 +585,7 @@ public class Hao123Application {
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date());
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
