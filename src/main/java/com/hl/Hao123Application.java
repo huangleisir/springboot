@@ -101,7 +101,7 @@ public class Hao123Application {
 				// TODO Auto-generated catch block
 
 			}
-		}, 2, 61, TimeUnit.SECONDS);
+		}, 2, 5, TimeUnit.SECONDS);
 
 	}
 
@@ -952,6 +952,8 @@ public class Hao123Application {
 				"204 （5）、发布/订阅\n" + "\n"
 						+ "最后（但肯定不是最不重要的）是Redis的发布/订阅功能。发布/订阅的使用场景确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚本触发器，甚至用Redis的发布/订阅功能来建立聊天系统！（不，这是真的，你可以去核实）。\n"
 						+ "\n" + "Redis提供的所有特性中，我感觉这个是喜欢的人最少的一个，虽然它为用户提供如果此多功能。" + new Date(),
+				"205 为何宁愿吃生活的苦，也不愿吃学习的苦 学习的基本过程 三步学习法 理解实践记忆  刻意练习  学习资料的筛选搜集整理和管理还有回顾  知识体系的建立  抽象思维的培养 环境和学习  整合学习流程"
+						+ new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
@@ -980,7 +982,7 @@ public class Hao123Application {
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date());
+				"" + new Date(), "" + new Date(), "" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
