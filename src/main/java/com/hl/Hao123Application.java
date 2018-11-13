@@ -843,6 +843,39 @@ public class Hao123Application {
 						+ "就问你现在线上数据量有多大，如果是 100G，你用 mysqldump 出来要多久，然后 mysql进去又要多久，如果互联网不允许延时的话，你又怎么做到 恢复单张表的时候保证 nagios不报警。如果有人说 mysqldump 出来 1 个小时就 ok 了，那么我就要问问他 db 服务器是\n"
 						+ "啥配置了，如果他说 mysql 进去 50 分钟搞定了，那么我也要问问他 db 机器啥配置了，如果是普通的吊丝 pc server，那么真实性，大家懂得。然后如果你用 xtrabackup 备份要多久，恢复要多久，大家都知道 copy-back 这一步要很久，那么你有没有办法对这一块优化。\n"
 						+ "\n" + "" + new Date(),
+				"173 详解TCP的3次握手和4次挥手   https://blog.csdn.net/kingov/article/details/77155671" + new Date(),
+				"174 sql语句面试   https://www.cnblogs.com/diffrent/p/8854995.html   " + new Date(), "" + new Date(),
+				"175 jvm内存溢出分析\n" + "2016-11-07 13:47 by 钟绍威, 3689 阅读, 1 评论, 收藏, 编辑概述\n"
+						+ "jvm中除了程序计数器，其他的区域都有可能会发生内存溢出\n" + "内存溢出是什么？\n"
+						+ "当程序需要申请内存的时候，由于没有足够的内存，此时就会抛出OutOfMemoryError，这就是内存溢出\n" + "内存溢出和内存泄漏有什么区别？\n"
+						+ "内存泄漏是由于使用不当，把一部分内存“丢掉了”，导致这部分内存不可用。\n"
+						+ "当在堆中创建了对象，后来没有使用这个对象了，又没有把整个对象的相关引用设为null。此时垃圾收集器会认为这个对象是需要的，就不会清理这部分内存。这就会导致这部分内存不可用。\n"
+						+ "所以内存泄漏会导致可用的内存减少，进而会导致内存溢出。\n" + "用到的jvm参数\n" + "下面为了说明溢出的情景，会执行一些实例代码，同时需要给jvm指定参数\n"
+						+ "-Xms 堆最小容量(heap min size)\n" + "-Xmx 堆最大容量(heap max size)\n" + "-Xss 栈容量(stack size)\n"
+						+ "-XX:PermSize=size 永生代最小容量\n" + "-XX:MaxPermSize=size 永生代最大容量\n" + "堆溢出\n"
+						+ "堆是存放对象的地方，那么只要在堆中疯狂的创建对象，那么堆就会发生内存溢出。\n" + "https://www.cnblogs.com/wewill/p/6038528.html"
+						+ new Date(),
+				"176 https://www.cnblogs.com/panxuejun/p/8630779.html     JVM调优总结（7）：调优方法" + new Date(),
+				"177 内存泄漏  无非是GC没起到该有的作用 或是加载了大对象   Java JVM 内存泄露——全解析和处理办法\n"
+						+ "   https://www.cnblogs.com/ixenos/p/5674702.html?utm_source=itdadao&utm_medium=referral"
+						+ new Date(),
+				"178 内存泄漏  无非是GC没起到该有的作用 或是加载了大对象   Java JVM 内存泄露——全解析和处理办法\n"
+						+ "   https://www.cnblogs.com/ixenos/p/5674702.html?utm_source=itdadao&utm_medium=referral"
+						+ new Date(),
+				"179 java stackoverflowerror与outofmemoryerror区别\n"
+						+ "  https://blog.csdn.net/chenchaofuck1/article/details/51144223  记忆力不好的博客" + new Date(),
+				"180 字符串作为值来传递，数组作为对象传递\n" + "\n" + "值传递是不改变原来属性的值的。\n" + "所以结果是：goodbbb\n" + "\n"
+						+ "String 确定是值传递，。   https://zhidao.baidu.com/question/106796048.html" + new Date(),
+				"181 \n" + "一次线上JVM调优实践，FullGC40次/天到10天一次的优化过程    https://blog.csdn.net/cml_blog/article/details/81057966"
+						+ new Date(),
+				"182 https://blog.csdn.net/varyall/article/details/80517977   性能案例-JVM频繁full GC 问题（JVM参数优化）"
+						+ new Date(),
+				"183 Minor GC、Major GC和Full GC之间的区别\n"
+						+ "   https://www.cnblogs.com/yang-hao/p/5948207.html" + new Date(),
+				"184 查看gc情况  stat -gc -t 4037 10s " + new Date(),
+				"185 重入读写锁  这里重入有何含义   重入：此锁允许reader和writer按照 ReentrantLock 的样式重新获取读取锁或写入锁。在写入线程保持的所有写入锁都已经释放后，才允许重入reader使用读取锁。 重入 第二次进来  先进来发现资源锁住了，于是乎出去，等待锁释放再进来操作资源。"
+						+ new Date(),
+				"186 redis  面试总结  https://www.cnblogs.com/jiahaoJAVA/p/6244278.html" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
@@ -874,10 +907,7 @@ public class Hao123Application {
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date());
+				"" + new Date(), "" + new Date(), "" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
