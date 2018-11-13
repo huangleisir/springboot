@@ -875,7 +875,83 @@ public class Hao123Application {
 				"184 查看gc情况  stat -gc -t 4037 10s " + new Date(),
 				"185 重入读写锁  这里重入有何含义   重入：此锁允许reader和writer按照 ReentrantLock 的样式重新获取读取锁或写入锁。在写入线程保持的所有写入锁都已经释放后，才允许重入reader使用读取锁。 重入 第二次进来  先进来发现资源锁住了，于是乎出去，等待锁释放再进来操作资源。"
 						+ new Date(),
-				"186 redis  面试总结  https://www.cnblogs.com/jiahaoJAVA/p/6244278.html" + new Date(), "" + new Date(),
+				"186 redis  面试总结  https://www.cnblogs.com/jiahaoJAVA/p/6244278.html" + new Date(),
+				"187 （2）Reids的特点\n" + "\n"
+						+ "Redis本质上是一个Key-Value类型的内存数据库，很像memcached，整个数据库统统加载在内存当中进行操作，定期通过异步操作把数据库数据flush到硬盘上进行保存。因为是纯内存操作，Redis的性能非常出色，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。\n"
+						+ "Redis的出色之处不仅仅是性能，Redis最大的魅力是支持保存多种数据结构，此外单个value的最大限制是1GB，不像 memcached只能保存1MB的数据，因此Redis可以用来实现很多有用的功能，比方说用他的List来做FIFO双向链表，实现一个轻量级的高性 能消息队列服务，用他的Set可以做高性能的tag系统等等。另外Redis也可以对存入的Key-Value设置expire时间，因此也可以被当作一 个功能加强版的memcached来用。\n"
+						+ "Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。" + new Date(),
+				"188 （3）Redis支持的数据类型\n" + "\n" + "Redis通过Key-Value的单值不同类型来区分, 以下是支持的类型:\n" + "Strings\n" + "Lists\n"
+						+ "Sets 求交集、并集\n" + "Sorted Set \n" + "hashes" + new Date(),
+				"189 （4）为什么redis需要把所有数据放到内存中？\n" + "\n"
+						+ "Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。\n"
+						+ "如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。" + new Date(),
+				"190 （5）Redis是单进程单线程的\n" + "\n" + "redis利用队列技术将并发访问变为串行访问，消除了传统数据库串行控制的开销" + new Date(),
+				"191 （6）虚拟内存\n" + "\n" + "当你的key很小而value很大时,使用VM的效果会比较好.因为这样节约的内存比较大.\n"
+						+ "当你的key不小时,可以考虑使用一些非常方法将很大的key变成很大的value,比如你可以考虑将key,value组合成一个新的value.\n"
+						+ "vm-max-threads这个参数,可以设置访问swap文件的线程数,设置最好不要超过机器的核数,如果设置为0,那么所有对swap文件的操作都是串行的.可能会造成比较长时间的延迟,但是对数据完整性有很好的保证.\n"
+						+ "\n" + "自己测试的时候发现用虚拟内存性能也不错。如果数据量很大，可以考虑分布式或者其他数据库" + new Date(),
+				"192 （7）分布式\n" + "\n"
+						+ "redis支持主从的模式。原则：Master会将数据同步到slave，而slave不会将数据同步到master。Slave启动时会连接master来同步数据。\n" + "\n"
+						+ "这是一个典型的分布式读写分离模型。我们可以利用master来插入数据，slave提供检索服务。这样可以有效减少单个机器的并发访问数量" + new Date(),
+				"193 （8）读写分离模型\n" + "\n"
+						+ "通过增加Slave DB的数量，读的性能可以线性增长。为了避免Master DB的单点故障，集群一般都会采用两台Master DB做双机热备，所以整个集群的读和写的可用性都非常高。\n"
+						+ "读写分离架构的缺陷在于，不管是Master还是Slave，每个节点都必须保存完整的数据，如果在数据量很大的情况下，集群的扩展能力还是受限于单个节点的存储能力，而且对于Write-intensive类型的应用，读写分离架构并不适合。"
+						+ new Date(),
+				"194 （9）数据分片模型\n" + "\n" + "为了解决读写分离模型的缺陷，可以将数据分片模型应用进来。\n" + "\n"
+						+ "可以将每个节点看成都是独立的master，然后通过业务实现数据分片。\n" + "\n"
+						+ "结合上面两种模型，可以将每个master设计成由一个master和多个slave组成的模型。" + new Date(),
+				"195 1. 使用Redis有哪些好处？\n" + "\n" + "(1) 速度快，因为数据存在内存中，类似于HashMap，HashMap的优势就是查找和操作的时间复杂度都是O(1)\n" + "\n"
+						+ "(2) 支持丰富数据类型，支持string，list，set，sorted set，hash\n" + "\n"
+						+ "(3) 支持事务，操作都是原子性，所谓的原子性就是对数据的更改要么全部执行，要么全部不执行\n" + "\n"
+						+ "(4) 丰富的特性：可用于缓存，消息，按key设置过期时间，过期后将会自动删除" + new Date(),
+				"196  2. redis相比memcached有哪些优势？\n" + "\n" + "(1) memcached所有的值均是简单的字符串，redis作为其替代者，支持更为丰富的数据类型\n" + "\n"
+						+ "(2) redis的速度比memcached快很多\n" + "\n" + "(3) redis可以持久化其数据" + new Date(),
+				"197  3. redis常见性能问题和解决方案：\n" + "\n" + "(1) Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文件\n" + "\n"
+						+ "(2) 如果数据比较重要，某个Slave开启AOF备份数据，策略设置为每秒同步一次\n" + "\n"
+						+ "(3) 为了主从复制的速度和连接的稳定性，Master和Slave最好在同一个局域网内\n" + "\n" + "(4) 尽量避免在压力很大的主库上增加从库\n" + "\n"
+						+ "(5) 主从复制不要用图状结构，用单向链表结构更为稳定，即：Master <- Slave1 <- Slave2 <- Slave3...\n" + "\n"
+						+ "这样的结构方便解决单点故障问题，实现Slave对Master的替换。如果Master挂了，可以立刻启用Slave1做Master，其他不变。" + new Date(),
+				"198  4. MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据\n" + "\n"
+						+ " 相关知识：redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。redis 提供 6种数据淘汰策略：\n" + "\n"
+						+ "voltile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰\n" + "\n"
+						+ "volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰\n" + "\n"
+						+ "volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰\n" + "\n"
+						+ "allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰\n" + "\n"
+						+ "allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰\n" + "\n" + "no-enviction（驱逐）：禁止驱逐数据"
+						+ new Date(),
+				"199 （10）Redis的回收策略\n" + "\n" + " \n" + "\n"
+						+ "        volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰\n" + "\n"
+						+ "        volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰\n" + "\n"
+						+ "        volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰\n" + "\n"
+						+ "        allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰\n" + "\n"
+						+ "        allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰\n" + "\n"
+						+ "        no-enviction（驱逐）：禁止驱逐数据" + new Date(),
+				"200  5. Memcache与Redis的区别都有哪些？\n" + "\n" + "1)、存储方式\n" + "\n"
+						+ "Memecache把数据全部存在内存之中，断电后会挂掉，数据不能超过内存大小。\n" + "\n" + "Redis有部份存在硬盘上，这样能保证数据的持久性。\n" + "\n"
+						+ "2)、数据支持类型\n" + "\n" + "Memcache对数据类型支持相对简单。\n" + "\n" + "Redis有复杂的数据类型。\n" + "\n"
+						+ "3)、使用底层模型不同\n" + "\n" + "它们之间底层实现方式 以及与客户端之间通信的应用协议不一样。\n" + "\n"
+						+ "Redis直接自己构建了VM 机制 ，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求。\n" + "\n" + "4），value大小\n" + "\n"
+						+ "redis最大可以达到1GB，而memcache只有1MB" + new Date(),
+				"201  6. Redis 常见的性能问题都有哪些？如何解决？\n" + "\n" + " \n" + "\n"
+						+ "1).Master写内存快照，save命令调度rdbSave函数，会阻塞主线程的工作，当快照比较大时对性能影响是非常大的，会间断性暂停服务，所以Master最好不要写内存快照。\n"
+						+ "\n" + " \n" + "\n"
+						+ "2).Master AOF持久化，如果不重写AOF文件，这个持久化方式对性能的影响是最小的，但是AOF文件会不断增大，AOF文件过大会影响Master重启的恢复速度。Master最好不要做任何持久化工作，包括内存快照和AOF日志文件，特别是不要启用内存快照做持久化,如果数据比较关键，某个Slave开启AOF备份数据，策略为每秒同步一次。\n"
+						+ "\n" + " \n" + "\n"
+						+ "3).Master调用BGREWRITEAOF重写AOF文件，AOF在重写的时候会占大量的CPU和内存资源，导致服务load过高，出现短暂服务暂停现象。\n" + "\n"
+						+ "4). Redis主从复制的性能问题，为了主从复制的速度和连接的稳定性，Slave和Master最好在同一个局域网内" + new Date(),
+				"202 （3）、队列\n" + "\n"
+						+ "Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。Redis作为队列使用的操作，就类似于本地程序语言（如Python）对 list 的 push/pop 操作。\n"
+						+ "\n"
+						+ "如果你快速的在Google中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就是利用Redis创建非常好的后端工具，以满足各种队列需求。例如，Celery有一个后台就是使用Redis作为broker，你可以从这里去查看。"
+						+ new Date(),
+				"203 （4），排行榜/计数器\n" + "\n"
+						+ "Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可：\n"
+						+ "\n" + "当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行：\n" + "\n"
+						+ "ZRANGE user_scores 0 10 WITHSCORES\n" + "\n"
+						+ "Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。" + new Date(),
+				"204 （5）、发布/订阅\n" + "\n"
+						+ "最后（但肯定不是最不重要的）是Redis的发布/订阅功能。发布/订阅的使用场景确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚本触发器，甚至用Redis的发布/订阅功能来建立聊天系统！（不，这是真的，你可以去核实）。\n"
+						+ "\n" + "Redis提供的所有特性中，我感觉这个是喜欢的人最少的一个，虽然它为用户提供如果此多功能。" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
@@ -904,10 +980,7 @@ public class Hao123Application {
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
 				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date());
+				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
