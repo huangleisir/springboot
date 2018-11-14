@@ -962,40 +962,111 @@ public class Hao123Application {
 						+ new Date(),
 				"208  站在上帝的角度看redis和zk分布式锁的优缺点\n" + "redis分布式锁安全性的探讨\n"
 						+ "http://blog.csdn.net/jackcaptain1015/article/details/71157004" + new Date(),
-				"209" + new Date(), "210" + new Date(), "211" + new Date(), "212" + new Date(), "213" + new Date(),
-				"214" + new Date(), "215" + new Date(), "216" + new Date(), "217" + new Date(), "218" + new Date(),
-				"219" + new Date(), "220" + new Date(), "221" + new Date(), "222" + new Date(), "223" + new Date(),
-				"224" + new Date(), "225" + new Date(), "226" + new Date(), "227" + new Date(), "228" + new Date(),
-				"229" + new Date(), "230" + new Date(), "231" + new Date(), "232" + new Date(), "233" + new Date(),
-				"234" + new Date(), "235" + new Date(), "236" + new Date(), "237" + new Date(), "238" + new Date(),
-				"239" + new Date(), "240" + new Date(), "241" + new Date(), "242" + new Date(), "243" + new Date(),
-				"244" + new Date(), "245" + new Date(), "246" + new Date(), "247" + new Date(), "248" + new Date(),
-				"249" + new Date(), "250" + new Date(), "251" + new Date(), "252" + new Date(), "253" + new Date(),
-				"254" + new Date(), "255" + new Date(), "256" + new Date(), "257" + new Date(), "258" + new Date(),
-				"259" + new Date(), "260" + new Date(), "261" + new Date(), "262" + new Date(), "263" + new Date(),
-				"264" + new Date(), "265" + new Date(), "266" + new Date(), "267" + new Date(), "268" + new Date(),
-				"269" + new Date(), "270" + new Date(), "271" + new Date(), "272" + new Date(), "273" + new Date(),
-				"274" + new Date(), "275" + new Date(), "276" + new Date(), "277" + new Date(), "278" + new Date(),
-				"279" + new Date(), "280" + new Date(), "281" + new Date(), "282" + new Date(), "283" + new Date(),
-				"284" + new Date(), "285" + new Date(), "286" + new Date(), "287" + new Date(), "288" + new Date(),
-				"289" + new Date(), "290" + new Date(), "291" + new Date(), "292" + new Date(), "293" + new Date(),
-				"294" + new Date(), "295" + new Date(), "296" + new Date(), "297" + new Date(), "298" + new Date(),
-				"299" + new Date(), "300" + new Date(), "301" + new Date(), "302" + new Date(), "303" + new Date(),
-				"304" + new Date(), "305" + new Date(), "306" + new Date(), "307" + new Date(), "308" + new Date(),
-				"309" + new Date(), "310" + new Date(), "311" + new Date(), "312" + new Date(), "313" + new Date(),
-				"314" + new Date(), "315" + new Date(), "316" + new Date(), "317" + new Date(), "318" + new Date(),
-				"319" + new Date(), "320" + new Date(), "321" + new Date(), "322" + new Date(), "323" + new Date(),
-				"324" + new Date(), "325" + new Date(), "326" + new Date(), "327" + new Date(), "328" + new Date(),
-				"329" + new Date(), "330" + new Date(), "331" + new Date(), "332" + new Date(), "333" + new Date(),
-				"334" + new Date(), "335" + new Date(), "336" + new Date(), "337" + new Date(), "338" + new Date(),
-				"339" + new Date(), "340" + new Date(), "341" + new Date(), "342" + new Date(), "343" + new Date(),
-				"344" + new Date(), "345" + new Date(), "346" + new Date(), "347" + new Date(), "348" + new Date(),
-				"349" + new Date(), "350" + new Date(), "351" + new Date(), "352" + new Date(), "353" + new Date(),
-				"354" + new Date(), "355" + new Date(), "356" + new Date(), "357" + new Date(), "358" + new Date(),
-				"359" + new Date(), "360" + new Date(), "361" + new Date(), "362" + new Date(), "363" + new Date(),
-				"364" + new Date(), "365" + new Date(), "366" + new Date(), "367" + new Date(), "368" + new Date(),
-				"369" + new Date(), "370" + new Date(), "371" + new Date(), "372" + new Date(), "373" + new Date(),
-				"374" + new Date(), "375" + new Date(), "376" + new Date());
+				"209 mybatis 源码翻阅  \n" + "这篇是写的不错的，可惜就写了一篇   http://blog.csdn.net/rickesy/article/details/52075410\n"
+						+ "\n" + "http://blog.csdn.net/luanlouis/article/details/40422941 \n" + "这里有一篇，没来得及好好看\n" + "\n"
+						+ "\n" + "https://www.cnblogs.com/hayasi/p/6142638.html" + new Date(),
+				"210 spring支持构造器注入和setter方法注入\n" + "接口注入    构造器注入，通过 <constructor-arg> 元素完成注入\n"
+						+ "    setter方法注入， 通过<property> 元素完成注入【开发中常用方式】 " + new Date(),
+				"211 \n" + "13.为什么要有事物传播行为？\n" + "https://www.cnblogs.com/wang-meng/p/5701982.html" + new Date(),
+				"212 Spring的核心类有哪些，各有什么作用？\n" + "\n" + "BeanFactory：产生一个新的实例，可以实现单例模式\n" + "\n"
+						+ "BeanWrapper：提供统一的get及set方法\n" + "\n" + "ApplicationContext:提供框架的实现，包括BeanFactory的所有功能\n" + ""
+						+ new Date(),
+				"213  什么是AOP，AOP的作用是什么？\n" + "\n"
+						+ "面向切面编程（AOP）提供另外一种角度来思考程序结构，通过这种方式弥补了面向对象编程（OOP）的不足，除了类（classes）以外，AOP提供了切面。切面对关注点进行模块化，例如横切多个类型和对象的事务管理\n"
+						+ "\n"
+						+ "Spring的一个关键的组件就是AOP框架，可以自由选择是否使用AOP 提供声明式企业服务，特别是为了替代EJB声明式服务。最重要的服务是声明性事务管理，这个服务建立在Spring的抽象事物管理之上。允许用户实现自定义切面，用AOP来完善OOP的使用,可以把Spring AOP看作是对Spring的一种增强\n"
+						+ "" + new Date(),
+				"214  Spring如何处理线程并发问题？\n" + "\n" + "Spring使用ThreadLocal解决线程安全问题\n" + "\n"
+						+ "我们知道在一般情况下，只有无状态的Bean才可以在多线程环境下共享，在Spring中，绝大部分Bean都可以声明为singleton作用域。就是因为Spring对一些Bean(如RequestContextHolder、TransactionSynchronizationManager、LocaleContextHolder等)中非线程安全状态采用ThreadLocal进行处理，让它们也成为线程安全的状态，因为有状态的Bean就可以在多线程中共享了。\n"
+						+ "\n" + "ThreadLocal和线程同步机制都是为了解决多线程中相同变量的访问冲突问题。\n" + "\n"
+						+ "在同步机制中，通过对象的锁机制保证同一时间只有一个线程访问变量。这时该变量是多个线程共享的，使用同步机制要求程序慎密地分析什么时候对变量进行读写，什么时候需要锁定某个对象，什么时候释放对象锁等繁杂的问题，程序设计和编写难度相对较大。\n"
+						+ "\n"
+						+ "而ThreadLocal则从另一个角度来解决多线程的并发访问。ThreadLocal会为每一个线程提供一个独立的变量副本，从而隔离了多个线程对数据的访问冲突。因为每一个线程都拥有自己的变量副本，从而也就没有必要对该变量进行同步了。ThreadLocal提供了线程安全的共享对象，在编写多线程代码时，可以把不安全的变量封装进ThreadLocal。\n"
+						+ "\n"
+						+ "由于ThreadLocal中可以持有任何类型的对象，低版本JDK所提供的get()返回的是Object对象，需要强制类型转换。但JDK5.0通过泛型很好的解决了这个问题，在一定程度地简化ThreadLocal的使用。\n"
+						+ "\n"
+						+ "概括起来说，对于多线程资源共享的问题，同步机制采用了“以时间换空间”的方式，而ThreadLocal采用了“以空间换时间”的方式。前者仅提供一份变量，让不同的线程排队访问，而后者为每一个线程都提供了一份变量，因此可以同时访问而互不影响。\n"
+						+ "" + new Date(),
+				"215  spring  注解 作用域\n" + "\n" + "singleton\n" + "\n"
+						+ "当一个bean的作用域为singleton, 那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。\n"
+						+ "\n" + "prototype\n" + "\n"
+						+ "Prototype作用域的bean会导致在每次对该bean请求（将其注入到另一个bean中，或者以程序的方式调用容器的getBean() 方法）时都会创建一个新的bean实例。根据经验，对所有有状态的bean应该使用prototype作用域，而对无状态的bean则应该使用 singleton作用域\n"
+						+ "\n" + "request\n" + "\n"
+						+ "在一次HTTP请求中，一个bean定义对应一个实例；即每次HTTP请求将会有各自的bean实例， 它们依据某个bean定义创建而成。该作用 域仅在基于web的Spring ApplicationContext情形下有效。\n"
+						+ "\n" + "session\n" + "\n"
+						+ "在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。\n" + "\n"
+						+ "global session\n" + "\n"
+						+ "在一个全局的HTTP Session中，一个bean定义对应一个实例。典型情况下，仅在使用portlet context的时候有效。该作用域仅在基于 web的Spring ApplicationContext情形下有效。"
+						+ new Date(),
+				"216 谈谈你对spring IOC和DI的理解，它们有什么区别？\n" + "\n"
+						+ "IoC Inverse of Control 反转控制的概念，就是将原本在程序中手动创建UserService对象的控制权，交由Spring框架管理，简单说，就是创建UserService对象控制权被反转到了Spring框架\n"
+						+ "\n" + "DI：Dependency Injection 依赖注入，在Spring框架负责创建Bean对象时，动态的将依赖对象注入到Bean组件\n" + ""
+						+ new Date(),
+				"217 Spring的核心类有哪些，各有什么作用？\n" + "\n" + "BeanFactory：产生一个新的实例，可以实现单例模式\n" + "\n"
+						+ "BeanWrapper：提供统一的get及set方法\n" + "\n" + "ApplicationContext:提供框架的实现，包括BeanFactory的所有功能\n" + ""
+						+ new Date(),
+				"218 介绍一下Spring的事物管理\n" + "\n"
+						+ "    事务就是对一系列的数据库操作（比如插入多条数据）进行统一的提交或回滚操作，如果插入成功，那么一起成功，如果中间有一条出现异常，那么回滚之前的所有操作。这样可以防止出现脏数据，防止数据库数据出现问题。\n"
+						+ "\n"
+						+ "开发中为了避免这种情况一般都会进行事务管理。Spring中也有自己的事务管理机制，一般是使用TransactionMananger进行管 理，可以通过Spring的注入来完成此功能。spring提供了几个关于事务处理的类：\n"
+						+ "\n" + "TransactionDefinition //事务属性定义\n" + "\n" + "TranscationStatus //代表了当前的事务，可以提交，回滚。\n"
+						+ "\n"
+						+ "PlatformTransactionManager这个是spring提供的用于管理事务的基础接口，其下有一个实现的抽象类 AbstractPlatformTransactionManager,我们使用的事务管理类例如 DataSourceTransactionManager等都是这个类的子类。\n"
+						+ "\n" + "一般事务定义步骤：\n" + "\n" + " \n" + "\n"
+						+ "    TransactionDefinition td =newTransactionDefinition();\n"
+						+ "    TransactionStatus ts = transactionManager.getTransaction(td);\n" + "    try{ \n"
+						+ "        //do sth\n" + "        transactionManager.commit(ts);\n"
+						+ "    }catch(Exception e){\n" + "        transactionManager.rollback(ts);\n" + "    }\n" + "\n"
+						+ "    spring提供的事务管理可以分为两类：编程式的和声明式的。编程式的，比较灵活，但是代码量大，存在重复的代码比较多；声明式的比编程式的更灵活。 " + new Date(),
+				"219 编程式主要使用transactionTemplate。省略了部分的提交，回滚，一系列的事务对象定义，需注入事务管理对象.\n" + "\n" + " \n" + "\n"
+						+ "    void add(){\n" + "        transactionTemplate.execute(newTransactionCallback(){\n"
+						+ "            pulic Object doInTransaction(TransactionStatus ts){\n"
+						+ "             //do sth\n" + "            }\n" + "        }\n" + "    }\n" + "\n" + "声明式：\n"
+						+ "\n" + " \n" + "\n"
+						+ "使用TransactionProxyFactoryBean:PROPAGATION_REQUIRED PROPAGATION_REQUIRED PROPAGATION_REQUIRED,readOnly\n"
+						+ "\n" + "围绕Poxy的动态代理 能够自动的提交和回滚事务\n" + "\n"
+						+ "org.springframework.transaction.interceptor.TransactionProxyFactoryBean\n" + "\n"
+						+ "PROPAGATION_REQUIRED–支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。\n" + "\n"
+						+ "PROPAGATION_SUPPORTS–支持当前事务，如果当前没有事务，就以非事务方式执行。\n" + "\n"
+						+ "PROPAGATION_MANDATORY–支持当前事务，如果当前没有事务，就抛出异常。\n" + "\n"
+						+ "PROPAGATION_REQUIRES_NEW–新建事务，如果当前存在事务，把当前事务挂起。\n" + "\n"
+						+ "PROPAGATION_NOT_SUPPORTED–以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。\n" + "\n"
+						+ "PROPAGATION_NEVER–以非事务方式执行，如果当前存在事务，则抛出异常。\n" + "\n"
+						+ "PROPAGATION_NESTED–如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与 PROPAGATION_REQUIRED类似的操作。" + new Date(),
+				"220 事务传播行为种类\n" + "\n" + "Spring在TransactionDefinition接口中规定了7种类型的事务传播行为，它们规定了事务方法和事务方法发生嵌套调用时事务如何进行传播："
+						+ new Date(),
+				"221" + new Date(), "222" + new Date(), "223" + new Date(), "224" + new Date(), "225" + new Date(),
+				"226" + new Date(), "227" + new Date(), "228" + new Date(), "229" + new Date(), "230" + new Date(),
+				"231" + new Date(), "232" + new Date(), "233" + new Date(), "234" + new Date(), "235" + new Date(),
+				"236" + new Date(), "237" + new Date(), "238" + new Date(), "239" + new Date(), "240" + new Date(),
+				"241" + new Date(), "242" + new Date(), "243" + new Date(), "244" + new Date(), "245" + new Date(),
+				"246" + new Date(), "247" + new Date(), "248" + new Date(), "249" + new Date(), "250" + new Date(),
+				"251" + new Date(), "252" + new Date(), "253" + new Date(), "254" + new Date(), "255" + new Date(),
+				"256" + new Date(), "257" + new Date(), "258" + new Date(), "259" + new Date(), "260" + new Date(),
+				"261" + new Date(), "262" + new Date(), "263" + new Date(), "264" + new Date(), "265" + new Date(),
+				"266" + new Date(), "267" + new Date(), "268" + new Date(), "269" + new Date(), "270" + new Date(),
+				"271" + new Date(), "272" + new Date(), "273" + new Date(), "274" + new Date(), "275" + new Date(),
+				"276" + new Date(), "277" + new Date(), "278" + new Date(), "279" + new Date(), "280" + new Date(),
+				"281" + new Date(), "282" + new Date(), "283" + new Date(), "284" + new Date(), "285" + new Date(),
+				"286" + new Date(), "287" + new Date(), "288" + new Date(), "289" + new Date(), "290" + new Date(),
+				"291" + new Date(), "292" + new Date(), "293" + new Date(), "294" + new Date(), "295" + new Date(),
+				"296" + new Date(), "297" + new Date(), "298" + new Date(), "299" + new Date(), "300" + new Date(),
+				"301" + new Date(), "302" + new Date(), "303" + new Date(), "304" + new Date(), "305" + new Date(),
+				"306" + new Date(), "307" + new Date(), "308" + new Date(), "309" + new Date(), "310" + new Date(),
+				"311" + new Date(), "312" + new Date(), "313" + new Date(), "314" + new Date(), "315" + new Date(),
+				"316" + new Date(), "317" + new Date(), "318" + new Date(), "319" + new Date(), "320" + new Date(),
+				"321" + new Date(), "322" + new Date(), "323" + new Date(), "324" + new Date(), "325" + new Date(),
+				"326" + new Date(), "327" + new Date(), "328" + new Date(), "329" + new Date(), "330" + new Date(),
+				"331" + new Date(), "332" + new Date(), "333" + new Date(), "334" + new Date(), "335" + new Date(),
+				"336" + new Date(), "337" + new Date(), "338" + new Date(), "339" + new Date(), "340" + new Date(),
+				"341" + new Date(), "342" + new Date(), "343" + new Date(), "344" + new Date(), "345" + new Date(),
+				"346" + new Date(), "347" + new Date(), "348" + new Date(), "349" + new Date(), "350" + new Date(),
+				"351" + new Date(), "352" + new Date(), "353" + new Date(), "354" + new Date(), "355" + new Date(),
+				"356" + new Date(), "357" + new Date(), "358" + new Date(), "359" + new Date(), "360" + new Date(),
+				"361" + new Date(), "362" + new Date(), "363" + new Date(), "364" + new Date(), "365" + new Date(),
+				"366" + new Date(), "367" + new Date(), "368" + new Date(), "369" + new Date(), "370" + new Date(),
+				"371" + new Date(), "372" + new Date(), "373" + new Date(), "374" + new Date(), "375" + new Date(),
+				"376" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
