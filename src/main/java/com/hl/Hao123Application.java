@@ -6,6 +6,7 @@
  *******************************************************************************/
 package com.hl;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -80,7 +81,7 @@ public class Hao123Application {
 			 * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
 			 * content + " \" }}"
 			 */
-			String content = randomShiti();
+			String content = randomShiti() + new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(new Date());
 			try {
 				log.info("22222222222222, " + new Date());
 				String token = tokenMap.get("access_token");
@@ -954,35 +955,47 @@ public class Hao123Application {
 						+ "\n" + "Redis提供的所有特性中，我感觉这个是喜欢的人最少的一个，虽然它为用户提供如果此多功能。" + new Date(),
 				"205 为何宁愿吃生活的苦，也不愿吃学习的苦 学习的基本过程 三步学习法 理解实践记忆  刻意练习  学习资料的筛选搜集整理和管理还有回顾  知识体系的建立  抽象思维的培养 环境和学习  整合学习流程"
 						+ new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(), "" + new Date(),
-				"" + new Date(), "" + new Date(), "" + new Date());
+				"206 这个是图灵学院张飞老师的讲课截图，他这里是这样讲的，因为远程调用银行接口，这里假设银行接口同步返回结果，这里耗时比较久，入过对调用银行接口的 代码也加上事务的话，会造成连接池占用。造成线程长时间在这里阻塞，占用连接资源，因为@Transactional这个是靠数据库连接对象来保证的，，所以这里 如果是调用银行接口同步返回结果的话，那么就不能在这条语句上加事务，并且为了外部事务的方法调用次方法将外部事务加进来，所以这里用propagation.NEVER 来控制。 其实我还是不明白这里取消事务控制跟接口调用耗时太久以及占用连接资源容易被耗尽之间是什么关系， ---- 昨天躺在床上,突然联想起来，这个事务用@Transactional来保证，可是这个是mybatis的一个注解，也就是说这个是用数据库连接来保证的， 这里一个事务就要消耗掉一个db连接，如果这个事务里面的代码一直不执行完，那么这个数据库连接就会一直被占用。\n"
+						+ "\n" + "还有，这个调用银行结果的处理有可能重复处理，上个月在捷顺我曾经写过话费充值的时候，遇到过这个问题们当时用的是乐观锁，版本号来解决这个问题。\n" + "\n"
+						+ "事务就是原子性" + new Date(),
+				"207 支付代码怎么写 黎活明的这个视频是可以学习一下的 http://study.163.com/course/introduction.htm?courseId=212009"
+						+ new Date(),
+				"208  站在上帝的角度看redis和zk分布式锁的优缺点\n" + "redis分布式锁安全性的探讨\n"
+						+ "http://blog.csdn.net/jackcaptain1015/article/details/71157004" + new Date(),
+				"209" + new Date(), "210" + new Date(), "211" + new Date(), "212" + new Date(), "213" + new Date(),
+				"214" + new Date(), "215" + new Date(), "216" + new Date(), "217" + new Date(), "218" + new Date(),
+				"219" + new Date(), "220" + new Date(), "221" + new Date(), "222" + new Date(), "223" + new Date(),
+				"224" + new Date(), "225" + new Date(), "226" + new Date(), "227" + new Date(), "228" + new Date(),
+				"229" + new Date(), "230" + new Date(), "231" + new Date(), "232" + new Date(), "233" + new Date(),
+				"234" + new Date(), "235" + new Date(), "236" + new Date(), "237" + new Date(), "238" + new Date(),
+				"239" + new Date(), "240" + new Date(), "241" + new Date(), "242" + new Date(), "243" + new Date(),
+				"244" + new Date(), "245" + new Date(), "246" + new Date(), "247" + new Date(), "248" + new Date(),
+				"249" + new Date(), "250" + new Date(), "251" + new Date(), "252" + new Date(), "253" + new Date(),
+				"254" + new Date(), "255" + new Date(), "256" + new Date(), "257" + new Date(), "258" + new Date(),
+				"259" + new Date(), "260" + new Date(), "261" + new Date(), "262" + new Date(), "263" + new Date(),
+				"264" + new Date(), "265" + new Date(), "266" + new Date(), "267" + new Date(), "268" + new Date(),
+				"269" + new Date(), "270" + new Date(), "271" + new Date(), "272" + new Date(), "273" + new Date(),
+				"274" + new Date(), "275" + new Date(), "276" + new Date(), "277" + new Date(), "278" + new Date(),
+				"279" + new Date(), "280" + new Date(), "281" + new Date(), "282" + new Date(), "283" + new Date(),
+				"284" + new Date(), "285" + new Date(), "286" + new Date(), "287" + new Date(), "288" + new Date(),
+				"289" + new Date(), "290" + new Date(), "291" + new Date(), "292" + new Date(), "293" + new Date(),
+				"294" + new Date(), "295" + new Date(), "296" + new Date(), "297" + new Date(), "298" + new Date(),
+				"299" + new Date(), "300" + new Date(), "301" + new Date(), "302" + new Date(), "303" + new Date(),
+				"304" + new Date(), "305" + new Date(), "306" + new Date(), "307" + new Date(), "308" + new Date(),
+				"309" + new Date(), "310" + new Date(), "311" + new Date(), "312" + new Date(), "313" + new Date(),
+				"314" + new Date(), "315" + new Date(), "316" + new Date(), "317" + new Date(), "318" + new Date(),
+				"319" + new Date(), "320" + new Date(), "321" + new Date(), "322" + new Date(), "323" + new Date(),
+				"324" + new Date(), "325" + new Date(), "326" + new Date(), "327" + new Date(), "328" + new Date(),
+				"329" + new Date(), "330" + new Date(), "331" + new Date(), "332" + new Date(), "333" + new Date(),
+				"334" + new Date(), "335" + new Date(), "336" + new Date(), "337" + new Date(), "338" + new Date(),
+				"339" + new Date(), "340" + new Date(), "341" + new Date(), "342" + new Date(), "343" + new Date(),
+				"344" + new Date(), "345" + new Date(), "346" + new Date(), "347" + new Date(), "348" + new Date(),
+				"349" + new Date(), "350" + new Date(), "351" + new Date(), "352" + new Date(), "353" + new Date(),
+				"354" + new Date(), "355" + new Date(), "356" + new Date(), "357" + new Date(), "358" + new Date(),
+				"359" + new Date(), "360" + new Date(), "361" + new Date(), "362" + new Date(), "363" + new Date(),
+				"364" + new Date(), "365" + new Date(), "366" + new Date(), "367" + new Date(), "368" + new Date(),
+				"369" + new Date(), "370" + new Date(), "371" + new Date(), "372" + new Date(), "373" + new Date(),
+				"374" + new Date(), "375" + new Date(), "376" + new Date());
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}
