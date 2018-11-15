@@ -46,6 +46,8 @@ public class Hao123Application {
 
 	static String token_time = "";
 
+	static int count = 0;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Hao123Application.class, args);
 		/////////////////////////////////////////////////////////////////////
@@ -53,7 +55,7 @@ public class Hao123Application {
 		// 参数：1、任务体 2、首次执行的延时时间
 		// 3、任务执行间隔 4、间隔时间单位
 		service.scheduleAtFixedRate(() -> {
-			System.out.println("更新access_token, " + new Date());
+			System.out.println("更新access_token, ");
 			try {
 				String str = HttpClientUtil.doGet(
 						"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx63e923c37a90e24e&secret=58e8da3e42d3e3b04db36af5dae8fdb1",
@@ -81,9 +83,13 @@ public class Hao123Application {
 			 * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
 			 * content + " \" }}"
 			 */
-			String content = randomShiti() + new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(new Date());
+			if (count < 20) {
+				count++;
+			}
+			String content = count + "-  " + randomShiti()
+					+ new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(new Date());
 			try {
-				log.info("22222222222222, " + new Date());
+				log.info("22222222222222, ");
 				String token = tokenMap.get("access_token");
 				Map<String, String> map = new HashMap<String, String>();
 				map.put("touser", "orR4l1sSeLPOQRpLkCC57sBU1fE0");
@@ -395,12 +401,12 @@ public class Hao123Application {
 				"97单例模式三种模式，饿汉、饱汉、双重锁模式，实例及优劣详解   https://blog.csdn.net/zhangliangzi/article/details/52438401\n" + " ",
 				"98 面向对象三大特性 六大原则  https://www.cnblogs.com/xijie/p/6068786.html ",
 				"99 https://www.cnblogs.com/butterfly100/p/9034281.html   分库分表思路",
-				"100  浅谈我对DDD领域驱动设计的理解  https://blog.csdn.net/heweimingming/article/details/78661540" + new Date(),
+				"100  浅谈我对DDD领域驱动设计的理解  https://blog.csdn.net/heweimingming/article/details/78661540",
 				"101  Condition有点意思\n" + "Condition con1 = new Condition.newCondition();\n"
 						+ "con1.await();   //让当前线程在这里wait();\n"
 						+ "con1.signal();  //唤醒一个被con1.await()的线程，继续执行后面的代码   \n"
-						+ "我很想写一个demo，按顺序让线程1，2，3分别执行1，2，3圈，循环往复，一个线程任务不能被其他线程断，可以用重入锁。或者synchronized" + new Date(),
-				"102 JAVA并行框架学习之ForkJoin\\n\" + \"https://www.cnblogs.com/jiyuqi/p/4547082.html\" " + new Date(),
+						+ "我很想写一个demo，按顺序让线程1，2，3分别执行1，2，3圈，循环往复，一个线程任务不能被其他线程断，可以用重入锁。或者synchronized",
+				"102 JAVA并行框架学习之ForkJoin\\n\" + \"https://www.cnblogs.com/jiyuqi/p/4547082.html\" ",
 				"103  package concurrent;\n" + "public class JoinDemo implements Runnable {\n"
 						+ "	public void run() {\n" + "		for (int i = 0; i < 100; i++) {\n" + "			try {\n"
 						+ "				Thread.sleep(1);\n" + "			} catch (InterruptedException e) {\n"
@@ -411,12 +417,10 @@ public class Hao123Application {
 						+ "		for (int i = 0; i < 100; i++) {\n" + "			if(i==50){\n"
 						+ "				t.join();\n" + "			}\n"
 						+ "			System.out.println(\"main \"+i);\n" + "		}\n"
-						+ "	}  你注意这里t.join()方法的出现一定是在t线程之外的另一个线程的代码中，就是让这个线程等一等，跟join的含义有什么区别，你可以把它理解为嫁接中的结合， 而且优先级比那个线程t.join()之后的代码执行优先级还要高。这个很有意思。 让我想起来了，那年过年在曹武大幺家里吃饭，张飞几个小家伙，菜都抢光。呵呵。 源码里面的注释 比较搞笑，一直要等到这个客人死亡，才能执行自己的代码，这么悲催。 /** * Waits for this thread to die. *     跟人家抢不赢了，就找个人去人家家里去说一声，等我执行完了，你再执行。 main 0 join 0 main 1 main 2 main 3 main 4 main 5 main 6 main 7 main 8 main 9 join 1 main 10 join 2 main 11 main 12 join 3 main 13 main 14 main 15 main 16 main 17 main 18 main 19 main 20 main 21 join 4 main 22 join 5 main 23 join 6 main 24 join 7 main 25 join 8 main 26 join 9 main 27 join 10 main 28 join 11 main 29 join 12 main 30 join 13 main 31 join 14 main 32 join 15 main 33 join 16 main 34 join 17 main 35 join 18 main 36 join 19 main 37 join 20 join 21 join 22 main 38 join 23 join 24 join 25 join 26 join 27 join 28 main 39 main 40 main 41 main 42 main 43 join 29 main 44 join 30 main 45 join 31 join 32 main 46 join 33 join 34 join 35 join 36 join 37 join 38 join 39 main 47 join 40 join 41 join 42 join 43 join 44 join 45 join 46 join 47 join 48 join 49 main 48 join 50 main 49 join 51 join 52 join 53 join 54 join 55 join 56 join 57 join 58 join 59 join 60 join 61 join 62 join 63 join 64 join 65 join 66 join 67 join 68 join 69 join 70 join 71 join 72 join 73 join 74 join 75 join 76 join 77 join 78 join 79 join 80 join 81 join 82 join 83 join 84 join 85 join 86 join 87 join 88 join 89 join 90 join 91 join 92 join 93 join 94 join 95 join 96 join 97 join 98 join 99 main 50 main 51 main 52 main 53 main 54 main 55 main 56 main 57 main 58 main 59 main 60 main 61 main 62 main 63 main 64 main 65 main 66 main 67 main 68 main 69 main 70 main 71 main 72 main 73 main 74 main 75 main 76 main 77 main 78 main 79 main 80 main 81 main 82 main 83 main 84 main 85 main 86 main 87 main 88 main 89 main 90 main 91 main 92 main 93 main 94 main 95 main 96 main 97 main 98 main 99"
-						+ new Date(),
+						+ "	}  你注意这里t.join()方法的出现一定是在t线程之外的另一个线程的代码中，就是让这个线程等一等，跟join的含义有什么区别，你可以把它理解为嫁接中的结合， 而且优先级比那个线程t.join()之后的代码执行优先级还要高。这个很有意思。 让我想起来了，那年过年在曹武大幺家里吃饭，张飞几个小家伙，菜都抢光。呵呵。 源码里面的注释 比较搞笑，一直要等到这个客人死亡，才能执行自己的代码，这么悲催。 /** * Waits for this thread to die. *     跟人家抢不赢了，就找个人去人家家里去说一声，等我执行完了，你再执行。 main 0 join 0 main 1 main 2 main 3 main 4 main 5 main 6 main 7 main 8 main 9 join 1 main 10 join 2 main 11 main 12 join 3 main 13 main 14 main 15 main 16 main 17 main 18 main 19 main 20 main 21 join 4 main 22 join 5 main 23 join 6 main 24 join 7 main 25 join 8 main 26 join 9 main 27 join 10 main 28 join 11 main 29 join 12 main 30 join 13 main 31 join 14 main 32 join 15 main 33 join 16 main 34 join 17 main 35 join 18 main 36 join 19 main 37 join 20 join 21 join 22 main 38 join 23 join 24 join 25 join 26 join 27 join 28 main 39 main 40 main 41 main 42 main 43 join 29 main 44 join 30 main 45 join 31 join 32 main 46 join 33 join 34 join 35 join 36 join 37 join 38 join 39 main 47 join 40 join 41 join 42 join 43 join 44 join 45 join 46 join 47 join 48 join 49 main 48 join 50 main 49 join 51 join 52 join 53 join 54 join 55 join 56 join 57 join 58 join 59 join 60 join 61 join 62 join 63 join 64 join 65 join 66 join 67 join 68 join 69 join 70 join 71 join 72 join 73 join 74 join 75 join 76 join 77 join 78 join 79 join 80 join 81 join 82 join 83 join 84 join 85 join 86 join 87 join 88 join 89 join 90 join 91 join 92 join 93 join 94 join 95 join 96 join 97 join 98 join 99 main 50 main 51 main 52 main 53 main 54 main 55 main 56 main 57 main 58 main 59 main 60 main 61 main 62 main 63 main 64 main 65 main 66 main 67 main 68 main 69 main 70 main 71 main 72 main 73 main 74 main 75 main 76 main 77 main 78 main 79 main 80 main 81 main 82 main 83 main 84 main 85 main 86 main 87 main 88 main 89 main 90 main 91 main 92 main 93 main 94 main 95 main 96 main 97 main 98 main 99",
 				"104 Synchronized\n"
 						+ "这篇文章讲的特别好，还特别讲了为什么 “synchronized加持的方法或者代码块有可能多个线程可以同时执行，在锁对象的时候，而却对象非单例，而且多个线程并不是\n"
-						+ "公用一个实例的时候，其实这时候多个线程之间没有竞争关系的，当然可以多个线程同时执行这段代码块啊”\n" + "http://www.importnew.com/20444.html"
-						+ new Date(),
+						+ "公用一个实例的时候，其实这时候多个线程之间没有竞争关系的，当然可以多个线程同时执行这段代码块啊”\n" + "http://www.importnew.com/20444.html",
 				"105 import java.util.concurrent.ExecutorService;\n" + "import java.util.concurrent.Executors;\n"
 						+ "public class ThreadA {\n" + "	static int i = 1;\n"
 						+ "	public static void main(String[] args) {\n" + "		fixedThreadPool();\n"
@@ -445,7 +449,7 @@ public class Hao123Application {
 						+ "					for (int j = 1; j <= 5; j++) { //假设j代表绕操场跑几圈\n"
 						+ "						System.out.println(Thread.currentThread().getName()+\"目前正在跑第\"+task+\"个任务中的第\"+j+\"圈\");\n"
 						+ "					}\n" + "				}\n" + "			});\n" + "		}\n" + "	}\n"
-						+ "}\n" + "" + new Date(),
+						+ "}\n" + "",
 				"106 \n" + "\n" + "这种搞法太粗犷了，每次都新建一个线程，太浪费了，迟早会崩掉的。 看ThreadB1\n" + "\n" + "public class ThreadB {\n"
 						+ "	static int i = 1;\n" + "	public static void main(String[] args) {\n"
 						+ "		while(true) {\n" + "		 new Thread(new Runnable() {\n" + "			@Override\n"
@@ -466,25 +470,24 @@ public class Hao123Application {
 						+ "								e.printStackTrace();\n" + "							}\n"
 						+ "							System.out.println(\"消费者：\"+(--i));\n" + "						}\n"
 						+ "					}\n" + "				}\n" + "			}).start();\n" + "		}\n"
-						+ "	}\n" + "}\n" + "\n" + "" + new Date(),
+						+ "	}\n" + "}\n" + "\n" + "",
 				"107  ThreadLocal钻进去看原理钻进范冰冰也就这么回事.md\n"
-						+ "https://github.com/huangleisir/captain_diary/blob/master/Concurrent/ThreadLocal%E9%92%BB%E8%BF%9B%E5%8E%BB%E7%9C%8B%E5%8E%9F%E7%90%86%E9%92%BB%E8%BF%9B%E8%8C%83%E5%86%B0%E5%86%B0%E4%B9%9F%E5%B0%B1%E8%BF%99%E4%B9%88%E5%9B%9E%E4%BA%8B.md"
-						+ new Date(),
+						+ "https://github.com/huangleisir/captain_diary/blob/master/Concurrent/ThreadLocal%E9%92%BB%E8%BF%9B%E5%8E%BB%E7%9C%8B%E5%8E%9F%E7%90%86%E9%92%BB%E8%BF%9B%E8%8C%83%E5%86%B0%E5%86%B0%E4%B9%9F%E5%B0%B1%E8%BF%99%E4%B9%88%E5%9B%9E%E4%BA%8B.md",
 				"108  java 多线程同步工具这个讲的最好\n" + "http://blog.csdn.net/hejingyuan6/article/details/47070443\n"
-						+ "可惜没有代码 跟上 这是个遗憾" + new Date(),
+						+ "可惜没有代码 跟上 这是个遗憾",
 				"109 java并发编程读后感\n"
 						+ "  http://blog.csdn.net/songxinjianqwe/article/details/72789899?locationNum=15&fps=1\n"
-						+ "以后还是尽量别贴url, 文字贴到这里来。" + new Date(),
+						+ "以后还是尽量别贴url, 文字贴到这里来。",
 				"110 java5里面的读写锁跟mysql里面的读写锁是不是异曲同工之妙\n"
 						+ "mysql里面的读写锁，昨天配置这个mysql主从配置的时候，还配置了这个读写锁，先给主库上read lock,从库配置完重启后，再释放主库的锁用unlock lock\n"
 						+ "\n" + "命令吧好像。\n" + "\n"
 						+ "java5的读写锁的妙用，用在缓存的读写里面。是怕出现脏读，幻读。仅仅是get，set操作倒还好，就是怕前面还有if条件判断，那就有可能出现中间wait（if判断完\n"
-						+ "wait（），\n" + "不能马上执行后面的语句，这就完了）" + new Date(),
+						+ "wait（），\n" + "不能马上执行后面的语句，这就完了）",
 				"111 java并发编程读后感\n"
 						+ "http://blog.csdn.net/songxinjianqwe/article/details/72789899?locationNum=15&fps=1\n"
-						+ "以后还是尽量别贴url, 文字贴到这里来。" + new Date(),
+						+ "以后还是尽量别贴url, 文字贴到这里来。",
 				"112 notify()和notifyAll()区别\n" + " http://blog.csdn.net/cloudeagle_bupt/article/details/21378283\n"
-						+ "想想yield()方法怎么用的。感觉这方法没啥用，notify()  notifyAll()还有点意思\n" + "改造一下 更新意思" + new Date(),
+						+ "想想yield()方法怎么用的。感觉这方法没啥用，notify()  notifyAll()还有点意思\n" + "改造一下 更新意思",
 				"113 \n" + "volatile关键字解析\n"
 						+ "http://www.cnblogs.com/dolphin0520/p/3920373.html 这一篇对volatile的解读算挖到根了  \n"
 						+ "这里面引入了intel CPU 的一个高速缓存的概念\n" + "我的理解没错，这个高速缓存是属于CPU的一部分的。\n"
@@ -494,27 +497,24 @@ public class Hao123Application {
 						+ "比如i++,这个命令的操作是分两部完成的，先读取i的值，然后加1，可是中间有可能被另一个线程干扰。\n"
 						+ "你刚读完值，别的线程已经将该值修改了，你再加1并不是在新值上面加，为什么呢，如果你重新读取这个值你可以读到update 后的值，问题是你以及你给读过了，\n"
 						+ "不可能重复读第二回。\n"
-						+ "再举个例子，火车票多线程出售，if(count>0){count--;} if判断跟后面的count-- 操作有可能被截胡。被干扰。count被其他线程修改了。"
-						+ new Date(),
-				"114  dubbo 服务端用的注解@Service  客户端用的注解 @Refrence" + new Date(), "115" + new Date(),
+						+ "再举个例子，火车票多线程出售，if(count>0){count--;} if判断跟后面的count-- 操作有可能被截胡。被干扰。count被其他线程修改了。",
+				"114  dubbo 服务端用的注解@Service  客户端用的注解 @Refrence", "115",
 				"116 //重定向，不会共享request  \n" + "        //以下写法错误,该 \"/\"代表了8080端口  \n"
 						+ "        //response.sendRedirect(\"/student_list.jsp\");  \n"
 						+ "        response.sendRedirect(request.getContextPath() + \"/student_list.jsp\");        //转发,转发是在服务器端转发的，客户端是不知道的  \n"
-						+ "request.getRequestDispatcher(\"/student_list.jsp\").forward(request, response);   重定向 前一个request携带的参数就带不过去了"
-						+ new Date(),
-				"117 如何保证队列中消息的顺序  用同一个队列名  也就是将消息按顺序放进同一个队列中" + new Date(),
+						+ "request.getRequestDispatcher(\"/student_list.jsp\").forward(request, response);   重定向 前一个request携带的参数就带不过去了",
+				"117 如何保证队列中消息的顺序  用同一个队列名  也就是将消息按顺序放进同一个队列中",
 				"118  https://news.html5.qq.com/share/768397206588282402?ch=060000&tabId=0&tagId=0&docId=768397206588282402&url=http%3A%2F%2Fkuaibao.qq.com%2Fs%2F20180106G000P100&clientWidth=360&dataSrc=&sc_id=xkeHgtC  这篇是写的不错的 volatile 关键字只能保证共享变量对各线程的可见性，也就是各个线程都能读到这个变量的最新值，但是并不能保证线程安全性，这是两个概念。需要办证安全性 一是在读写这个变量的时候加锁，各种锁都可以，另外可以用原子类。 https://www.cnblogs.com/zhengbin/p/5657707.html   这篇文章里面讲的很好，备战阿里，不错，小伙子，阿里不要你要谁\n"
 						+ "\n" + "关于原子类，张孝祥讲的很好，atomic下面的原子类可以操作基本数据，数组中的基本数据，以及类中的基本数据。\n" + "\n"
-						+ "atomic原子类操作类中的成员变量" + new Date(),
+						+ "atomic原子类操作类中的成员变量",
 				"119  我记得在oppo面试的时候，问了一个这样的问题，10个写线程，只有一个读线程，那么这个时候有必要加读锁吗。 其实是要加的，加读锁是为了跟写锁互斥。\n" + "\n"
 						+ "类图是这样的， ReadWriteLock接口（这个接口跟Lock接口没有半毛钱关系）下面的实现类RenentrantReadWriteLock 张孝祥：读写锁卡农控制粒度比synchronized更加细致，且他只能在代码块上加锁，也就是说她锁的是对象，不能锁类。两个线程要达到互斥的效果，必须用同一个读写锁，那么用ReentrantLock行不行，达不到读写锁这么细颗粒度的控制。\n"
 						+ "\n"
-						+ "对象下面的读锁和写锁。锁是要上在共享的任务实例的内部方法中的代码块上的，而不是线程代码上。 读锁与读锁不互斥，读锁与写锁互斥，写锁与读锁互斥，写锁与写锁互斥。前提是都是同一个读写锁啊。面试题用读写锁写一个缓存类。 我在总结一下：一个线程读的时候，另一个线程不能写但可以读（正是因为这个特性使得写多读少的场景下提升了性能，因为面试经常问到）， 一个线程写的时候，另一个线程也不能读，夜不能写。欧拉。 从代码语句执行的角度来讲，就是一个线程执行了读锁语句，另一个线程还能执行读锁语句，但不能执行上写锁语句以及后面的代码，一个线程执行了上写锁语句， 另一个线程既不能执行上读锁语句以及后面的语句，也不能执行上写锁以及后面的语句。 我的一个疑问是，既然读锁与读锁不互斥，那么所线程都是读的情况下，还有加读锁的必要吗，那确实没必要，但是如果读的时候不希望有写锁包围的代码被执行， 那就必须要 加读锁，另外一块代码要加写锁。另外，我觉得不要被这个读写的名字局限了，凡是需要用到这个互斥特性的地方都可以使用读写锁。"
-						+ new Date(),
+						+ "对象下面的读锁和写锁。锁是要上在共享的任务实例的内部方法中的代码块上的，而不是线程代码上。 读锁与读锁不互斥，读锁与写锁互斥，写锁与读锁互斥，写锁与写锁互斥。前提是都是同一个读写锁啊。面试题用读写锁写一个缓存类。 我在总结一下：一个线程读的时候，另一个线程不能写但可以读（正是因为这个特性使得写多读少的场景下提升了性能，因为面试经常问到）， 一个线程写的时候，另一个线程也不能读，夜不能写。欧拉。 从代码语句执行的角度来讲，就是一个线程执行了读锁语句，另一个线程还能执行读锁语句，但不能执行上写锁语句以及后面的代码，一个线程执行了上写锁语句， 另一个线程既不能执行上读锁语句以及后面的语句，也不能执行上写锁以及后面的语句。 我的一个疑问是，既然读锁与读锁不互斥，那么所线程都是读的情况下，还有加读锁的必要吗，那确实没必要，但是如果读的时候不希望有写锁包围的代码被执行， 那就必须要 加读锁，另外一块代码要加写锁。另外，我觉得不要被这个读写的名字局限了，凡是需要用到这个互斥特性的地方都可以使用读写锁。",
 				"120 \n" + "并发编程的目的是为了让程序运行得更快，但是，并不是启动更多的线程就能让程序最大限度地并发执行。在进行并发编程时，\n"
 						+ "如果希望通过多线程执行任务让程序运行得更快，会面临非常多的挑战，比如上下文切换的问题、死锁的问题，以及受限于硬件和软件的资源限制问题，\n"
-						+ "本章会介绍几种并发编程的挑战以及解决方案。\n" + "\n" + "对于多核CPU，多线程才起优化作用" + new Date(),
-				"121 " + new Date(), "122" + new Date(), "123" + new Date(), "124" + new Date(), "125" + new Date(),
+						+ "本章会介绍几种并发编程的挑战以及解决方案。\n" + "\n" + "对于多核CPU，多线程才起优化作用",
+				"121 ", "122", "123", "124", "125",
 				"126  面试是一次双向的沟通过程，对求职者而言是找到心仪的东家，对公司而言是招揽合适的人才。面试官的目的是考察求职者能力，评估和岗位的匹配程度，\n" + "绝非用稀奇古怪的题目面倒求职者。\n"
 						+ "\n" + "本人近两年面试大几十位求职者，深感作为一个面试者不易，做好一个面试官更难，如何在极其有限的时间内准确的考察出求职的技术能力，对面试官的考验很大。\n"
 						+ "本文关注服务端技术能力的考察，包括考察的范围、方式和注意事项。性格、合作能力、抗压能力等的考察不在本文讨论范围内。\n" + "\n" + "态度指南\n" + "\n"
@@ -532,49 +532,45 @@ public class Hao123Application {
 						+ "不推荐压力面试，群面等面试方式\n" + "不推荐做题、现场写代码(时间成本太高，伪代码除外)，不推荐询问杂而无连贯的问题\n"
 						+ "能给出 github 的求职者往往具有更强的竞争力\n"
 						+ "面试的方式和考察重点因人而异，本人认为这种方式的面试效率较高，既适合现场面试、又适合电话面试，非常注重基础功底，基础功底扎实的工程师编程能力、\n"
-						+ "学习能力和调试能力都比较强悍，因为外部各异的技术归根结底总是有诸多相通之处。" + new Date(),
-				"127  https://github.com/huangleisir/captain_diary/blob/master/Concurrent/%E8%81%94%E6%98%93%E8%9E%8D%E9%9D%A2%E8%AF%95%E6%8C%91%E6%88%9830k.md"
-						+ new Date(),
+						+ "学习能力和调试能力都比较强悍，因为外部各异的技术归根结底总是有诸多相通之处。",
+				"127  https://github.com/huangleisir/captain_diary/blob/master/Concurrent/%E8%81%94%E6%98%93%E8%9E%8D%E9%9D%A2%E8%AF%95%E6%8C%91%E6%88%9830k.md",
 				"128 自己实现BlockingQueue\n" + "  张孝祥应该就是这么写阻塞队列的吧\n"
 						+ "http://blog.csdn.net/chenchaofuck1/article/details/51660119\n"
-						+ "其实也不难，用condition下面的await()和signal（）" + new Date(),
+						+ "其实也不难，用condition下面的await()和signal（）",
 				"129 昨晚睡觉又做噩梦高考，没有背作文\n" + "没有背诵三五十篇作文，怎么敢去高考\n" + "这就跟现在面试前没有去背面试题一样\n" + "噩梦拯救行动    高考作文拯救行动\n"
-						+ "这样 先把面试题背下来" + new Date(),
+						+ "这样 先把面试题背下来",
 				"130 一门研究数据之间关系的学问，目的是为了提高插入，读取，更新，删除效率\n" + "\n" + "分为两种关系\n" + " 逻辑关系\n" + "\n"
 						+ "    集合：同在一个范围内，数据之间没有关系\n" + "    线性：1对1 怎么举例子呢\n" + "    树形 1对多  比如文件夹就是树形结构\n" + "\n"
-						+ "物理关系 物理存储" + new Date(),
-				"131  一看就懂的模板方法模式  https://blog.csdn.net/u013565163/article/details/79285617" + new Date(),
-				"132 一次 HashSet 所引起的并发问题  https://mp.weixin.qq.com/s/-_6fDP6OSse-tL-ptjcbJw    HashSet的本质还是HashMap  如何线程安全的使用HashSet 使用ConcurrentHashMap   value写死成null"
-						+ new Date(),
+						+ "物理关系 物理存储",
+				"131  一看就懂的模板方法模式  https://blog.csdn.net/u013565163/article/details/79285617",
+				"132 一次 HashSet 所引起的并发问题  https://mp.weixin.qq.com/s/-_6fDP6OSse-tL-ptjcbJw    HashSet的本质还是HashMap  如何线程安全的使用HashSet 使用ConcurrentHashMap   value写死成null",
 				"133 局部性原理与磁盘预读\n" + "\n"
 						+ "由于存储介质的特性，磁盘本身存取就比主存慢很多，再加上机械运动耗费，磁盘的存取速度往往是主存的几百分分之一，因此为了提高效率，要尽量减少磁盘I/O。为了达到这个目的，磁盘往往不是严格按需读取，而是每次都会预读，即使只需要一个字节，磁盘也会从这个位置开始，顺序向后读取一定长度的数据放入内存。这样做的理论依据是计算机科学中著名的局部性原理：当一个数据被用到时，其附近的数据也通常会马上被使用。程序运行期间所需要的数据通常比较集中。\n"
 						+ "\n" + "由于磁盘顺序读取的效率很高（不需要寻道时间，只需很少的旋转时间），因此对于具有局部性的程序来说，预读可以提高I/O效率。\n" + "\n"
-						+ "预读的长度一般为页（page）的整倍数。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k），主存和磁盘以页为单位交换数据。当程序要读取的数据不在主存中时，会触发一个缺页异常，此时系统会向磁盘发出读盘信号，磁盘会找到数据的起始位置并向后连续读取一页或几页载入内存中，然后异常返回，程序继续运行。"
-						+ new Date(),
+						+ "预读的长度一般为页（page）的整倍数。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k），主存和磁盘以页为单位交换数据。当程序要读取的数据不在主存中时，会触发一个缺页异常，此时系统会向磁盘发出读盘信号，磁盘会找到数据的起始位置并向后连续读取一页或几页载入内存中，然后异常返回，程序继续运行。",
 				"134 B-/+Tree索引的性能分析\n" + "\n" + "到这里终于可以分析B-/+Tree索引的性能了。\n" + "\n"
 						+ "上文说过一般使用磁盘I/O次数评价索引结构的优劣。先从B-Tree分析，根据B-Tree的定义，可知检索一次最多需要访问h个节点。数据库系统的设计者巧妙利用了磁盘预读原理，将一个节点的大小设为等于一个页，这样每个节点只需要一次I/O就可以完全载入。为了达到这个目的，在实际实现B-Tree还需要使用如下技巧：\n"
 						+ "\n" + "每次新建节点时，直接申请一个页的空间，这样就保证一个节点物理上也存储在一个页里，加之计算机存储分配都是按页对齐的，就实现了一个node只需一次I/O。\n" + "\n"
 						+ "B-Tree中一次检索最多需要h-1次I/O（根节点常驻内存），渐进复杂度为O(h)=O(logdN)。一般实际应用中，出度d是非常大的数字，通常超过100，因此h非常小（通常不超过3）。\n"
 						+ "\n" + "而红黑树这种结构，h明显要深的多。由于逻辑上很近的节点（父子）物理上可能很远，无法利用局部性，所以红黑树的I/O渐进复杂度也为O(h)，效率明显比B-Tree差很多。\n"
-						+ "\n" + "综上所述，用B-Tree作为索引结构效率是非常高的。" + new Date(),
+						+ "\n" + "综上所述，用B-Tree作为索引结构效率是非常高的。",
 				"135 根据数据库的功能，可以在数据库设计器中创建三种索引：唯一索引、主键索引和聚集索引。 唯一索引\n" + "\n" + "唯一索引是不允许其中任何两行具有相同索引值的索引。\n" + "\n"
 						+ "当现有数据中存在重复的键值时，大多数数据库不允许将新创建的唯一索引与表一起保存。数据库还可能防止添加将在表中创建重复键值的新数据。例如，如果在employee表中职员的姓(lname)上创建了唯一索引，则任何两个员工都不能同姓。 主键索引 数据库表经常有一列或列组合，其值唯一标识表中的每一行。该列称为表的主键。 在数据库关系图中为表定义主键将自动创建主键索引，主键索引是唯一索引的特定类型。该索引要求主键中的每个值都唯一。当在查询中使用主键索引时，它还允许对数据的快速访问。 聚集索引 在聚集索引中，表中行的物理顺序与键值的逻辑（索引）顺序相同。一个表只能包含一个聚集索引。\n"
-						+ "\n" + "如果某索引不是聚集索引，则表中行的物理顺序与键值的逻辑顺序不匹配。与非聚集索引相比，聚集索引通常提供更快的数据访问速度。" + new Date(),
+						+ "\n" + "如果某索引不是聚集索引，则表中行的物理顺序与键值的逻辑顺序不匹配。与非聚集索引相比，聚集索引通常提供更快的数据访问速度。",
 				"136 5.索引的工作原理及其种类\n" + "\n" + "数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。\n" + "\n"
 						+ "在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。这种数据结构，就是索引。\n" + "\n"
-						+ "为表设置索引要付出代价的：一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间(因为索引也要随之变动)。" + new Date(),
+						+ "为表设置索引要付出代价的：一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间(因为索引也要随之变动)。",
 				"137 同样，对于有些列不应该创建索引。一般来说，不应该创建索引的的这些列具有下列特点：\n" + "\n"
 						+ "第一，对于那些在查询中很少使用或者参考的列不应该创建索引。这是因为，既然这些列很少使用到，因此有索引或者无索引，并不能提高查询速度。相反，由于增加了索引，反而降低了系统的维护速度和增大了空间需求。\n"
 						+ "\n"
 						+ "第二，对于那些只有很少数据值的列也不应该增加索引。这是因为，由于这些列的取值很少，例如人事表的性别列，在查询的结果中，结果集的数据行占了表中数据行的很大比例，即需要在表中搜索的数据行的比例很大。增加索引，并不能明显加快检索速度。\n"
 						+ "\n" + "第三，对于那些定义为text, image和bit数据类型的列不应该增加索引。这是因为，这些列的数据量要么相当大，要么取值很少。\n" + "\n"
-						+ "第四，当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。"
-						+ new Date(),
+						+ "第四，当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。",
 				"138 图展示了一种可能的索引方式。左边是数据表，一共有两列七条记录，最左边的是数据记录的物理地址（注意逻辑上相邻的记录在磁盘上也并不是一定物理相邻的）。为了加快Col2的查找，可以维护一个右边所示的二叉查找树，每个节点分别包含索引键值和一个指向对应数据记录物理地址的指针，这样就可以运用二叉查找在O(log2n)的复杂度内获取到相应数据。\n"
 						+ "\n" + "创建索引可以大大提高系统的性能。\n" + "\n" + "第一，通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。\n" + "\n"
 						+ "第二，可以大大加快数据的检索速度，这也是创建索引的最主要的原因。\n" + "\n" + "第三，可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。\n"
 						+ "\n" + "第四，在使用分组和排序子句进行数据检索时，同样可以显著减少查询中分组和排序的时间。\n" + "\n"
-						+ "第五，通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能。" + new Date(),
+						+ "第五，通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能。",
 				"139 也许会有人要问：增加索引有如此多的优点，为什么不对表中的每一个列创建一个索引呢？因为，增加索引也有许多不利的方面。\n" + "\n"
 						+ "第一，创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。\n" + "\n"
 						+ "第二，索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要的空间就会更大。\n" + "\n"
@@ -585,14 +581,12 @@ public class Hao123Application {
 						+ "\n"
 						+ "第二，对于那些只有很少数据值的列也不应该增加索引。这是因为，由于这些列的取值很少，例如人事表的性别列，在查询的结果中，结果集的数据行占了表中数据行的很大比例，即需要在表中搜索的数据行的比例很大。增加索引，并不能明显加快检索速度。\n"
 						+ "\n" + "第三，对于那些定义为text, image和bit数据类型的列不应该增加索引。这是因为，这些列的数据量要么相当大，要么取值很少。\n" + "\n"
-						+ "第四，当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。"
-						+ new Date(),
+						+ "第四，当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。",
 				"140 3.视图的作用，视图可以更改么？\n" + "\n"
 						+ "视图是虚拟的表，与包含数据的表不一样，视图只包含使用时动态检索数据的查询；不包含任何列或数据。使用视图可以简化复杂的sql操作，隐藏具体的细节，保护数据；视图创建后，可以使用与表相同的方式利用它们。\n"
 						+ "视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by 则对视图再次order by将被覆盖。\n"
 						+ "创建视图：create view XXX as XXXXXXXXXXXXXX;\n"
-						+ "对于某些视图比如未使用联结子查询分组聚集函数Distinct Union等，是可以对其更新的，对视图的更新将对基表进行更新；但是视图主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。"
-						+ new Date(),
+						+ "对于某些视图比如未使用联结子查询分组聚集函数Distinct Union等，是可以对其更新的，对视图的更新将对基表进行更新；但是视图主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。",
 				"141 4.drop,delete与truncate的区别\n" + "\n"
 						+ "drop直接删掉表 truncate删除表中数据，再插入时自增长id又从1开始 delete删除表中数据，可以加where字句。\n" + "\n"
 						+ "（1） DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行进行回滚操作。TRUNCATE TABLE 则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。\n"
@@ -612,18 +606,17 @@ public class Hao123Application {
 						+ "\n"
 						+ "（11） TRUNCATE TABLE 删除表中的所有行，但表结构及其列、约束、索引等保持不变。新行标识所用的计数值重置为该列的种子。如果想保留标识计数值，请改用 DELETE。如果要删除表定义及其数据，请使用 DROP TABLE 语句。\n"
 						+ "\n"
-						+ "（12） 对于由 FOREIGN KEY 约束引用的表，不能使用 TRUNCATE TABLE，而应使用不带 WHERE 子句的 DELETE 语句。由于 TRUNCATE TABLE 不记录在日志中，所以它不能激活触发器。"
-						+ new Date(),
+						+ "（12） 对于由 FOREIGN KEY 约束引用的表，不能使用 TRUNCATE TABLE，而应使用不带 WHERE 子句的 DELETE 语句。由于 TRUNCATE TABLE 不记录在日志中，所以它不能激活触发器。",
 				"142  MySQL经典面试题\n" + "1、MySQL的复制原理以及流程\n" + "\n" + "(1)、复制基本原理流程\n" + "\n"
 						+ "1. 主：binlog线程——记录下所有改变了数据库数据的语句，放进master上的binlog中；\n"
 						+ "2. 从：io线程——在使用start slave 之后，负责从master上拉取 binlog 内容，放进 自己的relay log中；\n"
-						+ "3. 从：sql执行线程——执行relay log中的语句；\n" + "\n" + "" + new Date(),
+						+ "3. 从：sql执行线程——执行relay log中的语句；\n" + "\n" + "",
 				"143 (2)、MySQL复制的线程有几个及之间的关联\n" + "\n" + "MySQL 的复制是基于如下 3 个线程的交互（ 多线程复制里面应该是 4 类线程）：\n"
 						+ "1. Master 上面的 binlog dump 线程，该线程负责将 master 的 binlog event 传到slave；\n"
 						+ "2. Slave 上面的 IO 线程，该线程负责接收 Master 传过来的 binlog，并写入 relay log；\n"
 						+ "3. Slave 上面的 SQL 线程，该线程负责读取 relay log 并执行；\n"
 						+ "4. 如果是多线程复制，无论是 5.6 库级别的假多线程还是 MariaDB 或者 5.7 的真正的多线程复制， SQL 线程只做 coordinator，只负责把 relay log 中的 binlog读出来然后交给 worker 线程， woker 线程负责具体 binlog event 的执行；\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"144 (3)、MySQL如何保证复制过程中数据一致性及减少数据同步延时\n" + "\n" + "一致性主要有以下几个方面：\n" + "复制代码\n" + "\n"
 						+ "1.在 MySQL5.5 以及之前， slave 的 SQL 线程执行的 relay log 的位置只能保存在文件（ relay-log.info）里面，并且该文件默认每执行 10000 次事务做一次同步到磁盘， 这意味着 slave 意外 crash 重启时， SQL 线程执行到的位置和数据库的数据是不一致的，将导致复制报错，如果不重搭复制，则有可能会\n"
 						+ "导致数据不一致。 MySQL 5.6 引入参数 relay_log_info_repository，将该参数设置为 TABLE 时， MySQL 将 SQL 线程执行到的位置存到mysql.slave_relay_log_info 表，这样更新该表的位置和 SQL 线程执行的用户事务绑定成一个事务，这样 slave 意外宕机后， slave 通过 innodb 的崩溃\n"
@@ -632,18 +625,17 @@ public class Hao123Application {
 						+ "3. MySQL 5.5 引入半同步复制， 用户安装半同步复制插件并且开启参数后，设置超时时间，可保证在超时时间内如果 binlog 不传到 slave 上面，那么用户提交事务时不会返回，直到超时后切成异步复制，但是如果切成异步之前用户线程提交时在 master 上面等待的时候，事务已经提交，该事务对 master\n"
 						+ "上面的其他 session 是可见的，如果这时 master 宕机，那么到 slave 上面该事务又不可见了，该问题直到 5.7 才解决；\n"
 						+ "4. MySQL 5.7 引入无损半同步复制，引入参 rpl_semi_sync_master_wait_point，该参数默认为 after_sync，指的是在切成半同步之前，事务不提交，而是接收到 slave 的 ACK 确认之后才提交该事务，从此，复制真正可以做到无损的了。\n"
-						+ "5.可以再说一下 5.7 的无损复制情况下， master 意外宕机，重启后发现有 binlog没传到 slave 上面，这部分 binlog 怎么办？？？分 2 种情况讨论， 1 宕机时已经切成异步了， 2 是宕机时还没切成异步？？？ 这个怎么判断宕机时有没有切成异步呢？？？ 分别怎么处理？？？"
-						+ new Date(),
+						+ "5.可以再说一下 5.7 的无损复制情况下， master 意外宕机，重启后发现有 binlog没传到 slave 上面，这部分 binlog 怎么办？？？分 2 种情况讨论， 1 宕机时已经切成异步了， 2 是宕机时还没切成异步？？？ 这个怎么判断宕机时有没有切成异步呢？？？ 分别怎么处理？？？",
 				"145 延时性：\n" + "\n"
 						+ " 5.5 是单线程复制， 5.6 是多库复制（对于单库或者单表的并发操作是没用的）， 5.7 是真正意义的多线程复制，它的原理是基于 group commit， 只要\n"
 						+ "master 上面的事务是 group commit 的，那 slave 上面也可以通过多个 worker线程去并发执行。 和 MairaDB10.0.0.5 引入多线程复制的原理基本一样。\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"146 2、MySQL中myisam与innodb的区别，至少5点\n" + "(1)、问5点不同\n" + "复制代码\n" + "\n" + "1.InnoDB支持事物，而MyISAM不支持事物\n"
 						+ "2.InnoDB支持行级锁，而MyISAM支持表级锁\n" + "3.InnoDB支持MVCC, 而MyISAM不支持\n" + "4.InnoDB支持外键，而MyISAM不支持\n"
 						+ "5.InnoDB不支持全文索引，而MyISAM支持。\n" + "6.InnoDB不能通过直接拷贝表文件的方法拷贝表到另外一台机器， myisam 支持\n"
-						+ "7.InnoDB表支持多种行格式， myisam 不支持\n" + "8.InnoDB是索引组织表， myisam 是堆表" + new Date(),
+						+ "7.InnoDB表支持多种行格式， myisam 不支持\n" + "8.InnoDB是索引组织表， myisam 是堆表",
 				"147 (2)、innodb引擎的4大特性\n" + "\n" + "1.插入缓冲（insert buffer)\n" + "2.二次写(double write)\n"
-						+ "3.自适应哈希索引(ahi)\n" + "4.预读(read ahead)\n" + "\n" + "" + new Date(),
+						+ "3.自适应哈希索引(ahi)\n" + "4.预读(read ahead)\n" + "\n" + "",
 				"148 (3)、各种不同 mysql 版本的Innodb的改进\n" + "复制代码\n" + "\n" + "MySQL5.6 下 Innodb 引擎的主要改进：\n"
 						+ "（ 1） online DDL\n" + "（ 2） memcached NoSQL 接口\n"
 						+ "（ 3） transportable tablespace（ alter table discard/import tablespace）\n"
@@ -652,11 +644,10 @@ public class Hao123Application {
 						+ "（ 6） Compressed row format 支持压缩表\n" + "\n" + "MySQL 5.7 innodb 引擎主要改进\n"
 						+ "（ 1） 修改 varchar 字段长度有时可以使用 online DDL\n" + "（ 2） Buffer pool 支持在线改变大小\n"
 						+ "（ 3） Buffer pool 支持导出部分比例\n" + "（ 4） 支持新建 innodb tablespace，并可以在其中创建多张表\n"
-						+ "（ 5） 磁盘临时表采用 innodb 存储，并且存储在 innodb temp tablespace 里面，以前是 myisam 存储\n" + "（ 6） 透明表空间压缩功能"
-						+ new Date(),
+						+ "（ 5） 磁盘临时表采用 innodb 存储，并且存储在 innodb temp tablespace 里面，以前是 myisam 存储\n" + "（ 6） 透明表空间压缩功能",
 				"149 (4)、2者select  count(*)哪个更快，为什么\n" + "\n" + "myisam更快，因为myisam内部维护了一个计数器，可以直接调取。\n" + "\n"
 						+ "(5)、2 者的索引的实现方式\n" + "\n" + "都是 B+树索引， Innodb 是索引组织表， myisam 是堆表， 索引组织表和堆表的区别要熟悉\n" + "\n"
-						+ "" + new Date(),
+						+ "",
 				"150 3、MySQL中varchar与char的区别以及varchar(50)中的50代表的涵义\n" + "(1)、varchar与char的区别\n" + "\n"
 						+ "在单字节字符集下， char（ N） 在内部存储的时候总是定长， 而且没有变长字段长度列表中。 在多字节字符集下面， char(N)如果存储的字节数超过 N，那么 char（ N）将和 varchar（ N）没有区别。在多字节字符集下面，如果存\n"
 						+ "储的字节数少于 N，那么存储 N 个字节，后面补空格，补到 N 字节长度。 都存储变长的数据和变长字段长度列表。 varchar(N)无论是什么字节字符集，都是变长的，即都存储变长数据和变长字段长度列表。\n"
@@ -664,7 +655,7 @@ public class Hao123Application {
 						+ "最多存放50个字符，varchar(50)和(200)存储hello所占空间一样，但后者在排序时会消耗更多内存，因为order by col采用fixed_length计算col长度(memory引擎也一样)。在早期 MySQL 版本中， 50 代表字节数，现在代表字符数。\n"
 						+ "\n" + "(3)、int（20）中20的涵义\n" + "\n" + "是指显示字符的长度\n"
 						+ "不影响内部存储，只是影响带 zerofill 定义的 int 时，前面补多少个 0，易于报表展示\n" + "\n" + "(4)、mysql为什么这么设计\n" + "\n"
-						+ "对大多数应用没有意义，只是规定一些工具用来显示字符的个数；int(1)和int(20)存储和计算均一样；\n" + "\n" + "" + new Date(),
+						+ "对大多数应用没有意义，只是规定一些工具用来显示字符的个数；int(1)和int(20)存储和计算均一样；\n" + "\n" + "",
 				"151 4、innodb的事务与日志的实现方式\n" + "\n" + "(1)、有多少种日志\n" + "\n" + "redo和undo\n" + "\n" + "(2)、日志的存放形式\n"
 						+ "\n"
 						+ "redo：在页修改的时候，先写到 redo log buffer 里面， 然后写到 redo log 的文件系统缓存里面(fwrite)，然后再同步到磁盘文件（ fsync）。\n"
@@ -672,7 +663,7 @@ public class Hao123Application {
 						+ "\n" + "(3)、事务是如何通过日志来实现的，说得越深入越好\n" + "\n" + "基本流程如下：\n"
 						+ "因为事务在修改页时，要先记 undo，在记 undo 之前要记 undo 的 redo， 然后修改数据页，再记数据页修改的 redo。 Redo（里面包括 undo 的修改） 一定要比数据页先持久化到磁盘。 当事务需要回滚时，因为有 undo，可以把数据页回滚到前镜像的\n"
 						+ "状态，崩溃恢复时，如果 redo log 中事务没有对应的 commit 记录，那么需要用 undo把该事务的修改回滚到事务开始之前。 如果有 commit 记录，就用 redo 前滚到该事务完成时并提交掉。\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"152 5、MySQL binlog的几种日志录入格式以及区别\n" + "\n" + "(1)、 各种日志格式的涵义\n" + "复制代码\n" + "\n"
 						+ "1.Statement：每一条会修改数据的sql都会记录在binlog中。\n"
 						+ "优点：不需要记录每一行的变化，减少了binlog日志量，节约了IO，提高性能。(相比row能节约多少性能 与日志量，这个取决于应用的SQL情况，正常同一条记录修改或者插入row格式所产生的日志量还小于Statement产生的日志量，\n"
@@ -691,12 +682,11 @@ public class Hao123Application {
 						+ "在一条 SQL 操作了多行数据时， statement 更节省空间， row 更占用空间。但是 row模式更可靠。\n" + "\n"
 						+ "(3)、结合第一个问题，每一种日志格式在复制中的优劣\n" + "\n"
 						+ "Statement 可能占用空间会相对小一些，传送到 slave 的时间可能也短，但是没有 row模式的可靠。 Row 模式在操作多行数据时更占用空间， 但是可靠。\n" + "\n"
-						+ "" + new Date(),
+						+ "",
 				"153 6、下MySQL数据库cpu飙升到500%的话他怎么处理？\n" + "\n"
 						+ "当 cpu 飙升到 500%时，先用操作系统命令 top 命令观察是不是 mysqld 占用导致的，如果不是，找出占用高的进程，并进行相关处理。如果是 mysqld 造成的， show processlist，看看里面跑的 session 情况，是不是有消耗资源的 sql 在运行。找出消耗高的 sql，\n"
 						+ "看看执行计划是否准确， index 是否缺失，或者实在是数据量太大造成。一般来说，肯定要 kill 掉这些线程(同时观察 cpu 使用率是否下降)，等进行相应的调整(比如说加索引、改 sql、改内存参数)之后，再重新跑这些 SQL。也有可能是每个 sql 消耗资源并不多，但是突然之间，\n"
-						+ "有大量的 session 连进来导致 cpu 飙升，这种情况就需要跟应用一起来分析为何连接数会激增，再做出相应的调整，比如说限制连接数等\n" + "\n" + ""
-						+ new Date(),
+						+ "有大量的 session 连进来导致 cpu 飙升，这种情况就需要跟应用一起来分析为何连接数会激增，再做出相应的调整，比如说限制连接数等\n" + "\n" + "",
 				"154 7、sql优化\n" + "\n" + "(1)、explain出来的各种item的意义\n" + "复制代码\n" + "\n"
 						+ "id:每个被独立执行的操作的标志，表示对象被操作的顺序。一般来说， id 值大，先被执行；如果 id 值相同，则顺序从上到下。\n"
 						+ "select_type：查询中每个 select 子句的类型。\n" + "table:名字，被操作的对象名称，通常的表名(或者别名)，但是也有其他格式。\n"
@@ -709,7 +699,7 @@ public class Hao123Application {
 						+ "\n" + "(3)、explain 中的索引问题\n" + "\n"
 						+ "Explain 结果中，一般来说，要看到尽量用 index(type 为 const、 ref 等， key 列有值)，避免使用全表扫描(type 显式为 ALL)。比如说有 where 条件且选择性不错的列，需要建立索引。\n"
 						+ "被驱动表的连接列，也需要建立索引。被驱动表的连接列也可能会跟 where 条件列一起建立联合索引。当有排序或者 group by 的需求时，也可以考虑建立索引来达到直接排序和汇总的需求。\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"155 8、备份计划，mysqldump以及xtranbackup的实现原理\n" + "\n" + "(1)、备份计划\n" + "\n"
 						+ "视库的大小来定，一般来说 100G 内的库，可以考虑使用 mysqldump 来做，因为 mysqldump更加轻巧灵活，备份时间选在业务低峰期，可以每天进行都进行全量备份(mysqldump 备份\n"
 						+ "出来的文件比较小，压缩之后更小)。100G 以上的库，可以考虑用 xtranbackup 来做，备份速度明显要比 mysqldump 要快。一般是选择一周一个全备，其余每天进行增量备份，备份时间为业务低峰期。\n"
@@ -726,20 +716,20 @@ public class Hao123Application {
 						+ "xtrabackup 属于物理备份，直接拷贝表空间文件，同时不断扫描产生的 redo 日志并保存下来。最后完成 innodb 的备份后，会做一个 flush engine logs 的操作(老版本在有 bug，在5.6 上不做此操作会丢数据)，确保所有的 redo log 都已经落盘(涉及到事务的两阶段提交\n"
 						+ "概念，因为 xtrabackup 并不拷贝 binlog，所以必须保证所有的 redo log 都落盘，否则可能会丢最后一组提交事务的数据)。这个时间点就是 innodb 完成备份的时间点，数据文件虽然不是一致性的，但是有这段时间的 redo 就可以让数据文件达到一致性(恢复的时候做的事\n"
 						+ "情)。然后还需要 flush tables with read lock，把 myisam 等其他引擎的表给备份出来，备份完后解锁。 这样就做到了完美的热备。\n" + "\n"
-						+ "" + new Date(),
+						+ "",
 				"156 10、500台db，在最快时间之内重启\n" + "\n"
 						+ "可以使用批量 ssh 工具 pssh 来对需要重启的机器执行重启命令。 也可以使用 salt（前提是客户端有安装 salt）或者 ansible（ ansible 只需要 ssh 免登通了就行）等多线程工具同时操作多台服务器\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"157 13、你是否做过主从一致性校验，如果有，怎么做的，如果没有，你打算怎么做？\n" + "\n"
-						+ "主从一致性校验有多种工具 例如checksum、mysqldiff、pt-table-checksum等\n" + "\n" + "" + new Date(),
+						+ "主从一致性校验有多种工具 例如checksum、mysqldiff、pt-table-checksum等\n" + "\n" + "",
 				"158 14、表中有大字段X(例如：text类型)，且字段X不会经常更新，以读为为主，请问您是选择拆成子表，还是继续放一起?写出您这样选择的理由\n" + "\n"
 						+ "答：拆带来的问题：连接消耗 + 存储拆分空间；不拆可能带来的问题：查询性能；\n"
 						+ "如果能容忍拆分带来的空间问题,拆的话最好和经常要查询的表的主键在物理结构上放置在一起(分区) 顺序IO,减少连接消耗,最后这是一个文本列再加上一个全文索引来尽量抵消连接消耗\n"
-						+ "如果能容忍不拆分带来的查询性能损失的话:上面的方案在某个极致条件下肯定会出现问题,那么不拆就是最好的选择\n" + "\n" + "" + new Date(),
+						+ "如果能容忍不拆分带来的查询性能损失的话:上面的方案在某个极致条件下肯定会出现问题,那么不拆就是最好的选择\n" + "\n" + "",
 				"159 15、MySQL中InnoDB引擎的行锁是通过加在什么上完成(或称实现)的？为什么是这样子的？\n" + "\n" + "答：InnoDB是基于索引来完成行锁\n"
 						+ "例: select * from tab_with_index where id = 1 for update;\n"
 						+ "for update 可以根据条件来完成行锁锁定,并且 id 是有索引键的列,\n" + "如果 id 不是索引键那么InnoDB将完成表锁,,并发将无从谈起\n" + "\n"
-						+ "" + new Date(),
+						+ "",
 				"160 16、如何从mysqldump产生的全库备份中只恢复某一个库、某一张表？\n" + "复制代码\n" + "\n" + "全库备份\n"
 						+ "[root@HE1 ~]# mysqldump -uroot -p --single-transaction -A --master-data=2 >dump.sql\n"
 						+ "只还原erp库的内容\n" + "[root@HE1 ~]# mysql -uroot -pMANAGER erp --one-database <dump.sql\n" + "\n"
@@ -755,11 +745,10 @@ public class Hao123Application {
 						+ ") ENGINE=InnoDBAUTO_INCREMENT=4 DEFAULT CHARSET=utf8;\n"
 						+ "/*!40101 SETcharacter_set_client = @saved_cs_client */;\n" + " \n" + "从全库备份中抽取出t表的内容\n"
 						+ "[root@HE1 ~]# grep'INSERT INTO `t`' dump.sql\n"
-						+ "INSERT INTO `t`VALUES (0,0,''),(1,0,'aa'),(2,0,'bbb'),(3,25,'helei');\n" + "\n" + "复制代码"
-						+ new Date(),
+						+ "INSERT INTO `t`VALUES (0,0,''),(1,0,'aa'),(2,0,'bbb'),(3,25,'helei');\n" + "\n" + "复制代码",
 				"161 17、在当前的工作中，你碰到到的最大的 mysql db 问题以及如何解决的？\n" + "\n"
 						+ "可以选择一个处理过的比较棘手的案例，或者选择一个老师在课程上讲过的死锁的案例;没有及时 Purge + insert 唯一索引造成的死锁：具体案例可以参考学委笔记。\n" + "\n"
-						+ "" + new Date(),
+						+ "",
 				"162 18、请简洁地描述下 MySQL 中 InnoDB 支持的四种事务隔离级别名称，以及逐级之间的区别？\n" + "\n" + "(1)、事物的4种隔离级别\n" + "\n"
 						+ "读未提交(read uncommitted)\n" + "读已提交(read committed)\n" + "可重复读(repeatable read)\n"
 						+ "串行(serializable)\n" + "\n" + "(2)、不同级别的现象\n" + "\n"
@@ -767,38 +756,34 @@ public class Hao123Application {
 						+ "Read Committed:允许不可重复读取，但不允许脏读取。提交后，其他会话可以看到提交的数据。\n"
 						+ "Repeatable Read: 禁止不可重复读取和脏读取、以及幻读(innodb 独有)。\n"
 						+ "Serializable: 事务只能一个接着一个地执行，但不能并发执行。事务隔离级别最高。\n"
-						+ "不同的隔离级别有不同的现象，并有不同的锁定/并发机制，隔离级别越高，数据库的并发性就越差。\n" + "\n" + "" + new Date(),
+						+ "不同的隔离级别有不同的现象，并有不同的锁定/并发机制，隔离级别越高，数据库的并发性就越差。\n" + "\n" + "",
 				"163 面试中其他的问题：\n" + "1、2 年 MySQL DBA 经验\n" + "复制代码\n" + "\n"
 						+ "其中许多有水分，一看到简历自我介绍，说公司项目的时候，会写上 linux 系统维护，mssql server 项目，或者 oracle data gard 项目，一般如果有这些的话，工作在 3 年到 4年的话，他的 2 年 MySQL DBA 管理经验，是有很大的水分的。刚开始我跟领导说，这些\n"
 						+ "不用去面试了，肯定 mysql dba 经验不足，领导说先面面看看，于是我就面了，结果很多人卡在基础知识这一环节之上，比如：\n" + "（ 1）有的卡在复制原理之上\n"
 						+ "（ 2）有的卡在 binlog 的日志格式的种类和分别\n" + "（ 3）有的卡在 innodb 事务与日志的实现上。\n"
 						+ "（ 4）有的卡在 innodb 与 myisam 的索引实现方式的理解上面。\n" + ".........\n"
 						+ "个人觉得如果有过真正的 2 年 mysql 专职 dba 经验，那么肯定会在 mysql 的基本原理上有所研究，因为很多问题都不得不让你去仔细研究各种细节，而自 己研究过的细节肯定会记忆深刻，别人问起一定会说的头头是道，起码一些最基本的关键参数比如\n"
-						+ "Seconds_Behind_Master 为 60 这个值 60 的准确涵义，面试了 10+的 mysql dba，没有一个说的准确，有的说不知道忘记了，有的说是差了 60 秒，有的说是与主上执行时间延后了 60 秒。"
-						+ new Date(),
+						+ "Seconds_Behind_Master 为 60 这个值 60 的准确涵义，面试了 10+的 mysql dba，没有一个说的准确，有的说不知道忘记了，有的说是差了 60 秒，有的说是与主上执行时间延后了 60 秒。",
 				"164 2 、对于简历中写有熟悉 mysql 高可用方案\n" + "\n"
 						+ "我一般先问他现在管理的数据库架构是什么，如果他只说出了主从，而没有说任何 ha的方案，那么我就可以判断出他没有实际的 ha 经验。不过这时候也不能就是 断定他不懂mysql 高可用，也许是没有实际机会去使用，那么我就要问 mmm 以及 mha 以及mm+keepalived 等的原理\n"
 						+ "实现方式以及它们之间的优 势和不足了，一般这种情况下，能说出这个的基本没有。mmm 那东西好像不靠谱，据说不稳定，但是有人在用的，我只在虚拟机上面用过，和mysql-router 比较像，都是指定可写的机器和只读机器。 MHA 的话一句话说不完，可以翻翻学委的笔记\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"165 3 、对于简历中写有批量 MySQL 数据库服务器的管理经验\n" + "\n"
 						+ "这个如果他说有的话，我会先问他们现在实际线上的 mysql 数据库数量有多少，分多少个节点组，最后问这些节点组上面的 slow log 是如何组合在一起来统计分析的。如果这些他都答对了，那么我还有一问，就是现在手上有 600 台数据库，新来的机器， Mysql 都\n"
 						+ "安装好了，那么你如 何在最快的时间里面把这 600 台 mysql 数据库的 mysqld 服务启动起来。这个重点在于最快的时间，而能准确回答出清晰思路的只有 2 个人。slow log 分析：可以通过一个管理服务器定时去各台 MySQL 服务器上面 mv 并且 cp slowlog，\n"
-						+ "然后分析入库，页面展示。最快的时间里面启动 600 台服务器： 肯定是多线程。 可以用 pssh， ansible 等多线程批量管理服务器的工具\n" + "\n" + ""
-						+ new Date(),
+						+ "然后分析入库，页面展示。最快的时间里面启动 600 台服务器： 肯定是多线程。 可以用 pssh， ansible 等多线程批量管理服务器的工具\n" + "\n" + "",
 				"166 4 、对于有丰富的 SQL 优化的经验\n" + "\n"
 						+ "首先问 mysql 中 sql 优化的思路，如果能准备说出来， ok，那么我就开始问 explain的各种参数了，重点是 select_type， type， possible_key, ref,rows,extra 等参数的各种\n"
 						+ "值的含义，如果他都回答正确了，那么我再问 file sort 的含义以及什么时候会出现这个分析结果，如果这里他也回答对了，那么我就准备问 profile 分析了，如果这里他也答对了，那么我就会再问一个问 题，\n"
 						+ "那是曾经 tx 问我的让我郁闷不已的问题，一个 6 亿的表 a，一个 3 亿的表 b，通过外间 tid 关联，你如何最快的查询出满足条件的第 50000 到第 50200中的这 200 条数据记录。\n"
 						+ "Explain 在上面的题目中有了，这里就不说了。如何最快的查询出满足条件的第 50000 到第 50200 中的这 200 条数据记录？这个我想不出来！\n"
-						+ "关于 explain 的各种参数，请参考： http://blog.csdn.net/mchdba/article/details/9190771\n" + "\n" + ""
-						+ new Date(),
+						+ "关于 explain 的各种参数，请参考： http://blog.csdn.net/mchdba/article/details/9190771\n" + "\n" + "",
 				"167 5、对于有丰富的数据库设计经验\n" + "\n"
 						+ "这个对于数据库设计我真的没有太多的经验，我也就只能问问最基础的， mysql 中varchar(60) 60 是啥含义， int(30)中 30 是啥含义？ 如果他都回答对了，那么我就问 mysql中为什么要这么设计呢？\n"
 						+ "如果他还回答对了，我就继续问 int(20)存储的数字的上限和下限是多少？这个问题难道了全部的 mysql dba 的应聘者，不得不佩服提出这个问题的金总的睿智啊，因为这个问题回答正确了，\n"
 						+ "那么他确实认认真真地研究了 mysql 的设计中关于字段类型的细节。至 于丰富的设计数据库的经验，不用着急，这不我上面还有更加厉害的 dba吗，他会搞明白的，那就跟我无关了。\n"
 						+ "varchar(60)的 60 表示最多可以存储 60 个字符。int(30)的 30 表示客户端显示这个字段的宽度。\n"
-						+ "为何这么设计？说不清楚，请大家补充 。 int(20)的上限为 2147483647(signed)或者4294967295(unsigned)。\n" + "\n" + ""
-						+ new Date(),
+						+ "为何这么设计？说不清楚，请大家补充 。 int(20)的上限为 2147483647(signed)或者4294967295(unsigned)。\n" + "\n" + "",
 				"168 6 、关于 mysql 参数优化的经验\n" + "复制代码\n" + "\n"
 						+ "首先问他它们线上 mysql 数据库是怎么安装的，如果说是 rpm 安装的，那么我就直接问调优参数了，如果是源码安装的，那么我就要问编译中的一些参数了，比如 my.cnf 以及存储引擎以及字符类型等等。然后从以下几个方面问起：\n"
 						+ "（ 1） mysql 有哪些 global 内存参数，有哪些 local 内存参数。\n" + "Global:\n"
@@ -825,27 +810,26 @@ public class Hao123Application {
 						+ "binlog_cache_size： 表示每个 session 中存放 transaction 的 binlog 的 cache size。默认 32K。一般使用默认值即可。如果有大事务，可以考虑调大。\n"
 						+ "thread_stack： 每个进程都需要有，默认为 256K，使用默认值即可。\n" + "\n"
 						+ "（ 4） 还有就是著名的 query cache 了，以及 query cache 的适用场景了，这里有一个陷阱，\n"
-						+ "就是高并发的情况下，比如双十一的时候， query cache 开还是不开，开了怎么保证高并发，不开又有何别的考虑？建议关闭，上了性能反而更差。" + new Date(),
+						+ "就是高并发的情况下，比如双十一的时候， query cache 开还是不开，开了怎么保证高并发，不开又有何别的考虑？建议关闭，上了性能反而更差。",
 				"169 7、关于熟悉 mysql 的锁机制\n" + "\n" + "gap 锁， next-key 锁，以及 innodb 的行锁是怎么实现的，以及 myisam 的锁是怎么实现的等\n"
 						+ "Innodb 的锁的策略为 next-key 锁，即 record lock+gap lock。是通过在 index 上加 lock 实现的，如果 index 为 unique index，则降级为 record lock,如果是普通 index，则为 next-key lock，如果没有 index，则直接锁住全表。 myisam 直接使用全表扫描。\n"
-						+ "\n" + "" + new Date(),
+						+ "\n" + "",
 				"170 8、 关于熟悉 mysql 集群的\n" + "\n"
 						+ "我就问了 ndbd 的节点的启动先后顺序，再问配置参数中的内存配置几个重要的参数，再问 sql 节点中执行一个 join 表的 select 语句的实现流程是怎么走的？ ok，能回答的也只有一个。\n"
-						+ "关于 mysql 集群入门资料，请参考： http://write.blog.csdn.net/postlist/1583151/all\n" + "\n" + ""
-						+ new Date(),
+						+ "关于 mysql 集群入门资料，请参考： http://write.blog.csdn.net/postlist/1583151/all\n" + "\n" + "",
 				"171 9、 关于有丰富的备份经验的\n" + "复制代码\n" + "\n"
 						+ "就问 mysqldump 中备份出来的 sql，如果我想 sql 文件中，一行只有一个 insert .... value()的话，怎么办？如果备份需要带上 master 的复制点信息怎么办？或者 xtrabackup 中如何\n"
 						+ "做到实时在线备份的？以及 xtrabackup 是如何做到带上 master 的复制点的信息的？ 当前 xtrabackup 做增量备份的时候有何缺陷？能全部回答出来的没有一个，不过没有关系，只要回答出 mysqldump 或者xtrabackup 其中一个的也可以。\n"
 						+ "1). --skip-extended-insert\n" + "2). --master-date=1\n"
 						+ "3). 因为 xtrabackup 是多线程，一个线程不停地在拷贝新产生的 redo 文件，另外的线程去备份数据库，当所有表空间备份完成的时候，它会执行 flush table with read lock 操作\n"
 						+ "锁住所有表，然后执行 show master status; 接着执行 flush engine logs; 最后解锁表。执行 show master status; 时就能获取到 mster 的复制点信息，执行 flush engine logs 强制把redo 文件刷新到磁盘。\n"
-						+ "4). xtrabackup 增量备份的缺陷不了解，在线上用 xtrabackup 备份没有发现什么缺陷。" + new Date(),
+						+ "4). xtrabackup 增量备份的缺陷不了解，在线上用 xtrabackup 备份没有发现什么缺陷。",
 				"172 10 、关于有丰富的线上恢复经验的\n" + "\n"
 						+ "就问你现在线上数据量有多大，如果是 100G，你用 mysqldump 出来要多久，然后 mysql进去又要多久，如果互联网不允许延时的话，你又怎么做到 恢复单张表的时候保证 nagios不报警。如果有人说 mysqldump 出来 1 个小时就 ok 了，那么我就要问问他 db 服务器是\n"
 						+ "啥配置了，如果他说 mysql 进去 50 分钟搞定了，那么我也要问问他 db 机器啥配置了，如果是普通的吊丝 pc server，那么真实性，大家懂得。然后如果你用 xtrabackup 备份要多久，恢复要多久，大家都知道 copy-back 这一步要很久，那么你有没有办法对这一块优化。\n"
-						+ "\n" + "" + new Date(),
-				"173 详解TCP的3次握手和4次挥手   https://blog.csdn.net/kingov/article/details/77155671" + new Date(),
-				"174 sql语句面试   https://www.cnblogs.com/diffrent/p/8854995.html   " + new Date(), "" + new Date(),
+						+ "\n" + "",
+				"173 详解TCP的3次握手和4次挥手   https://blog.csdn.net/kingov/article/details/77155671",
+				"174 sql语句面试   https://www.cnblogs.com/diffrent/p/8854995.html   ", "",
 				"175 jvm内存溢出分析\n" + "2016-11-07 13:47 by 钟绍威, 3689 阅读, 1 评论, 收藏, 编辑概述\n"
 						+ "jvm中除了程序计数器，其他的区域都有可能会发生内存溢出\n" + "内存溢出是什么？\n"
 						+ "当程序需要申请内存的时候，由于没有足够的内存，此时就会抛出OutOfMemoryError，这就是内存溢出\n" + "内存溢出和内存泄漏有什么区别？\n"
@@ -854,128 +838,116 @@ public class Hao123Application {
 						+ "所以内存泄漏会导致可用的内存减少，进而会导致内存溢出。\n" + "用到的jvm参数\n" + "下面为了说明溢出的情景，会执行一些实例代码，同时需要给jvm指定参数\n"
 						+ "-Xms 堆最小容量(heap min size)\n" + "-Xmx 堆最大容量(heap max size)\n" + "-Xss 栈容量(stack size)\n"
 						+ "-XX:PermSize=size 永生代最小容量\n" + "-XX:MaxPermSize=size 永生代最大容量\n" + "堆溢出\n"
-						+ "堆是存放对象的地方，那么只要在堆中疯狂的创建对象，那么堆就会发生内存溢出。\n" + "https://www.cnblogs.com/wewill/p/6038528.html"
-						+ new Date(),
-				"176 https://www.cnblogs.com/panxuejun/p/8630779.html     JVM调优总结（7）：调优方法" + new Date(),
+						+ "堆是存放对象的地方，那么只要在堆中疯狂的创建对象，那么堆就会发生内存溢出。\n" + "https://www.cnblogs.com/wewill/p/6038528.html",
+				"176 https://www.cnblogs.com/panxuejun/p/8630779.html     JVM调优总结（7）：调优方法",
 				"177 内存泄漏  无非是GC没起到该有的作用 或是加载了大对象   Java JVM 内存泄露——全解析和处理办法\n"
-						+ "   https://www.cnblogs.com/ixenos/p/5674702.html?utm_source=itdadao&utm_medium=referral"
-						+ new Date(),
+						+ "   https://www.cnblogs.com/ixenos/p/5674702.html?utm_source=itdadao&utm_medium=referral",
 				"178 内存泄漏  无非是GC没起到该有的作用 或是加载了大对象   Java JVM 内存泄露——全解析和处理办法\n"
-						+ "   https://www.cnblogs.com/ixenos/p/5674702.html?utm_source=itdadao&utm_medium=referral"
-						+ new Date(),
+						+ "   https://www.cnblogs.com/ixenos/p/5674702.html?utm_source=itdadao&utm_medium=referral",
 				"179 java stackoverflowerror与outofmemoryerror区别\n"
-						+ "  https://blog.csdn.net/chenchaofuck1/article/details/51144223  记忆力不好的博客" + new Date(),
+						+ "  https://blog.csdn.net/chenchaofuck1/article/details/51144223  记忆力不好的博客",
 				"180 字符串作为值来传递，数组作为对象传递\n" + "\n" + "值传递是不改变原来属性的值的。\n" + "所以结果是：goodbbb\n" + "\n"
-						+ "String 确定是值传递，。   https://zhidao.baidu.com/question/106796048.html" + new Date(),
-				"181 \n" + "一次线上JVM调优实践，FullGC40次/天到10天一次的优化过程    https://blog.csdn.net/cml_blog/article/details/81057966"
-						+ new Date(),
-				"182 https://blog.csdn.net/varyall/article/details/80517977   性能案例-JVM频繁full GC 问题（JVM参数优化）"
-						+ new Date(),
-				"183 Minor GC、Major GC和Full GC之间的区别\n"
-						+ "   https://www.cnblogs.com/yang-hao/p/5948207.html" + new Date(),
-				"184 查看gc情况  stat -gc -t 4037 10s " + new Date(),
-				"185 重入读写锁  这里重入有何含义   重入：此锁允许reader和writer按照 ReentrantLock 的样式重新获取读取锁或写入锁。在写入线程保持的所有写入锁都已经释放后，才允许重入reader使用读取锁。 重入 第二次进来  先进来发现资源锁住了，于是乎出去，等待锁释放再进来操作资源。"
-						+ new Date(),
-				"186 redis  面试总结  https://www.cnblogs.com/jiahaoJAVA/p/6244278.html" + new Date(),
+						+ "String 确定是值传递，。   https://zhidao.baidu.com/question/106796048.html",
+				"181 \n" + "一次线上JVM调优实践，FullGC40次/天到10天一次的优化过程    https://blog.csdn.net/cml_blog/article/details/81057966",
+				"182 https://blog.csdn.net/varyall/article/details/80517977   性能案例-JVM频繁full GC 问题（JVM参数优化）",
+				"183 Minor GC、Major GC和Full GC之间的区别\n" + "   https://www.cnblogs.com/yang-hao/p/5948207.html",
+				"184 查看gc情况  stat -gc -t 4037 10s ",
+				"185 重入读写锁  这里重入有何含义   重入：此锁允许reader和writer按照 ReentrantLock 的样式重新获取读取锁或写入锁。在写入线程保持的所有写入锁都已经释放后，才允许重入reader使用读取锁。 重入 第二次进来  先进来发现资源锁住了，于是乎出去，等待锁释放再进来操作资源。",
+				"186 redis  面试总结  https://www.cnblogs.com/jiahaoJAVA/p/6244278.html",
 				"187 （2）Reids的特点\n" + "\n"
 						+ "Redis本质上是一个Key-Value类型的内存数据库，很像memcached，整个数据库统统加载在内存当中进行操作，定期通过异步操作把数据库数据flush到硬盘上进行保存。因为是纯内存操作，Redis的性能非常出色，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。\n"
 						+ "Redis的出色之处不仅仅是性能，Redis最大的魅力是支持保存多种数据结构，此外单个value的最大限制是1GB，不像 memcached只能保存1MB的数据，因此Redis可以用来实现很多有用的功能，比方说用他的List来做FIFO双向链表，实现一个轻量级的高性 能消息队列服务，用他的Set可以做高性能的tag系统等等。另外Redis也可以对存入的Key-Value设置expire时间，因此也可以被当作一 个功能加强版的memcached来用。\n"
-						+ "Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。" + new Date(),
+						+ "Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。",
 				"188 （3）Redis支持的数据类型\n" + "\n" + "Redis通过Key-Value的单值不同类型来区分, 以下是支持的类型:\n" + "Strings\n" + "Lists\n"
-						+ "Sets 求交集、并集\n" + "Sorted Set \n" + "hashes" + new Date(),
+						+ "Sets 求交集、并集\n" + "Sorted Set \n" + "hashes",
 				"189 （4）为什么redis需要把所有数据放到内存中？\n" + "\n"
 						+ "Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。\n"
-						+ "如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。" + new Date(),
-				"190 （5）Redis是单进程单线程的\n" + "\n" + "redis利用队列技术将并发访问变为串行访问，消除了传统数据库串行控制的开销" + new Date(),
+						+ "如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。",
+				"190 （5）Redis是单进程单线程的\n" + "\n" + "redis利用队列技术将并发访问变为串行访问，消除了传统数据库串行控制的开销",
 				"191 （6）虚拟内存\n" + "\n" + "当你的key很小而value很大时,使用VM的效果会比较好.因为这样节约的内存比较大.\n"
 						+ "当你的key不小时,可以考虑使用一些非常方法将很大的key变成很大的value,比如你可以考虑将key,value组合成一个新的value.\n"
 						+ "vm-max-threads这个参数,可以设置访问swap文件的线程数,设置最好不要超过机器的核数,如果设置为0,那么所有对swap文件的操作都是串行的.可能会造成比较长时间的延迟,但是对数据完整性有很好的保证.\n"
-						+ "\n" + "自己测试的时候发现用虚拟内存性能也不错。如果数据量很大，可以考虑分布式或者其他数据库" + new Date(),
+						+ "\n" + "自己测试的时候发现用虚拟内存性能也不错。如果数据量很大，可以考虑分布式或者其他数据库",
 				"192 （7）分布式\n" + "\n"
 						+ "redis支持主从的模式。原则：Master会将数据同步到slave，而slave不会将数据同步到master。Slave启动时会连接master来同步数据。\n" + "\n"
-						+ "这是一个典型的分布式读写分离模型。我们可以利用master来插入数据，slave提供检索服务。这样可以有效减少单个机器的并发访问数量" + new Date(),
+						+ "这是一个典型的分布式读写分离模型。我们可以利用master来插入数据，slave提供检索服务。这样可以有效减少单个机器的并发访问数量",
 				"193 （8）读写分离模型\n" + "\n"
 						+ "通过增加Slave DB的数量，读的性能可以线性增长。为了避免Master DB的单点故障，集群一般都会采用两台Master DB做双机热备，所以整个集群的读和写的可用性都非常高。\n"
-						+ "读写分离架构的缺陷在于，不管是Master还是Slave，每个节点都必须保存完整的数据，如果在数据量很大的情况下，集群的扩展能力还是受限于单个节点的存储能力，而且对于Write-intensive类型的应用，读写分离架构并不适合。"
-						+ new Date(),
+						+ "读写分离架构的缺陷在于，不管是Master还是Slave，每个节点都必须保存完整的数据，如果在数据量很大的情况下，集群的扩展能力还是受限于单个节点的存储能力，而且对于Write-intensive类型的应用，读写分离架构并不适合。",
 				"194 （9）数据分片模型\n" + "\n" + "为了解决读写分离模型的缺陷，可以将数据分片模型应用进来。\n" + "\n"
 						+ "可以将每个节点看成都是独立的master，然后通过业务实现数据分片。\n" + "\n"
-						+ "结合上面两种模型，可以将每个master设计成由一个master和多个slave组成的模型。" + new Date(),
+						+ "结合上面两种模型，可以将每个master设计成由一个master和多个slave组成的模型。",
 				"195 1. 使用Redis有哪些好处？\n" + "\n" + "(1) 速度快，因为数据存在内存中，类似于HashMap，HashMap的优势就是查找和操作的时间复杂度都是O(1)\n" + "\n"
 						+ "(2) 支持丰富数据类型，支持string，list，set，sorted set，hash\n" + "\n"
 						+ "(3) 支持事务，操作都是原子性，所谓的原子性就是对数据的更改要么全部执行，要么全部不执行\n" + "\n"
-						+ "(4) 丰富的特性：可用于缓存，消息，按key设置过期时间，过期后将会自动删除" + new Date(),
+						+ "(4) 丰富的特性：可用于缓存，消息，按key设置过期时间，过期后将会自动删除",
 				"196  2. redis相比memcached有哪些优势？\n" + "\n" + "(1) memcached所有的值均是简单的字符串，redis作为其替代者，支持更为丰富的数据类型\n" + "\n"
-						+ "(2) redis的速度比memcached快很多\n" + "\n" + "(3) redis可以持久化其数据" + new Date(),
+						+ "(2) redis的速度比memcached快很多\n" + "\n" + "(3) redis可以持久化其数据",
 				"197  3. redis常见性能问题和解决方案：\n" + "\n" + "(1) Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文件\n" + "\n"
 						+ "(2) 如果数据比较重要，某个Slave开启AOF备份数据，策略设置为每秒同步一次\n" + "\n"
 						+ "(3) 为了主从复制的速度和连接的稳定性，Master和Slave最好在同一个局域网内\n" + "\n" + "(4) 尽量避免在压力很大的主库上增加从库\n" + "\n"
 						+ "(5) 主从复制不要用图状结构，用单向链表结构更为稳定，即：Master <- Slave1 <- Slave2 <- Slave3...\n" + "\n"
-						+ "这样的结构方便解决单点故障问题，实现Slave对Master的替换。如果Master挂了，可以立刻启用Slave1做Master，其他不变。" + new Date(),
+						+ "这样的结构方便解决单点故障问题，实现Slave对Master的替换。如果Master挂了，可以立刻启用Slave1做Master，其他不变。",
 				"198  4. MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据\n" + "\n"
 						+ " 相关知识：redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。redis 提供 6种数据淘汰策略：\n" + "\n"
 						+ "voltile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰\n" + "\n"
 						+ "volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰\n" + "\n"
 						+ "volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰\n" + "\n"
 						+ "allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰\n" + "\n"
-						+ "allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰\n" + "\n" + "no-enviction（驱逐）：禁止驱逐数据"
-						+ new Date(),
+						+ "allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰\n" + "\n" + "no-enviction（驱逐）：禁止驱逐数据",
 				"199 （10）Redis的回收策略\n" + "\n" + " \n" + "\n"
 						+ "        volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰\n" + "\n"
 						+ "        volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰\n" + "\n"
 						+ "        volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰\n" + "\n"
 						+ "        allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰\n" + "\n"
 						+ "        allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰\n" + "\n"
-						+ "        no-enviction（驱逐）：禁止驱逐数据" + new Date(),
+						+ "        no-enviction（驱逐）：禁止驱逐数据",
 				"200  5. Memcache与Redis的区别都有哪些？\n" + "\n" + "1)、存储方式\n" + "\n"
 						+ "Memecache把数据全部存在内存之中，断电后会挂掉，数据不能超过内存大小。\n" + "\n" + "Redis有部份存在硬盘上，这样能保证数据的持久性。\n" + "\n"
 						+ "2)、数据支持类型\n" + "\n" + "Memcache对数据类型支持相对简单。\n" + "\n" + "Redis有复杂的数据类型。\n" + "\n"
 						+ "3)、使用底层模型不同\n" + "\n" + "它们之间底层实现方式 以及与客户端之间通信的应用协议不一样。\n" + "\n"
 						+ "Redis直接自己构建了VM 机制 ，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求。\n" + "\n" + "4），value大小\n" + "\n"
-						+ "redis最大可以达到1GB，而memcache只有1MB" + new Date(),
+						+ "redis最大可以达到1GB，而memcache只有1MB",
 				"201  6. Redis 常见的性能问题都有哪些？如何解决？\n" + "\n" + " \n" + "\n"
 						+ "1).Master写内存快照，save命令调度rdbSave函数，会阻塞主线程的工作，当快照比较大时对性能影响是非常大的，会间断性暂停服务，所以Master最好不要写内存快照。\n"
 						+ "\n" + " \n" + "\n"
 						+ "2).Master AOF持久化，如果不重写AOF文件，这个持久化方式对性能的影响是最小的，但是AOF文件会不断增大，AOF文件过大会影响Master重启的恢复速度。Master最好不要做任何持久化工作，包括内存快照和AOF日志文件，特别是不要启用内存快照做持久化,如果数据比较关键，某个Slave开启AOF备份数据，策略为每秒同步一次。\n"
 						+ "\n" + " \n" + "\n"
 						+ "3).Master调用BGREWRITEAOF重写AOF文件，AOF在重写的时候会占大量的CPU和内存资源，导致服务load过高，出现短暂服务暂停现象。\n" + "\n"
-						+ "4). Redis主从复制的性能问题，为了主从复制的速度和连接的稳定性，Slave和Master最好在同一个局域网内" + new Date(),
+						+ "4). Redis主从复制的性能问题，为了主从复制的速度和连接的稳定性，Slave和Master最好在同一个局域网内",
 				"202 （3）、队列\n" + "\n"
 						+ "Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。Redis作为队列使用的操作，就类似于本地程序语言（如Python）对 list 的 push/pop 操作。\n"
 						+ "\n"
-						+ "如果你快速的在Google中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就是利用Redis创建非常好的后端工具，以满足各种队列需求。例如，Celery有一个后台就是使用Redis作为broker，你可以从这里去查看。"
-						+ new Date(),
+						+ "如果你快速的在Google中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就是利用Redis创建非常好的后端工具，以满足各种队列需求。例如，Celery有一个后台就是使用Redis作为broker，你可以从这里去查看。",
 				"203 （4），排行榜/计数器\n" + "\n"
 						+ "Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可：\n"
 						+ "\n" + "当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行：\n" + "\n"
 						+ "ZRANGE user_scores 0 10 WITHSCORES\n" + "\n"
-						+ "Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。" + new Date(),
+						+ "Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。",
 				"204 （5）、发布/订阅\n" + "\n"
 						+ "最后（但肯定不是最不重要的）是Redis的发布/订阅功能。发布/订阅的使用场景确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚本触发器，甚至用Redis的发布/订阅功能来建立聊天系统！（不，这是真的，你可以去核实）。\n"
-						+ "\n" + "Redis提供的所有特性中，我感觉这个是喜欢的人最少的一个，虽然它为用户提供如果此多功能。" + new Date(),
-				"205 为何宁愿吃生活的苦，也不愿吃学习的苦 学习的基本过程 三步学习法 理解实践记忆  刻意练习  学习资料的筛选搜集整理和管理还有回顾  知识体系的建立  抽象思维的培养 环境和学习  整合学习流程"
-						+ new Date(),
+						+ "\n" + "Redis提供的所有特性中，我感觉这个是喜欢的人最少的一个，虽然它为用户提供如果此多功能。",
+				"205 为何宁愿吃生活的苦，也不愿吃学习的苦 学习的基本过程 三步学习法 理解实践记忆  刻意练习  学习资料的筛选搜集整理和管理还有回顾  知识体系的建立  抽象思维的培养 环境和学习  整合学习流程",
 				"206 这个是图灵学院张飞老师的讲课截图，他这里是这样讲的，因为远程调用银行接口，这里假设银行接口同步返回结果，这里耗时比较久，入过对调用银行接口的 代码也加上事务的话，会造成连接池占用。造成线程长时间在这里阻塞，占用连接资源，因为@Transactional这个是靠数据库连接对象来保证的，，所以这里 如果是调用银行接口同步返回结果的话，那么就不能在这条语句上加事务，并且为了外部事务的方法调用次方法将外部事务加进来，所以这里用propagation.NEVER 来控制。 其实我还是不明白这里取消事务控制跟接口调用耗时太久以及占用连接资源容易被耗尽之间是什么关系， ---- 昨天躺在床上,突然联想起来，这个事务用@Transactional来保证，可是这个是mybatis的一个注解，也就是说这个是用数据库连接来保证的， 这里一个事务就要消耗掉一个db连接，如果这个事务里面的代码一直不执行完，那么这个数据库连接就会一直被占用。\n"
 						+ "\n" + "还有，这个调用银行结果的处理有可能重复处理，上个月在捷顺我曾经写过话费充值的时候，遇到过这个问题们当时用的是乐观锁，版本号来解决这个问题。\n" + "\n"
-						+ "事务就是原子性" + new Date(),
-				"207 支付代码怎么写 黎活明的这个视频是可以学习一下的 http://study.163.com/course/introduction.htm?courseId=212009"
-						+ new Date(),
+						+ "事务就是原子性",
+				"207 支付代码怎么写 黎活明的这个视频是可以学习一下的 http://study.163.com/course/introduction.htm?courseId=212009",
 				"208  站在上帝的角度看redis和zk分布式锁的优缺点\n" + "redis分布式锁安全性的探讨\n"
-						+ "http://blog.csdn.net/jackcaptain1015/article/details/71157004" + new Date(),
+						+ "http://blog.csdn.net/jackcaptain1015/article/details/71157004",
 				"209 mybatis 源码翻阅  \n" + "这篇是写的不错的，可惜就写了一篇   http://blog.csdn.net/rickesy/article/details/52075410\n"
 						+ "\n" + "http://blog.csdn.net/luanlouis/article/details/40422941 \n" + "这里有一篇，没来得及好好看\n" + "\n"
-						+ "\n" + "https://www.cnblogs.com/hayasi/p/6142638.html" + new Date(),
+						+ "\n" + "https://www.cnblogs.com/hayasi/p/6142638.html",
 				"210 spring支持构造器注入和setter方法注入\n" + "接口注入    构造器注入，通过 <constructor-arg> 元素完成注入\n"
-						+ "    setter方法注入， 通过<property> 元素完成注入【开发中常用方式】 " + new Date(),
-				"211 \n" + "13.为什么要有事物传播行为？\n" + "https://www.cnblogs.com/wang-meng/p/5701982.html" + new Date(),
+						+ "    setter方法注入， 通过<property> 元素完成注入【开发中常用方式】 ",
+				"211 \n" + "13.为什么要有事物传播行为？\n" + "https://www.cnblogs.com/wang-meng/p/5701982.html",
 				"212 Spring的核心类有哪些，各有什么作用？\n" + "\n" + "BeanFactory：产生一个新的实例，可以实现单例模式\n" + "\n"
-						+ "BeanWrapper：提供统一的get及set方法\n" + "\n" + "ApplicationContext:提供框架的实现，包括BeanFactory的所有功能\n" + ""
-						+ new Date(),
+						+ "BeanWrapper：提供统一的get及set方法\n" + "\n" + "ApplicationContext:提供框架的实现，包括BeanFactory的所有功能\n"
+						+ "",
 				"213  什么是AOP，AOP的作用是什么？\n" + "\n"
 						+ "面向切面编程（AOP）提供另外一种角度来思考程序结构，通过这种方式弥补了面向对象编程（OOP）的不足，除了类（classes）以外，AOP提供了切面。切面对关注点进行模块化，例如横切多个类型和对象的事务管理\n"
 						+ "\n"
 						+ "Spring的一个关键的组件就是AOP框架，可以自由选择是否使用AOP 提供声明式企业服务，特别是为了替代EJB声明式服务。最重要的服务是声明性事务管理，这个服务建立在Spring的抽象事物管理之上。允许用户实现自定义切面，用AOP来完善OOP的使用,可以把Spring AOP看作是对Spring的一种增强\n"
-						+ "" + new Date(),
+						+ "",
 				"214  Spring如何处理线程并发问题？\n" + "\n" + "Spring使用ThreadLocal解决线程安全问题\n" + "\n"
 						+ "我们知道在一般情况下，只有无状态的Bean才可以在多线程环境下共享，在Spring中，绝大部分Bean都可以声明为singleton作用域。就是因为Spring对一些Bean(如RequestContextHolder、TransactionSynchronizationManager、LocaleContextHolder等)中非线程安全状态采用ThreadLocal进行处理，让它们也成为线程安全的状态，因为有状态的Bean就可以在多线程中共享了。\n"
 						+ "\n" + "ThreadLocal和线程同步机制都是为了解决多线程中相同变量的访问冲突问题。\n" + "\n"
@@ -986,7 +958,7 @@ public class Hao123Application {
 						+ "由于ThreadLocal中可以持有任何类型的对象，低版本JDK所提供的get()返回的是Object对象，需要强制类型转换。但JDK5.0通过泛型很好的解决了这个问题，在一定程度地简化ThreadLocal的使用。\n"
 						+ "\n"
 						+ "概括起来说，对于多线程资源共享的问题，同步机制采用了“以时间换空间”的方式，而ThreadLocal采用了“以空间换时间”的方式。前者仅提供一份变量，让不同的线程排队访问，而后者为每一个线程都提供了一份变量，因此可以同时访问而互不影响。\n"
-						+ "" + new Date(),
+						+ "",
 				"215  spring  注解 作用域\n" + "\n" + "singleton\n" + "\n"
 						+ "当一个bean的作用域为singleton, 那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。\n"
 						+ "\n" + "prototype\n" + "\n"
@@ -996,15 +968,13 @@ public class Hao123Application {
 						+ "\n" + "session\n" + "\n"
 						+ "在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。\n" + "\n"
 						+ "global session\n" + "\n"
-						+ "在一个全局的HTTP Session中，一个bean定义对应一个实例。典型情况下，仅在使用portlet context的时候有效。该作用域仅在基于 web的Spring ApplicationContext情形下有效。"
-						+ new Date(),
+						+ "在一个全局的HTTP Session中，一个bean定义对应一个实例。典型情况下，仅在使用portlet context的时候有效。该作用域仅在基于 web的Spring ApplicationContext情形下有效。",
 				"216 谈谈你对spring IOC和DI的理解，它们有什么区别？\n" + "\n"
 						+ "IoC Inverse of Control 反转控制的概念，就是将原本在程序中手动创建UserService对象的控制权，交由Spring框架管理，简单说，就是创建UserService对象控制权被反转到了Spring框架\n"
-						+ "\n" + "DI：Dependency Injection 依赖注入，在Spring框架负责创建Bean对象时，动态的将依赖对象注入到Bean组件\n" + ""
-						+ new Date(),
+						+ "\n" + "DI：Dependency Injection 依赖注入，在Spring框架负责创建Bean对象时，动态的将依赖对象注入到Bean组件\n" + "",
 				"217 Spring的核心类有哪些，各有什么作用？\n" + "\n" + "BeanFactory：产生一个新的实例，可以实现单例模式\n" + "\n"
-						+ "BeanWrapper：提供统一的get及set方法\n" + "\n" + "ApplicationContext:提供框架的实现，包括BeanFactory的所有功能\n" + ""
-						+ new Date(),
+						+ "BeanWrapper：提供统一的get及set方法\n" + "\n" + "ApplicationContext:提供框架的实现，包括BeanFactory的所有功能\n"
+						+ "",
 				"218 介绍一下Spring的事物管理\n" + "\n"
 						+ "    事务就是对一系列的数据库操作（比如插入多条数据）进行统一的提交或回滚操作，如果插入成功，那么一起成功，如果中间有一条出现异常，那么回滚之前的所有操作。这样可以防止出现脏数据，防止数据库数据出现问题。\n"
 						+ "\n"
@@ -1017,7 +987,7 @@ public class Hao123Application {
 						+ "    TransactionStatus ts = transactionManager.getTransaction(td);\n" + "    try{ \n"
 						+ "        //do sth\n" + "        transactionManager.commit(ts);\n"
 						+ "    }catch(Exception e){\n" + "        transactionManager.rollback(ts);\n" + "    }\n" + "\n"
-						+ "    spring提供的事务管理可以分为两类：编程式的和声明式的。编程式的，比较灵活，但是代码量大，存在重复的代码比较多；声明式的比编程式的更灵活。 " + new Date(),
+						+ "    spring提供的事务管理可以分为两类：编程式的和声明式的。编程式的，比较灵活，但是代码量大，存在重复的代码比较多；声明式的比编程式的更灵活。 ",
 				"219 编程式主要使用transactionTemplate。省略了部分的提交，回滚，一系列的事务对象定义，需注入事务管理对象.\n" + "\n" + " \n" + "\n"
 						+ "    void add(){\n" + "        transactionTemplate.execute(newTransactionCallback(){\n"
 						+ "            pulic Object doInTransaction(TransactionStatus ts){\n"
@@ -1032,42 +1002,66 @@ public class Hao123Application {
 						+ "PROPAGATION_REQUIRES_NEW–新建事务，如果当前存在事务，把当前事务挂起。\n" + "\n"
 						+ "PROPAGATION_NOT_SUPPORTED–以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。\n" + "\n"
 						+ "PROPAGATION_NEVER–以非事务方式执行，如果当前存在事务，则抛出异常。\n" + "\n"
-						+ "PROPAGATION_NESTED–如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与 PROPAGATION_REQUIRED类似的操作。" + new Date(),
-				"220 事务传播行为种类\n" + "\n" + "Spring在TransactionDefinition接口中规定了7种类型的事务传播行为，它们规定了事务方法和事务方法发生嵌套调用时事务如何进行传播："
-						+ new Date(),
-				"221 用redis来保证序号按顺序增长不重复,yjs 先while(key不存在)循环直到set key成功  ,然后调用incr(key)方法来获取下一个序号,原子性的，即便分布式环境，也不会重复"
-						+ new Date(),
-				"222" + new Date(), "223" + new Date(), "224" + new Date(), "225" + new Date(), "226" + new Date(),
-				"227" + new Date(), "228" + new Date(), "229" + new Date(), "230" + new Date(), "231" + new Date(),
-				"232" + new Date(), "233" + new Date(), "234" + new Date(), "235" + new Date(), "236" + new Date(),
-				"237" + new Date(), "238" + new Date(), "239" + new Date(), "240" + new Date(), "241" + new Date(),
-				"242" + new Date(), "243" + new Date(), "244" + new Date(), "245" + new Date(), "246" + new Date(),
-				"247" + new Date(), "248" + new Date(), "249" + new Date(), "250" + new Date(), "251" + new Date(),
-				"252" + new Date(), "253" + new Date(), "254" + new Date(), "255" + new Date(), "256" + new Date(),
-				"257" + new Date(), "258" + new Date(), "259" + new Date(), "260" + new Date(), "261" + new Date(),
-				"262" + new Date(), "263" + new Date(), "264" + new Date(), "265" + new Date(), "266" + new Date(),
-				"267" + new Date(), "268" + new Date(), "269" + new Date(), "270" + new Date(), "271" + new Date(),
-				"272" + new Date(), "273" + new Date(), "274" + new Date(), "275" + new Date(), "276" + new Date(),
-				"277" + new Date(), "278" + new Date(), "279" + new Date(), "280" + new Date(), "281" + new Date(),
-				"282" + new Date(), "283" + new Date(), "284" + new Date(), "285" + new Date(), "286" + new Date(),
-				"287" + new Date(), "288" + new Date(), "289" + new Date(), "290" + new Date(), "291" + new Date(),
-				"292" + new Date(), "293" + new Date(), "294" + new Date(), "295" + new Date(), "296" + new Date(),
-				"297" + new Date(), "298" + new Date(), "299" + new Date(), "300" + new Date(), "301" + new Date(),
-				"302" + new Date(), "303" + new Date(), "304" + new Date(), "305" + new Date(), "306" + new Date(),
-				"307" + new Date(), "308" + new Date(), "309" + new Date(), "310" + new Date(), "311" + new Date(),
-				"312" + new Date(), "313" + new Date(), "314" + new Date(), "315" + new Date(), "316" + new Date(),
-				"317" + new Date(), "318" + new Date(), "319" + new Date(), "320" + new Date(), "321" + new Date(),
-				"322" + new Date(), "323" + new Date(), "324" + new Date(), "325" + new Date(), "326" + new Date(),
-				"327" + new Date(), "328" + new Date(), "329" + new Date(), "330" + new Date(), "331" + new Date(),
-				"332" + new Date(), "333" + new Date(), "334" + new Date(), "335" + new Date(), "336" + new Date(),
-				"337" + new Date(), "338" + new Date(), "339" + new Date(), "340" + new Date(), "341" + new Date(),
-				"342" + new Date(), "343" + new Date(), "344" + new Date(), "345" + new Date(), "346" + new Date(),
-				"347" + new Date(), "348" + new Date(), "349" + new Date(), "350" + new Date(), "351" + new Date(),
-				"352" + new Date(), "353" + new Date(), "354" + new Date(), "355" + new Date(), "356" + new Date(),
-				"357" + new Date(), "358" + new Date(), "359" + new Date(), "360" + new Date(), "361" + new Date(),
-				"362" + new Date(), "363" + new Date(), "364" + new Date(), "365" + new Date(), "366" + new Date(),
-				"367" + new Date(), "368" + new Date(), "369" + new Date(), "370" + new Date(), "371" + new Date(),
-				"372" + new Date(), "373" + new Date(), "374" + new Date(), "375" + new Date(), "376" + new Date());
+						+ "PROPAGATION_NESTED–如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与 PROPAGATION_REQUIRED类似的操作。",
+				"220 事务传播行为种类\n" + "\n"
+						+ "Spring在TransactionDefinition接口中规定了7种类型的事务传播行为，它们规定了事务方法和事务方法发生嵌套调用时事务如何进行传播：",
+				"221 用redis来保证序号按顺序增长不重复,yjs 先while(key不存在)循环直到set key成功  ,然后调用incr(key)方法来获取下一个序号,原子性的，即便分布式环境，也不会重复",
+				"222  MySQL事务隔离级别的实现原理\n" + "  https://www.cnblogs.com/cjsblog/p/8365921.html", "223", "224", "225",
+				"226 一致性非锁定读和锁定读\n" + "锁定读\n"
+						+ "　　在一个事务中，标准的SELECT语句是不会加锁，但是有两种情况例外。SELECT ... LOCK IN SHARE MODE 和 SELECT ... FOR UPDATE。\n"
+						+ "　　SELECT ... LOCK IN SHARE MODE\n" + "　　给记录假设共享锁，这样一来的话，其它事务只能读不能修改，直到当前事务提交\n"
+						+ "　　SELECT ... FOR UPDATE\n" + "　　给索引记录加锁，这种情况下跟UPDATE的加锁情况是一样的\n" + "一致性非锁定读\n"
+						+ "　　consistent read （一致性读），InnoDB用多版本来提供查询数据库在某个时间点的快照。如果隔离级别是REPEATABLE READ，那么在同一个事务中的所有一致性读都读的是事务中第一个这样的读读到的快照；如果是READ COMMITTED，那么一个事务中的每一个一致性读都会读到它自己刷新的快照版本。Consistent read（一致性读）是READ COMMITTED和REPEATABLE READ隔离级别下普通SELECT语句默认的模式。一致性读不会给它所访问的表加任何形式的锁，因此其它事务可以同时并发的修改它们。",
+				"227 说明\n" + "网上看到大量的文章讲到MVCC都是说给每一行增加两个隐藏的字段分别表示行的创建时间以及过期时间，它们存储的并不是时间，而是事务版本号。\n"
+						+ "事实上，这种说法并不准确，严格的来讲，InnoDB会给数据库中的每一行增加三个字段，它们分别是DB_TRX_ID、DB_ROLL_PTR、DB_ROW_ID。\n"
+						+ "但是，为了理解的方便，我们可以这样去理解，索引接下来的讲解中也还是用这两个字段的方式去理解。\n" + "增删查改\n"
+						+ "在InnoDB中，给每行增加两个隐藏字段来实现MVCC，一个用来记录数据行的创建时间，另一个用来记录行的过期时间（删除时间）。在实际操作中，存储的并不是时间，而是事务的版本号，每开启一个新事务，事务的版本号就会递增。\n"
+						+ "于是乎，默认的隔离级别（REPEATABLE READ）下，增删查改变成了这样：\n"
+						+ "SELECT读取创建版本小于或等于当前事务版本号，并且删除版本为空或大于当前事务版本号的记录。这样可以保证在读取之前记录是存在的。\n"
+						+ "INSERT将当前事务的版本号保存至行的创建版本号\n" + "UPDATE新插入一行，并以当前事务的版本号作为新行的创建版本号，同时将原记录行的删除版本号设置为当前事务版本号\n"
+						+ "DELETE将当前事务的版本号保存至行的删除版本号\n" + "快照读和当前读\n" + "快照读：读取的是快照版本，也就是历史版本\n" + "当前读：读取的是最新版本\n"
+						+ "普通的SELECT就是快照读，而UPDATE、DELETE、INSERT、SELECT ...  LOCK IN SHARE MODE、SELECT ... FOR UPDATE是当前读。",
+				"228 关于Mysql中MVCC的总结\n" + "客观上，我们认为他就是乐观锁的一整实现方式，就是每行都有版本号，保存时根据版本号决定是否成功。\n"
+						+ "但由于Mysql的写操作会加排他锁（前文有讲），如果锁定了还算不算是MVCC？\n"
+						+ "了解乐观锁的小伙伴们，都知道其主要依靠版本控制，即消除锁定，二者相互矛盾，so从某种意义上来说，Mysql的MVCC并非真正的MVCC，他只是借用MVCC的名号实现了读的非阻塞而已。",
+				"229 4、查询操作：\n" + "从上面的描述可以看到，在查询时要符合以下两个条件的记录才能被事务查询出来：\n"
+						+ "1) 删除版本号未指定或者大于当前事务版本号，即查询事务开启后确保读取的行未被删除。(即上述事务id为2的事务查询时，依然能读取到事务id为3所删除的数据行)\n"
+						+ "2) 创建版本号 小于或者等于 当前事务版本号 ，就是说记录创建是在当前事务中（等于的情况）或者在当前事务启动之前的其他事物进行的insert。\n"
+						+ "（即事务id为2的事务只能读取到create version<=2的已提交的事务的数据集）\n" + "补充：\n"
+						+ "1.MVCC手段只适用于Msyql隔离级别中的读已提交（Read committed）和可重复读（Repeatable Read）.\n"
+						+ "2.Read uncimmitted由于存在脏读，即能读到未提交事务的数据行，所以不适用MVCC.\n" + "原因是MVCC的创建版本和删除版本只要在事务提交后才会产生。\n"
+						+ "3.串行化由于是会对所涉及到的表加锁，并非行锁，自然也就不存在行的版本控制问题。\n" + "4.通过以上总结，可知，MVCC主要作用于事务性的，有行锁控制的数据库模型。",
+				"230 特点\n" + "1.MVCC其实广泛应用于数据库技术，像Oracle,PostgreSQL等也引入了该技术，即适用范围广\n"
+						+ "2.MVCC并没有简单的使用数据库的行锁，而是使用了行级锁，row_level_lock,而非InnoDB中的innodb_row_lock.\n" + "基本原理\n"
+						+ "MVCC的实现，通过保存数据在某个时间点的快照来实现的。这意味着一个事务无论运行多长时间，在同一个事务里能够看到数据一致的视图。根据事务开始的时间不同，同时也意味着在同一个时刻不同事务看到的相同表里的数据可能是不同的。\n"
+						+ "基本特征\n" + "每行数据都存在一个版本，每次数据更新时都更新该版本。\n" + "修改时Copy出当前版本随意修改，各个事务之间无干扰。\n"
+						+ "保存时比较版本号，如果成功（commit），则覆盖原记录；失败则放弃copy（rollback）\n" + "InnoDB存储引擎MVCC的实现策略\n"
+						+ "在每一行数据中额外保存两个隐藏的列：当前行创建时的版本号和删除时的版本号（可能为空，其实还有一列称为回滚指针，用于事务回滚，不在本文范畴）。这里的版本号并不是实际的时间值，而是系统版本号。每开始新的事务，系统版本号都会自动递增。事务开始时刻的系统版本号会作为事务的版本号，用来和查询每行记录的版本号进行比较。\n"
+						+ "每个事务又有自己的版本号，这样事务内执行CRUD操作时，就通过版本号的比较来达到数据版本控制的目的。\n" + "MVCC下InnoDB的增删查改是怎么work的\n"
+						+ "1.插入数据（insert）:记录的版本号即当前事务的版本号\n" + "执行一条数据语句：insert into testmvcc values(1,\"test\");\n"
+						+ "假设事务id为1，那么插入后的数据行如下：",
+				"231 译注：\n"
+						+ "　　MVCC的全称是“多版本并发控制”。这项技术使得InnoDB的事务隔离级别下执行一致性读操作有了保证，换言之，就是为了查询一些正在被另一个事务更新的行，并且可以看到它们被更新之前的值。这是一个可以用来增强并发性的强大的技术，因为这样的一来的话查询就不用等待另一个事务释放锁。这项技术在数据库领域并不是普遍使用的。一些其它的数据库产品，以及mysql其它的存储引擎并不支持它。\n"
+						+ "有个事务在这里读数据，其他事务就没办法读这些数据了吗，错了，是可以的，为什么，因为有MVCC这个技术。  找段英文。介绍MVCC   什么是MVCC?\n"
+						+ "英文全称为Multi-Version Concurrency Control,翻译为中文即 多版本并发控制。在小编看来，他无非就是乐观锁的一种实现方式。在Java编程中，如果把乐观锁看成一个接口，MVCC便是这个接口的一个实现类而已。",
+				"232 在MySQL的众多存储引擎中，只有InnoDB支持事务，所有这里说的事务隔离级别指的是InnoDB下的事务隔离级别。\n"
+						+ "读未提交：一个事务可以读取到另一个事务未提交的修改。这会带来脏读、幻读、不可重复读问题。（基本没用）\n"
+						+ "读已提交：一个事务只能读取另一个事务已经提交的修改。其避免了脏读，但仍然存在不可重复读和幻读问题。\n"
+						+ "可重复读：同一个事务中多次读取相同的数据返回的结果是一样的。其避免了脏读和不可重复读问题，但幻读依然存在。\n" + "串行化：事务串行执行。避免了以上所有问题。\n"
+						+ "以上是SQL-92标准中定义的四种隔离级别。在MySQL中，默认的隔离级别是REPEATABLE-READ（可重复读），并且解决了幻读问题。简单的来说，mysql的默认隔离级别解决了脏读、幻读、不可重复读问题。\n"
+						+ "不可重复读重点在于update和delete，而幻读的重点在于insert。\n" + "在这里，我们只讨论可重复读。\n"
+						+ "你注意 mysql没有用表锁。而是用间隙锁解决了幻读的问题。",
+				"233 如果redis key过热怎么办  分成多个key来存储", "234", "235", "236", "237", "238", "239", "240", "241", "242",
+				"243 基于k8s、docker、jenkins构建springboot服务\n" + " http://www.mamicode.com/info-detail-2316898.html ",
+				"244", "245", "246", "247", "248", "249", "250", "251", "252", "253", "254", "255", "256", "257", "258",
+				"259", "260", "261", "262", "263", "264", "265", "266", "267", "268", "269", "270", "271", "272", "273",
+				"274", "275", "276", "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288",
+				"289", "290", "291", "292", "293", "294", "295", "296", "297", "298", "299", "300", "301", "302", "303",
+				"304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315", "316", "317", "318",
+				"319", "320", "321", "322", "323", "324", "325", "326", "327", "328", "329", "330", "331", "332", "333",
+				"334", "335", "336", "337", "338", "339", "340", "341", "342", "343", "344", "345", "346", "347", "348",
+				"349", "350", "351", "352", "353", "354", "355", "356", "357", "358", "359", "360", "361", "362", "363",
+				"364", "365", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375", "376");
 		int i = RandomUtils.nextInt(list.size());
 		return list.get(i);
 	}

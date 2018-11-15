@@ -258,6 +258,14 @@ public class Hao123Controller {
 			asyncSkipToPage("今日头条");
 			map.put("url", "https://www.toutiao.com/");
 			break;
+		case "wechatDevDoc":
+			asyncSkipToPage("微信支付开发文档");
+			map.put("url", "https://pay.weixin.qq.com/wiki/doc/api/index.html");
+			break;
+		case "aliPayDevDoc":
+			asyncSkipToPage("支付宝支付开发文档");
+			map.put("url", "https://openhome.alipay.com/developmentDocument.htm");
+			break;
 		case "token":
 			asyncSkipToPage("测试号access_token");
 			map.put("url", Hao123Application.tokenShow);
