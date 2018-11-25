@@ -98,11 +98,18 @@ public class Hao123Application {
                 String str = HttpClientUtil.httpPostWithJSON("https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + token,
                         "{\"touser\": \"orR4l1rIdRi1-xsJxWJezAA2QrXE\", \"msgtype\": \"text\", \"text\": {\"content\": \" " + content + " \" }}");
                 log.info("2222222222result2222, {}", str);
+                // 如果累计发送达到20条 就将计数归零
+                Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
+                Double errcode = (Double) retMap.get("errcode");
+                if (0 != errcode) {
+                    count = 0;
+                }
+                log.info("retMap, {}", GsonUtil.GsonString(retMap));
             } catch (Exception e) {
-                // TODO Auto-generated catch block
+                log.error("获取errcode异常,{}", e);
 
             }
-        }, 2, 559, TimeUnit.SECONDS);
+        }, 2, 299, TimeUnit.SECONDS);
 
     }
 
@@ -834,11 +841,13 @@ public class Hao123Application {
                 "268  删除 文件夹及文件夹里面的内容   rm -rf dir",
                 "269  linux安装elasticsearch\n"
                         + "   https://blog.csdn.net/yowrhihoil/article/details/79746430   你看 使用ES的过程是不是这样的  部署好ES  然后添加分词插件  然后就启动定时任务 将业务数据扔进es dml都需要同步到es，可以最后修改时间来判断是否是增量数据，然后同步到es，然后再从es检索",
-                "270", "271", "272", "273", "274", "275", "276", "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290", "291", "292",
+                "270 将每一天都过成荒野求生", "271", "272", "273", "274", "275", "276", "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290",
+                "291 费了这么大的力气 学会了centos安装es，怎么能够不使用起来呢  Spring Boot整合Elasticsearch全文搜索引擎\n" + "https://blog.yoodb.com/yoodb/article/detail/1424   ",
+                "292  ScheduleExecutorService接口和spring控制定时任务的理解\n" + "https://blog.csdn.net/dsiori/article/details/53517832    还真有不喜欢quartz的人 跟我一样的想法  yjs用的那个定时任务太笨重了 依赖那么多的表",
                 "293", "294", "295", "296", "297", "298", "299", "300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315",
                 "316", "317", "318", "319", "320", "321", "322", "323", "324", "325", "326", "327", "328", "329", "330", "331", "332", "333", "334", "335", "336", "337", "338",
                 "339", "340", "341", "342", "343", "344", "345", "346", "347", "348", "349", "350", "351", "352", "353", "354", "355", "356", "357", "358", "359", "360", "361",
-                "362", "363", "364", "365", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375", "376");
+                "362", "363", "364", "365  当mvp的感觉才叫爽", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375", "376");
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
