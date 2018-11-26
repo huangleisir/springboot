@@ -6,6 +6,7 @@ package com.hl;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -75,7 +76,8 @@ public class Hao123Application {
         ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
-
+        int seconds = Calendar.getInstance().getTime().getSeconds();
+        int delaySeconds = 60 - seconds;
         service2.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
@@ -110,7 +112,7 @@ public class Hao123Application {
                 log.error("获取errcode异常,{}", e);
 
             }
-        }, 2, 299, TimeUnit.SECONDS);
+        }, delaySeconds, 300, TimeUnit.SECONDS);
 
     }
 
@@ -842,7 +844,8 @@ public class Hao123Application {
                 "268  删除 文件夹及文件夹里面的内容   rm -rf dir",
                 "269  linux安装elasticsearch\n"
                         + "   https://blog.csdn.net/yowrhihoil/article/details/79746430   你看 使用ES的过程是不是这样的  部署好ES  然后添加分词插件  然后就启动定时任务 将业务数据扔进es dml都需要同步到es，可以最后修改时间来判断是否是增量数据，然后同步到es，然后再从es检索",
-                "270 将每一天都过成荒野求生", "271", "272", "273", "274", "275", "276", "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290",
+                "270 将每一天都过成荒野求生", "271 Arrays.asList(param0,param1 ... paramN),这里这种入参个数不定的方法，其实入参是个数组,你看Arrays.asList 这个名字", "272 相信我  没三行代码就会有一个bug", "273", "274", "275", "276",
+                "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290",
                 "291 费了这么大的力气 学会了centos安装es，怎么能够不使用起来呢  Spring Boot整合Elasticsearch全文搜索引擎\n" + "https://blog.yoodb.com/yoodb/article/detail/1424   ",
                 "292  ScheduleExecutorService接口和spring控制定时任务的理解\n" + "https://blog.csdn.net/dsiori/article/details/53517832    还真有不喜欢quartz的人 跟我一样的想法  yjs用的那个定时任务太笨重了 依赖那么多的表",
                 "293", "294", "295", "296", "297", "298", "299", "300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315",
