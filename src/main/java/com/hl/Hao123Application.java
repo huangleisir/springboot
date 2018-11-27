@@ -105,7 +105,7 @@ public class Hao123Application {
                 // 如果累计发送达到20条 就将计数归零
                 Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
                 Double errcode = (Double) retMap.get("errcode");
-                if (0d != errcode) {
+                if (45047d == errcode) {
                     count = 0;
                 }
                 log.info("retMap, {}", GsonUtil.GsonString(retMap));
@@ -125,7 +125,7 @@ public class Hao123Application {
 
     static String randomShiti() {
         List<String> list = Arrays.asList("1你能讲讲jvm内存模型吗，eden，S1,S2,年轻代，年老代，永久代，垃圾回收算法吗？   https://www.cnblogs.com/dingyingsi/p/3760447.html",
-                "2你能说出几种设计模式  https://www.cnblogs.com/geek6/p/3951677.html", "3并发包下面的类  https://blog.csdn.net/sunyc1990/article/details/78084864",
+                "2你能说出几种设计模式  https://www.cnblogs.com/geek6/p/3951677.html", "3 并发包下面的类  https://blog.csdn.net/sunyc1990/article/details/78084864",
                 "4集合框架1.java集合 集合的好处：1是可变容量 2.是可以存放不同类型的元素 3.增删改查算法优化 4.部分支持线程安全 Collections - List接口 -Map接口 -Queue接口 HashMap 源码解读  http://blog.csdn.net/mrb1289798400/article/details/76761423  第一层是数组，第二层是Node元素的单向链表 ConcurrentHashMap源码解读  http://www.importnew.com/16142.html 用到了segment，然后更重要的是在segment里面用到了重入锁，用读写所，在 读多写少的情况下，性能有显著提升，如果写多读少到不见得比synchrnized能好到哪里去。\n"
                         + "List接口 ： 有序可重复 Arraylist 查快 增删改慢（用挪动其他元素） LinkedList 查比较慢 增删改快（不用挪动其他元素） Vector 3个 可以用List的特性做队列和栈容器 用addLast/First pollFirst/Last removeFirst/Last（）在在集合为空的时候会报空指针异常。 List接口里面有contains()方法，不要傻逼比再去用for循环一个元素一个元素在那里比较了了。 set接口 : 无序不可重复 HashSet treeSet 2个\n"
                         + "\n" + "Map 接口 ： treeMap HashMap HashTable 3个\n"
@@ -875,8 +875,24 @@ public class Hao123Application {
                 "337  equals和hashcode为什么要一起重写\n" + "\n"
                         + "object对象中的 public boolean equals(Object obj)，对于任何非空引用值 x 和 y，当且仅当 x 和 y 引用同一个对象时，此方法才返回 true； 注意：当此方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。如下： (1)当obj1.equals(obj2)为true时，obj1.hashCode() == obj2.hashCode()必须为true  (2)当obj1.hashCode() == obj2.hashCode()为false时，obj1.equals(obj2)必须为false 如果不重写equals，那么比较的将是对象的引用是否指向同一块内存地址，重写之后目的是为了比较两个对象的value值是否相等。特别指出利用equals比较八大包装对象 （如int，float等）和String类（因为该类已重写了equals和hashcode方法）对象时，默认比较的是值，在比较其它自定义对象时都是比较的引用地址 hashcode是用于散列数据的快速存取，如利用HashSet/HashMap/Hashtable类来存储数据时，都是根据存储对象的hashcode值来进行判断是否相同的。 这样如果我们对一个对象重写了euqals，意思是只要对象的成员变量值都相等那么euqals就等于true，但不重写hashcode，那么我们再new一个新的对象， 当原对象.equals（新对象）等于true时，两者的hashcode却是不一样的，由此将产生了理解的不一致，如在存储散列集合时（如Set类），将会存储了两个值一样的对象， 导致混淆，因此，就也需要重写hashcode() 举例说明：  就这个程序进行分析，在第一次添加时，调用了hashcode()方法，将hashcode存入对象中，第二次也一样，然后对hashcode进行比较。hashcode也只用于HashSet/HashMap/Hashtable类存储数据，所以会用于比较，需要重写\n"
                         + "\n" + "总结，自定义类要重写equals方法来进行等值比较，自定义类要重写compareTo方法来进行不同对象大小的比较，重写hashcode方法为了将数据存入HashSet/HashMap/Hashtable类时进行比较",
-                "338", "339", "340", "341", "342", "343", "344", "345", "346", "347", "348", "349", "350", "351", "352", "353", "354", "355", "356", "357", "358", "359", "360",
-                "361", "362", "363", "364", "365  当mvp的感觉才叫爽", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375", "376");
+                "338 .接口和抽象类的区别是什么？\n" + "从设计层面来说，抽象是对类的抽象，是一种模板设计，接口是行为的抽象，是一种行为的规范。\n" + "Java提供和支持创建抽象类和接口。它们的实现有共同点，不同点在于：\n" + "接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法。\n"
+                        + "类可以实现很多个接口，但是只能继承一个抽象类\n" + "类可以不实现抽象类和接口声明的所有方法，当然，在这种情况下，类也必须得声明成是抽象的。\n" + "抽象类可以在不提供接口方法实现的情况下实现接口。\n" + "Java接口中声明的变量默认都是final的。抽象类可以包含非final的变量。\n"
+                        + "Java接口中的成员函数默认是public的。抽象类的成员函数可以是private，protected或者是public。\n" + "接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含main方法的话是可以被调用的。\n" + "也可以参考JDK8中抽象类和接口的区别。\n"
+                        + "--------------------- \n" + "作者：hopeplus \n" + "来源：CSDN \n" + "原文：https://blog.csdn.net/hope900/article/details/78647466 \n"
+                        + "版权声明：本文为博主原创文章，转载请附上博文链接！",
+                "339 .hashCode()和equals()方法有何重要性？\n" + "\n"
+                        + "HashMap使用Key对象的hashCode()和equals()方法去决定key-value对的索引。当我们试着从HashMap中获取值的时候，这些方法也会被用到。如果这些方法没有被正确地实现，在这种情况下，两个不同Key也许会产生相同的hashCode()和equals()输出，HashMap将会认为它们是相同的，然后覆盖它们，而非把它们存储到不同的地方。同样的，所有不允许存储重复数据的集合类都使用hashCode()和equals()去查找重复，所以正确实现它们非常重要。equals()和hashCode()的实现应该遵循以下规则：\n"
+                        + "（1）如果o1.equals(o2)，那么o1.hashCode() == o2.hashCode()总是为true的。\n" + "（2）如果o1.hashCode() == o2.hashCode()，并不意味着o1.equals(o2)会为true。\n"
+                        + "具体可以参考 http://blog.csdn.net/javazejian/article/details/51348320\n" + "--------------------- \n" + "作者：hopeplus \n" + "来源：CSDN \n"
+                        + "原文：https://blog.csdn.net/hope900/article/details/78647466 \n" + "版权声明：本文为博主原创文章，转载请附上博文链接！",
+                "340 HashMap和Hashtable有什么区别？\n" + "\n" + "1、HashMap是非线程安全的，HashTable是线程安全的。\n" + "2、HashMap的键和值都允许有null值存在，而HashTable则不行。\n"
+                        + "3、因为线程安全的问题，HashMap效率比HashTable的要高。\n" + "4、Hashtable是同步的，而HashMap不是。因此，HashMap更适合于单线程环境，而Hashtable适合于多线程环境。\n"
+                        + "一般现在不建议用HashTable, ①是HashTable是遗留类，内部实现很多没优化和冗余。②即使在多线程环境下，现在也有同步的ConcurrentHashMap替代，没有必要因为是多线程而用HashTable。\n" + "\n" + "31.如何决定选用HashMap还是TreeMap？\n"
+                        + "\n" + "对于在Map中插入、删除和定位元素这类操作，HashMap是最好的选择。然而，假如你需要对一个有序的key集合进行遍历，TreeMap是更好的选择。基于你的collection的大小，也许向HashMap中添加元素会更快，将map换为TreeMap进行有序key的遍历。\n"
+                        + "--------------------- \n" + "作者：hopeplus \n" + "来源：CSDN \n" + "原文：https://blog.csdn.net/hope900/article/details/78647466 \n"
+                        + "版权声明：本文为博主原创文章，转载请附上博文链接！",
+                "341", "342", "343", "344", "345", "346", "347", "348", "349", "350", "351", "352", "353", "354", "355", "356", "357", "358", "359", "360", "361", "362", "363",
+                "364", "365  当mvp的感觉才叫爽", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375", "376");
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
