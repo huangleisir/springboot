@@ -77,7 +77,8 @@ public class Hao123Application {
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         int seconds = Calendar.getInstance().getTime().getSeconds();
-        int delaySeconds = 60 - seconds;
+        int mins = Calendar.getInstance().getTime().getMinutes();
+        int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
         service2.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
@@ -86,9 +87,9 @@ public class Hao123Application {
             if (count < 20) {
                 count++;
             }
-            String content = count + "-  " + randomShiti() + new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(new Date());
+            String content = count + "-  " + randomShiti() + new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Calendar.getInstance().getTime());
             try {
-                log.info("22222222222222, ");
+                log.info("22222222222222, {}", content);
                 String token = tokenMap.get("access_token");
                 Map<String, String> map = new HashMap<String, String>();
                 map.put("touser", "orR4l1sSeLPOQRpLkCC57sBU1fE0");
@@ -104,7 +105,7 @@ public class Hao123Application {
                 // 如果累计发送达到20条 就将计数归零
                 Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
                 Double errcode = (Double) retMap.get("errcode");
-                if (0 != errcode) {
+                if (0d != errcode) {
                     count = 0;
                 }
                 log.info("retMap, {}", GsonUtil.GsonString(retMap));
@@ -848,10 +849,31 @@ public class Hao123Application {
                 "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290",
                 "291 费了这么大的力气 学会了centos安装es，怎么能够不使用起来呢  Spring Boot整合Elasticsearch全文搜索引擎\n" + "https://blog.yoodb.com/yoodb/article/detail/1424   ",
                 "292  ScheduleExecutorService接口和spring控制定时任务的理解\n" + "https://blog.csdn.net/dsiori/article/details/53517832    还真有不喜欢quartz的人 跟我一样的想法  yjs用的那个定时任务太笨重了 依赖那么多的表",
-                "293", "294", "295", "296", "297", "298", "299", "300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315",
-                "316", "317", "318", "319", "320", "321", "322", "323", "324", "325", "326", "327", "328", "329", "330", "331", "332", "333", "334", "335", "336", "337", "338",
-                "339", "340", "341", "342", "343", "344", "345", "346", "347", "348", "349", "350", "351", "352", "353", "354", "355", "356", "357", "358", "359", "360", "361",
-                "362", "363", "364", "365  当mvp的感觉才叫爽", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375", "376");
+                "293 字符串 对齐  有些不支持 \\t \\n 的场合 适合用这种     \n" + "  static String duiqi(String str, boolean isHuanghang) {\n"
+                        + "        return isHuanghang ? String.format(\"%-20s\", str) + \"<br/>\" : String.format(\"%-20s\", str);\n" + "    }\n" + "    ",
+                "294 获取Date 不要再去new了  ，太low了 ，/**\n" + "     * 获取当前系统时间\n" + "     *\n" + "     * @return\n" + "     */\n" + "    public static Date getCurDate() {\n"
+                        + "        return Calendar.getInstance().getTime();\n" + "    }",
+                "295 eclipse ctr + 3 也能用来搜索   eclipse不如直接下载STS,这个更好用", "296", "297", "298", "299", "300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310",
+                "311 redis 一主二从三哨兵   https://www.cnblogs.com/cheyunhua/p/7940458.html   redis", "312", "313", "314", "315", "316", "317", "318", "319", "320", "321", "322", "323",
+                "324  下面描述使用zookeeper实现分布式锁的算法流程，假设锁空间的根节点为/lock：\n" + "\n"
+                        + "    客户端连接zookeeper，并在/lock下创建临时的且有序的子节点，第一个客户端对应的子节点为/lock/lock-0000000000，第二个为/lock/lock-0000000001，以此类推。\n" + "\n"
+                        + "    客户端获取/lock下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听/lock的子节点变更消息，获得子节点变更通知后重复此步骤直至获得锁；\n" + "\n" + "    执行业务代码；\n" + "\n"
+                        + "    完成业务流程后，删除对应的子节点释放锁。\n" + "\n"
+                        + "步骤1中创建的临时节点能够保证在故障的情况下锁也能被释放，考虑这么个场景：假如客户端a当前创建的子节点为序号最小的节点，获得锁之后客户端所在机器宕机了，客户端没有主动删除子节点；如果创建的是永久的节点，那么这个锁永远不会释放，导致死锁；由于创建的是临时节点，客户端宕机后，过了一定时间zookeeper没有收到客户端的心跳包判断会话失效，将临时节点删除从而释放锁。\n"
+                        + "\n"
+                        + "另外细心的朋友可能会想到，在步骤2中获取子节点列表与设置监听这两步操作的原子性问题，考虑这么个场景：客户端a对应子节点为/lock/lock-0000000000，客户端b对应子节点为/lock/lock-0000000001，客户端b获取子节点列表时发现自己不是序号最小的，但是在设置监听器前客户端a完成业务流程删除了子节点/lock/lock-0000000000，客户端b设置的监听器岂不是丢失了这个事件从而导致永远等待了？这个问题不存在的。因为zookeeper提供的API中设置监听器的操作与读操作是原子执行的，也就是说在读子节点列表时同时设置监听器，保证不会丢失事件。\n"
+                        + "\n"
+                        + "最后，对于这个算法有个极大的优化点：假如当前有1000个节点在等待锁，如果获得锁的客户端释放锁时，这1000个客户端都会被唤醒，这种情况称为“羊群效应”；在这种羊群效应中，zookeeper需要通知1000个客户端，这会阻塞其他的操作，最好的情况应该只唤醒新的最小节点对应的客户端。应该怎么做呢？在设置事件监听时，每个客户端应该对刚好在它之前的子节点设置事件监听，例如子节点列表为/lock/lock-0000000000、/lock/lock-0000000001、/lock/lock-0000000002，序号为1的客户端监听序号为0的子节点删除消息，序号为2的监听序号为1的子节点删除消息。",
+                "325 Java多线程：线程安全和非线程安全的集合对象\n" + "一、概念：\n" + "    线程安全：就是当多线程访问时，采用了加锁的机制；即当一个线程访问该类的某个数据时，会对这个数据进行保护，其他线程不能对其访问，直到该线程读取完之后，其他线程才可以使用。防止出现数据不一致或者数据被污染的情况。\n"
+                        + "    线程不安全：就是不提供数据访问时的数据保护，多个线程能够同时操作某个数据，从而出现数据不一致或者数据污染的情况。\n" + "    对于线程不安全的问题，一般会使用synchronized关键字加锁同步控制。\n"
+                        + "    线程安全 工作原理： jvm中有一个main memory对象，每一个线程也有自己的working memory，一个线程对于一个变量variable进行操作的时候， 都需要在自己的working memory里创建一个copy,操作完之后再写入main memory。\n"
+                        + "    当多个线程操作同一个变量variable，就可能出现不可预知的结果。\n"
+                        + "    而用synchronized的关键是建立一个监控monitor，这个monitor可以是要修改的变量，也可以是其他自己认为合适的对象(方法)，然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完加载load到working memory 到 use && 指派assign 到 存储store 再到 main memory的过程。才会释放它得到的锁。这样就实现了所谓的线程安全。\n"
+                        + "二、线程安全(Thread-safe)的集合对象：\n" + "    Vector 线程安全：\n" + "    HashTable 线程安全：\n" + "    StringBuffer 线程安全：\n" + "三、非线程安全的集合对象：\n" + "    ArrayList ：\n"
+                        + "    LinkedList：\n" + "    HashMap：\n" + "    HashSet：\n" + "    TreeMap：\n" + "    TreeSet：\n" + "    StringBulider：",
+                "326", "327", "328", "329", "330", "331", "332", "333", "334", "335", "336", "337", "338", "339", "340", "341", "342", "343", "344", "345", "346", "347", "348",
+                "349", "350", "351", "352", "353", "354", "355", "356", "357", "358", "359", "360", "361", "362", "363", "364", "365  当mvp的感觉才叫爽", "366", "367", "368", "369",
+                "370", "371", "372", "373", "374", "375", "376");
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
