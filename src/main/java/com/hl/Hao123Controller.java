@@ -277,6 +277,10 @@ public class Hao123Controller {
                 asyncSkipToPage("xinwen1plus1");
                 map.put("url", "http://tv.cctv.com/lm/xinwen1j1/");
                 break;
+            case "fandengdushu":
+                asyncSkipToPage("樊登读书会");
+                map.put("url", "http://www.szdushu.com/index.html");
+                break;
             case "weather":
                 asyncSkipToPage("weather");
                 String str = HttpClientUtil.doGet("http://api.k780.com/?app=weather.today&weaid=1&appkey=37513&sign=03ece6e534315f18bb18cca05465217f&format=json", null);
