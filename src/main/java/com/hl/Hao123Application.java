@@ -933,8 +933,16 @@ public class Hao123Application {
                 "354 事物的理解\n" + "\n" + "a) 事物具有原子性，一致性，持久性，隔离性\n" + "\n" + "b) 原子性：是指在一个事物中，要么全部执行成功，要么全部失败回滚。\n" + "\n" + "c) 一致性：事物执行之前和执行之后都处于一致性状态\n" + "\n"
                         + "d) 持久性：事物多数据的操作是永久性\n" + "\n" + "e) 隔离性：当一个事物正在对数据进行操作时，另一个事物不可以对数据进行操作，也就是多个并发事物之间相互隔离。\n" + "--------------------- \n" + "作者：白衣染霜华丶 \n" + "来源：CSDN \n"
                         + "原文：https://blog.csdn.net/zhangcc233/article/details/77847104 \n" + "版权声明：本文为博主原创文章，转载请附上博文链接！",
-                "355", "356", "357", "358", "359", "360", "361", "362", "363", "364", "365  当mvp的感觉才叫爽", "366", "367", "368", "369", "370", "371", "372", "373", "374", "375",
-                "376");
+                "355 server.tomcat.uri-encoding   新    UTF-8          \n" + "server.tomcat.max-threads   新    1000           \n" + "server.tomcat.max-connections   新    20000   ",
+                "356 am pm:  问一下大佬们，有没有懂Kafka的，Kafka怎么标记消息是否被消费，没有被标记消费的，重复消费，这个应该怎么设置？ 傅文江: offset  ", "357", "358", "359", "360", "361", "362", "363", "364", "365  当mvp的感觉才叫爽",
+                "366 注意力集中，聚焦一次，非常不容易 切换上下文 就需要重新来一次  21比9 显示器  能有效降低注意力的无效损失 ",
+                "367 java判断一个字符串是否是json格式\n" + "2017年04月24日 18:53:36 Legendary灬 阅读数：14858\n"
+                        + "版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/qq_16272049/article/details/70649767\n"
+                        + "本以为判断一个字符串是否是json格式，常用的json处理工具类会有成型的方法，结果找了一下却没有发现，所以只能用异常来解决这个问题。\n" + "这肯定是个非常规的办法 ，不过可以解决问题，记录一下，有更好方法，欢迎提出！\n"
+                        + "import com.alibaba.fastjson.JSONObject; \n" + "\n" + "public boolean isJson(String content){\n" + "    try {\n"
+                        + "        JSONObject jsonStr= JSONObject.parseObject(content);\n" + "        return  true;\n" + "   } catch (Exception e) {\n" + "        return false;\n"
+                        + "  }\n" + "}",
+                "368", "369", "370", "371", "372", "373", "374", "375", "376");
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
