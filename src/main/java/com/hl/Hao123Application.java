@@ -48,6 +48,7 @@ public class Hao123Application {
 
     static int count = 0;
 
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         SpringApplication.run(Hao123Application.class, args);
         /////////////////////////////////////////////////////////////////////
@@ -79,6 +80,7 @@ public class Hao123Application {
         int seconds = Calendar.getInstance().getTime().getSeconds();
         int mins = Calendar.getInstance().getTime().getMinutes();
         int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
+        delaySeconds = 60 - seconds;
         service2.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
@@ -113,7 +115,7 @@ public class Hao123Application {
                 log.error("获取errcode异常,{}", e);
 
             }
-        }, delaySeconds, 300, TimeUnit.SECONDS);
+        }, delaySeconds, 30, TimeUnit.SECONDS);
 
     }
 
@@ -942,7 +944,9 @@ public class Hao123Application {
                         + "import com.alibaba.fastjson.JSONObject; \n" + "\n" + "public boolean isJson(String content){\n" + "    try {\n"
                         + "        JSONObject jsonStr= JSONObject.parseObject(content);\n" + "        return  true;\n" + "   } catch (Exception e) {\n" + "        return false;\n"
                         + "  }\n" + "}",
-                "368", "369", "370", "371", "372", "373", "374", "375", "376");
+                "368 这个分布式事务跟孙玄讲的基本一致    interview之前可以拿出来温故一下   https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html", "369", "370", "371", "372",
+                "373 深入理解MySql的Explain执行计划\n" + "https://mp.weixin.qq.com/s/mEhqKQuF5JCAdAAc6Uqotg",
+                "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra", "375", "376");
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
