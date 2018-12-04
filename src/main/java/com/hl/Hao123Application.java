@@ -946,7 +946,8 @@ public class Hao123Application {
                         + "  }\n" + "}",
                 "368 这个分布式事务跟孙玄讲的基本一致    interview之前可以拿出来温故一下   https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html", "369", "370", "371", "372",
                 "373 深入理解MySql的Explain执行计划\n" + "https://mp.weixin.qq.com/s/mEhqKQuF5JCAdAAc6Uqotg",
-                "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra", "375", "376");
+                "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra", "375 ",
+                "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A");
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
