@@ -848,8 +848,14 @@ public class Hao123Application {
                 "268  删除 文件夹及文件夹里面的内容   rm -rf dir",
                 "269  linux安装elasticsearch\n"
                         + "   https://blog.csdn.net/yowrhihoil/article/details/79746430   你看 使用ES的过程是不是这样的  部署好ES  然后添加分词插件  然后就启动定时任务 将业务数据扔进es dml都需要同步到es，可以最后修改时间来判断是否是增量数据，然后同步到es，然后再从es检索",
-                "270 将每一天都过成荒野求生", "271 Arrays.asList(param0,param1 ... paramN),这里这种入参个数不定的方法，其实入参是个数组,你看Arrays.asList 这个名字", "272 相信我  没三行代码就会有一个bug", "273", "274", "275", "276",
-                "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290",
+                "270 将每一天都过成荒野求生", "271 Arrays.asList(param0,param1 ... paramN),这里这种入参个数不定的方法，其实入参是个数组,你看Arrays.asList 这个名字", "272 相信我  没三行代码就会有一个bug",
+                "273  关于Mybatis的$和#的细节，源码解析\n" + "  https://blog.csdn.net/lz710117239/article/details/76218172", "274", "275", "276", "277", "278", "279", "280", "281", "282",
+                "283 sun eclipse里面的merge tool 怎么使用 https://www.cnblogs.com/wavky/p/3504060.html  merge tool里面是可以左右复制代码的",
+                "284  ---------------------Merge Tool的使用-------------------------------------------\n"
+                        + "这个东西只有在有红色双向箭头的时候才可用，否则是灰色的    所以要先使用merge，让代码合并在一起，并标识出冲突，才能使用Merge Tool \n" + "把代码pull下来  或者将另一个分支代码merge到当前分支都可以让冲突出现   有时候需要commit一下 才会让红色冲突出现\n"
+                        + "另外 要知道  在merge tool  视图  左边是自己workspace里面的代码  右边是远端代码 \n" + "注意左边的代码是可以编辑的（不能用ctr + d 快捷键  我也不知道为什么）  右边的代码 不可以编辑\n"
+                        + " 编辑完之后  将代码  add to  index  一下   这样 红色双向箭头就变成了 黑色星号  （紧张情绪一下子缓解了） 就可以正常提交了",
+                "285", "286", "287", "288", "289", "290",
                 "291 费了这么大的力气 学会了centos安装es，怎么能够不使用起来呢  Spring Boot整合Elasticsearch全文搜索引擎\n" + "https://blog.yoodb.com/yoodb/article/detail/1424   ",
                 "292  ScheduleExecutorService接口和spring控制定时任务的理解\n" + "https://blog.csdn.net/dsiori/article/details/53517832    还真有不喜欢quartz的人 跟我一样的想法  yjs用的那个定时任务太笨重了 依赖那么多的表",
                 "293 字符串 对齐  有些不支持 \\t \\n 的场合 适合用这种     \n" + "  static String duiqi(String str, boolean isHuanghang) {\n"
