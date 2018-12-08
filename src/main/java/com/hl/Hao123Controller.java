@@ -224,6 +224,10 @@ public class Hao123Controller {
                 asyncSkipToPage("mybatis");
                 map.put("url", "http://www.mybatis.org/mybatis-3/zh/source-repository.html");
                 break;
+            case "huangyeshengyan":
+                asyncSkipToPage("荒野盛宴");
+                map.put("url", "https://v.qq.com/x/cover/uwhaofqt6r06hvp.html");
+                break;
             case "zk":
                 asyncSkipToPage("zookeeper");
                 map.put("url", "https://zookeeper.apache.org/");
