@@ -898,7 +898,26 @@ public class Hao123Application {
                         + "        return isHuanghang ? String.format(\"%-20s\", str) + \"<br/>\" : String.format(\"%-20s\", str);\n" + "    }\n" + "    ",
                 "294 获取Date 不要再去new了  ，太low了 ，/**\n" + "     * 获取当前系统时间\n" + "     *\n" + "     * @return\n" + "     */\n" + "    public static Date getCurDate() {\n"
                         + "        return Calendar.getInstance().getTime();\n" + "    }",
-                "295 eclipse ctr + 3 也能用来搜索   eclipse不如直接下载STS,这个更好用", "296", "297", "298", "299", "300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310",
+                "295 eclipse ctr + 3 也能用来搜索   eclipse不如直接下载STS,这个更好用",
+                "296 \n" + "重入锁的理解\n" + "\n" + "重入锁\n" + "\n" + "（1）重进入：\n" + "\n" + "1.定义：重进入是指任意线程在获取到锁之后，再次获取该锁而不会被该锁所阻塞。关联一个线程持有者+计数器，重入意味着锁操作的颗粒度为“线程”。\n" + "\n"
+                        + "2.需要解决两个问题：\n" + "\n" + "线程再次获取锁：锁需要识别获取锁的现场是否为当前占据锁的线程，如果是，则再次成功获取；\n" + "\n"
+                        + "锁的最终释放：线程重复n次获取锁，随后在第n次释放该锁后，其他线程能够获取该锁。要求对锁对于获取进行次数的自增，计数器对当前锁被重复获取的次数进行统计，当锁被释放的时候，计数器自减，当计数器值为0时，表示锁成功释放。\n" + "\n"
+                        + "3.重入锁实现重入性：每个锁关联一个线程持有者和计数器，当计数器为0时表示该锁没有被任何线程持有，那么任何线程都可能获得该锁而调用相应的方法；当某一线程请求成功后，JVM会记下锁的持有线程，并且将计数器置为1；此时其它线程请求该锁，则必须等待；而该持有锁的线程如果再次请求这个锁，就可以再次拿到这个锁，同时计数器会递增；当线程退出同步代码块时，计数器会递减，如果计数器为0，则释放该锁\n"
+                        + "\n" + "（2）ReentrantLock是的非公平类中通过组合自定义同步器来实现锁的获取与释放。",
+                "297  jackson中@JsonProperty、@JsonIgnore等常用注解总结\n" + "本文为博主原创，未经允许不得转载：\n" + "最近用的比较多，把json相关的知识点都总结一下，jackjson的注解使用比较频繁，\n" + "jackson的maven依赖\n"
+                        + "<dependency> \n" + "    <groupId>com.fasterxml.jackson.core</groupId> \n" + "        <artifactId>jackson-databind</artifactId> \n"
+                        + "    <version>2.5.3</version>\n" + "</dependency>    \n" + "在这单独总结一下，最近常用到的注解。\n"
+                        + "1.@JsonProperty :此注解用于属性上，作用是把该属性的名称序列化为另外一个名称，如把trueName属性序列化为name，@JsonProperty(\"name\")。 \n"
+                        + "对属性名称重命名，比如在很多场景下Java对象的属性是按照规范的驼峰书写，但在数据库设计时使用的是下划线连接方式，此处在进行映射的时候\n" + "就可以使用该注解。\n" + "例如：使用该注解将以下表结构转化为Javabean：\n"
+                        + "2.@JsonIgnore此注解用于属性或者方法上（最好是属性上），用来完全忽略被注解的字段和方法对应的属性，即便这个字段或方法可以被自动检测到或者还有其\n" + "他的注解，一般标记在属性或者方法上，返回的json数据即不包含该属性。\n"
+                        + "使用情景：需要把一个List<CustomerInfo >转换成json格式的数据传递给前台。但实体类中基本属性字段的值都存储在快照属性字段中。此时我可以在业务层中做处理，\n"
+                        + "把快照属性字段的值赋给实体类中对应的基本属性字段。最后，我希望返回的json数据中不包含这两个快照字段，那么在实体类中快照属性上加注解@JsonIgnore，\n" + "那么最后返回的json数据，将不会包含customerId和productId两个属性值。\n"
+                        + "3.@JsonIgnoreProperties此注解是类注解，作用是json序列化时将java bean中的一些属性忽略掉，序列化和反序列化都受影响。\n" + "4.@JsonFormat此注解用于属性或者方法上（最好是属性上），可以方便的把Date类型直接转化为我们想要的模式。\n"
+                        + "例子：@JsonFormat(pattern=\"yyyy-MM-dd hh:mm:ss\")\n" + "@JsonFormat(pattern=\"yyyy-MM-dd HH:mm:ss\")\n" + "private Date updateTime;\n"
+                        + "5.@JsonSerialize此注解用于属性或者getter方法上，用于在序列化时嵌入我们自定义的代码，比如序列化一个double时在其后面限制两位小数点。\n"
+                        + "6.@JsonDeserialize此注解用于属性或者setter方法上，用于在反序列化时可以嵌入我们自定义的代码，类似于上面的@JsonSerialize。\n"
+                        + "7.@JsonInclude 属性值为null的不参与序列化。例子：@JsonInclude(Include.NON_NULL)\n",
+                "298", "299", "300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310",
                 "311 redis 一主二从三哨兵   https://www.cnblogs.com/cheyunhua/p/7940458.html   redis", "312", "313", "314", "315", "316", "317", "318", "319", "320", "321", "322", "323",
                 "324  下面描述使用zookeeper实现分布式锁的算法流程，假设锁空间的根节点为/lock：\n" + "\n"
                         + "    客户端连接zookeeper，并在/lock下创建临时的且有序的子节点，第一个客户端对应的子节点为/lock/lock-0000000000，第二个为/lock/lock-0000000001，以此类推。\n" + "\n"
