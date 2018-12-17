@@ -944,8 +944,30 @@ public class Hao123Application {
                         + "6.@JsonDeserialize此注解用于属性或者setter方法上，用于在反序列化时可以嵌入我们自定义的代码，类似于上面的@JsonSerialize。\n" + "7.@JsonInclude 属性值为null的不参与序列化。例子：@JsonInclude(Include.NON_NULL)\n"
                         + "",
                 "301  乞丐不好意思要饭，结果饿死了；商户不好意思要账，结果自己门店关了；不好意思向心仪的人表白，结果她跟别人走了；不好意思让客户签单，结果客户在别人那里成交了；不要让不好意思成为你人生的绊脚石，凡是让你觉得不好意思的都要马上去做，否则时间会把你的勇气完全消磨掉。说句实在的，我想要赞！", "302", "303",
-                "304", "305", "306", "307", "308", "309", "310", "311 redis 一主二从三哨兵   https://www.cnblogs.com/cheyunhua/p/7940458.html   redis", "312", "313", "314", "315", "316",
-                "317", "318", "319", "320", "321", "322", "323",
+                "304 接口设计原则     高内聚 低耦合\n" + "好的接口应当满足设计模式六大原则, 很多设计模式, 框架都是基于高内聚低耦合这个出发点的.\n" + "1单一职责原则: 一个类只负责一个功能领域中的相应职责.\n" + "2开闭原则: 一个软件实体应当对扩展开放，对修改关闭.\n"
+                        + "3里氏代换原则: 所有引用基类（父类）的地方必须能透明地使用其子类的对象.\n" + "4依赖倒转原则: 抽象不应该依赖于细节, 细节应当依赖于抽象. 换言之, 要针对接口编程, 而不是针对实现编程.\n"
+                        + "5接口隔离原则: 使用多个专门的接口, 而不使用单一的总接口, 即客户端不应该依赖那些它不需要的接口.\n" + "6迪米特法则: 一个软件实体应当尽可能少地与其他实体发生相互作用, 例如外观模式, 对外暴露统一接口.",
+                "305 记住，永远不要在MySQL中使用“utf8”编码  http://sh.qihoo.com/pc/91b901251f76d1e69?sign=360_e39369d1&refer_scene=so_7      问题的症结在于，MySQL的“utf8”实际上不是真正的 UTF-8。\n"
+                        + "“utf8”只支持每个字符三个字节，而真正的 UTF-8 是每个字符最多四字节\n" + "MySQL 一直没有修复这个 bug，他们在 2010 年发布了一个叫作“utf8mb4”的字符集，绕过了这个问题。\n"
+                        + "当然，他们并没有对新的字符集广而告之(可能是因为这个 bug 让他们觉得很尴尬)，以致于现在网络上仍然在建议开发者使用“utf8”，但这些建议都是错误的。\n" + "简单概括如下:\n" + "MySQL 的“utf8mb4”是真正的“UTF-8”。\n"
+                        + "MySQL 的“utf8”是一种“专属的编码”，它能够编码的Unicode字符并不多。\n" + "我要在这里澄清一下:所有在使用“utf8”的 MySQL 和 MariaDB 用户都应该改用“utf8mb4”，永远都不要再使用“utf8”。\n"
+                        + "而想要正确性的用户，当他们使用“utf8”编码时，却无法保存像“ߒ ”这样的字符。\n" + "\n"
+                        + "在这个不合法的字符集发布了之后，MySQL 就无法修复它，因为这样需要要求所有用户重新构建他们的数据库。最终，MySQL 在 2010 年重新发布了“utf8mb4”来支持真正的 UTF-8。\n" + "为什么这件事情会让人如此抓狂\n"
+                        + "因为这个问题，我整整抓狂了一个礼拜。我被“utf8”愚弄了，花了很多时间才找到这个 bug。但我一定不是唯一的一个，网络上几乎所有的文章都把“utf8”当成是真正的 UTF-8。\n" + "“utf8”只能算是个专有的字符集，它给我们带来了新问题，却一直没有得到解决。\n" + "总结\n"
+                        + "如果你在使用 MySQL 或MariaDB，不要用“utf8”编码，改用“utf8mb4”。这里提供了一个指南用于将现有数据库的字符编码从“utf8”转成“utf8mb4”。链接如下:\n"
+                        + "https://mathiasbynens.be/notes/mysql-utf8mb4#utf8-to-utf8mb4\n" + "",
+                "306 https://mp.weixin.qq.com/s/lbiD1DiDSXyD1Lf8r2RiSQ  SpringBoot 使用线程池\n" + "2018 年了，SpringBoot 盛行；来看看在 SpringBoot 中应当怎么配置和使用线程池。\n"
+                        + "既然用了 SpringBoot ，那自然得发挥 Spring 的特性，所以需要 Spring 来帮我们管理线程池：\n" + "@Configuration\n" + "public class TreadPoolConfig {\n" + "    /**\n" + "     * 消费队列线程\n"
+                        + "     * @return\n" + "     */\n" + "    @Bean(value = \"consumerQueueThreadPool\")\n" + "    public ExecutorService buildConsumerQueueThreadPool(){\n"
+                        + "        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()\n" + "                .setNameFormat(\"consumer-queue-thread-%d\").build();\n"
+                        + "\n" + "        ExecutorService pool = new ThreadPoolExecutor(5, 5, 0L, TimeUnit.MILLISECONDS,\n"
+                        + "                new ArrayBlockingQueue<Runnable>(5),namedThreadFactory,new ThreadPoolExecutor.AbortPolicy());\n" + "\n" + "        return pool ;\n"
+                        + "    }\n" + "}\n" + "使用时：\n" + "    @Resource(name = \"consumerQueueThreadPool\")\n" + "    private ExecutorService consumerQueueThreadPool;\n"
+                        + "    @Override\n" + "    public void execute() {\n" + "\n" + "        //消费队列\n" + "        for (int i = 0; i < 5; i++) {\n"
+                        + "            consumerQueueThreadPool.execute(new ConsumerQueueThread());\n" + "        }\n" + "\n" + "    }\n"
+                        + "其实也挺简单，就是创建了一个线程池的 bean，在使用时直接从 Spring 中取出即可。\n" + "",
+                "307", "308", "309", "310", "311 redis 一主二从三哨兵   https://www.cnblogs.com/cheyunhua/p/7940458.html   redis", "312", "313", "314", "315", "316", "317", "318", "319",
+                "320", "321", "322", "323",
                 "324  下面描述使用zookeeper实现分布式锁的算法流程，假设锁空间的根节点为/lock：\n" + "\n"
                         + "    客户端连接zookeeper，并在/lock下创建临时的且有序的子节点，第一个客户端对应的子节点为/lock/lock-0000000000，第二个为/lock/lock-0000000001，以此类推。\n" + "\n"
                         + "    客户端获取/lock下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听/lock的子节点变更消息，获得子节点变更通知后重复此步骤直至获得锁；\n" + "\n" + "    执行业务代码；\n" + "\n"
