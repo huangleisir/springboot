@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.util.concurrent.RateLimiter;
@@ -38,6 +39,15 @@ public class Hao123Controller {
      * logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
      * return "welcome to us , demo"; }
      */
+
+    @RequestMapping(value = "/wechat/portal", method = RequestMethod.GET)
+    @ResponseBody
+    public String demo(HttpServletRequest req, HttpServletResponse resp) {
+        logger.info("---------------~~~~~~~~~~~~/wechat/portal~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        // echostr
+        String echostr = req.getParameter("echostr");
+        return echostr;
+    }
 
     @RequestMapping(value = "/skip/{name}", method = RequestMethod.POST)
     public Object skip(@PathVariable("name") String name, HttpServletRequest req, HttpServletResponse resp) throws IOException {

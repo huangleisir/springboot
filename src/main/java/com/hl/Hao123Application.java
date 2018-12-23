@@ -966,8 +966,36 @@ public class Hao123Application {
                         + "    @Override\n" + "    public void execute() {\n" + "\n" + "        //消费队列\n" + "        for (int i = 0; i < 5; i++) {\n"
                         + "            consumerQueueThreadPool.execute(new ConsumerQueueThread());\n" + "        }\n" + "\n" + "    }\n"
                         + "其实也挺简单，就是创建了一个线程池的 bean，在使用时直接从 Spring 中取出即可。\n" + "",
-                "307", "308", "309", "310", "311 redis 一主二从三哨兵   https://www.cnblogs.com/cheyunhua/p/7940458.html   redis", "312", "313", "314", "315", "316", "317", "318", "319",
-                "320", "321", "322", "323",
+                "307  接口设计原则     高内聚 低耦合\n" + "好的接口应当满足设计模式六大原则, 很多设计模式, 框架都是基于高内聚低耦合这个出发点的.\n" + "1单一职责原则: 一个类只负责一个功能领域中的相应职责.\n" + "2开闭原则: 一个软件实体应当对扩展开放，对修改关闭.\n"
+                        + "3里氏代换原则: 所有引用基类（父类）的地方必须能透明地使用其子类的对象.\n" + "4依赖倒转原则: 抽象不应该依赖于细节, 细节应当依赖于抽象. 换言之, 要针对接口编程, 而不是针对实现编程.\n"
+                        + "5接口隔离原则: 使用多个专门的接口, 而不使用单一的总接口, 即客户端不应该依赖那些它不需要的接口.\n" + "6迪米特法则: 一个软件实体应当尽可能少地与其他实体发生相互作用, 例如外观模式, 对外暴露统一接口.",
+                "308 记住，永远不要在MySQL中使用“utf8”编码  http://sh.qihoo.com/pc/91b901251f76d1e69?sign=360_e39369d1&refer_scene=so_7      问题的症结在于，MySQL的“utf8”实际上不是真正的 UTF-8。\n"
+                        + "“utf8”只支持每个字符三个字节，而真正的 UTF-8 是每个字符最多四字节\n" + "MySQL 一直没有修复这个 bug，他们在 2010 年发布了一个叫作“utf8mb4”的字符集，绕过了这个问题。\n"
+                        + "当然，他们并没有对新的字符集广而告之(可能是因为这个 bug 让他们觉得很尴尬)，以致于现在网络上仍然在建议开发者使用“utf8”，但这些建议都是错误的。\n" + "简单概括如下:\n" + "MySQL 的“utf8mb4”是真正的“UTF-8”。\n"
+                        + "MySQL 的“utf8”是一种“专属的编码”，它能够编码的Unicode字符并不多。\n" + "我要在这里澄清一下:所有在使用“utf8”的 MySQL 和 MariaDB 用户都应该改用“utf8mb4”，永远都不要再使用“utf8”。\n"
+                        + "而想要正确性的用户，当他们使用“utf8”编码时，却无法保存像“ߒ ”这样的字符。\n" + "\n"
+                        + "在这个不合法的字符集发布了之后，MySQL 就无法修复它，因为这样需要要求所有用户重新构建他们的数据库。最终，MySQL 在 2010 年重新发布了“utf8mb4”来支持真正的 UTF-8。\n" + "为什么这件事情会让人如此抓狂\n"
+                        + "因为这个问题，我整整抓狂了一个礼拜。我被“utf8”愚弄了，花了很多时间才找到这个 bug。但我一定不是唯一的一个，网络上几乎所有的文章都把“utf8”当成是真正的 UTF-8。\n" + "“utf8”只能算是个专有的字符集，它给我们带来了新问题，却一直没有得到解决。\n" + "总结\n"
+                        + "如果你在使用 MySQL 或MariaDB，不要用“utf8”编码，改用“utf8mb4”。这里提供了一个指南用于将现有数据库的字符编码从“utf8”转成“utf8mb4”。链接如下:\n"
+                        + "https://mathiasbynens.be/notes/mysql-utf8mb4#utf8-to-utf8mb4\n" + "",
+                "309  阿里巴巴Java开发手册  线程资源必须通过线程池提供，不允许在应用中自行显式创建线程。\n" + "说明：使用线程池的好处是减少在创建和销毁线程上所花的时间以及系统资源的开销，解决系统资源不足的问题。如果不适用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者\"过度切换的问题\"。\n"
+                        + "应该将要并行运行的任务与运行机制解耦合。如果有很多任务，要为每个任务创建一个独立的线程所付出的代价太大了，可以使用线程池来解决这个问题。（摘自java核心技术）\n" + "可见线程池的重要性。\n" + "简单来说使用线程池有以下几个目的：\n" + "线程是稀缺资源，不能频繁的创建。\n"
+                        + "解耦作用；线程的创建于执行完全分开，方便维护。\n" + "应当将其放入一个池子中，可以给其他任务进行复用。",
+                "310 SpringBoot 使用线程池\n" + "2018 年了，SpringBoot 盛行；来看看在 SpringBoot 中应当怎么配置和使用线程池。\n" + "既然用了 SpringBoot ，那自然得发挥 Spring 的特性，所以需要 Spring 来帮我们管理线程池：\n"
+                        + "@Configuration\n" + "public class TreadPoolConfig {\n" + "    /**\n" + "     * 消费队列线程\n" + "     * @return\n" + "     */\n"
+                        + "    @Bean(value = \"consumerQueueThreadPool\")\n" + "    public ExecutorService buildConsumerQueueThreadPool(){\n"
+                        + "        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()\n" + "                .setNameFormat(\"consumer-queue-thread-%d\").build();\n"
+                        + "\n" + "        ExecutorService pool = new ThreadPoolExecutor(5, 5, 0L, TimeUnit.MILLISECONDS,\n"
+                        + "                new ArrayBlockingQueue<Runnable>(5),namedThreadFactory,new ThreadPoolExecutor.AbortPolicy());\n" + "\n" + "        return pool ;\n"
+                        + "    }\n" + "}\n" + "使用时：\n" + "    @Resource(name = \"consumerQueueThreadPool\")\n" + "    private ExecutorService consumerQueueThreadPool;\n"
+                        + "    @Override\n" + "    public void execute() {\n" + "\n" + "        //消费队列\n" + "        for (int i = 0; i < 5; i++) {\n"
+                        + "            consumerQueueThreadPool.execute(new ConsumerQueueThread());\n" + "        }\n" + "\n" + "    }\n"
+                        + "其实也挺简单，就是创建了一个线程池的 bean，在使用时直接从 Spring 中取出即可。",
+                "311 redis 一主二从三哨兵   https://www.cnblogs.com/cheyunhua/p/7940458.html   redis",
+                "312 精益创新过程中需要人脑同时处理大量的信息才能做出决策。下面看一下大脑的结构，读者会更理解可视化的必要性。人类的大脑有三种记忆区：长期记忆区，短期记忆区和工作记忆区。大量的知识经验被存储在长期记忆区，最近经历存储在短期记忆区，但思考判断必须借助于工作记忆区 。工作记忆区的容量非常有限。精益创新过程中，团队成员和管理者都需要依赖大量相关信息，才能做出有效决策。不借助外部记忆载体，管理者就必须从长期或短期记忆区回忆相关信息，才能做出决策，这将是一个缓慢而不可靠的过程。这就是为什么大多数知识工作者都有自己的外部记忆载体来协助思考和决策。例如下图就是在破案过程中，警察或侦探们经常使用的Crazy Wall:\n"
+                        + "为了实现知识工作的战术沙盘，首先需要将创意通过一层或多层分级，分解到精确到人的任务。希望一个任务可以在2-3天内完成，这样可以产生足够的压力避免拖延症，同时又不会因压力过大而产生管窥效应（过分关注目标，忽略其他因素而导致错误）。利用双层看板系统，可以很好地展示出创意工作和任务之间的对应关系。下图也是实际项目中使用的双层看板，绿色卡片是上层价值单元 – 用户故事。在开发环节，用户故事被拆分成多个开发任务，区分前后端，一个任务由一个人负责，一个任务可以在2-3天内完成。\n"
+                        + "，可视化对于管理者来说是战略或战术沙盘，是风险雷达，又是打造自组织团队的温床。衷心希望这篇小文可以帮助管理者用好可视化工具，更好地做好创新管理工作。\n" + "",
+                "313  缓存分类缓存一般有以下几类：客户端、浏览器、CDN缓存、NGINX缓存、应用缓存及统一缓存（如redis）。", "314", "315", "316", "317", "318", "319", "320", "321", "322", "323",
                 "324  下面描述使用zookeeper实现分布式锁的算法流程，假设锁空间的根节点为/lock：\n" + "\n"
                         + "    客户端连接zookeeper，并在/lock下创建临时的且有序的子节点，第一个客户端对应的子节点为/lock/lock-0000000000，第二个为/lock/lock-0000000001，以此类推。\n" + "\n"
                         + "    客户端获取/lock下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听/lock的子节点变更消息，获得子节点变更通知后重复此步骤直至获得锁；\n" + "\n" + "    执行业务代码；\n" + "\n"
@@ -993,7 +1021,11 @@ public class Hao123Application {
                         + "乐观锁，其本质上不存在资源锁定，因此从根源上杜绝了死锁的发生；同时由于内部自旋机制（失败尝试机制），只有在资源发生冲突时才会进行重试，在并发竞争不充分的情况下，大大提升了系统效率（当并发竞争很激烈的时候，耗费在自旋的资源可能会大于加锁的损耗，此时，乐观锁比悲观锁效率低）。\n"
                         + "3. 乐观锁实现原理\n" + "3.1. CAS\n" + "CAS 的全称是 Compare And Swap 即比较交换，其算法核心思想如下：\n" + "执行函数：CAS（V,E,N）\n" + "其包含 3 个参数：\n" + "V 表示要更新的变量\n" + "E 表示预期值\n"
                         + "N 表示新值\n" + "如果 V 值等于 E 值，则将 V 的值设为 N。若 V 值和 E 值不同，则说明已经有其他线程做了更新，则当前线程什么都不做。\n" + "",
-                "328", "329", "330", "331", "332", "333", "334", "335", "336",
+                "328  Java调用Groovy脚本   https://blog.csdn.net/GAMEloft9/article/details/79359079  适合 逻辑要变来变去  又不想重新部署服务的场景",
+                "329  oppo手机   1、JAVA基础扎实，熟练掌握IO、多线程、集合等基础类库，熟悉分布式缓存、消息机制、搜索引擎等技术；\n" + "2、3年以上使用JAVA进行大型系统开发的经验；\n" + "3、熟悉J2EE规范，掌握常用的设计模式；熟悉高并发、高性能的分布式系统的设计及应用、调优；\n"
+                        + "4、熟悉SQL，了解Mysql及相关分布式存储技术；\n" + "5、有互联网平台级产品研发经验或者开发经验者优先；",
+                "330 全网把 Map 中的 hash() 分析的最透彻的文章，别无二家\n" + "https://mp.weixin.qq.com/s/4MDfsJ_tzLyT45xbOb85_g",
+                "331   服务号后台  微信开发工具  https://github.com/SamHz/weixin-java-mp-demo-springboot\n" + "", "332", "333", "334", "335", "336",
                 "337  equals和hashcode为什么要一起重写\n" + "\n"
                         + "object对象中的 public boolean equals(Object obj)，对于任何非空引用值 x 和 y，当且仅当 x 和 y 引用同一个对象时，此方法才返回 true； 注意：当此方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。如下： (1)当obj1.equals(obj2)为true时，obj1.hashCode() == obj2.hashCode()必须为true  (2)当obj1.hashCode() == obj2.hashCode()为false时，obj1.equals(obj2)必须为false 如果不重写equals，那么比较的将是对象的引用是否指向同一块内存地址，重写之后目的是为了比较两个对象的value值是否相等。特别指出利用equals比较八大包装对象 （如int，float等）和String类（因为该类已重写了equals和hashcode方法）对象时，默认比较的是值，在比较其它自定义对象时都是比较的引用地址 hashcode是用于散列数据的快速存取，如利用HashSet/HashMap/Hashtable类来存储数据时，都是根据存储对象的hashcode值来进行判断是否相同的。 这样如果我们对一个对象重写了euqals，意思是只要对象的成员变量值都相等那么euqals就等于true，但不重写hashcode，那么我们再new一个新的对象， 当原对象.equals（新对象）等于true时，两者的hashcode却是不一样的，由此将产生了理解的不一致，如在存储散列集合时（如Set类），将会存储了两个值一样的对象， 导致混淆，因此，就也需要重写hashcode() 举例说明：  就这个程序进行分析，在第一次添加时，调用了hashcode()方法，将hashcode存入对象中，第二次也一样，然后对hashcode进行比较。hashcode也只用于HashSet/HashMap/Hashtable类存储数据，所以会用于比较，需要重写\n"
                         + "\n" + "总结，自定义类要重写equals方法来进行等值比较，自定义类要重写compareTo方法来进行不同对象大小的比较，重写hashcode方法为了将数据存入HashSet/HashMap/Hashtable类时进行比较",
