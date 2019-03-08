@@ -49,6 +49,7 @@ public class Hao123Controller {
         return echostr;
     }
 
+
     @RequestMapping(value = "/skip/{name}", method = RequestMethod.POST)
     public Object skip(@PathVariable("name") String name, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         logger.info("---------------~~~~~~~~~~~~name~~~~~" + name);
