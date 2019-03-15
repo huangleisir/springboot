@@ -27,7 +27,6 @@ public class Hao123Controller {
     /**
      * http://localhost:8080/&#x4e2d;&#x6587; &#x4e0d;&#x9519;&#xff0c;&#x662f;&#x53ef;&#x4ee5;&#x652f;&#x6301;&#x4e2d;&#x6587;&#x7684;
      *
-     * @param value
      * @return
      * @throws IOException
      */
