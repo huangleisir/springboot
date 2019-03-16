@@ -170,7 +170,7 @@ public class Hao123Application {
                 "28mysql优化",
                 "29执行计划看什么,是否有全表扫描,索引是否生效",
                 "30jvm的数据模型,年代划分,gc算法 \n   https://www.cnblogs.com/kingszelda/p/7226080.html",
-                 "31 idea  ctr+E 查看最近浏览或者编辑的文件，这个非常好，会跟ctr+Q一样常用",
+                 "31 ",
                 "32set是怎么实现不重复的   https://blog.csdn.net/u010698072/article/details/52802179   一句话，用hashMap存储，key值不会重复 所以set也不会重复", "33lock锁与synchronize的差别",
                 "34ConcurrentHashMap实现原理", "35一致性hash",
                 "36RabbitMQ:ACK机制 MQ三个作用，异步，解耦，削峰，\n    Consumer可能需要一段时间才能处理完收到的数据。如果在这个过程中，Consumer出错了，异常退出了，而数据还没有处理完成，这段数据就丢失了。如果我们采用no-ack的方式进行确认，也就是说，每次Consumer接到数据后，而不管是否处理完成，RabbitMQ Server会立即把这个Message标记为完成，然后从queue中删除了。\n"
@@ -1118,7 +1118,14 @@ public class Hao123Application {
                 "368 这个分布式事务跟孙玄讲的基本一致    interview之前可以拿出来温故一下   https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html", "369", "370", "371", "372",
                 "373 深入理解MySql的Explain执行计划\n" + "https://mp.weixin.qq.com/s/mEhqKQuF5JCAdAAc6Uqotg",
                 "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra", "375 ",
-                "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A");
+                "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A",
+                "400 400之后用作专门的idea 用法心得总结吧   idea  ctr+E 查看最近浏览或者编辑的文件，这个非常好，会跟ctr+Q一样常用",
+                "401 快速的打开关闭某个面板 可以用alt+面板编号，这个比较好用"
+
+
+
+
+        );
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
     }
