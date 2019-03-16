@@ -1121,7 +1121,8 @@ public class Hao123Application {
                 "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A",
                 "400 400之后用作专门的idea 用法心得总结吧   idea  ctr+E 查看最近浏览或者编辑的文件，这个非常好，会跟ctr+Q一样常用",
                 "401 快速的打开关闭某个面板 可以用alt+面板编号，这个比较好用  编辑区与Project面板之间的跳转，用alt+1 ",
-                "402 ctr+H  这个跟eclipse里面的ctr+H全局搜索类似，也可以匹配文件类型，指定在某一类型的文件里面去搜索 用File Mask这个功能在对话框的右上角"
+                "402 ctr+H  这个跟eclipse里面的ctr+H全局搜索类似，也可以匹配文件类型，指定在某一类型的文件里面去搜索 用File Mask这个功能在对话框的右上角",
+                "403 根据类名 成员变量名  方法名  也就是idea里面的symbol这个概念来搜索,用菜单Navigate - Symbol 快捷键 ctrl+alt+shift+N "
 
 
 
