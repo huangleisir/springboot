@@ -1127,7 +1127,8 @@ public class Hao123Application {
                 "405 写代码 要怎么写  面试 确实是很难的   还是买个蓝牙耳机吧  不然上班老是走神",
                 "406 按下alt, 你再看看菜单栏  ",
                 "407 VCS- local control put label ，这个挺有用 如果你想回到某个版本节点 可以用这个",
-                "408 "
+                "408 idea里面在方法调用的地方 ctrl + t 跳转到方法实现的地方",
+                "409 ctrl + g 跳转到调用该方法的地方 等同于eclipse里面的ctrl + alt + h"
 
 
 
