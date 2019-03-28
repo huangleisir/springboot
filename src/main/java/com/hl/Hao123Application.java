@@ -1128,7 +1128,8 @@ public class Hao123Application {
                 "406 按下alt, 你再看看菜单栏  ",
                 "407 VCS- local control put label ，这个挺有用 如果你想回到某个版本节点 可以用这个",
                 "408 idea里面在方法调用的地方 ctrl + t 跳转到方法实现的地方",
-                "409 ctrl + g 跳转到调用该方法的地方 等同于eclipse里面的ctrl + alt + h"
+                "409 ctrl + g 跳转到调用该方法的地方 等同于eclipse里面的ctrl + alt + h",
+                "410 今天无意之中发现一个事,idea支持alt辅助下的多行编辑，跟notepad++那样的功能，这个太有意思了"
 
 
 
