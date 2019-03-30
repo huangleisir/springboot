@@ -51,9 +51,9 @@ public class Hao123Application {
 
 
     @SuppressWarnings("deprecation")
-    public static void main(String[] args) {
+    public static void main(String[] strings) {
         System.out.println("要启动该服务了---------------Hao123Application");
-        SpringApplication.run(Hao123Application.class, args);
+        SpringApplication.run(Hao123Application.class, strings);
         /////////////////////////////////////////////////////////////////////
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
         // 参数：1、任务体 2、首次执行的延时时间
@@ -1254,5 +1254,5 @@ public class Hao123Application {
  *             处理静态文件
  *             浏览器页面使用HTML作为描述语言，那么必然也脱离不了CSS以及JavaScript。为了能够浏览器能够正确加载类似/css/style.css,
  *             /js/main.js等资源，默认情况下我们只需要在src/main/resources/static目录下添加css/style.css和js/main.js文件后，Spring
- *             MVC能够自动将他们发布，通过访问/css/style.css, /js/main.js也就可以正确加载这些资源。
+ *             MVC能够自动将他们发布，通过访问/css/style.css.js也就可以正确加载这些资源。
  */
