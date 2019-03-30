@@ -3,6 +3,7 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Controller.java" description="getIpAdrress()" line="329" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Controller.java" line="337" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" description="快速到达idea使用总结" line="1132" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c94116e-e2c8-4927-9d68-a87fd802fc21" name="Default" comment="add moto  xiaofeng">
@@ -60,7 +61,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="50" />
-          <entry key="java" value="1052" />
+          <entry key="java" value="1285" />
           <entry key="sql" value="16" />
           <entry key="txt" value="96" />
         </counts>
@@ -68,14 +69,14 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="50" />
-          <entry key="JAVA" value="1052" />
+          <entry key="JAVA" value="1285" />
           <entry key="PLAIN_TEXT" value="96" />
           <entry key="Scratch" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
@@ -88,10 +89,10 @@
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="3" />
-          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -110,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="1131" column="74" selection-start-line="1131" selection-start-column="74" selection-end-line="1131" selection-end-column="74" />
+            <state relative-caret-position="398">
+              <caret line="1132" column="115" selection-start-line="1132" selection-start-column="115" selection-end-line="1132" selection-end-column="115" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -209,6 +210,8 @@
       <find>53.248</find>
       <find>print</find>
       <find>idea</find>
+      <find>mainmain</find>
+      <find>main</find>
       <find>400</find>
     </findStrings>
   </component>
@@ -267,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,7 +366,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,7 +380,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552793410178" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553911819278" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ClickHouse" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -509,7 +512,8 @@
       <workItem from="1553301289830" duration="645000" />
       <workItem from="1553604551288" duration="1442000" />
       <workItem from="1553690011035" duration="4008000" />
-      <workItem from="1553775322226" duration="670000" />
+      <workItem from="1553775322226" duration="1287000" />
+      <workItem from="1553910606981" duration="1201000" />
     </task>
     <task id="LOCAL-00001" summary="log里面加一条启动提示">
       <created>1550367145960</created>
@@ -623,11 +627,32 @@
       <option name="project" value="LOCAL" />
       <updated>1553690401056</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add moto  xiaofeng">
+      <created>1553778840988</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1553778840988</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add moto  xiaofeng">
+      <created>1553910718120</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553910718120</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add moto  xiaofeng">
+      <created>1553911676448</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1553911676448</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40942000" />
+    <option name="totallyTimeSpent" value="42760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,7 +667,7 @@
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.23360881" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.23581268" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.15482093" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -653,13 +678,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997245" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986226" weight="0.36542442" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4969697" visible="true" weight="0.39958593" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49641874" visible="true" weight="0.39958593" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32919255" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5030303" side_tool="true" visible="true" weight="0.39958593" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5035813" side_tool="true" visible="true" weight="0.39958593" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49917355" weight="0.32919255" />
@@ -787,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="1131" column="74" selection-start-line="1131" selection-start-column="74" selection-end-line="1131" selection-end-column="74" />
+        <state relative-caret-position="398">
+          <caret line="1132" column="115" selection-start-line="1132" selection-start-column="115" selection-end-line="1132" selection-end-column="115" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
