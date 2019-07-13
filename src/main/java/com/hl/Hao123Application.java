@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 import util.GsonUtil;
 
 /**
- * @author moss
+ * @author moss Holmes
  */
 @ComponentScan({ "com.hl", "config", "entity", "service", "service.impl" })
 @ServletComponentScan
@@ -176,6 +176,11 @@ public class Hao123Application {
                 "35一致性hash                                                                                                                 ", "16讲讲现公司的架构", "17数据结构和算法  冒择入希快归堆",
                 "18dubbo", "19zookepper", "20分布式事务", "21敏捷开发  快速迭代 持续集成", "22linux命令，根据端口找进程", "23zookeeper选举原理", "24consul跟zk有什么区别", "25最新版JDK HashMap的结构", "26springmvc的原理",
                 "27oracle sql实现递归", "28mysql优化", "29执行计划看什么,是否有全表扫描,索引是否生效", "30jvm的数据模型,年代划分,gc算法 \n   https://www.cnblogs.com/kingszelda/p/7226080.html", "31 ",
+                "12mysql优化：sql优化；索引优化，执行计划，配置参数优化", "13分布式锁   https://www.cnblogs.com/austinspark-jessylu/p/8043726.html",
+                "14zookeeper 实现分布式锁  https://blog.csdn.net/qiangcuo6087/article/details/79067136",
+                "15redis,复制,分布式锁,哈希环   一致性hash  https://blog.csdn.net/bntX2jSQfEHy7/article/details/79549368", "16讲讲现公司的架构", "17数据结构和算法  冒择入希快归堆", "18dubbo", "19zookepper",
+                "20分布式事务", "21敏捷开发  快速迭代 持续集成", "22linux命令，根据端口找进程", "23zookeeper选举原理", "24consul跟zk有什么区别", "25最新版JDK HashMap的结构", "26springmvc的原理", "27oracle sql实现递归",
+                "28mysql优化", "29执行计划看什么,是否有全表扫描,索引是否生效", "30jvm的数据模型,年代划分,gc算法 \n   https://www.cnblogs.com/kingszelda/p/7226080.html", "31 ",
                 "32set是怎么实现不重复的   https://blog.csdn.net/u010698072/article/details/52802179   一句话，用hashMap存储，key值不会重复 所以set也不会重复", "33lock锁与synchronize的差别",
                 "34ConcurrentHashMap实现原理", "35一致性hash",
                 "36RabbitMQ:ACK机制 MQ三个作用，异步，解耦，削峰，\n    Consumer可能需要一段时间才能处理完收到的数据。如果在这个过程中，Consumer出错了，异常退出了，而数据还没有处理完成，这段数据就丢失了。如果我们采用no-ack的方式进行确认，也就是说，每次Consumer接到数据后，而不管是否处理完成，RabbitMQ Server会立即把这个Message标记为完成，然后从queue中删除了。\n"
@@ -1164,9 +1169,17 @@ public class Hao123Application {
                 "405 写代码 要怎么写  面试 确实是很难的   还是买个蓝牙耳机吧  不然上班老是走神", "406 按下alt, 你再看看菜单栏  ", "407 VCS- local control put label ，这个挺有用 如果你想回到某个版本节点 可以用这个",
                 "408 idea里面在方法调用的地方 ctrl + t 跳转到方法实现的地方", "409 ctrl + g 跳转到调用该方法的地方 等同于eclipse里面的ctrl + alt + h", "410 今天无意之中发现一个事,idea支持alt辅助下的多行编辑，跟notepad++那样的功能，这个太有意思了",
                 "411 idea里面快速打开书签的快捷键 shift + F11 ，我憎恨一切单手没法操控的快捷键,还好这个不算在内,添加书签的快捷键是ctr+shift+F11，光标停留的这一行就自动加上了书签", "412 idea里面如何将文件夹工程转为maven工程,选中pom文件,右键，转为maven工程，就这么简单", "",
-                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra", "375 ",
+                "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A", "400 400之后用作专门的idea 用法心得总结吧   idea  ctr+E 查看最近浏览或者编辑的文件，这个非常好，会跟ctr+Q一样常用",
+                "401 快速的打开关闭某个面板 可以用alt+面板编号，这个比较好用  编辑区与Project面板之间的跳转，用alt+1 ", "402 ctr+H  这个跟eclipse里面的ctr+H全局搜索类似，也可以匹配文件类型，指定在某一类型的文件里面去搜索 用File Mask这个功能在对话框的右上角",
+                "403 根据类名 成员变量名  方法名  也就是idea里面的symbol这个概念来搜索,用菜单Navigate - Symbol 快捷键 ctrl+alt+shift+N ", "404 要学会用别人  面高级别  余额高级别的岗位收入越高  工作内容月轻松",
+                "405 写代码 要怎么写  面试 确实是很难的   还是买个蓝牙耳机吧  不然上班老是走神", "406 按下alt, 你再看看菜单栏  ", "407 VCS- local control put label ，这个挺有用 如果你想回到某个版本节点 可以用这个",
+                "408 idea里面在方法调用的地方 ctrl + t 跳转到方法实现的地方", "409 ctrl + g 跳转到调用该方法的地方 等同于eclipse里面的ctrl + alt + h", "410 今天无意之中发现一个事,idea支持alt辅助下的多行编辑，跟notepad++那样的功能，这个太有意思了",
+                "411 idea里面快速打开书签的快捷键 shift + F11 ，我憎恨一切单手没法操控的快捷键,还好这个不算在内,添加书签的快捷键是ctr+shift+F11，光标停留的这一行就自动加上了书签                                                                                                                                                                                                                                                                                                 ",
+                "412 干这个行业就做好不稳定的打算吧，这个世界没有人能够稳定过一生", "413 就像越战兵一样，跳出战壕，随机应变", "414 实现序列化接口有什么用，序列化id有什么用  https://blog.csdn.net/qq_18298439/article/details/80607057",
+                "415 今天连绍杰 问我两个用子类做入参的方法如何合并成一个，用<? extends 父类>来生命入参,还有泛型T的使用", "416 mysql是支持分区的，这个很有意思，能够瞬间将表的体量减少,分区也是跟oracle一样，支持range,list，key，hash分区 ",
+                "417 mysql表的数据如果超过千万,那么加索引会非常慢,执行到无法响应   ",
+                "418                                                                                                                                ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -1297,6 +1310,7 @@ public class Hao123Application {
                 "", ""
 
         );
+                
 
         int i = RandomUtils.nextInt(list.size());
         return list.get(i);
