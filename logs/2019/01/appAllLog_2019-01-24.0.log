@@ -1,0 +1,704 @@
+2019-01-24 22:28:58.354[INFO ][com.hl.Hao123Application ] Starting Hao123Application on PC-20160220FPSE with PID 7620 (C:\Users\Administrator\git\springboot-w\target\classes started by Administrator in C:\Users\Administrator\git\springboot-w)
+2019-01-24 22:28:58.356[INFO ][com.hl.Hao123Application ] The following profiles are active: dev
+2019-01-24 22:28:58.421[INFO ][org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@385c9627: startup date [Thu Jan 24 22:28:58 CST 2019]; root of context hierarchy
+2019-01-24 22:28:58.560[INFO ][org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.2.4.Final
+2019-01-24 22:28:59.883[INFO ][org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer] Tomcat initialized with port(s): 9080 (http)
+2019-01-24 22:28:59.894[INFO ][org.apache.catalina.core.StandardService] Starting service Tomcat
+2019-01-24 22:28:59.896[INFO ][org.apache.catalina.core.StandardEngine] Starting Servlet Engine: Apache Tomcat/8.5.4
+2019-01-24 22:29:00.007[INFO ][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2019-01-24 22:29:00.007[INFO ][org.springframework.web.context.ContextLoader] Root WebApplicationContext: initialization completed in 1587 ms
+2019-01-24 22:29:00.153[INFO ][org.springframework.boot.web.servlet.ServletRegistrationBean] Mapping servlet: 'dispatcherServlet' to [/]
+2019-01-24 22:29:00.157[INFO ][org.springframework.boot.web.servlet.FilterRegistrationBean] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-24 22:29:00.157[INFO ][org.springframework.boot.web.servlet.FilterRegistrationBean] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-24 22:29:00.157[INFO ][org.springframework.boot.web.servlet.FilterRegistrationBean] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-01-24 22:29:00.157[INFO ][org.springframework.boot.web.servlet.FilterRegistrationBean] Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-24 22:29:00.158[INFO ][org.springframework.boot.web.servlet.FilterRegistrationBean] Mapping filter: 'myFilter' to urls: [/*]
+2019-01-24 22:29:00.175[INFO ][com.hl.filter.MyFilter   ] MyFilter init............
+2019-01-24 22:29:00.381[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@385c9627: startup date [Thu Jan 24 22:28:58 CST 2019]; root of context hierarchy
+2019-01-24 22:29:00.435[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/demo],methods=[GET]}" onto public java.lang.String com.hl.Hao123Application.demo()
+2019-01-24 22:29:00.446[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/skip/{name}],methods=[POST]}" onto public java.lang.Object com.hl.Hao123Controller.skip(java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2019-01-24 22:29:00.447[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/wechat/portal],methods=[GET]}" onto public java.lang.String com.hl.Hao123Controller.demo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-24 22:29:00.447[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/tmall],methods=[GET]}" onto public java.lang.Object com.hl.Hao123Controller.tmall(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-24 22:29:00.447[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/home],methods=[GET]}" onto public java.lang.String com.hl.HomeController.demo()
+2019-01-24 22:29:00.451[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-01-24 22:29:00.452[INFO ][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-01-24 22:29:00.455[INFO ][org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter] Adding welcome page: class path resource [index.html]
+2019-01-24 22:29:00.466[INFO ][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2019-01-24 22:29:00.476[INFO ][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-24 22:29:00.476[INFO ][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-24 22:29:00.522[INFO ][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-01-24 22:29:00.734[INFO ][org.springframework.jmx.export.annotation.AnnotationMBeanExporter] Registering beans for JMX exposure on startup
+2019-01-24 22:29:00.760[INFO ][org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-9080"]
+2019-01-24 22:29:00.782[INFO ][org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler [http-nio-9080]
+2019-01-24 22:29:00.795[INFO ][org.apache.tomcat.util.net.NioSelectorPool] Using a shared selector for servlet write/read
+2019-01-24 22:29:00.983[INFO ][org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer] Tomcat started on port(s): 9080 (http)
+2019-01-24 22:29:00.987[INFO ][com.hl.Hao123Application ] Started Hao123Application in 3.059 seconds (JVM running for 3.4)
+2019-01-24 22:29:04.794[INFO ][com.hl.Hao123Application ] -----------{"access_token":"17_TFROYpAZQ9Fwn6c2luMdZRvAVkuH1AUJzn4_paLztjNgUSh09OLL3s6GydRuUde_ovRpyDYsW2Y9_4-L-HFoihudiO47-_V87aYqcJNAv2v5fXtrT9-qBzDPLT4r1Oo85iQV2NrE7YuvZ-aCLWKhACAWHV","expires_in":7200}
+2019-01-24 22:29:04.807[INFO ][com.hl.Hao123Application ] 更新access_token, 17_TFROYpAZQ9Fwn6c2luMdZRvAVkuH1AUJzn4_paLztjNgUSh09OLL3s6GydRuUde_ovRpyDYsW2Y9_4-L-HFoihudiO47-_V87aYqcJNAv2v5fXtrT9-qBzDPLT4r1Oo85iQV2NrE7YuvZ-aCLWKhACAWHV
+2019-01-24 22:30:01.004[INFO ][com.hl.Hao123Application ] 22222222222222, 1-  368 这个分布式事务跟孙玄讲的基本一致    interview之前可以拿出来温故一下   https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html2019-01-24 星期四 下午 22:30:01
+2019-01-24 22:30:01.017[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:30:01.018[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 1-  368 这个分布式事务跟孙玄讲的基本一致    interview之前可以拿出来温故一下   https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html2019-01-24 星期四 下午 22:30:01
+2019-01-24 22:30:01.425[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [0v32DA02028641]"}
+2019-01-24 22:30:01.508[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [0v32DA02028641]"}
+2019-01-24 22:30:30.997[INFO ][com.hl.Hao123Application ] 22222222222222, 2-  11mysql隔离级别  读未提交 读已提交  可重复读(锁行)  串行化(锁表)  1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据
+
+　　2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。（事务 A在这一次事务里面多次读了同一批数据）
+　　3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。
+　　小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表事务隔离级别 	脏读 	不可重复读 	幻读
+读未提交（read-uncommitted） 	是 	是 	是
+不可重复读（read-committed） 	否 	是 	是
+可重复读（repeatable-read） 	否 	否 	是
+串行化（serializable） 	否 	否 	否2019-01-24 星期四 下午 22:30:30
+2019-01-24 22:30:30.998[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:30:30.999[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 2-  11mysql隔离级别  读未提交 读已提交  可重复读(锁行)  串行化(锁表)  1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据
+
+　　2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。（事务 A在这一次事务里面多次读了同一批数据）
+　　3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。
+　　小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表事务隔离级别 	脏读 	不可重复读 	幻读
+读未提交（read-uncommitted） 	是 	是 	是
+不可重复读（read-committed） 	否 	是 	是
+可重复读（repeatable-read） 	否 	否 	是
+串行化（serializable） 	否 	否 	否2019-01-24 星期四 下午 22:30:30
+2019-01-24 22:30:31.282[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [kMzUZa02324120]"}
+2019-01-24 22:30:31.283[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [kMzUZa02324120]"}
+2019-01-24 22:31:00.996[INFO ][com.hl.Hao123Application ] 22222222222222, 3-  189 （4）为什么redis需要把所有数据放到内存中？
+
+Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。
+如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。2019-01-24 星期四 下午 22:31:00
+2019-01-24 22:31:00.997[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:31:00.997[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 3-  189 （4）为什么redis需要把所有数据放到内存中？
+
+Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。
+如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。2019-01-24 星期四 下午 22:31:00
+2019-01-24 22:31:01.273[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [RJ1FMA02623113]"}
+2019-01-24 22:31:01.273[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [RJ1FMA02623113]"}
+2019-01-24 22:31:30.997[INFO ][com.hl.Hao123Application ] 22222222222222, 4-  185 重入读写锁  这里重入有何含义   重入：此锁允许reader和writer按照 ReentrantLock 的样式重新获取读取锁或写入锁。在写入线程保持的所有写入锁都已经释放后，才允许重入reader使用读取锁。 重入 第二次进来  先进来发现资源锁住了，于是乎出去，等待锁释放再进来操作资源。2019-01-24 星期四 下午 22:31:30
+2019-01-24 22:31:30.998[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:31:30.999[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 4-  185 重入读写锁  这里重入有何含义   重入：此锁允许reader和writer按照 ReentrantLock 的样式重新获取读取锁或写入锁。在写入线程保持的所有写入锁都已经释放后，才允许重入reader使用读取锁。 重入 第二次进来  先进来发现资源锁住了，于是乎出去，等待锁释放再进来操作资源。2019-01-24 星期四 下午 22:31:30
+2019-01-24 22:31:31.277[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [dlMQza02923945]"}
+2019-01-24 22:31:31.277[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [dlMQza02923945]"}
+2019-01-24 22:32:00.998[INFO ][com.hl.Hao123Application ] 22222222222222, 5-  7dubbo原理源码  
+  https://www.cnblogs.com/gotodsp/p/6532856.html2019-01-24 星期四 下午 22:32:00
+2019-01-24 22:32:00.999[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:32:00.999[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 5-  7dubbo原理源码  
+  https://www.cnblogs.com/gotodsp/p/6532856.html2019-01-24 星期四 下午 22:32:00
+2019-01-24 22:32:01.256[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [3gm903223934]"}
+2019-01-24 22:32:01.257[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [3gm903223934]"}
+2019-01-24 22:32:19.701[INFO ][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-01-24 22:32:19.701[INFO ][org.springframework.web.servlet.DispatcherServlet] FrameworkServlet 'dispatcherServlet': initialization started
+2019-01-24 22:32:19.737[INFO ][org.springframework.web.servlet.DispatcherServlet] FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
+2019-01-24 22:32:19.762[INFO ][com.hl.filter.MyFilter   ] MyFilter doFilter.........before
+2019-01-24 22:32:19.763[INFO ][com.hl.service.impl.ServilceImpl] --------------------action------------------------
+2019-01-24 22:32:19.763[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:19.764[INFO ][com.hl.filter.MyFilter   ] ====================
+2019-01-24 22:32:19.790[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:19.791[INFO ][com.hl.filter.MyFilter   ] request url:		0:0:0:0:0:0:0:1
+2019-01-24 22:32:19.791[INFO ][com.hl.filter.MyFilter   ] request parameters:	
+2019-01-24 22:32:19.811[INFO ][com.hl.filter.MyFilter   ] MyFilter doFilter.........before
+2019-01-24 22:32:19.811[INFO ][com.hl.service.impl.ServilceImpl] --------------------action------------------------
+2019-01-24 22:32:19.811[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:19.811[INFO ][com.hl.filter.MyFilter   ] ====================
+2019-01-24 22:32:19.841[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:19.842[INFO ][com.hl.filter.MyFilter   ] request url:		0:0:0:0:0:0:0:1
+2019-01-24 22:32:19.842[INFO ][com.hl.filter.MyFilter   ] request parameters:	
+2019-01-24 22:32:19.894[INFO ][com.hl.filter.MyFilter   ] MyFilter doFilter.........before
+2019-01-24 22:32:19.894[INFO ][com.hl.service.impl.ServilceImpl] --------------------action------------------------
+2019-01-24 22:32:19.894[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:19.894[INFO ][com.hl.filter.MyFilter   ] ====================
+2019-01-24 22:32:19.915[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:19.915[INFO ][com.hl.filter.MyFilter   ] request url:		0:0:0:0:0:0:0:1
+2019-01-24 22:32:19.915[INFO ][com.hl.filter.MyFilter   ] request parameters:	
+2019-01-24 22:32:20.024[INFO ][com.hl.filter.MyFilter   ] MyFilter doFilter.........before
+2019-01-24 22:32:20.025[INFO ][com.hl.service.impl.ServilceImpl] --------------------action------------------------
+2019-01-24 22:32:20.025[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		12
+2019-01-24 22:32:20.025[INFO ][com.hl.filter.MyFilter   ] ====================
+2019-01-24 22:32:20.046[INFO ][com.hl.filter.MyFilter   ] MyFilter doFilter.........before
+2019-01-24 22:32:20.047[INFO ][com.hl.service.impl.ServilceImpl] --------------------action------------------------
+2019-01-24 22:32:20.047[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		10
+2019-01-24 22:32:20.048[INFO ][com.hl.filter.MyFilter   ] ====================
+2019-01-24 22:32:20.050[INFO ][com.hl.filter.MyFilter   ] MyFilter doFilter.........before
+2019-01-24 22:32:20.051[INFO ][com.hl.service.impl.ServilceImpl] --------------------action------------------------
+2019-01-24 22:32:20.052[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:20.052[INFO ][com.hl.filter.MyFilter   ] ====================
+2019-01-24 22:32:20.068[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		-1
+2019-01-24 22:32:20.068[INFO ][com.hl.filter.MyFilter   ] request url:		0:0:0:0:0:0:0:1
+2019-01-24 22:32:20.068[INFO ][com.hl.filter.MyFilter   ] request parameters:	
+2019-01-24 22:32:20.079[INFO ][com.hl.Hao123Controller  ] ---------------~~~~~~~~~~~~name~~~~~token
+2019-01-24 22:32:20.079[INFO ][com.hl.Hao123Controller  ] ---------------~~~~~~~~~~~~name~~~~~weather
+2019-01-24 22:32:20.086[INFO ][com.hl.Hao123Controller  ] 多线程，异步调用 日志打印方法thread-pool-0---跳转到 测试号access_token
+2019-01-24 22:32:20.086[INFO ][com.hl.Hao123Controller  ] 多线程，异步调用 日志打印方法thread-pool-0---跳转到 weather
+2019-01-24 22:32:20.122[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		10
+2019-01-24 22:32:20.122[INFO ][com.hl.filter.MyFilter   ] request url:		0:0:0:0:0:0:0:1
+2019-01-24 22:32:20.122[INFO ][com.hl.filter.MyFilter   ] request parameters:	[name=token,token]
+2019-01-24 22:32:20.301[INFO ][com.hl.Hao123Controller  ] {"weaid":"1","days":"2019-01-24","week":"星期四","cityno":"beijing","citynm":"北京","cityid":"101010100","temperature":"5℃/-4℃","temperature_curr":"0℃","humidity":"56%","aqi":"84","weather":"多云","weather_curr":"阴","weather_icon":"http://api.k780.com/upload/weather/d/2.gif","weather_icon1":"","wind":"东北风","winp":"1级","temp_high":"5","temp_low":"-4","temp_curr":"0","humi_high":"0","humi_low":"0","weatid":"3","weatid1":"","windid":"13","winpid":"201","weather_iconid":"2"}
+2019-01-24 22:32:20.323[INFO ][com.hl.filter.MyFilter   ] request.getContentLength():		12
+2019-01-24 22:32:20.324[INFO ][com.hl.filter.MyFilter   ] request url:		0:0:0:0:0:0:0:1
+2019-01-24 22:32:20.324[INFO ][com.hl.filter.MyFilter   ] request parameters:	[name=weather,weather]
+2019-01-24 22:32:30.998[INFO ][com.hl.Hao123Application ] 22222222222222, 6-  228 关于Mysql中MVCC的总结
+客观上，我们认为他就是乐观锁的一整实现方式，就是每行都有版本号，保存时根据版本号决定是否成功。
+但由于Mysql的写操作会加排他锁（前文有讲），如果锁定了还算不算是MVCC？
+了解乐观锁的小伙伴们，都知道其主要依靠版本控制，即消除锁定，二者相互矛盾，so从某种意义上来说，Mysql的MVCC并非真正的MVCC，他只是借用MVCC的名号实现了读的非阻塞而已。2019-01-24 星期四 下午 22:32:30
+2019-01-24 22:32:30.999[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:32:30.999[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 6-  228 关于Mysql中MVCC的总结
+客观上，我们认为他就是乐观锁的一整实现方式，就是每行都有版本号，保存时根据版本号决定是否成功。
+但由于Mysql的写操作会加排他锁（前文有讲），如果锁定了还算不算是MVCC？
+了解乐观锁的小伙伴们，都知道其主要依靠版本控制，即消除锁定，二者相互矛盾，so从某种意义上来说，Mysql的MVCC并非真正的MVCC，他只是借用MVCC的名号实现了读的非阻塞而已。2019-01-24 星期四 下午 22:32:30
+2019-01-24 22:32:31.293[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [QA_9JA03523954]"}
+2019-01-24 22:32:31.293[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [QA_9JA03523954]"}
+2019-01-24 22:33:00.998[INFO ][com.hl.Hao123Application ] 22222222222222, 7-  3202019-01-24 星期四 下午 22:33:00
+2019-01-24 22:33:00.999[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:33:00.999[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 7-  3202019-01-24 星期四 下午 22:33:00
+2019-01-24 22:33:01.287[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [gyteFA03824126]"}
+2019-01-24 22:33:01.287[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [gyteFA03824126]"}
+2019-01-24 22:33:30.999[INFO ][com.hl.Hao123Application ] 22222222222222, 8-  302                                                                                                                 2019-01-24 星期四 下午 22:33:30
+2019-01-24 22:33:31.000[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:33:31.000[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 8-  302                                                                                                                 2019-01-24 星期四 下午 22:33:30
+2019-01-24 22:33:31.248[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [zID8fa0412shc2]"}
+2019-01-24 22:33:31.249[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [zID8fa0412shc2]"}
+2019-01-24 22:34:00.999[INFO ][com.hl.Hao123Application ] 22222222222222, 9-  68可以在hashcode中使用随机数字吗?
+
+不行，因为同一对象的 hashcode 值必须是相同的2019-01-24 星期四 下午 22:34:00
+2019-01-24 22:34:00.999[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:34:00.999[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 9-  68可以在hashcode中使用随机数字吗?
+
+不行，因为同一对象的 hashcode 值必须是相同的2019-01-24 星期四 下午 22:34:00
+2019-01-24 22:34:01.300[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [_N8SvA04424129]"}
+2019-01-24 22:34:01.301[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [_N8SvA04424129]"}
+2019-01-24 22:34:31.001[INFO ][com.hl.Hao123Application ] 22222222222222, 10-  370                                                                                                                 2019-01-24 星期四 下午 22:34:31
+2019-01-24 22:34:31.001[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:34:31.002[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 10-  370                                                                                                                 2019-01-24 星期四 下午 22:34:31
+2019-01-24 22:34:31.289[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [sCwosa0472shc2]"}
+2019-01-24 22:34:31.290[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [sCwosa0472shc2]"}
+2019-01-24 22:35:01.000[INFO ][com.hl.Hao123Application ] 22222222222222, 11-  38工厂模式如何实现                                                                                                                 2019-01-24 星期四 下午 22:35:01
+2019-01-24 22:35:01.001[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:35:01.001[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 11-  38工厂模式如何实现                                                                                                                 2019-01-24 星期四 下午 22:35:01
+2019-01-24 22:35:01.263[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [C.VsHa05023948]"}
+2019-01-24 22:35:01.263[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [C.VsHa05023948]"}
+2019-01-24 22:35:31.000[INFO ][com.hl.Hao123Application ] 22222222222222, 12-  203 （4），排行榜/计数器
+
+Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可：
+
+当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行：
+
+ZRANGE user_scores 0 10 WITHSCORES
+
+Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。2019-01-24 星期四 下午 22:35:31
+2019-01-24 22:35:31.001[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:35:31.002[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 12-  203 （4），排行榜/计数器
+
+Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可：
+
+当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行：
+
+ZRANGE user_scores 0 10 WITHSCORES
+
+Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。2019-01-24 星期四 下午 22:35:31
+2019-01-24 22:35:31.245[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [tCl1GA0532shc2]"}
+2019-01-24 22:35:31.246[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [tCl1GA0532shc2]"}
+2019-01-24 22:36:01.001[INFO ][com.hl.Hao123Application ] 22222222222222, 13-  51jvm运行时数据图 GC 内存溢出 CPU高等解决办法 图 理解这个图 对理解GC 以及多线程非常有好处。 特别是锁，锁的是对象还是类 http://blog.csdn.net/loveslmy/article/details/46820929  这篇博客总结的非常好，非常喜欢前面那张图，图旁边有箭头指向，并且加了注释，非常好。 另外非常喜欢他的GC描述，讲的调理非常清晰，年轻代使用标记清除算法，因为年轻代大多数对象都是要被清理掉的，只有少量会存活下来，所以用mark-sweep GC 算法，年老代则是只有少部分对象需要被清理，所以使用标记整理算法（不会产生内存碎片）。 还有他的收集器的总结真的是绝了，GC收集器，从来没有这么清晰的明白过收集器。特别是那张图，上次在那个TCL国际E城那里面试，那个视力不好的家伙估计也 不懂这块的知识，很不耐烦的直接问，IO密集型和运算密集型分别使用什么类型的收集器，这东西是汪文敏那种家伙怎么都不会懂的，IO密集场景下用并发， 高并发嘛，运算密集型用并行，oracle里面不是用parallel来并行执行sql，加快执行时间吗。 另外就是收集器是如何在java命令中去配置的。 http://blog.csdn.net/heyutao007/article/details/38151581  这一篇也是讲的不错的 -XX：survivalRatio=8（默认值） 画个图 eden与From与To区域比例8：1：1  如果设置10 证个young generation 1200M 那分别是1000M 100M 100M GC  -XX:NewRatio 默认为4  老年代与新生代的比值为4:1  就是说老年代占整个堆内存的80%，剩下的新生代占20%，这个比值是个反的，不要被New所 误导 VM -XX:NewRatio=4（老年代与新生代的比值）、-XX:SurvivorRatio=8（eden与一个survivor的比值）参数含义 https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html 这个里面jvm参数来历讲的比较好
+
+查看dump文件，，用IBM Analyzer打开.hprof文件
+
+ -XX:+HeapDumpOnOutOfMemoryError 此参数是帮助生成dump文件，程序启动后直到抛出OOM异常，异常抛出后，在程序的classpath下会生成一个以.hprof结尾的文件，如 java_pid4504.hprof文件， 这就是我们需要的dump文件。这个文件在实际生产环境中比较大，，打开这个文件就可以分析java内存溢出点。 获取到这个.hprof文件之后，使用IBM的heapAnalyzer，这个IBM开发的强大的内存dump分析工具，分析我们的.hprof文件来打开分析找到可能的内存泄漏点。
+
+打开这个.hprof文件，就可以看到这个高亮显示的部分就是可能的内存泄漏点， 打开 tree viwer 就能看到一个占用内存排序的列表。
+
+内存溢出 两种可能 有大对象，堆内存空间不够，2.死循环，往某个容器里面拼命加东西,死锁，   3.-xmx参数设置过小
+
+CPU高的解决办法  https://www.cnblogs.com/guoyuqiangf8/p/3545687.html 终于知道那个鼓泡那个家伙一口气念了那么多都是什么了，jinfo,jps,jstack,jstat,jmap,jconsole j后面的ipss mc  还有 JProfiler、Optimizeit Profiler 查看内存泄漏的 http://blog.csdn.net/caihaijiang/article/details/60843252019-01-24 星期四 下午 22:36:01
+2019-01-24 22:36:01.002[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:36:01.003[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 13-  51jvm运行时数据图 GC 内存溢出 CPU高等解决办法 图 理解这个图 对理解GC 以及多线程非常有好处。 特别是锁，锁的是对象还是类 http://blog.csdn.net/loveslmy/article/details/46820929  这篇博客总结的非常好，非常喜欢前面那张图，图旁边有箭头指向，并且加了注释，非常好。 另外非常喜欢他的GC描述，讲的调理非常清晰，年轻代使用标记清除算法，因为年轻代大多数对象都是要被清理掉的，只有少量会存活下来，所以用mark-sweep GC 算法，年老代则是只有少部分对象需要被清理，所以使用标记整理算法（不会产生内存碎片）。 还有他的收集器的总结真的是绝了，GC收集器，从来没有这么清晰的明白过收集器。特别是那张图，上次在那个TCL国际E城那里面试，那个视力不好的家伙估计也 不懂这块的知识，很不耐烦的直接问，IO密集型和运算密集型分别使用什么类型的收集器，这东西是汪文敏那种家伙怎么都不会懂的，IO密集场景下用并发， 高并发嘛，运算密集型用并行，oracle里面不是用parallel来并行执行sql，加快执行时间吗。 另外就是收集器是如何在java命令中去配置的。 http://blog.csdn.net/heyutao007/article/details/38151581  这一篇也是讲的不错的 -XX：survivalRatio=8（默认值） 画个图 eden与From与To区域比例8：1：1  如果设置10 证个young generation 1200M 那分别是1000M 100M 100M GC  -XX:NewRatio 默认为4  老年代与新生代的比值为4:1  就是说老年代占整个堆内存的80%，剩下的新生代占20%，这个比值是个反的，不要被New所 误导 VM -XX:NewRatio=4（老年代与新生代的比值）、-XX:SurvivorRatio=8（eden与一个survivor的比值）参数含义 https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html 这个里面jvm参数来历讲的比较好
+
+查看dump文件，，用IBM Analyzer打开.hprof文件
+
+ -XX:+HeapDumpOnOutOfMemoryError 此参数是帮助生成dump文件，程序启动后直到抛出OOM异常，异常抛出后，在程序的classpath下会生成一个以.hprof结尾的文件，如 java_pid4504.hprof文件， 这就是我们需要的dump文件。这个文件在实际生产环境中比较大，，打开这个文件就可以分析java内存溢出点。 获取到这个.hprof文件之后，使用IBM的heapAnalyzer，这个IBM开发的强大的内存dump分析工具，分析我们的.hprof文件来打开分析找到可能的内存泄漏点。
+
+打开这个.hprof文件，就可以看到这个高亮显示的部分就是可能的内存泄漏点， 打开 tree viwer 就能看到一个占用内存排序的列表。
+
+内存溢出 两种可能 有大对象，堆内存空间不够，2.死循环，往某个容器里面拼命加东西,死锁，   3.-xmx参数设置过小
+
+CPU高的解决办法  https://www.cnblogs.com/guoyuqiangf8/p/3545687.html 终于知道那个鼓泡那个家伙一口气念了那么多都是什么了，jinfo,jps,jstack,jstat,jmap,jconsole j后面的ipss mc  还有 JProfiler、Optimizeit Profiler 查看内存泄漏的 http://blog.csdn.net/caihaijiang/article/details/60843252019-01-24 星期四 下午 22:36:01
+2019-01-24 22:36:01.270[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [23NCvA05624128]"}
+2019-01-24 22:36:01.271[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [23NCvA05624128]"}
+2019-01-24 22:36:31.001[INFO ][com.hl.Hao123Application ] 22222222222222, 14-  294 获取Date 不要再去new了  ，太low了 ，/**
+     * 获取当前系统时间
+     *
+     * @return
+     */
+    public static Date getCurDate() {
+        return Calendar.getInstance().getTime();
+    }2019-01-24 星期四 下午 22:36:31
+2019-01-24 22:36:31.001[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:36:31.002[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 14-  294 获取Date 不要再去new了  ，太low了 ，/**
+     * 获取当前系统时间
+     *
+     * @return
+     */
+    public static Date getCurDate() {
+        return Calendar.getInstance().getTime();
+    }2019-01-24 星期四 下午 22:36:31
+2019-01-24 22:36:31.290[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [4B070592a394]"}
+2019-01-24 22:36:31.290[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [4B070592a394]"}
+2019-01-24 22:37:01.002[INFO ][com.hl.Hao123Application ] 22222222222222, 15-  118  https://news.html5.qq.com/share/768397206588282402?ch=060000&tabId=0&tagId=0&docId=768397206588282402&url=http%3A%2F%2Fkuaibao.qq.com%2Fs%2F20180106G000P100&clientWidth=360&dataSrc=&sc_id=xkeHgtC  这篇是写的不错的 volatile 关键字只能保证共享变量对各线程的可见性，也就是各个线程都能读到这个变量的最新值，但是并不能保证线程安全性，这是两个概念。需要办证安全性 一是在读写这个变量的时候加锁，各种锁都可以，另外可以用原子类。 https://www.cnblogs.com/zhengbin/p/5657707.html   这篇文章里面讲的很好，备战阿里，不错，小伙子，阿里不要你要谁
+
+关于原子类，张孝祥讲的很好，atomic下面的原子类可以操作基本数据，数组中的基本数据，以及类中的基本数据。
+
+atomic原子类操作类中的成员变量2019-01-24 星期四 下午 22:37:01
+2019-01-24 22:37:01.003[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:37:01.003[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 15-  118  https://news.html5.qq.com/share/768397206588282402?ch=060000&tabId=0&tagId=0&docId=768397206588282402&url=http%3A%2F%2Fkuaibao.qq.com%2Fs%2F20180106G000P100&clientWidth=360&dataSrc=&sc_id=xkeHgtC  这篇是写的不错的 volatile 关键字只能保证共享变量对各线程的可见性，也就是各个线程都能读到这个变量的最新值，但是并不能保证线程安全性，这是两个概念。需要办证安全性 一是在读写这个变量的时候加锁，各种锁都可以，另外可以用原子类。 https://www.cnblogs.com/zhengbin/p/5657707.html   这篇文章里面讲的很好，备战阿里，不错，小伙子，阿里不要你要谁
+
+关于原子类，张孝祥讲的很好，atomic下面的原子类可以操作基本数据，数组中的基本数据，以及类中的基本数据。
+
+atomic原子类操作类中的成员变量2019-01-24 星期四 下午 22:37:01
+2019-01-24 22:37:01.234[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [zJxmdA06224127]"}
+2019-01-24 22:37:01.234[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [zJxmdA06224127]"}
+2019-01-24 22:37:31.002[INFO ][com.hl.Hao123Application ] 22222222222222, 16-  3192019-01-24 星期四 下午 22:37:31
+2019-01-24 22:37:31.003[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:37:31.004[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 16-  3192019-01-24 星期四 下午 22:37:31
+2019-01-24 22:37:31.317[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [KqzZ506524128]"}
+2019-01-24 22:37:31.318[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [KqzZ506524128]"}
+2019-01-24 22:38:01.003[INFO ][com.hl.Hao123Application ] 22222222222222, 17-  324  下面描述使用zookeeper实现分布式锁的算法流程，假设锁空间的根节点为/lock：
+
+    客户端连接zookeeper，并在/lock下创建临时的且有序的子节点，第一个客户端对应的子节点为/lock/lock-0000000000，第二个为/lock/lock-0000000001，以此类推。
+
+    客户端获取/lock下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听/lock的子节点变更消息，获得子节点变更通知后重复此步骤直至获得锁；
+
+    执行业务代码；
+
+    完成业务流程后，删除对应的子节点释放锁。
+
+步骤1中创建的临时节点能够保证在故障的情况下锁也能被释放，考虑这么个场景：假如客户端a当前创建的子节点为序号最小的节点，获得锁之后客户端所在机器宕机了，客户端没有主动删除子节点；如果创建的是永久的节点，那么这个锁永远不会释放，导致死锁；由于创建的是临时节点，客户端宕机后，过了一定时间zookeeper没有收到客户端的心跳包判断会话失效，将临时节点删除从而释放锁。
+
+另外细心的朋友可能会想到，在步骤2中获取子节点列表与设置监听这两步操作的原子性问题，考虑这么个场景：客户端a对应子节点为/lock/lock-0000000000，客户端b对应子节点为/lock/lock-0000000001，客户端b获取子节点列表时发现自己不是序号最小的，但是在设置监听器前客户端a完成业务流程删除了子节点/lock/lock-0000000000，客户端b设置的监听器岂不是丢失了这个事件从而导致永远等待了？这个问题不存在的。因为zookeeper提供的API中设置监听器的操作与读操作是原子执行的，也就是说在读子节点列表时同时设置监听器，保证不会丢失事件。
+
+最后，对于这个算法有个极大的优化点：假如当前有1000个节点在等待锁，如果获得锁的客户端释放锁时，这1000个客户端都会被唤醒，这种情况称为“羊群效应”；在这种羊群效应中，zookeeper需要通知1000个客户端，这会阻塞其他的操作，最好的情况应该只唤醒新的最小节点对应的客户端。应该怎么做呢？在设置事件监听时，每个客户端应该对刚好在它之前的子节点设置事件监听，例如子节点列表为/lock/lock-0000000000、/lock/lock-0000000001、/lock/lock-0000000002，序号为1的客户端监听序号为0的子节点删除消息，序号为2的监听序号为1的子节点删除消息。2019-01-24 星期四 下午 22:38:01
+2019-01-24 22:38:01.004[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:38:01.004[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 17-  324  下面描述使用zookeeper实现分布式锁的算法流程，假设锁空间的根节点为/lock：
+
+    客户端连接zookeeper，并在/lock下创建临时的且有序的子节点，第一个客户端对应的子节点为/lock/lock-0000000000，第二个为/lock/lock-0000000001，以此类推。
+
+    客户端获取/lock下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听/lock的子节点变更消息，获得子节点变更通知后重复此步骤直至获得锁；
+
+    执行业务代码；
+
+    完成业务流程后，删除对应的子节点释放锁。
+
+步骤1中创建的临时节点能够保证在故障的情况下锁也能被释放，考虑这么个场景：假如客户端a当前创建的子节点为序号最小的节点，获得锁之后客户端所在机器宕机了，客户端没有主动删除子节点；如果创建的是永久的节点，那么这个锁永远不会释放，导致死锁；由于创建的是临时节点，客户端宕机后，过了一定时间zookeeper没有收到客户端的心跳包判断会话失效，将临时节点删除从而释放锁。
+
+另外细心的朋友可能会想到，在步骤2中获取子节点列表与设置监听这两步操作的原子性问题，考虑这么个场景：客户端a对应子节点为/lock/lock-0000000000，客户端b对应子节点为/lock/lock-0000000001，客户端b获取子节点列表时发现自己不是序号最小的，但是在设置监听器前客户端a完成业务流程删除了子节点/lock/lock-0000000000，客户端b设置的监听器岂不是丢失了这个事件从而导致永远等待了？这个问题不存在的。因为zookeeper提供的API中设置监听器的操作与读操作是原子执行的，也就是说在读子节点列表时同时设置监听器，保证不会丢失事件。
+
+最后，对于这个算法有个极大的优化点：假如当前有1000个节点在等待锁，如果获得锁的客户端释放锁时，这1000个客户端都会被唤醒，这种情况称为“羊群效应”；在这种羊群效应中，zookeeper需要通知1000个客户端，这会阻塞其他的操作，最好的情况应该只唤醒新的最小节点对应的客户端。应该怎么做呢？在设置事件监听时，每个客户端应该对刚好在它之前的子节点设置事件监听，例如子节点列表为/lock/lock-0000000000、/lock/lock-0000000001、/lock/lock-0000000002，序号为1的客户端监听序号为0的子节点删除消息，序号为2的监听序号为1的子节点删除消息。2019-01-24 星期四 下午 22:38:01
+2019-01-24 22:38:01.270[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [rx7bUA06823937]"}
+2019-01-24 22:38:01.271[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [rx7bUA06823937]"}
+2019-01-24 22:38:31.003[INFO ][com.hl.Hao123Application ] 22222222222222, 18-  87     @RequestMapping(value = "/showCodes", method = RequestMethod.POST)
+    @ResponseBody
+    public Object showCodes(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("code1", apiCode900500RetNo);
+        map.put("code2", apiCode900510RetNo);
+        // OutputStream out = resp.getOutputStream();
+        // out.write(("{\"code2\":" + apiCode900510RetNo + ",\"code1\":" + apiCode900500RetNo + "}").getBytes());
+        // out.flush();
+        // out.close();
+        return map;
+    }    这两种传值给前端的方法是等效的2019-01-24 星期四 下午 22:38:31
+2019-01-24 22:38:31.003[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:38:31.003[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 18-  87     @RequestMapping(value = "/showCodes", method = RequestMethod.POST)
+    @ResponseBody
+    public Object showCodes(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("code1", apiCode900500RetNo);
+        map.put("code2", apiCode900510RetNo);
+        // OutputStream out = resp.getOutputStream();
+        // out.write(("{\"code2\":" + apiCode900510RetNo + ",\"code1\":" + apiCode900500RetNo + "}").getBytes());
+        // out.flush();
+        // out.close();
+        return map;
+    }    这两种传值给前端的方法是等效的2019-01-24 星期四 下午 22:38:31
+2019-01-24 22:38:31.313[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [p5lViA07124114]"}
+2019-01-24 22:38:31.313[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [p5lViA07124114]"}
+2019-01-24 22:39:01.004[INFO ][com.hl.Hao123Application ] 22222222222222, 19-  92 CyclicBarrier和CountDownLatch区别
+这两个类非常类似，都在java.util.concurrent下，都可以用来表示代码运行到某个点上，二者的区别在于：
+CyclicBarrier的某个线程运行到某个点上之后，该线程即停止运行，直到所有的线程都到达了这个点，所有线程才重新运行；CountDownLatch则不是，某线程运行到某个点上之后，只是给某个数值-1而已，该线程继续运行。
+CyclicBarrier只能唤起一个任务，CountDownLatch可以唤起多个任务
+CyclicBarrier可重用，CountDownLatch不可重用，计数值为0该CountDownLatch就不可再用了。2019-01-24 星期四 下午 22:39:01
+2019-01-24 22:39:01.005[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:39:01.005[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 19-  92 CyclicBarrier和CountDownLatch区别
+这两个类非常类似，都在java.util.concurrent下，都可以用来表示代码运行到某个点上，二者的区别在于：
+CyclicBarrier的某个线程运行到某个点上之后，该线程即停止运行，直到所有的线程都到达了这个点，所有线程才重新运行；CountDownLatch则不是，某线程运行到某个点上之后，只是给某个数值-1而已，该线程继续运行。
+CyclicBarrier只能唤起一个任务，CountDownLatch可以唤起多个任务
+CyclicBarrier可重用，CountDownLatch不可重用，计数值为0该CountDownLatch就不可再用了。2019-01-24 星期四 下午 22:39:01
+2019-01-24 22:39:01.338[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [m2S1Sa07424119]"}
+2019-01-24 22:39:01.339[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [m2S1Sa07424119]"}
+2019-01-24 22:39:31.004[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  136 5.索引的工作原理及其种类
+
+数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。
+
+在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。这种数据结构，就是索引。
+
+为表设置索引要付出代价的：一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间(因为索引也要随之变动)。2019-01-24 星期四 下午 22:39:31
+2019-01-24 22:39:31.005[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:39:31.005[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  136 5.索引的工作原理及其种类
+
+数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。
+
+在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。这种数据结构，就是索引。
+
+为表设置索引要付出代价的：一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间(因为索引也要随之变动)。2019-01-24 星期四 下午 22:39:31
+2019-01-24 22:39:31.253[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [nnVrjA07724129]"}
+2019-01-24 22:39:31.254[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [nnVrjA07724129]"}
+2019-01-24 22:40:01.004[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  129 昨晚睡觉又做噩梦高考，没有背作文
+没有背诵三五十篇作文，怎么敢去高考
+这就跟现在面试前没有去背面试题一样
+噩梦拯救行动    高考作文拯救行动
+这样 先把面试题背下来2019-01-24 星期四 下午 22:40:01
+2019-01-24 22:40:01.005[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:40:01.006[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  129 昨晚睡觉又做噩梦高考，没有背作文
+没有背诵三五十篇作文，怎么敢去高考
+这就跟现在面试前没有去背面试题一样
+噩梦拯救行动    高考作文拯救行动
+这样 先把面试题背下来2019-01-24 星期四 下午 22:40:01
+2019-01-24 22:40:01.265[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [1Ix0sa08024100]"}
+2019-01-24 22:40:01.266[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [1Ix0sa08024100]"}
+2019-01-24 22:40:31.004[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  11mysql隔离级别  读未提交 读已提交  可重复读(锁行)  串行化(锁表)  1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据
+
+　　2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。（事务 A在这一次事务里面多次读了同一批数据）
+　　3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。
+　　小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表事务隔离级别 	脏读 	不可重复读 	幻读
+读未提交（read-uncommitted） 	是 	是 	是
+不可重复读（read-committed） 	否 	是 	是
+可重复读（repeatable-read） 	否 	否 	是
+串行化（serializable） 	否 	否 	否2019-01-24 星期四 下午 22:40:31
+2019-01-24 22:40:31.005[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:40:31.005[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  11mysql隔离级别  读未提交 读已提交  可重复读(锁行)  串行化(锁表)  1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据
+
+　　2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。（事务 A在这一次事务里面多次读了同一批数据）
+　　3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。
+　　小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表事务隔离级别 	脏读 	不可重复读 	幻读
+读未提交（read-uncommitted） 	是 	是 	是
+不可重复读（read-committed） 	否 	是 	是
+可重复读（repeatable-read） 	否 	否 	是
+串行化（serializable） 	否 	否 	否2019-01-24 星期四 下午 22:40:31
+2019-01-24 22:40:31.248[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [Nv.4Ta08323948]"}
+2019-01-24 22:40:31.249[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [Nv.4Ta08323948]"}
+2019-01-24 22:41:01.005[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  258 悲观锁  可以用 select * from LostUpdate where id =1 for update 来进行2019-01-24 星期四 下午 22:41:01
+2019-01-24 22:41:01.006[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:41:01.006[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  258 悲观锁  可以用 select * from LostUpdate where id =1 for update 来进行2019-01-24 星期四 下午 22:41:01
+2019-01-24 22:41:01.293[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [IUkyka08624123]"}
+2019-01-24 22:41:01.293[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [IUkyka08624123]"}
+2019-01-24 22:41:31.006[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  161 17、在当前的工作中，你碰到到的最大的 mysql db 问题以及如何解决的？
+
+可以选择一个处理过的比较棘手的案例，或者选择一个老师在课程上讲过的死锁的案例;没有及时 Purge + insert 唯一索引造成的死锁：具体案例可以参考学委笔记。
+
+2019-01-24 星期四 下午 22:41:31
+2019-01-24 22:41:31.007[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:41:31.008[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  161 17、在当前的工作中，你碰到到的最大的 mysql db 问题以及如何解决的？
+
+可以选择一个处理过的比较棘手的案例，或者选择一个老师在课程上讲过的死锁的案例;没有及时 Purge + insert 唯一索引造成的死锁：具体案例可以参考学委笔记。
+
+2019-01-24 星期四 下午 22:41:31
+2019-01-24 22:41:31.262[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [6ZabWa08924106]"}
+2019-01-24 22:41:31.263[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [6ZabWa08924106]"}
+2019-01-24 22:42:01.005[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  53JVM运行时数据区
+--   纯文字描述，等同于面试时候的演讲 讲述JVM运行时数据区不同于 讲述JVM内存模型   这是两个不同的概念 ----http://blog.csdn.net/tjiyu/article/details/53915869---
+--------正式开始，清一清嗓子 首先说，jvm运行时的数据区分为两块，一个是所有线程公用的区域：1.堆内存，存放所有Java 对象，用jvm垃圾回收机制来管理。 2.方法区，存储包括jvm加载的每一个 类的信息，包括常量池，成员变量和方法。 另一个是每一个栈所私有的区域：   本地方法栈，虚拟机栈和程序计数器。这些是每个线程私有的，不会与其他线程共有。在新建线程时创建，在线程结束时销毁。
+先说说这个程序计数器 我们的jvm内部在执行多线程任务的时候，他用的是CPU时间片的轮流分配来决定哪一个线程作为当前线程来执行程序代码。 这个计数器就是骑存储该线程需要执行的字节码指令的地址，到了该线程来执行的时候，JVM字节码解释器会来取该程序计数器的字节码指令的地址来寻找要执行的程序。
+再说Java虚拟机栈
+他是为方法调用而服务的，存放的是线程的栈帧，当方法调用的时候，栈帧被创建，当方法调用结束的时候，栈帧被销毁， 栈帧是方法运行时的基础结构，它里面存放的是方法执行时候逇一些信息，局部变量表、操作数栈、动态连接、方法出口。
+HotSpot VM通过"-Xss"参数设置JVM栈内存空间大小
+本地方法栈    想起了昨天看Object类的时候，看到了他下面的一个本地方法hashCode，没有代码实现。 为什么会这样呢，因为这个本地方法指的是 用Java语言之外的语言来编写的方法，所以不需要用Java代码来实现。
+谈堆内存的话，那就是JVM内存模型的问题了，那是一个更具体的话题。
+-----以上
+2019-01-24 星期四 下午 22:42:01
+2019-01-24 22:42:01.006[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:42:01.006[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  53JVM运行时数据区
+--   纯文字描述，等同于面试时候的演讲 讲述JVM运行时数据区不同于 讲述JVM内存模型   这是两个不同的概念 ----http://blog.csdn.net/tjiyu/article/details/53915869---
+--------正式开始，清一清嗓子 首先说，jvm运行时的数据区分为两块，一个是所有线程公用的区域：1.堆内存，存放所有Java 对象，用jvm垃圾回收机制来管理。 2.方法区，存储包括jvm加载的每一个 类的信息，包括常量池，成员变量和方法。 另一个是每一个栈所私有的区域：   本地方法栈，虚拟机栈和程序计数器。这些是每个线程私有的，不会与其他线程共有。在新建线程时创建，在线程结束时销毁。
+先说说这个程序计数器 我们的jvm内部在执行多线程任务的时候，他用的是CPU时间片的轮流分配来决定哪一个线程作为当前线程来执行程序代码。 这个计数器就是骑存储该线程需要执行的字节码指令的地址，到了该线程来执行的时候，JVM字节码解释器会来取该程序计数器的字节码指令的地址来寻找要执行的程序。
+再说Java虚拟机栈
+他是为方法调用而服务的，存放的是线程的栈帧，当方法调用的时候，栈帧被创建，当方法调用结束的时候，栈帧被销毁， 栈帧是方法运行时的基础结构，它里面存放的是方法执行时候逇一些信息，局部变量表、操作数栈、动态连接、方法出口。
+HotSpot VM通过"-Xss"参数设置JVM栈内存空间大小
+本地方法栈    想起了昨天看Object类的时候，看到了他下面的一个本地方法hashCode，没有代码实现。 为什么会这样呢，因为这个本地方法指的是 用Java语言之外的语言来编写的方法，所以不需要用Java代码来实现。
+谈堆内存的话，那就是JVM内存模型的问题了，那是一个更具体的话题。
+-----以上
+2019-01-24 星期四 下午 22:42:01
+2019-01-24 22:42:01.289[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [hbhHqA09223933]"}
+2019-01-24 22:42:01.290[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [hbhHqA09223933]"}
+2019-01-24 22:42:31.006[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  66a.hashCode()有什么用?与a.equals(b)有什么关系
+
+hashCode() 方法是相应对象整型的 hash 值。它常用于基于 hash 的集合类，如 Hashtable、HashMap、LinkedHashMap等等。它与 equals() 方法关系特别紧密。根据 Java 规范，使用 equal() 方法来判断两个相等的对象，必须具有相同的 hashcode。
+将对象放入到集合中时，首先判断要放入对象的hashcode是否已经在集合中存在，不存在则直接放入集合。如果hashcode相等，然后通过equal()方法判断要放入对象与集合中的任意对象是否相等：如果equal()判断不相等，直接将该元素放入集合中，否则不放入。2019-01-24 星期四 下午 22:42:31
+2019-01-24 22:42:31.006[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:42:31.007[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  66a.hashCode()有什么用?与a.equals(b)有什么关系
+
+hashCode() 方法是相应对象整型的 hash 值。它常用于基于 hash 的集合类，如 Hashtable、HashMap、LinkedHashMap等等。它与 equals() 方法关系特别紧密。根据 Java 规范，使用 equal() 方法来判断两个相等的对象，必须具有相同的 hashcode。
+将对象放入到集合中时，首先判断要放入对象的hashcode是否已经在集合中存在，不存在则直接放入集合。如果hashcode相等，然后通过equal()方法判断要放入对象与集合中的任意对象是否相等：如果equal()判断不相等，直接将该元素放入集合中，否则不放入。2019-01-24 星期四 下午 22:42:31
+2019-01-24 22:42:31.269[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [E41LOA09528641]"}
+2019-01-24 22:42:31.269[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [E41LOA09528641]"}
+2019-01-24 22:43:01.007[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  110 java5里面的读写锁跟mysql里面的读写锁是不是异曲同工之妙
+mysql里面的读写锁，昨天配置这个mysql主从配置的时候，还配置了这个读写锁，先给主库上read lock,从库配置完重启后，再释放主库的锁用unlock lock
+
+命令吧好像。
+
+java5的读写锁的妙用，用在缓存的读写里面。是怕出现脏读，幻读。仅仅是get，set操作倒还好，就是怕前面还有if条件判断，那就有可能出现中间wait（if判断完
+wait（），
+不能马上执行后面的语句，这就完了）2019-01-24 星期四 下午 22:43:01
+2019-01-24 22:43:01.008[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:43:01.008[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  110 java5里面的读写锁跟mysql里面的读写锁是不是异曲同工之妙
+mysql里面的读写锁，昨天配置这个mysql主从配置的时候，还配置了这个读写锁，先给主库上read lock,从库配置完重启后，再释放主库的锁用unlock lock
+
+命令吧好像。
+
+java5的读写锁的妙用，用在缓存的读写里面。是怕出现脏读，幻读。仅仅是get，set操作倒还好，就是怕前面还有if条件判断，那就有可能出现中间wait（if判断完
+wait（），
+不能马上执行后面的语句，这就完了）2019-01-24 星期四 下午 22:43:01
+2019-01-24 22:43:01.285[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [nL09823932]"}
+2019-01-24 22:43:01.285[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [nL09823932]"}
+2019-01-24 22:43:31.006[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  331   服务号后台  微信开发工具  https://github.com/SamHz/weixin-java-mp-demo-springboot
+2019-01-24 星期四 下午 22:43:31
+2019-01-24 22:43:31.006[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:43:31.007[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  331   服务号后台  微信开发工具  https://github.com/SamHz/weixin-java-mp-demo-springboot
+2019-01-24 星期四 下午 22:43:31
+2019-01-24 22:43:31.245[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [bbLhoa00123936]"}
+2019-01-24 22:43:31.246[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [bbLhoa00123936]"}
+2019-01-24 22:44:01.008[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  254 eclipse 如何在debugger时候 watch 表达式的值 断点，选中表达式，右键-》 watch,或者在watch视图中填写表达式，然后看值                                                                                                    2019-01-24 星期四 下午 22:44:01
+2019-01-24 22:44:01.012[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:44:01.012[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  254 eclipse 如何在debugger时候 watch 表达式的值 断点，选中表达式，右键-》 watch,或者在watch视图中填写表达式，然后看值                                                                                                    2019-01-24 星期四 下午 22:44:01
+2019-01-24 22:44:01.307[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [Rwvima00424104]"}
+2019-01-24 22:44:01.308[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [Rwvima00424104]"}
+2019-01-24 22:44:31.008[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  282                                                                                                                      2019-01-24 星期四 下午 22:44:31
+2019-01-24 22:44:31.008[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:44:31.009[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  282                                                                                                                      2019-01-24 星期四 下午 22:44:31
+2019-01-24 22:44:31.247[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [l0072shc1]"}
+2019-01-24 22:44:31.249[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [l0072shc1]"}
+2019-01-24 22:45:01.008[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  54请讲讲ThreadLocal下面的四个方法. ThreadLocal用法详解和原理
+
+一、用法
+ThreadLocal用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。
+
+1、ThreadLocal.get: 获取ThreadLocal中当前线程共享变量的值。
+2、ThreadLocal.set: 设置ThreadLocal中当前线程共享变量的值。
+3、ThreadLocal.remove: 移除ThreadLocal中当前线程共享变量的值。
+4、ThreadLocal.initialValue: ThreadLocal没有被当前线程赋值时或当前线程刚调用remove方法后调用get方法，返回此方法值。2019-01-24 星期四 下午 22:45:01
+2019-01-24 22:45:01.010[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:45:01.010[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  54请讲讲ThreadLocal下面的四个方法. ThreadLocal用法详解和原理
+
+一、用法
+ThreadLocal用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。
+
+1、ThreadLocal.get: 获取ThreadLocal中当前线程共享变量的值。
+2、ThreadLocal.set: 设置ThreadLocal中当前线程共享变量的值。
+3、ThreadLocal.remove: 移除ThreadLocal中当前线程共享变量的值。
+4、ThreadLocal.initialValue: ThreadLocal没有被当前线程赋值时或当前线程刚调用remove方法后调用get方法，返回此方法值。2019-01-24 星期四 下午 22:45:01
+2019-01-24 22:45:01.301[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [3nzJCA01023934]"}
+2019-01-24 22:45:01.301[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [3nzJCA01023934]"}
+2019-01-24 22:45:31.008[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  309  阿里巴巴Java开发手册  线程资源必须通过线程池提供，不允许在应用中自行显式创建线程。
+说明：使用线程池的好处是减少在创建和销毁线程上所花的时间以及系统资源的开销，解决系统资源不足的问题。如果不适用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者"过度切换的问题"。
+应该将要并行运行的任务与运行机制解耦合。如果有很多任务，要为每个任务创建一个独立的线程所付出的代价太大了，可以使用线程池来解决这个问题。（摘自java核心技术）
+可见线程池的重要性。
+简单来说使用线程池有以下几个目的：
+线程是稀缺资源，不能频繁的创建。
+解耦作用；线程的创建于执行完全分开，方便维护。
+应当将其放入一个池子中，可以给其他任务进行复用。2019-01-24 星期四 下午 22:45:31
+2019-01-24 22:45:31.009[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:45:31.009[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  309  阿里巴巴Java开发手册  线程资源必须通过线程池提供，不允许在应用中自行显式创建线程。
+说明：使用线程池的好处是减少在创建和销毁线程上所花的时间以及系统资源的开销，解决系统资源不足的问题。如果不适用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者"过度切换的问题"。
+应该将要并行运行的任务与运行机制解耦合。如果有很多任务，要为每个任务创建一个独立的线程所付出的代价太大了，可以使用线程池来解决这个问题。（摘自java核心技术）
+可见线程池的重要性。
+简单来说使用线程池有以下几个目的：
+线程是稀缺资源，不能频繁的创建。
+解耦作用；线程的创建于执行完全分开，方便维护。
+应当将其放入一个池子中，可以给其他任务进行复用。2019-01-24 星期四 下午 22:45:31
+2019-01-24 22:45:31.290[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [M3qWSa01323948]"}
+2019-01-24 22:45:31.290[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [M3qWSa01323948]"}
+2019-01-24 22:46:01.009[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  253 chmod 777  文件或目录
+示例：chmod  777 /etc/squid 运行命令后，squid文件夹（目录）的权限就被修改为777（可读可写可执行）。
+如果是Ubuntu系统，可能需要加上sudo来执行：
+sudo chmod  777 /etc/squid
+故事的开始，都会先留一个悬念。
+只有程序员能懂的冷笑话系列中，有个比较经典的段子：
+请用最简洁的语言描述我国FL。
+754。
+所以，754是什么意思呢？754是什么意思呢？754是什么意思呢？
+下面具体介绍chmod命令。
+Linux系统中，每个用户的角色和权限划分的很细致也很严格，每个文件（目录）都设有访问许可权限，利用这种机制来决定某个用户通过某种方式对文件（目录）进行读、写、执行等操作。
+操作文件或目录的用户，有3种不同类型：文件所有者、群组用户、其他用户。最高位表示文件所有者的权限值，中间位表示群组用户的权限值，最低位则表示其他用户的权限值，所以，chmod 777中，三个数字7分别对应上面三种用户，权限值都为7。
+文件或目录的权限又分为3种：只读、只写、可执行。
+权限  权限数值    二进制 具体作用
+r   4   00000100    read，读取。当前用户可以读取文件内容，当前用户可以浏览目录。
+w   2   00000010    write，写入。当前用户可以新增或修改文件内容，当前用户可以删除、移动目录或目录内文件。
+x   1   00000001    execute，执行。当前用户可以执行文件，当前用户可以进入目录。
+2019-01-24 星期四 下午 22:46:01
+2019-01-24 22:46:01.010[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:46:01.010[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  253 chmod 777  文件或目录
+示例：chmod  777 /etc/squid 运行命令后，squid文件夹（目录）的权限就被修改为777（可读可写可执行）。
+如果是Ubuntu系统，可能需要加上sudo来执行：
+sudo chmod  777 /etc/squid
+故事的开始，都会先留一个悬念。
+只有程序员能懂的冷笑话系列中，有个比较经典的段子：
+请用最简洁的语言描述我国FL。
+754。
+所以，754是什么意思呢？754是什么意思呢？754是什么意思呢？
+下面具体介绍chmod命令。
+Linux系统中，每个用户的角色和权限划分的很细致也很严格，每个文件（目录）都设有访问许可权限，利用这种机制来决定某个用户通过某种方式对文件（目录）进行读、写、执行等操作。
+操作文件或目录的用户，有3种不同类型：文件所有者、群组用户、其他用户。最高位表示文件所有者的权限值，中间位表示群组用户的权限值，最低位则表示其他用户的权限值，所以，chmod 777中，三个数字7分别对应上面三种用户，权限值都为7。
+文件或目录的权限又分为3种：只读、只写、可执行。
+权限  权限数值    二进制 具体作用
+r   4   00000100    read，读取。当前用户可以读取文件内容，当前用户可以浏览目录。
+w   2   00000010    write，写入。当前用户可以新增或修改文件内容，当前用户可以删除、移动目录或目录内文件。
+x   1   00000001    execute，执行。当前用户可以执行文件，当前用户可以进入目录。
+2019-01-24 星期四 下午 22:46:01
+2019-01-24 22:46:01.288[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [hq2VIa01623941]"}
+2019-01-24 22:46:01.288[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [hq2VIa01623941]"}
+2019-01-24 22:46:31.009[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  264 kill pid
+
+kill pid和kill -s 15 pid含义一样，表示发送一个SIGTERM的信号给对应的程序。程序收到该信号后，将会发生以下事情，
+
+1 程序立刻停止
+
+2 程序释放相应资源后立刻停止
+
+3 程序可能仍然继续运行
+
+大部分程序在接收到SIGTERM信号后，会先释放自己的资源，然后再停止。但也有一些程序在收到信号后，做一些其他事情，并且这些事情是可以配置的。也就是说，SIGTERM多半是会被阻塞，忽略的。
+
+
+kill -9 pid
+
+kill -9 pid等于kill -s 9 pid，表示强制，尽快终止一个进程。多半admin会用这个命令。
+2019-01-24 星期四 下午 22:46:31
+2019-01-24 22:46:31.010[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:46:31.010[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  264 kill pid
+
+kill pid和kill -s 15 pid含义一样，表示发送一个SIGTERM的信号给对应的程序。程序收到该信号后，将会发生以下事情，
+
+1 程序立刻停止
+
+2 程序释放相应资源后立刻停止
+
+3 程序可能仍然继续运行
+
+大部分程序在接收到SIGTERM信号后，会先释放自己的资源，然后再停止。但也有一些程序在收到信号后，做一些其他事情，并且这些事情是可以配置的。也就是说，SIGTERM多半是会被阻塞，忽略的。
+
+
+kill -9 pid
+
+kill -9 pid等于kill -s 9 pid，表示强制，尽快终止一个进程。多半admin会用这个命令。
+2019-01-24 星期四 下午 22:46:31
+2019-01-24 22:46:31.271[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [S9dqua01924121]"}
+2019-01-24 22:46:31.274[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [S9dqua01924121]"}
+2019-01-24 22:47:01.009[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  162 18、请简洁地描述下 MySQL 中 InnoDB 支持的四种事务隔离级别名称，以及逐级之间的区别？
+
+(1)、事物的4种隔离级别
+
+读未提交(read uncommitted)
+读已提交(read committed)
+可重复读(repeatable read)
+串行(serializable)
+
+(2)、不同级别的现象
+
+Read Uncommitted:可以读取其他 session 未提交的脏数据。
+Read Committed:允许不可重复读取，但不允许脏读取。提交后，其他会话可以看到提交的数据。
+Repeatable Read: 禁止不可重复读取和脏读取、以及幻读(innodb 独有)。
+Serializable: 事务只能一个接着一个地执行，但不能并发执行。事务隔离级别最高。
+不同的隔离级别有不同的现象，并有不同的锁定/并发机制，隔离级别越高，数据库的并发性就越差。
+
+2019-01-24 星期四 下午 22:47:01
+2019-01-24 22:47:01.009[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:47:01.009[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  162 18、请简洁地描述下 MySQL 中 InnoDB 支持的四种事务隔离级别名称，以及逐级之间的区别？
+
+(1)、事物的4种隔离级别
+
+读未提交(read uncommitted)
+读已提交(read committed)
+可重复读(repeatable read)
+串行(serializable)
+
+(2)、不同级别的现象
+
+Read Uncommitted:可以读取其他 session 未提交的脏数据。
+Read Committed:允许不可重复读取，但不允许脏读取。提交后，其他会话可以看到提交的数据。
+Repeatable Read: 禁止不可重复读取和脏读取、以及幻读(innodb 独有)。
+Serializable: 事务只能一个接着一个地执行，但不能并发执行。事务隔离级别最高。
+不同的隔离级别有不同的现象，并有不同的锁定/并发机制，隔离级别越高，数据库的并发性就越差。
+
+2019-01-24 星期四 下午 22:47:01
+2019-01-24 22:47:01.296[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [GULDea02223929]"}
+2019-01-24 22:47:01.297[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [GULDea02223929]"}
+2019-01-24 22:47:31.010[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  120 
+并发编程的目的是为了让程序运行得更快，但是，并不是启动更多的线程就能让程序最大限度地并发执行。在进行并发编程时，
+如果希望通过多线程执行任务让程序运行得更快，会面临非常多的挑战，比如上下文切换的问题、死锁的问题，以及受限于硬件和软件的资源限制问题，
+本章会介绍几种并发编程的挑战以及解决方案。
+
+对于多核CPU，多线程才起优化作用2019-01-24 星期四 下午 22:47:31
+2019-01-24 22:47:31.010[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:47:31.010[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  120 
+并发编程的目的是为了让程序运行得更快，但是，并不是启动更多的线程就能让程序最大限度地并发执行。在进行并发编程时，
+如果希望通过多线程执行任务让程序运行得更快，会面临非常多的挑战，比如上下文切换的问题、死锁的问题，以及受限于硬件和软件的资源限制问题，
+本章会介绍几种并发编程的挑战以及解决方案。
+
+对于多核CPU，多线程才起优化作用2019-01-24 星期四 下午 22:47:31
+2019-01-24 22:47:31.294[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [Kf7kHA02523954]"}
+2019-01-24 22:47:31.295[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [Kf7kHA02523954]"}
+2019-01-24 22:48:01.010[INFO ][com.hl.Hao123Application ] 22222222222222, 20-  56linux内核参数优化* 修改最大文件句柄打开数&最大可开进程数调优
+
+修改最大文件句柄打开数&最大可开进程数调优
+    ulimit –u 65535
+    ulimit –n 65535
+查看： ulimit -a
+
+lsof -n |awk '{print $2}'|sort|uniq -c |sort -nr|more   这个可以看最大可打开文件句柄数的统计结果。
+然后用 ps -ef|grep pid_num  查看到底是哪一个进程占用了这么多的打开文件数
+
+
+聊聊jps这个命令，这个命令可以查看当前活着的java进程，这个就有意思了，springboot进程是可以发现的。 以前都用
+ps -ef|grep member.jar  这个方式，太low 了，直接用jps -l,真好用。
+---------------------------------------------------------------------------
+注：jps命令有个地方很不好，似乎只能显示当前用户的java进程，要显示其他用户的还是只能用unix/linux的ps命令。
+
+
+TCP传输参数调优
+执行命令(root用户) ：
+         vi /etc/sysctl.conf 
+   修改内容：
+         net.ipv4.tcp_max_tw_buckets = 6000
+              net.ipv4.ip_local_port_range = 1024 65000
+              net.ipv4.tcp_tw_recycle = 1
+              net.ipv4.tcp_tw_reuse = 1
+              net.ipv4.tcp_syncookies = 1
+              net.core.somaxconn = 262144
+          以上解决，高并发下linux访问流量上不去的问题   
+2019-01-24 星期四 下午 22:48:01
+2019-01-24 22:48:01.011[INFO ][com.hl.Hao123Application ] 11111111111111, {"touser":"orR4l1sSeLPOQRpLkCC57sBU1fE0","text":"{\"content\":\"123\"}","msgtype":"text"}
+2019-01-24 22:48:01.011[INFO ][com.hl.Hao123Application ] 发送的内容,发送不易，且读且珍惜, 20-  56linux内核参数优化* 修改最大文件句柄打开数&最大可开进程数调优
+
+修改最大文件句柄打开数&最大可开进程数调优
+    ulimit –u 65535
+    ulimit –n 65535
+查看： ulimit -a
+
+lsof -n |awk '{print $2}'|sort|uniq -c |sort -nr|more   这个可以看最大可打开文件句柄数的统计结果。
+然后用 ps -ef|grep pid_num  查看到底是哪一个进程占用了这么多的打开文件数
+
+
+聊聊jps这个命令，这个命令可以查看当前活着的java进程，这个就有意思了，springboot进程是可以发现的。 以前都用
+ps -ef|grep member.jar  这个方式，太low 了，直接用jps -l,真好用。
+---------------------------------------------------------------------------
+注：jps命令有个地方很不好，似乎只能显示当前用户的java进程，要显示其他用户的还是只能用unix/linux的ps命令。
+
+
+TCP传输参数调优
+执行命令(root用户) ：
+         vi /etc/sysctl.conf 
+   修改内容：
+         net.ipv4.tcp_max_tw_buckets = 6000
+              net.ipv4.ip_local_port_range = 1024 65000
+              net.ipv4.tcp_tw_recycle = 1
+              net.ipv4.tcp_tw_reuse = 1
+              net.ipv4.tcp_syncookies = 1
+              net.core.somaxconn = 262144
+          以上解决，高并发下linux访问流量上不去的问题   
+2019-01-24 星期四 下午 22:48:01
+2019-01-24 22:48:01.333[INFO ][com.hl.Hao123Application ] 2222222222result2222, {"errcode":45015,"errmsg":"response out of time limit or subscription is canceled hint: [8j6wKa02824104]"}
+2019-01-24 22:48:01.334[INFO ][com.hl.Hao123Application ] retMap, {"errcode":45015.0,"errmsg":"response out of time limit or subscription is canceled hint: [8j6wKa02824104]"}
