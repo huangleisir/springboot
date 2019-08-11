@@ -6,9 +6,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" description="快速到达idea使用总结" line="1164" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c94116e-e2c8-4927-9d68-a87fd802fc21" name="Default" comment="add moto  xiaofeng">
+    <list default="true" id="3c94116e-e2c8-4927-9d68-a87fd802fc21" name="Default" comment="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hl/service/impl/ServilceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hl/service/impl/ServilceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +40,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="RELEASE" value="1" />
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="java" value="22" />
           <entry key="log" value="5" />
           <entry key="sql" value="2" />
@@ -50,7 +49,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JAVA" value="22" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Scratch" value="2" />
@@ -60,7 +59,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="50" />
+          <entry key="html" value="54" />
           <entry key="java" value="1376" />
           <entry key="sql" value="16" />
           <entry key="txt" value="96" />
@@ -68,7 +67,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="50" />
+          <entry key="HTML" value="54" />
           <entry key="JAVA" value="1376" />
           <entry key="PLAIN_TEXT" value="96" />
           <entry key="Scratch" value="16" />
@@ -111,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="1347" column="60" selection-start-line="1347" selection-start-column="60" selection-end-line="1347" selection-end-column="60" />
+            <state relative-caret-position="33">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -123,17 +122,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/service/IService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state relative-caret-position="114">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/service/impl/ServilceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="95">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -171,8 +170,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+            <state relative-caret-position="158">
+              <caret line="10" column="85" lean-forward="true" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,9 +179,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="302" column="33" lean-forward="true" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -197,6 +200,9 @@
       <find>400</find>
       <find>index</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -206,6 +212,7 @@
         <entry key="$PROJECT_DIR$" value="123" />
       </map>
     </option>
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="b12dbd4a-d19a-4f60-aab0-9a668e968eda" />
@@ -215,10 +222,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/hl/HomeController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1bf5e78d-8931-4310-b068-bb0d145d7688/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/hl/Hao123Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hl/service/impl/ServilceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/index.html" />
       </list>
     </option>
   </component>
@@ -306,6 +313,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hl" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -324,7 +338,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565486004237" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565486238277" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ClickHouse" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -589,7 +603,7 @@
       <workItem from="1554986553258" duration="869000" />
       <workItem from="1565184166944" duration="640000" />
       <workItem from="1565427386886" duration="695000" />
-      <workItem from="1565483405628" duration="1284000" />
+      <workItem from="1565483405628" duration="1517000" />
     </task>
     <task id="LOCAL-00001" summary="log里面加一条启动提示">
       <created>1550367145960</created>
@@ -752,11 +766,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554987193645</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java">
+      <created>1565486041608</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1565486041608</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47727000" />
+    <option name="totallyTimeSpent" value="47960000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -771,7 +792,7 @@
     <frame x="-8" y="-8" width="1861" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.2465297" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.2465297" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.15482093" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -781,7 +802,7 @@
       <window_info id="Web" order="7" sideWeight="0.5008157" side_tool="true" weight="0.15482093" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997245" weight="0.32919255" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.74931127" visible="true" weight="0.3665628" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.74931127" visible="true" weight="0.3665628" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49586776" weight="0.39958593" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -818,7 +839,8 @@
     <MESSAGE value="加一条 空行" />
     <MESSAGE value="add idea  用法总结  xiaofeng" />
     <MESSAGE value="add moto  xiaofeng" />
-    <option name="LAST_COMMIT_MESSAGE" value="add moto  xiaofeng" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -910,23 +932,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/2019/03/appAllLog_2019-03-16.0.log" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="1347" column="60" selection-start-line="1347" selection-start-column="60" selection-end-line="1347" selection-end-column="60" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/service/IService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/filter/MyFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -951,30 +956,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/service/IService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="301" column="4" lean-forward="true" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+        <state relative-caret-position="114">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/service/impl/ServilceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        <state relative-caret-position="158">
+          <caret line="10" column="85" lean-forward="true" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hl/service/impl/ServilceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        <state relative-caret-position="67">
+          <caret line="302" column="33" lean-forward="true" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
         </state>
       </provider>
     </entry>
