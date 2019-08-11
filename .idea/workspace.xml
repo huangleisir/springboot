@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c94116e-e2c8-4927-9d68-a87fd802fc21" name="Default" comment="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +60,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="54" />
+          <entry key="html" value="80" />
           <entry key="java" value="1376" />
           <entry key="sql" value="16" />
           <entry key="txt" value="96" />
@@ -67,7 +68,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="54" />
+          <entry key="HTML" value="80" />
           <entry key="JAVA" value="1376" />
           <entry key="PLAIN_TEXT" value="96" />
           <entry key="Scratch" value="16" />
@@ -182,8 +183,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="302" column="33" lean-forward="true" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
+            <state relative-caret-position="114">
+              <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+              <folding>
+                <element signature="e#3977#3999#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,6 +202,7 @@
       <find>mainmain</find>
       <find>main</find>
       <find>400</find>
+      <find>index.html</find>
       <find>index</find>
     </findStrings>
     <replaceStrings>
@@ -253,16 +258,12 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -338,7 +339,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565486238277" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565516542593" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ClickHouse" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -603,7 +604,7 @@
       <workItem from="1554986553258" duration="869000" />
       <workItem from="1565184166944" duration="640000" />
       <workItem from="1565427386886" duration="695000" />
-      <workItem from="1565483405628" duration="1517000" />
+      <workItem from="1565483405628" duration="3503000" />
     </task>
     <task id="LOCAL-00001" summary="log里面加一条启动提示">
       <created>1550367145960</created>
@@ -773,11 +774,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565486041608</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java">
+      <created>1565486248460</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1565486248460</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47960000" />
+    <option name="totallyTimeSpent" value="49946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,7 +800,7 @@
     <frame x="-8" y="-8" width="1861" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.2465297" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.2465297" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.15482093" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -800,9 +808,10 @@
       <window_info id="Favorites" order="5" sideWeight="0.5010352" side_tool="true" weight="0.15482093" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" sideWeight="0.5008157" side_tool="true" weight="0.15482093" />
+      <window_info anchor="bottom" id="Thumbnails" visible="true" weight="0.32917964" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997245" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.74931127" visible="true" weight="0.3665628" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.74931127" weight="0.3665628" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49586776" weight="0.39958593" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -820,7 +829,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.1804553" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="5" visible="true" weight="0.1804553" />
       <window_info anchor="right" id="Database" order="6" weight="0.3294766" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -995,8 +1004,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="302" column="33" lean-forward="true" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
+        <state relative-caret-position="114">
+          <caret line="201" column="9" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+          <folding>
+            <element signature="e#3977#3999#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
