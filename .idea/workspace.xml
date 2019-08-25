@@ -18,9 +18,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/demo$Hao123Application.ic" NAME="Hao123Application Coverage Results" MODIFIED="1566734471430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/demo$Hao123Application.ic" NAME="Hao123Application Coverage Results" MODIFIED="1566734590029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.hl.*</FILTER>
     </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="142" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -67,7 +70,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="117" />
+          <entry key="html" value="121" />
           <entry key="java" value="1376" />
           <entry key="md" value="24" />
           <entry key="sql" value="16" />
@@ -76,7 +79,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="117" />
+          <entry key="HTML" value="121" />
           <entry key="JAVA" value="1376" />
           <entry key="Markdown" value="24" />
           <entry key="PLAIN_TEXT" value="96" />
@@ -192,12 +195,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="340" column="16" selection-start-line="340" selection-start-column="16" selection-end-line="340" selection-end-column="16" />
+            <state relative-caret-position="316">
+              <caret line="348" column="17" selection-start-line="348" selection-start-column="17" selection-end-line="348" selection-end-column="17" />
               <folding>
                 <element signature="e#3977#3999#0" expanded="true" />
                 <element signature="e#4474#4493#0" expanded="true" />
                 <element signature="e#8607#8629#0" expanded="true" />
+                <element signature="e#8722#8744#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -341,7 +345,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566734543180" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566739194607" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ClickHouse" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -499,7 +503,7 @@
       <workItem from="1566102709711" duration="660000" />
       <workItem from="1566110211021" duration="605000" />
       <workItem from="1566698454208" duration="843000" />
-      <workItem from="1566723512288" duration="1998000" />
+      <workItem from="1566723512288" duration="2663000" />
     </task>
     <task id="LOCAL-00001" summary="log里面加一条启动提示">
       <created>1550367145960</created>
@@ -718,11 +722,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566732464508</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Merge remote-tracking branch 'origin/add_web' into add_web&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/hl/Hao123Application.java">
+      <created>1566734557767</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1566734557767</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57660000" />
+    <option name="totallyTimeSpent" value="58325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -952,12 +963,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="340" column="16" selection-start-line="340" selection-start-column="16" selection-end-line="340" selection-end-column="16" />
+        <state relative-caret-position="316">
+          <caret line="348" column="17" selection-start-line="348" selection-start-column="17" selection-end-line="348" selection-end-column="17" />
           <folding>
             <element signature="e#3977#3999#0" expanded="true" />
             <element signature="e#4474#4493#0" expanded="true" />
             <element signature="e#8607#8629#0" expanded="true" />
+            <element signature="e#8722#8744#0" expanded="true" />
           </folding>
         </state>
       </provider>
