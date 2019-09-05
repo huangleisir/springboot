@@ -50,7 +50,7 @@ public class Hao123Application {
 
     @SuppressWarnings("deprecation")
     public static void main(String[] strings) {
-        System.out.println("要启动该服务了---------------Hao123Application");
+        log.info("要启动该服务了---------------Hao123Application");
         SpringApplication.run(Hao123Application.class, strings);
         /////////////////////////////////////////////////////////////////////
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
