@@ -1154,7 +1154,7 @@ public class Hao123Application {
                         + "        JSONObject jsonStr= JSONObject.parseObject(content);\n" + "        return  true;\n" + "   } catch (Exception e) {\n" + "        return false;\n"
                         + "  }\n" + "}",
                 "368 这个分布式事务跟孙玄讲的基本一致    interview之前可以拿出来温故一下   https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html",
-                "369                                                                                                                  ",
+                "369                                                                                                                      ",
                 "370                                                                                                                 ",
                 "371                                                                                                          ",
                 "372                                                                                                                   ",
