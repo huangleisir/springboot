@@ -33,7 +33,7 @@ import util.GsonUtil;
 /**
  * @author moss Holmes
  */
-@ComponentScan({ "com.hl", "config", "entity", "service", "service.impl" })
+@ComponentScan({ "com.hl", "com.hl.config", "entity", "service", "service.impl" })
 @ServletComponentScan
 @SpringBootApplication
 @RestController
