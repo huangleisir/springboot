@@ -37,7 +37,7 @@ public class MyFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException {
         logger.info("MyFilter doFilter.........before");
         service.action();
-        logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
+        logger.info("request.getContentLength(): \t" + " \t" + request.getContentLength());
         try {
             BufferedReader br = request.getReader();
             String str, wholeStr = "";

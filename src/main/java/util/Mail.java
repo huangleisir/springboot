@@ -57,8 +57,9 @@ public class Mail {
 	/* 定义SMTP是否需要验证 */
 	public void setNeedAuth(boolean need) {
 		System.out.println("设置smtp身份认证：mail.smtp.auth = " + need);
-		if (props == null)
+		if (props == null) {
 			props = System.getProperties();
+		}
 		if (need) {
 			props.put("mail.smtp.auth", "true");
 		} else {
@@ -109,8 +110,9 @@ public class Mail {
 
 	/* 定义收信人 */
 	public boolean setTo(String to) {
-		if (to == null)
+		if (to == null) {
 			return false;
+		}
 		System.out.println("定义收信人！");
 		try {
 			mimeMsg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
@@ -122,8 +124,9 @@ public class Mail {
 
 	/* 定义抄送人 */
 	public boolean setCopyTo(String copyto) {
-		if (copyto == null)
+		if (copyto == null) {
 			return false;
+		}
 		try {
 			mimeMsg.setRecipients(Message.RecipientType.CC, InternetAddress.parse(copyto));
 			return true;

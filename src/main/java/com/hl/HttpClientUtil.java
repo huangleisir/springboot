@@ -160,8 +160,9 @@ public class HttpClientUtil {
         } catch (ParseException e) {
             e.printStackTrace();
         } finally {
-            if (response != null)
-                response.close();
+            if (response != null) {
+            	response.close();
+            }
         }
         return null;
     }
