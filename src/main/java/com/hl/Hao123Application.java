@@ -13,7 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -53,12 +55,13 @@ public class Hao123Application {
     public static void main(String[] strings) {
         log.info("要启动该服务了---------------Hao123Application");
         SpringApplication.run(Hao123Application.class, strings);
-        /////////////////////////////////////////////////////////////////////
-        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        // 阿里代码规约 禁止使用 Executors创建线程池
+   /*     ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+//        ScheduledThreadPoolExecutor s = new ScheduledThreadPoolExecutor(1, RejectedExecutionHandler.)
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         service.scheduleAtFixedRate(() -> {
-            System.out.println("更新access_token, ");
+        	log.info("更新access_token");
             try {
                 String str = HttpClientUtil
                         .doGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx63e923c37a90e24e&secret=58e8da3e42d3e3b04db36af5dae8fdb1", null);
@@ -75,15 +78,39 @@ public class Hao123Application {
                 e.printStackTrace();
             }
 
-        }, 3, 7199, TimeUnit.SECONDS);
-        ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
+        }, 3, 7199, TimeUnit.SECONDS);   */
+        
+        ScheduledThreadPoolExecutor  scheduled = new ScheduledThreadPoolExecutor(1);
+        scheduled.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+            	try {
+                    String str = HttpClientUtil
+                            .doGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx63e923c37a90e24e&secret=58e8da3e42d3e3b04db36af5dae8fdb1", null);
+                    log.info("-----------" + str);
+                    Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
+                    String token = (String) retMap.get("access_token");
+                    tokenShow = token;
+                    token_time = new Date() + "";
+                    log.info("更新access_token, {}", token);
+                    tokenMap.put("access_token", token);
+                    // tokenMap.put("token_time", new Date() + "");
+                } catch (Exception e) {
+                    log.info("更新access_token failed");
+                    e.printStackTrace();
+                }
+            }
+        }, 0, 7199, TimeUnit.SECONDS);//0表示首次执行任务的延迟时间，40表示每次执行任务的间隔时间，TimeUnit.MILLISECONDS执行的时间间隔数值单位
+
+        /* 阿里代码规约 禁止使用 Executors创建线程池  **/
+      //  ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         int seconds = Calendar.getInstance().getTime().getSeconds();
         int mins = Calendar.getInstance().getTime().getMinutes();
         int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
         delaySeconds = 60 - seconds;
-        service2.scheduleAtFixedRate(() -> {
+        scheduled.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
              * content + " \" }}"
