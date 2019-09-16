@@ -1184,7 +1184,7 @@ public class Hao123Application {
 
                 "420 几个注册中心来比较，eureka是高可用的，consul,etcd,zk是追求高一致性的，何以见得？ https://blog.csdn.net/qq_34395857/article/details/89212566",
                 "421 idea确实比较好用，将来不会用idea，大概率会被歧视的。我对这句话负责。 ",
-                "422",
+                "422 这些Q确实有帮助，interview前必看   https://blog.csdn.net/forezp/article/details/88823244",
                 "423",
                 "424",
                 "425",
