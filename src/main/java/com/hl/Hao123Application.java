@@ -1220,10 +1220,10 @@ public class Hao123Application {
                         "\n" +
                         "BlockingQueue 对插入操作、移除操作、获取元素操作提供了四种不同的方法用于不同的场景中使用：1、抛出异常；2、返回特殊值（null 或 true/false，取决于具体的操作）；3、阻塞等待此操作，直到这个操作成功；4、阻塞等待此操作，直到成功或者超时指定时间。  " +
                         "  BlockingQueue不光实现了一个完整队列所具有的基本功能，同时在多线程环境下，他还自动管理了多线间的自动等待于唤醒功能，从而使得程序员可以忽略这些细节，关注更高级的功能。",
-                "443",
-                "444",
-                "445",
-                "446",
+                "443   Java并发：Java并发编程：CountDownLatch、CyclicBarrier和Semaphore  https://www.fangzhipeng.com/javainterview/2019/03/21/latch-barrier-semaphore.html ",
+                "444 Java虚拟机：垃圾收集器和内存分配策略  https://www.fangzhipeng.com/javainterview/2019/04/13/gc-memory.html ",
+                "445 Java并发：CopyOnWriteArrayList实现原理及源码分析 https://www.fangzhipeng.com/javainterview/2019/03/19/copyonwritearraylist.html",
+                "446 Java并发：AtomicInteger源码分析——基于CAS的乐观锁实现  https://www.fangzhipeng.com/javainterview/2019/03/16/atomicinteger-cas.html",
                 "447",
                 "448",
                 "449",
