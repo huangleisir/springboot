@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="98391a26-273b-4d14-8310-a3bd7b7b2159" name="Default Changelist" comment="update log">
+    <list default="true" id="98391a26-273b-4d14-8310-a3bd7b7b2159" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hl/HttpClientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hl/HttpClientUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Mail.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +49,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,7 +95,8 @@
       <workItem from="1568090578747" duration="1948000" />
       <workItem from="1568597884465" duration="2249000" />
       <workItem from="1568604664512" duration="8944000" />
-      <workItem from="1568707790733" duration="6430000" />
+      <workItem from="1568707790733" duration="9482000" />
+      <workItem from="1568720700560" duration="1264000" />
     </task>
     <task id="LOCAL-00001" summary="add 421">
       <created>1568614657909</created>
@@ -223,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568714644699</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update log">
+      <created>1568716510846</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1568716510846</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

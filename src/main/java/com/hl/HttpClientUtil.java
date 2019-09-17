@@ -41,7 +41,7 @@ import org.apache.http.util.EntityUtils;
  */
 public class HttpClientUtil {
 
-    private static final CloseableHttpClient httpClient;
+    private static final CloseableHttpClient HTTP_CLIENT;
     public static final String CHARSET = "UTF-8";
     private static final String APPLICATION_JSON = "application/json";
 
@@ -49,7 +49,7 @@ public class HttpClientUtil {
     // 采用静态代码块，初始化超时时间配置，再根据配置生成默认httpClient对象
     static {
         RequestConfig config = RequestConfig.custom().setConnectTimeout(60000).setSocketTimeout(15000).build();
-        httpClient = HttpClientBuilder.create().setDefaultRequestConfig(config).build();
+        HTTP_CLIENT = HttpClientBuilder.create().setDefaultRequestConfig(config).build();
     }
 
     public static String doGet(String url, Map<String, String> params) {
@@ -92,7 +92,7 @@ public class HttpClientUtil {
                 url += "?" + EntityUtils.toString(new UrlEncodedFormEntity(pairs, charset));
             }
             HttpGet httpGet = new HttpGet(url);
-            CloseableHttpResponse response = httpClient.execute(httpGet);
+            CloseableHttpResponse response = HTTP_CLIENT.execute(httpGet);
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode != 200) {
                 httpGet.abort();
@@ -144,7 +144,7 @@ public class HttpClientUtil {
         }
         CloseableHttpResponse response = null;
         try {
-            response = httpClient.execute(httpPost);
+            response = HTTP_CLIENT.execute(httpPost);
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode != 200) {
                 httpPost.abort();
@@ -160,8 +160,9 @@ public class HttpClientUtil {
         } catch (ParseException e) {
             e.printStackTrace();
         } finally {
-            if (response != null)
+            if (response != null){
                 response.close();
+            }
         }
         return null;
     }

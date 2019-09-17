@@ -54,11 +54,12 @@ public class Mail {
 		}
 	}
 
-	/* 定义SMTP是否需要验证 */
+	/** 定义SMTP是否需要验证 */
 	public void setNeedAuth(boolean need) {
 		System.out.println("设置smtp身份认证：mail.smtp.auth = " + need);
-		if (props == null)
+		if (props == null){
 			props = System.getProperties();
+		}
 		if (need) {
 			props.put("mail.smtp.auth", "true");
 		} else {
@@ -109,8 +110,9 @@ public class Mail {
 
 	/* 定义收信人 */
 	public boolean setTo(String to) {
-		if (to == null)
+		if (to == null){
 			return false;
+		}
 		System.out.println("定义收信人！");
 		try {
 			mimeMsg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
@@ -122,8 +124,9 @@ public class Mail {
 
 	/* 定义抄送人 */
 	public boolean setCopyTo(String copyto) {
-		if (copyto == null)
+		if (copyto == null){
 			return false;
+		}
 		try {
 			mimeMsg.setRecipients(Message.RecipientType.CC, InternetAddress.parse(copyto));
 			return true;
@@ -151,24 +154,31 @@ public class Mail {
 		}
 	}
 
-	/* 调用sendOut方法完成发送 */
+	/** 调用sendOut方法完成发送 */
 	public static boolean sendAndCc(String smtp, String from, String to, String copyto, String subject, String content,
 			String username, String password) {
 		Mail theMail = new Mail(smtp);
-		theMail.setNeedAuth(true); // 验证
-		if (!theMail.setSubject(subject))
+		// 验证
+		theMail.setNeedAuth(true);
+		if (!theMail.setSubject(subject)){
 			return false;
-		if (!theMail.setBody(content))
+		}
+		if (!theMail.setBody(content)){
 			return false;
-		if (!theMail.setTo(to))
+		}
+		if (!theMail.setTo(to)){
 			return false;
-		if (!theMail.setCopyTo(copyto))
+		}
+		if (!theMail.setCopyTo(copyto)){
 			return false;
-		if (!theMail.setFrom(from))
+		}
+		if (!theMail.setFrom(from)){
 			return false;
+		}
 		theMail.setNamePass(username, password);
-		if (!theMail.sendOut())
+		if (!theMail.sendOut()){
 			return false;
+		}
 		return true;
 	}
 

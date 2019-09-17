@@ -83,16 +83,17 @@ public class Hao123Application {
         ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
-        int seconds = Calendar.getInstance().getTime().getSeconds();
-        int mins = Calendar.getInstance().getTime().getMinutes();
-        //int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
+        int seconds = Calendar.getInstance().get(Calendar.SECOND);
+/*//        int mins = Calendar.getInstance().getTime().getMinutes();*/
+        /** int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;*/
         int delaySeconds = 60 - seconds;
         service2.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
              * content + " \" }}"
              */
-            if (count < 20) {
+            int sendLimitCount = 20;
+            if (count < sendLimitCount) {
                 count++;
             }
             String content = count + "-  " + randomShiti() + new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss").format(Calendar.getInstance().getTime());
@@ -1280,7 +1281,7 @@ public class Hao123Application {
                 "499",
                 "500 啥时候具备面上阿里的能力呀？",
                 "501 @ComponentScan 在idea里面竟然可以识别出来后面的包名是否存在",
-                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "502", "503", "504", "505", "506", "507", "", "", "", "", "", "", "", "", "", "", "", "",
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
