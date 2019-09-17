@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98391a26-273b-4d14-8310-a3bd7b7b2159" name="Default Changelist" comment="">
+    <list default="true" id="98391a26-273b-4d14-8310-a3bd7b7b2159" name="Default Changelist" comment="update log">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hl/Hao123Application.java" afterDir="false" />
     </list>
@@ -25,6 +25,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="springboot2" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -40,6 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,18 +58,18 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_201\jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.hl.Hao123Application" />
-      <module name="springboot2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
+    <configuration name="springboot2" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_201\jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.hl.Hao123Application" />
+      <module name="springboot2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,7 +87,8 @@
       <updated>1568090577620</updated>
       <workItem from="1568090578747" duration="1948000" />
       <workItem from="1568597884465" duration="2249000" />
-      <workItem from="1568604664512" duration="7802000" />
+      <workItem from="1568604664512" duration="8944000" />
+      <workItem from="1568707790733" duration="6430000" />
     </task>
     <task id="LOCAL-00001" summary="add 421">
       <created>1568614657909</created>
@@ -134,7 +139,91 @@
       <option name="project" value="LOCAL" />
       <updated>1568705806299</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="// Lombok更类似于一种IDE插件，项目也需要依赖相应的jar包。Lombok依赖jar包是因为编译时要用它的注解，&#10;// @Data太过残暴（因为@Data集合了@ToString、@EqualsAndHashCode、@Getter/@Setter、@RequiredArgsConstructor的所有特性）&#10;//@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor&#10;//无参构造器、部分参数构造器、全参构造器。Lombok没法实现多种参数构造器的重载。&#10;//@Cleanup   该注解能帮助我们自动调用close()方法，很大的简化了代码。&#10;// @NonNull&#10;//该注解用在属性或构造器上，Lombok会生成一个非空的声明，可用于校验参数，能帮助避免空指针。">
+      <created>1568706246363</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568706246363</updated>
+    </task>
+    <task id="LOCAL-00009" summary="// Lombok更类似于一种IDE插件，项目也需要依赖相应的jar包。Lombok依赖jar包是因为编译时要用它的注解，&#10;// @Data太过残暴（因为@Data集合了@ToString、@EqualsAndHashCode、@Getter/@Setter、@RequiredArgsConstructor的所有特性）&#10;//@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor&#10;//无参构造器、部分参数构造器、全参构造器。Lombok没法实现多种参数构造器的重载。&#10;//@Cleanup   该注解能帮助我们自动调用close()方法，很大的简化了代码。&#10;// @NonNull&#10;//该注解用在属性或构造器上，Lombok会生成一个非空的声明，可用于校验参数，能帮助避免空指针。">
+      <created>1568706449113</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1568706449113</updated>
+    </task>
+    <task id="LOCAL-00010" summary="edit log">
+      <created>1568706802175</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1568706802175</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update log">
+      <created>1568706967751</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1568706967751</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update log">
+      <created>1568710044469</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1568710044469</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update log">
+      <created>1568710150424</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1568710150424</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update log">
+      <created>1568710740673</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1568710740673</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update log">
+      <created>1568711135213</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1568711135213</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update log">
+      <created>1568711513233</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1568711513233</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update log">
+      <created>1568711968115</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568711968115</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update log">
+      <created>1568714483485</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1568714483485</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update log">
+      <created>1568714644699</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1568714644699</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +249,8 @@
     <MESSAGE value="&lt;dependency&gt;&#10;    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;&#10;    &lt;artifactId&gt;lombok&lt;/artifactId&gt;&#10;    &lt;version&gt;1.16.20&lt;/version&gt;&#10;    &lt;scope&gt;provided&lt;/scope&gt;&#10;&lt;/dependency&gt;" />
     <MESSAGE value="&lt;dependency&gt;&#10;    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;&#10;    &lt;artifactId&gt;lombok&lt;/artifactId&gt;&#10;    &lt;version&gt;1.16.20&lt;/version&gt;&#10;    &lt;scope&gt;provided&lt;/scope&gt;&#10;&lt;/dependency&gt;&#10;添加Lombok" />
     <MESSAGE value="// Lombok更类似于一种IDE插件，项目也需要依赖相应的jar包。Lombok依赖jar包是因为编译时要用它的注解，&#10;// @Data太过残暴（因为@Data集合了@ToString、@EqualsAndHashCode、@Getter/@Setter、@RequiredArgsConstructor的所有特性）&#10;//@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor&#10;//无参构造器、部分参数构造器、全参构造器。Lombok没法实现多种参数构造器的重载。&#10;//@Cleanup   该注解能帮助我们自动调用close()方法，很大的简化了代码。&#10;// @NonNull&#10;//该注解用在属性或构造器上，Lombok会生成一个非空的声明，可用于校验参数，能帮助避免空指针。" />
-    <option name="LAST_COMMIT_MESSAGE" value="// Lombok更类似于一种IDE插件，项目也需要依赖相应的jar包。Lombok依赖jar包是因为编译时要用它的注解，&#10;// @Data太过残暴（因为@Data集合了@ToString、@EqualsAndHashCode、@Getter/@Setter、@RequiredArgsConstructor的所有特性）&#10;//@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor&#10;//无参构造器、部分参数构造器、全参构造器。Lombok没法实现多种参数构造器的重载。&#10;//@Cleanup   该注解能帮助我们自动调用close()方法，很大的简化了代码。&#10;// @NonNull&#10;//该注解用在属性或构造器上，Lombok会生成一个非空的声明，可用于校验参数，能帮助避免空指针。" />
+    <MESSAGE value="edit log" />
+    <MESSAGE value="update log" />
+    <option name="LAST_COMMIT_MESSAGE" value="update log" />
   </component>
 </project>
