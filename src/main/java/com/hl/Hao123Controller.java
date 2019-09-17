@@ -373,7 +373,7 @@ public class Hao123Controller {
                 try {
                     resp.sendRedirect(url);
                 } catch (IOException e) {
-                    logger.info("跳转到网易门户失败");
+                    logger.info("跳转到对应url失败");
                     e.printStackTrace();
                 }
 
