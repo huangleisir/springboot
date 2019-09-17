@@ -16,6 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import entity.User;
 import org.apache.commons.lang.math.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +34,7 @@ import util.GsonUtil;
 /**
  * @author moss Holmes
  */
-@ComponentScan({ "com.hl", "config", "entity", "service", "service.impl" })
+@ComponentScan({ "com.hl", "util", "entity", "com.hl.filter", "com.hl.service.impl" })
 @ServletComponentScan
 @SpringBootApplication
 @RestController
@@ -50,6 +51,10 @@ public class Hao123Application {
 
     @SuppressWarnings("deprecation")
     public static void main(String[] strings) {
+        User user = new User();
+        user.setName("红孩儿");
+        user.setAge(18);
+        user.setIdCardNum("234");
         log.info("要启动该服务了---------------Hao123Application");
         SpringApplication.run(Hao123Application.class, strings);
         /////////////////////////////////////////////////////////////////////
