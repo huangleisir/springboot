@@ -85,8 +85,8 @@ public class Hao123Application {
         // 3、任务执行间隔 4、间隔时间单位
         int seconds = Calendar.getInstance().getTime().getSeconds();
         int mins = Calendar.getInstance().getTime().getMinutes();
-        int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
-        delaySeconds = 60 - seconds;
+        //int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
+        int delaySeconds = 60 - seconds;
         service2.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
@@ -941,7 +941,7 @@ public class Hao123Application {
                         + "这个东西只有在有红色双向箭头的时候才可用，否则是灰色的    所以要先使用merge，让代码合并在一起，并标识出冲突，才能使用Merge Tool \n" + "把代码pull下来  或者将另一个分支代码merge到当前分支都可以让冲突出现   有时候需要commit一下 才会让红色冲突出现\n"
                         + "另外 要知道  在merge tool  视图  左边是自己workspace里面的代码  右边是远端代码 \n" + "注意左边的代码是可以编辑的（不能用ctr + d 快捷键  我也不知道为什么）  右边的代码 不可以编辑\n"
                         + " 编辑完之后  将代码  add to  index  一下   这样 红色双向箭头就变成了 黑色星号  （紧张情绪一下子缓解了） 就可以正常提交了",
-                "285                                                                                                                 ",
+                "285   idea也学会玩了，还有啥要学的,剩下的就是在工作中去学习了，不然这么多字符串，怎么补满                                                                                                              ",
                 "286                                                                                                                  ",
                 "287                                                                                                                 ",
                 "288                                                                                                                 ",
