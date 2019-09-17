@@ -10,5 +10,8 @@
         <module name="springboot2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot2" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
