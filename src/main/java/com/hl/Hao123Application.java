@@ -1192,24 +1192,33 @@ public class Hao123Application {
                 "422 这些Q确实有帮助，interview前必看   https://blog.csdn.net/forezp/article/details/88823244",
                 "423 我记得在马店中学，实验操作考试前，张良石在考场前给我们做最后的熟悉，那真是及时啊。",
                 "424 以后遇到大数据项目，不要那么拘谨，挽起袖子也是可以搞的   都是可以的 springboot可以轻松集成很多大数据工具，一搜一大把方案,搭建平台交给别人,自己单纯的搞Java操作大数据工具其实没有什么难度",
-                "425",
-                "426",
-                "427",
-                "428",
-                "429",
-                "430",
-                "431",
-                "432",
-                "433",
-                "434",
-                "435",
-                "436",
-                "437",
-                "438",
-                "439  ",
-                "440",
-                "441",
-                "442",
+                "425 mysql四种隔离级别,默认的是哪一个",
+                "426 Java虚拟机：JVM内存模型  https://www.fangzhipeng.com/javainterview/2019/04/09/jmm.html 顺丰快运：从方法调用的过程将jvm各个地方的作用连贯起来讲一遍",
+                "427 Java 虚拟机,垃圾回收算法 https://www.fangzhipeng.com/javainterview/2019/04/11/gc-algorithm.html",
+                "428 Java并发：Synchronized原理和优化  https://www.fangzhipeng.com/javainterview/2019/03/23/synchronized-base.html",
+                "429 Java并发：ConcurrentHashMap解读  https://www.fangzhipeng.com/javainterview/2019/03/18/concurrenthashmap.html",
+                "430 Java并发：BlockingQueue解读  https://www.fangzhipeng.com/javainterview/2019/03/17/blockingqueue.html",
+                "431 ava并发：AtomicInteger源码分析——基于CAS的乐观锁实现  https://www.fangzhipeng.com/javainterview/2019/03/16/atomicinteger-cas.html",
+                "432 Java基础：Java容器之HashMap https://www.fangzhipeng.com/javainterview/2019/03/15/collections-hashmap.html",
+                "433 Java基础：Java容器之ArrayList https://www.fangzhipeng.com/javainterview/2019/03/14/collections-arraylist.html",
+                "434 Java基础：java中HashSet详解 https://www.fangzhipeng.com/javainterview/2019/03/13/collectins-hashset.html",
+                "435 Java基础：JAVA中BitSet使用详解 https://www.fangzhipeng.com/javainterview/2019/03/12/collections-bitset.html",
+                "436 Java基础：JAVA Hashmap的死循环及Java8的修复 https://www.fangzhipeng.com/javainterview/2019/03/11/hashmap-dead-cycle.html",
+                "437 Java容器之LinkedList",
+                "438  Java基础： 攻破JAVA NIO技术壁垒1 https://www.fangzhipeng.com/javainterview/2019/03/04/javanio1.html",
+                "439 Java基础： 攻破JAVA NIO技术壁垒2 https://www.fangzhipeng.com/javainterview/2019/03/05/javanio2.html",
+                "440 Java并发：Java中CAS详解  https://www.fangzhipeng.com/javainterview/2019/03/19/java-cas.html ",
+                "441 Java并发：BlockingQueue解读  https://www.fangzhipeng.com/javainterview/2019/03/17/blockingqueue.html  ",
+                "442 BlockingQueue解读\n" +
+                        "\n" +
+                        "在新增的Concurrent包中，BlockingQueue很好的解决了多线程中，如何高效安全“传输”数据的问题。通过这些高效并且线程安全的队列类，为我们快速搭建高质量的多线程程序带来极大的便利。本文详细介绍了BlockingQueue家庭中的所有成员，包括他们各自的功能以及常见使用场景。\n" +
+                        "\n" +
+                        "认识BlockingQueue\n" +
+                        "首先，最基本的来说， BlockingQueue 是一个先进先出的队列（Queue），为什么说是阻塞（Blocking）的呢？是因为 BlockingQueue支持当获取队列元素但是队列为空时，会阻塞等待队列中有元素再返回；也支持添加元素时，如果队列已满，那么等到队列可以放入新元素时再放入。\n" +
+                        "\n" +
+                        "BlockingQueue 是一个接口，继承自 Queue，所以其实现类也可以作为 Queue 的实现来使用，而 Queue 又继承自 Collection 接口。\n" +
+                        "\n" +
+                        "BlockingQueue 对插入操作、移除操作、获取元素操作提供了四种不同的方法用于不同的场景中使用：1、抛出异常；2、返回特殊值（null 或 true/false，取决于具体的操作）；3、阻塞等待此操作，直到这个操作成功；4、阻塞等待此操作，直到成功或者超时指定时间。",
                 "443",
                 "444",
                 "445",
