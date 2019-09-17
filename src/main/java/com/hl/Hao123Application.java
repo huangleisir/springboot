@@ -1224,7 +1224,8 @@ public class Hao123Application {
                 "444 Java虚拟机：垃圾收集器和内存分配策略  https://www.fangzhipeng.com/javainterview/2019/04/13/gc-memory.html ",
                 "445 Java并发：CopyOnWriteArrayList实现原理及源码分析 https://www.fangzhipeng.com/javainterview/2019/03/19/copyonwritearraylist.html",
                 "446 Java并发：AtomicInteger源码分析——基于CAS的乐观锁实现  https://www.fangzhipeng.com/javainterview/2019/03/16/atomicinteger-cas.html",
-                "447",
+                "447 现在基本上可以独立使用idea了，导入工程，跑起来，maven打包都可以,查找代码，根据文件名，内容查找都可以,那就没什么了,慢慢转向idea了，以后项目中就优先使用idea了," +
+                        "越来越多的发现他的优势了",
                 "448",
                 "449",
                 "450",
