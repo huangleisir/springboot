@@ -1,4 +1,4 @@
-package entity;
+package com.hl.entity;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

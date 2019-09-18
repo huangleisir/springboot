@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.util.concurrent.RateLimiter;
 
-import util.GsonUtil;
-import util.SimpleThreadPoolUtils;
+import com.util.GsonUtil;
+import com.util.SimpleThreadPoolUtils;
 
 @RestController
 public class Hao123Controller {

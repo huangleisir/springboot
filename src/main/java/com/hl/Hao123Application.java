@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import entity.User;
+import com.hl.entity.User;
 import org.apache.commons.lang.math.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import util.GsonUtil;
+import com.util.GsonUtil;
 
 /**
  * @author moss Holmes
@@ -73,7 +73,7 @@ public class Hao123Application {
                 token_time = new Date() + "";
                 log.info("更新access_token, {}", token);
                 tokenMap.put("access_token", token);
-                // tokenMap.put("token_time", new Date() + "");
+                /*// tokenMap.put("token_time", new Date() + "");*/
             } catch (Exception e) {
                 log.info("更新access_token failed");
                 e.printStackTrace();
