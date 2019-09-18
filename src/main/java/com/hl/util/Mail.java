@@ -1,4 +1,4 @@
-package com.util;
+package com.hl.util;
 
 import java.util.Properties;
 

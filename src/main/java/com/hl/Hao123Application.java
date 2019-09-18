@@ -11,11 +11,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
+import java.util.concurrent.*;
 import com.hl.entity.User;
 import org.apache.commons.lang.math.RandomUtils;
 import org.slf4j.Logger;
@@ -28,13 +24,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.util.GsonUtil;
+import com.hl.util.GsonUtil;
 
 /**
  * @author moss Holmes
  */
-@ComponentScan({ "com.hl", "util", "entity", "com.hl.filter", "com.hl.service.impl" })
+@ComponentScan({ "com.hl", "com.hl.util", "com.hl.entity", "com.hl.filter", "com.hl.service.impl" })
 @ServletComponentScan
 @SpringBootApplication
 @RestController
@@ -58,11 +53,12 @@ public class Hao123Application {
         log.info("要启动该服务了---------------Hao123Application");
         SpringApplication.run(Hao123Application.class, strings);
         /////////////////////////////////////////////////////////////////////
-        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        /*ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();*/
+        ScheduledThreadPoolExecutor service = new ScheduledThreadPoolExecutor(1);
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         service.scheduleAtFixedRate(() -> {
-            System.out.println("更新access_token, ");
+            log.info("更新access_token, ");
             try {
                 String str = HttpClientUtil
                         .doGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx63e923c37a90e24e&secret=58e8da3e42d3e3b04db36af5dae8fdb1", null);
@@ -80,7 +76,8 @@ public class Hao123Application {
             }
 
         }, 3, 7199, TimeUnit.SECONDS);
-        ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
+        /*ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();*/
+        ScheduledThreadPoolExecutor service2 = new ScheduledThreadPoolExecutor(1);
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         int seconds = Calendar.getInstance().get(Calendar.SECOND);
