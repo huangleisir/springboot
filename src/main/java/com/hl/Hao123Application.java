@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.hl.entity.User;
@@ -44,9 +45,8 @@ public class Hao123Application {
 
     static String token_time = "";
 
-    static int count = 0;
+    private static final AtomicInteger count = new AtomicInteger(0);
 
-    @SuppressWarnings("deprecation")
     public static void main(String[] strings) {
         User user = new User();
         user.setName("红孩儿");
@@ -87,8 +87,8 @@ public class Hao123Application {
             }
 
         }, 3, 7199, TimeUnit.SECONDS);
-        /*ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();*/
-        ScheduledThreadPoolExecutor service2  = new ScheduledThreadPoolExecutor(1,
+        /*ScheduledExecutorService scheduleAtFixedRateSendMsg = Executors.newSingleThreadScheduledExecutor();*/
+        ScheduledThreadPoolExecutor scheduleAtFixedRateSendMsg  = new ScheduledThreadPoolExecutor(1,
                 new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build(),
                 new ThreadPoolExecutor.AbortPolicy() {
                     // 队列已满,而且当前线程数已经超过最大线程数时的异常处理策略
@@ -103,14 +103,14 @@ public class Hao123Application {
 /*//        int mins = Calendar.getInstance().getTime().getMinutes();*/
         /** int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;*/
         int delaySeconds = 60 - seconds;
-        service2.scheduleAtFixedRate(() -> {
+        scheduleAtFixedRateSendMsg.scheduleAtFixedRate(() -> {
             /*
              * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
              * content + " \" }}"
              */
             int sendLimitCount = 20;
-            if (count < sendLimitCount) {
-                count++;
+            if (count.get() < sendLimitCount) {
+                count.getAndIncrement();
             }
             String content = count + "-  " + randomShiti() + new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
             try {
@@ -133,7 +133,7 @@ public class Hao123Application {
                 double outOfResponseCountLimit = 45047.0;
                 if (outOfResponseCountLimit == errCode) {
                     log.info("微信服务器已向该用户连续推送20条消息，该用户未返回");
-                    count = 0;
+                    count.set(0);
                 }
                 log.info("微信服务器返回结果, {}", GsonUtil.GsonString(retMap));
             } catch (Exception e) {
