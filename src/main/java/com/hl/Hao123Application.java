@@ -129,11 +129,13 @@ public class Hao123Application {
                 log.info("2222222222result2222, {}", str);
                 // 如果累计发送达到20条 就将计数归零
                 Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
-                Double errcode = (Double) retMap.get("errcode");
-                if (45047d == errcode) {
+                double errCode = (double) retMap.get("errcode");
+                double outOfResponseCountLimit = 45047.0;
+                if (outOfResponseCountLimit == errCode) {
+                    log.info("微信服务器已向该用户连续推送20条消息，该用户未返回");
                     count = 0;
                 }
-                log.info("retMap, {}", GsonUtil.GsonString(retMap));
+                log.info("微信服务器返回结果, {}", GsonUtil.GsonString(retMap));
             } catch (Exception e) {
                 log.error("获取errcode异常,{}", e);
 
