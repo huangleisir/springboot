@@ -73,7 +73,7 @@ public class Hao123Application {
             try {
                 String str = HttpClientUtil
                         .doGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx63e923c37a90e24e&secret=58e8da3e42d3e3b04db36af5dae8fdb1", null);
-                log.info("-----------" + str);
+                log.info("请求微信服务端更新token接口,返回结果" + str);
                 Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
                 String token = (String) retMap.get("access_token");
                 tokenShow = token;
