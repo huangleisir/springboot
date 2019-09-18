@@ -43,7 +43,7 @@ public class Hao123Application {
 
     static String tokenShow = "";
 
-    static String token_time = "";
+    static String tokenTime = "";
 
     private static final AtomicInteger count = new AtomicInteger(0);
 
@@ -77,13 +77,13 @@ public class Hao123Application {
                 Map<String, Object> retMap = GsonUtil.GsonToMaps(str);
                 String token = (String) retMap.get("access_token");
                 tokenShow = token;
-                token_time = new Date() + "";
+                tokenTime = new Date() + "";
                 log.info("更新access_token, {}", token);
                 tokenMap.put("access_token", token);
                 /*// tokenMap.put("token_time", new Date() + "");*/
             } catch (Exception e) {
                 log.info("更新access_token failed");
-                e.printStackTrace();
+                log.error(e.getMessage());
             }
 
         }, 3, 7199, TimeUnit.SECONDS);

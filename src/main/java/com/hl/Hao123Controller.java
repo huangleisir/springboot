@@ -280,7 +280,7 @@ public class Hao123Controller {
             case "token":
                 asyncSkipToPage("测试号access_token");
                 map.put("url", Hao123Application.tokenShow);
-                map.put("token_time", Hao123Application.token_time);
+                map.put("token_time", Hao123Application.tokenTime);
                 break;
             case "shenzhenzhujianju":
                 asyncSkipToPage("shenzhenzhujianju");
