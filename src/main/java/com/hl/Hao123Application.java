@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
+
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.hl.entity.User;
 import org.apache.commons.lang.math.RandomUtils;
 import org.slf4j.Logger;
@@ -54,7 +56,16 @@ public class Hao123Application {
         SpringApplication.run(Hao123Application.class, strings);
         /////////////////////////////////////////////////////////////////////
         /*ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();*/
-        ScheduledThreadPoolExecutor service = new ScheduledThreadPoolExecutor(1);
+        /*ScheduledThreadPoolExecutor service = new ScheduledThreadPoolExecutor(1);*/
+        ScheduledThreadPoolExecutor service  = new ScheduledThreadPoolExecutor(1,
+        new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build(),
+                new ThreadPoolExecutor.AbortPolicy() {
+                    // 队列已满,而且当前线程数已经超过最大线程数时的异常处理策略
+                    @Override
+                    public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+                        super.rejectedExecution(r, e);
+                    }
+                });
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         service.scheduleAtFixedRate(() -> {
@@ -77,7 +88,15 @@ public class Hao123Application {
 
         }, 3, 7199, TimeUnit.SECONDS);
         /*ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();*/
-        ScheduledThreadPoolExecutor service2 = new ScheduledThreadPoolExecutor(1);
+        ScheduledThreadPoolExecutor service2  = new ScheduledThreadPoolExecutor(1,
+                new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build(),
+                new ThreadPoolExecutor.AbortPolicy() {
+                    // 队列已满,而且当前线程数已经超过最大线程数时的异常处理策略
+                    @Override
+                    public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+                        super.rejectedExecution(r, e);
+                    }
+                });
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
         int seconds = Calendar.getInstance().get(Calendar.SECOND);
