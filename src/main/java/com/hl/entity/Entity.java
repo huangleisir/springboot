@@ -49,7 +49,7 @@ public class Entity {
 
     public Entity() {
         super();
-        // TODO Auto-generated constructor stub
+        /* TODO Auto-generated constructor stub */
     }
 
     public List<String> getHobbies() {

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author DELL
+ */
 @Data
 @RestController
 public class HomeController {
@@ -26,7 +29,6 @@ public class HomeController {
 	public Object demo(HttpServletRequest request, @PathVariable("v") String params1) {
 		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Student s = new Student();
-		s.setId(56454L);
 		return "welcome to us , demo   "  +  params1;
 	}
 }

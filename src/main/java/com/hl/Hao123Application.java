@@ -137,7 +137,17 @@ public class Hao123Application {
             }
         }, delaySeconds, 30, TimeUnit.SECONDS);
 
-
+        //TODO
+        /*List<String> list = new ArrayList<>();
+        while(true){
+            list.add(new Random().nextInt()+"");
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.gc();
+        }*/
 
 
     }
