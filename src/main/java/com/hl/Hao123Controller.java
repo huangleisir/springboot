@@ -21,8 +21,12 @@ import com.google.common.util.concurrent.RateLimiter;
 import com.hl.util.GsonUtil;
 import com.hl.util.SimpleThreadPoolUtils;
 
+/**
+ * @author DELL
+ */
 @RestController
 public class Hao123Controller {
+    public static final String UNKNOWN = "unknown";
     private static final Logger logger = LoggerFactory.getLogger(Hao123Controller.class);
     /**
      * http://localhost:9080/
@@ -51,7 +55,7 @@ public class Hao123Controller {
     @RequestMapping(value = "/skip/{name}", method = RequestMethod.POST)
     public Object skip(@PathVariable("name") String name, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         logger.info("---------------~~~~~~~~~~~~name~~~~~" + name);
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<String, Object>(16);
         switch (name) {
             case "baidu":
                 asyncSkipToPage("baidu");
@@ -314,14 +318,15 @@ public class Hao123Controller {
     @RequestMapping(value = "/tmall", method = RequestMethod.GET)
     public Object tmall(HttpServletRequest req, HttpServletResponse resp) {
         logger.info(new Date() + "---------------~~~~~~~~~~~~tmall    https://www.tmall.com  ~~~~" + getIpAddress(req));
-        RateLimiter limiter = RateLimiter.create(1); // 每秒不超过10个任务被提交
+        // 每秒不超过10个任务被提交
+        RateLimiter limiter = RateLimiter.create(1);
         for (int i = 0; i < 3; i++) {
             limiter.acquire(); // 请求RateLimiter, 超过permits会被阻塞
             logger.info("call execute.." + i);
         }
         asyncSkipToPage("天猫");
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("url", "");
+        Map<String, String> map = new HashMap<String, String>(1);
+        map.put("url", "https://www.tmall.com");
         return map;
     }
 
@@ -339,19 +344,19 @@ public class Hao123Controller {
      */
     public static String getIpAddress(HttpServletRequest request) {
         String ip = request.getHeader("x-forwarded-for");
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("WL-Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("HTTP_CLIENT_IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getHeader("HTTP_X_FORWARDED_FOR");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.length() == 0 || UNKNOWN.equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
         }
         return ip;

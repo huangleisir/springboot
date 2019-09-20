@@ -24,7 +24,7 @@ import com.hl.service.IService;
 public class MyFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(MyFilter.class);
 
-    // 这个实例注入成功，说明 一个问题 在这里查表判断权限是没有问题的 而且在mapper层可以加入redis缓存
+    /** 这个实例注入成功，说明 一个问题 在这里查表判断权限是没有问题的 而且在mapper层可以加入redis缓存 */
     @Autowired
     private IService service;
 
