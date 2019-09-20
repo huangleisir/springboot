@@ -19,6 +19,9 @@ import org.springframework.core.annotation.Order;
 
 import com.hl.service.IService;
 
+/**
+ * @author DELL
+ */
 @WebFilter(filterName = "myFilter", urlPatterns = "/*")
 @Order(Integer.MAX_VALUE)
 public class MyFilter implements Filter {
