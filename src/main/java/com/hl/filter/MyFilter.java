@@ -50,8 +50,7 @@ public class MyFilter implements Filter {
             logger.info("====================" + wholeStr);
             chain.doFilter(request, response);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
         System.out.println("MyFilter doFilter.........after");
         logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
