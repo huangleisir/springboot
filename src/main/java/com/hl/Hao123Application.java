@@ -45,6 +45,7 @@ public class Hao123Application {
     public static void main(String[] strings) {
         User user = new User();
         user.setName("红孩儿");
+
         user.setAge(18);
         user.setIdCardNum("234");
         log.info("要启动该服务了---------------Hao123Application");
