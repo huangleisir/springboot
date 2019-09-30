@@ -71,6 +71,12 @@
 			<version>1.16.20</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- integrite  ES -->
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+			<version>1.4.4.RELEASE</version>
+		</dependency>-->
 	</dependencies>
 	<build>
 

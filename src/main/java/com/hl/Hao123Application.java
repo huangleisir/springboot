@@ -43,9 +43,7 @@ public class Hao123Application {
     private static final AtomicInteger count = new AtomicInteger(0);
 
     public static void main(String[] strings) {
-        User user = new User();
-        user.setName("红孩儿");
-        user.setAge(18);
+        User user = new User("红孩儿",18);
         user.setIdCardNum("234");
         log.info("要启动该服务了---------------Hao123Application");
         SpringApplication.run(Hao123Application.class, strings);
