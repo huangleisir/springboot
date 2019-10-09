@@ -33,6 +33,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 基于 httpclient 4.5版本的 http工具类
@@ -40,6 +42,8 @@ import org.apache.http.util.EntityUtils;
  * @author 爱琴孩
  */
 public class HttpClientUtil {
+
+    private static final Logger logger = LoggerFactory.getLogger(HttpClientUtil.class);
 
     private static final CloseableHttpClient httpClient;
     public static final String CHARSET = "UTF-8";
@@ -277,7 +281,7 @@ public class HttpClientUtil {
         byte[] jsonBytes = new byte[size];
         is.read(jsonBytes);
         String message = new String(jsonBytes, "UTF-8");
-        System.out.println("response============" + message);
+        logger.info("response============" + message);
         return message;
     }
 

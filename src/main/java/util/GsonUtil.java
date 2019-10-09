@@ -7,7 +7,9 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 /**
- * Created by Administrator on 2017/6/17.
+ *
+ * @author Administrator
+ * @date 2017/6/17
  */
 
 public class GsonUtil {
