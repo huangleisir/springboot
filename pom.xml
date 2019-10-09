@@ -48,6 +48,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.soecode.wx-tools</groupId>
+			<artifactId>wx-tools</artifactId>
+			<version>2.1.4-RELEASE</version>
+		</dependency>
 		<!-- <dependency> <groupId>org.apache.commons.io</groupId> <artifactId>commonsIO</artifactId> 
 			<version>2.5.0</version> <type>pom</type> </dependency> -->
 		<dependency>

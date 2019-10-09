@@ -9,6 +9,9 @@ import com.hl.config.RedisUtil;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author DELL
+ */
 @RestController
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -25,8 +28,8 @@ public class HomeController {
 	@ResponseBody
 	public Object demo(HttpServletRequest request, @PathVariable("v") String params1) {
 		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		redisUtil.set("a", "1");
-		logger.info(redisUtil.get("a") + "");
-		return "welcome to us , demo   "  +  params1;
+		redisUtil.set("a", params1);
+		logger.info((String)redisUtil.get("a"));
+		return "welcome to us , demo   "  +  (String)redisUtil.get("a") +"     000";
 	}
 }

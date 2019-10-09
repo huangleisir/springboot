@@ -310,11 +310,11 @@ public class Hao123Controller {
         return map;
     }
 
-    // https://www.tmall.com
     @RequestMapping(value = "/tmall", method = RequestMethod.GET)
     public Object tmall(HttpServletRequest req, HttpServletResponse resp) {
         logger.info(new Date() + "---------------~~~~~~~~~~~~tmall    https://www.tmall.com  ~~~~" + getIpAddress(req));
-        RateLimiter limiter = RateLimiter.create(1); // 每秒不超过10个任务被提交
+        // 每秒不超过10个任务被提交
+        RateLimiter limiter = RateLimiter.create(1);
         for (int i = 0; i < 3; i++) {
             limiter.acquire(); // 请求RateLimiter, 超过permits会被阻塞
             logger.info("call execute.." + i);

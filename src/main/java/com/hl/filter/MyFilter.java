@@ -19,12 +19,12 @@ import org.springframework.core.annotation.Order;
 
 import com.hl.service.IService;
 
-@WebFilter(filterName = "myFilter", urlPatterns = "/*")
+//@WebFilter(filterName = "myFilter", urlPatterns = "/*")
 @Order(Integer.MAX_VALUE)
 public class MyFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(MyFilter.class);
 
-    // 这个实例注入成功，说明 一个问题 在这里查表判断权限是没有问题的 而且在mapper层可以加入redis缓存
+    /** 这个实例注入成功，说明 一个问题 在这里查表判断权限是没有问题的 而且在mapper层可以加入redis缓存*/
     @Autowired
     private IService service;
 
@@ -38,7 +38,7 @@ public class MyFilter implements Filter {
         logger.info("MyFilter doFilter.........before");
         service.action();
         logger.info("request.getContentLength(): \t" + " \t" + request.getContentLength());
-        try {
+        /*try {
             BufferedReader br = request.getReader();
             String str, wholeStr = "";
             while ((str = br.readLine()) != null) {
@@ -49,21 +49,21 @@ public class MyFilter implements Filter {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
         System.out.println("MyFilter doFilter.........after");
         logger.info("request.getContentLength():\t" + "\t" + request.getContentLength());
         // 打印请求方法，路径
         logger.info("request url:\t" + "\t" + request.getRemoteAddr());
         Map<String, String[]> map = request.getParameterMap();
         // 打印请求url参数
-        if (map != null) {
+        /*if (map != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("request parameters:\t");
             for (Map.Entry<String, String[]> entry : map.entrySet()) {
                 sb.append("[" + entry.getKey() + "=" + printArray(entry.getValue()) + "]");
             }
             logger.info(sb.toString());
-        }
+        }*/
 
         // // 打印response
         // InputStream out = request.getInputStream();

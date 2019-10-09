@@ -43,7 +43,7 @@ import util.GsonUtil;
 public class Hao123Application {
     static Logger log = LoggerFactory.getLogger(Hao123Application.class);
 
-    static Map<String, String> tokenMap = new ConcurrentHashMap<String, String>();
+    public static Map<String, String> tokenMap = new ConcurrentHashMap<String, String>();
 
     static String tokenShow = "";
 
@@ -100,21 +100,22 @@ public class Hao123Application {
                     e.printStackTrace();
                 }
             }
-        }, 0, 7199, TimeUnit.SECONDS);//0表示首次执行任务的延迟时间，40表示每次执行任务的间隔时间，TimeUnit.MILLISECONDS执行的时间间隔数值单位
+            //0表示首次执行任务的延迟时间，40表示每次执行任务的间隔时间，TimeUnit.MILLISECONDS执行的时间间隔数值单位
+        }, 0, 7199, TimeUnit.SECONDS);
 
         /* 阿里代码规约 禁止使用 Executors创建线程池  **/
       //  ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
         // 参数：1、任务体 2、首次执行的延时时间
         // 3、任务执行间隔 4、间隔时间单位
-        int seconds = Calendar.getInstance().getTime().getSeconds();
+     /**   int seconds = Calendar.getInstance().getTime().getSeconds();
         int mins = Calendar.getInstance().getTime().getMinutes();
         int delaySeconds = 60 - seconds + (4 - mins % 5) * 60;
         delaySeconds = 60 - seconds;
         scheduled.scheduleAtFixedRate(() -> {
-            /*
-             * "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
-             * content + " \" }}"
-             */
+
+             "{\"touser\": \\", \"msgtype\": \"text\", \"text\": {\"content\": \" " +
+             content + " \" }}"
+
             if (count < 20) {
                 count++;
             }
@@ -144,7 +145,7 @@ public class Hao123Application {
                 log.error("获取errcode异常,{}", e);
 
             }
-        }, delaySeconds, 30, TimeUnit.SECONDS);
+        }, delaySeconds, 30, TimeUnit.SECONDS);  */
 
     }
 
@@ -154,7 +155,7 @@ public class Hao123Application {
         return "hello world!";
     }
 
-    static String randomShiti() {
+    public static String randomShiti() {
         List<String> list = Arrays.asList("1你能讲讲jvm内存模型吗，eden，S1,S2,年轻代，年老代，永久代，垃圾回收算法吗？   https://www.cnblogs.com/dingyingsi/p/3760447.html",
                 "2你能说出几种设计模式  https://www.cnblogs.com/geek6/p/3951677.html                                                                                                                 ",
                 "2你能说出几种设计模式  https://www.cnblogs.com/geek6/p/3951677.html", "3 并发包下面的类  https://blog.csdn.net/sunyc1990/article/details/78084864",
@@ -964,7 +965,7 @@ public class Hao123Application {
                         + "这个东西只有在有红色双向箭头的时候才可用，否则是灰色的    所以要先使用merge，让代码合并在一起，并标识出冲突，才能使用Merge Tool \n" + "把代码pull下来  或者将另一个分支代码merge到当前分支都可以让冲突出现   有时候需要commit一下 才会让红色冲突出现\n"
                         + "另外 要知道  在merge tool  视图  左边是自己workspace里面的代码  右边是远端代码 \n" + "注意左边的代码是可以编辑的（不能用ctr + d 快捷键  我也不知道为什么）  右边的代码 不可以编辑\n"
                         + " 编辑完之后  将代码  add to  index  一下   这样 红色双向箭头就变成了 黑色星号  （紧张情绪一下子缓解了） 就可以正常提交了",
-                "285                                                                                                                 ",
+                "285  如果只是单纯的解决库存超卖问题，其实用 update num=num-buy_num where id = activity_id and num>buy_num   也行了，这就是悲观锁，如果返回值为1则说明减库存成功，再加上事务管理起来， 并发不高的情况下是可以的。  https://www.cnblogs.com/wu-1393180819/p/9828155.html                                                                                                            ",
                 "286                                                                                                                  ",
                 "287                                                                                                                 ",
                 "288                                                                                                                 ",
