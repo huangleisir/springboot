@@ -1228,7 +1228,7 @@ public class Hao123Application {
                 "372                                                                                                                   ",
                 "373 深入理解MySql的Explain执行计划\n" + "https://mp.weixin.qq.com/s/mEhqKQuF5JCAdAAc6Uqotg",
                 "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra",
-                "375                                                                                                                   ",
+                "375  https://www.cnblogs.com/asker009/p/9471712.html   这个shiro是比较好操作上手的，，适合伸手党                                                                                                                 ",
                 "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A",
                 "374 mysql  执行计划9个列  id select_type table type possible_keys key key_len ref rows Extra", "375 ",
                 "376 75道高级java面试题         https://mp.weixin.qq.com/s/Dx5CD_CiuPjiKFnRiLUB1A", "400 400之后用作专门的idea 用法心得总结吧   idea  ctr+E 查看最近浏览或者编辑的文件，这个非常好，会跟ctr+Q一样常用",
@@ -1250,9 +1250,9 @@ public class Hao123Application {
                 "418  linux统计某个单词在文本中出现的次数                                                                                                                              ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
                 "419  线程池中间那些参数的含义    ", " 420  状态要好，面试带一小罐可乐在手上，或者咖啡，冰红茶 乐虎  红牛 ", "421 写代码的水平也不行，这块就是总结 模仿没别的捷径", "422  https://gitbook.cn/books/5d9054898e7d0276851ea85f/index.html  总结一下 1.要用idea.2,要用JSR303 3.要用复制属性的工具包 4.要用set链，5.要用DTO和转换工具类  多看成熟框架的源码\n" +
                         "多回头看自己的代码\n" +
-                        "勤于重构", "423 https://www.cnblogs.com/asker009/p/9471712.html  这个比较shiro讲的比较牛皮一点，适合伸手党", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-                "", "", "", ""
+                        "勤于重构", "423 https://www.cnblogs.com/asker009/p/9471712.html  这个比较shiro讲的比较牛皮一点，适合伸手党",
+                "424",
+                "425"
 
         );
                 
