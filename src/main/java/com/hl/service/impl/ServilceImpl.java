@@ -18,7 +18,13 @@ public class ServilceImpl implements IService {
 
     }
 
-
+    @Override
+    public String skip(String name) {
+        if("xiaozhupeiqi".equals(name)){
+            return "https://www.iqiyi.com/v_19rrkchaik.html";
+        }
+        return "https://www.baidu.com/";
+    }
 
 
 }

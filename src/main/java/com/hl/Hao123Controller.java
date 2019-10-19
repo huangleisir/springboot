@@ -1,25 +1,20 @@
 package com.hl;
 
+import com.google.common.util.concurrent.RateLimiter;
+import com.hl.service.IService;
+import com.hl.util.GsonUtil;
+import com.hl.util.SimpleThreadPoolUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.google.common.util.concurrent.RateLimiter;
-
-import com.hl.util.GsonUtil;
-import com.hl.util.SimpleThreadPoolUtils;
 
 /**
  * @author DELL
@@ -41,6 +36,8 @@ public class Hao123Controller {
      * logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
      * return "welcome to us , demo"; }
      */
+    @Autowired
+    private IService service;
 
     @RequestMapping(value = "/wechat/portal", method = RequestMethod.GET)
     @ResponseBody
@@ -63,7 +60,7 @@ public class Hao123Controller {
                 break;
             case "github":
                 asyncSkipToPage("github");
-                map.put("url", "https://github.com/huangleisir");
+                  map.put("url", "https://github.com/huangleisir");
                 break;
             case "panda":
                 asyncSkipToPage("panda");
@@ -80,6 +77,12 @@ public class Hao123Controller {
             case "kaikeba":
                 asyncSkipToPage("开课吧");
                 map.put("url", "https://www.kaikeba.com/opencourses");
+                break;
+            case "xiaozhupeiqi":
+                asyncSkipToPage("小猪佩奇");
+                String url = service.skip("xiaozhupeiqi");
+                logger.info(url);
+                map.put("url", url);
                 break;
             case "bilibili":
                 asyncSkipToPage("bilibili");
