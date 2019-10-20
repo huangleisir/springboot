@@ -71,7 +71,22 @@ function init(){
 			  $("#token_time").html(data.token_time);
 			  
 		  }
-		});
+	});
+
+    $.ajax({
+        type: 'GET',
+        url: '/home',
+        data:{'name':'token'},
+        dataType:'json',
+        success:function(data){
+            debugger;
+            for (var i = 0; i < data.length; i++) {
+                $("#apollo").append("<h2><a href='"+ data[i].url +"'>" + data[i].name  +"</a></h2>");
+            }
+
+
+        }
+    });
 	
 }
 </script>
@@ -408,10 +423,18 @@ function init(){
 
 
 
+
+
+
 <hr />
 这里还是可以写点东西的
 
+	<div id="apollo">
 
+
+
+
+	</div>
 
 
 

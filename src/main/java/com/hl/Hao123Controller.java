@@ -1,12 +1,16 @@
 package com.hl;
 
 import com.google.common.util.concurrent.RateLimiter;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.hl.entity.ApolloUrl;
 import com.hl.service.IService;
 import com.hl.util.GsonUtil;
 import com.hl.util.SimpleThreadPoolUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,19 +28,22 @@ import java.util.Map;
 public class Hao123Controller {
     public static final String UNKNOWN = "unknown";
     private static final Logger logger = LoggerFactory.getLogger(Hao123Controller.class);
+    @Value("${com.hl.url}")
+    private String urlJsonArray;
     /**
      * http://localhost:9080/
      *
      * @return
      * @throws IOException
      */
-    /*
-     * @RequestMapping(value = "/home", method = RequestMethod.GET)
-     * 
-     * @ResponseBody public String demo(){
-     * logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
-     * return "welcome to us , demo"; }
-     */
+
+     @RequestMapping(value = "/home", method = RequestMethod.GET)
+     @ResponseBody public Object demo(){
+     logger.info("---------------~~~~~~~~~~~~从apollo读到的url数据："+urlJsonArray);
+         List<ApolloUrl> list = new Gson().fromJson(urlJsonArray, new TypeToken<List<ApolloUrl>>(){}.getType());
+         return list;
+     }
+
     @Autowired
     private IService service;
 
