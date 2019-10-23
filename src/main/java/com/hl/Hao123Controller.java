@@ -3,7 +3,7 @@ package com.hl;
 import com.google.common.util.concurrent.RateLimiter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.hl.entity.ApolloUrl;
+import com.hl.entity.ApolloUrlVO;
 import com.hl.service.IService;
 import com.hl.util.GsonUtil;
 import com.hl.util.SimpleThreadPoolUtils;
@@ -40,7 +40,7 @@ public class Hao123Controller {
      @RequestMapping(value = "/home", method = RequestMethod.GET)
      @ResponseBody public Object demo(){
      logger.info("---------------~~~~~~~~~~~~从apollo读到的url数据："+urlJsonArray);
-         List<ApolloUrl> list = new Gson().fromJson(urlJsonArray, new TypeToken<List<ApolloUrl>>(){}.getType());
+         List<ApolloUrlVO> list = new Gson().fromJson(urlJsonArray, new TypeToken<List<ApolloUrlVO>>(){}.getType());
          return list;
      }
 
