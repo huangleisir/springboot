@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ConfigurationProperties(prefix = "redis.cache")
+// @ConfigurationProperties(prefix = "redis.cache")
 public class ConfigurationPropertiesSample {
 
     private int expireSeconds;

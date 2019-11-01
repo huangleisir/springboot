@@ -1,5 +1,6 @@
 package com.hl;
 
+import com.hl.common.CustomException;
 import com.hl.entity.Student;
 import com.hl.entity.User;
 import lombok.Data;
@@ -32,12 +33,20 @@ public class HomeController {
 		return "welcome to us , demo   "  +  params1;
 	}
 
+	/**
+	 * http://localhost/home/hl/888
+	 * @param request
+	 * @param params1
+	 * @return
+	 */
 	@RequestMapping(value = "hl/{v}", method = RequestMethod.GET)
 	@ResponseBody
 	public Object hl(HttpServletRequest request, @PathVariable("v") String params1) {
-		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		Student s = new Student();
-		return "welcome to us , demo   "  +  params1;
+		// 使用全局异常
+		throw new CustomException(67,"试试全局异常" + params1);
+		// logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		//Student s = new Student();
+		// return "welcome to us , demo   "  +  params1;
 	}
 
 	@RequestMapping(value = "postDemo", method = RequestMethod.POST)
