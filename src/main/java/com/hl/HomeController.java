@@ -6,6 +6,7 @@ import com.hl.entity.User;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author DELL
  */
 @Data
-@RestController
+@Controller
 @RequestMapping(value = "/home", method = RequestMethod.GET)
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -40,12 +41,12 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "hl/{v}", method = RequestMethod.GET)
-	@ResponseBody
+//	@ResponseBody
 	public Object hl(HttpServletRequest request, @PathVariable("v") String params1) {
 		// 使用全局异常
 		throw new CustomException(67,"试试全局异常" + params1);
 		// logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		//Student s = new Student();
+		// Student s = new Student();
 		// return "welcome to us , demo   "  +  params1;
 	}
 
