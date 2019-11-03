@@ -15,7 +15,6 @@ public class ServiceImpl implements Service {
 				int g = 10;
 				int c =11;
 				List list = new ArrayList();
-				
 		return a+b;
 	}
 
