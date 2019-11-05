@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.moss</groupId>
 	<artifactId>demo</artifactId>
-	<name>demo</name>
+	<name>springboot-demo</name>
 	<description>springboot demo for learning other project</description>
 
 	<parent>

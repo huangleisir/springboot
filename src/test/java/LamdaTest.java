@@ -1,6 +1,4 @@
-package src.test;
-
-import util.Mail;
+import com.hl.util.Mail;
 
 public class LamdaTest {
 	/*
