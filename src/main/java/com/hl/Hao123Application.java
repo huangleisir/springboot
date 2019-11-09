@@ -9,7 +9,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
+import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
+//import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.hl.entity.User;
 import org.apache.commons.lang.math.RandomUtils;
@@ -32,7 +33,8 @@ import com.hl.util.GsonUtil;
 @ServletComponentScan
 @SpringBootApplication
 @RestController
-@EnableApolloConfig
+/*@EnableApolloConfig*/
+@NacosPropertySource(dataId = "example", autoRefreshed = true)
 public class Hao123Application {
     static Logger log = LoggerFactory.getLogger(Hao123Application.class);
 

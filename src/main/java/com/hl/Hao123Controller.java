@@ -1,5 +1,6 @@
 package com.hl;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.google.common.util.concurrent.RateLimiter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -30,6 +31,9 @@ public class Hao123Controller {
     private static final Logger logger = LoggerFactory.getLogger(Hao123Controller.class);
     @Value("${com.hl.url}")
     private String urlJsonArray;
+
+    @NacosValue(value = "${aaa:000}", autoRefreshed = true)
+    private String aaa;
     /**
      * http://localhost:9080/
      *
@@ -39,8 +43,8 @@ public class Hao123Controller {
 
      @RequestMapping(value = "/home", method = RequestMethod.GET)
      @ResponseBody public Object demo(){
-     logger.info("---------------~~~~~~~~~~~~从apollo读到的url数据："+urlJsonArray);
-         List<ApolloUrlVO> list = new Gson().fromJson(urlJsonArray, new TypeToken<List<ApolloUrlVO>>(){}.getType());
+     logger.info("---------------~~~~~~~~~~~~从nacos读到的url数据："+aaa);
+         List<ApolloUrlVO> list = new Gson().fromJson(aaa, new TypeToken<List<ApolloUrlVO>>(){}.getType());
          return list;
      }
 
