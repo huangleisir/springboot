@@ -1,5 +1,6 @@
 package com.hl;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.hl.common.CustomException;
 import com.hl.entity.Student;
 import com.hl.entity.User;
@@ -27,6 +28,7 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/home/{v}", method = RequestMethod.GET)
+	@SentinelResource(value="hello",  fallback = "helloError")
 	@ResponseBody
 	public Object demo(HttpServletRequest request, @PathVariable("v") String params1) {
 		logger.info("---------------~~~~~~~~~~~~23424242~~~~~~~~~~~~~~~~~~~~~~~~~~");

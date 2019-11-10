@@ -1,5 +1,6 @@
 package com.hl;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.google.common.util.concurrent.RateLimiter;
 import com.google.gson.Gson;
@@ -42,6 +43,7 @@ public class Hao123Controller {
      */
 
      @RequestMapping(value = "/home", method = RequestMethod.GET)
+     @SentinelResource(value = "test.hello", fallback = "helloError")
      @ResponseBody public Object demo(){
      logger.info("---------------~~~~~~~~~~~~从nacos读到的url数据："+aaa);
          List<ApolloUrlVO> list = new Gson().fromJson(aaa, new TypeToken<List<ApolloUrlVO>>(){}.getType());
