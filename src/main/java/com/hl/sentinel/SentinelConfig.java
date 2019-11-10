@@ -21,12 +21,12 @@ public class SentinelConfig {
         FlowRule rule1 = new FlowRule();
         rule1.setResource("test.hello");
         rule1.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        rule1.setCount(1);   // 每秒调用最大次数为 1 次
+        rule1.setCount(2);   // 每秒调用最大次数为 1 次  -- 这里是初始值，后面可以在启动后sentinel控制台调整这个值
 
         FlowRule rule2 = new FlowRule();
         rule2.setResource("hello");
         rule2.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        rule2.setCount(1);   // 每秒调用最大次数为 1 次
+        rule2.setCount(2);   // 每秒调用最大次数为 1 次   -- 这里是初始值，后面可以在启动后sentinel控制台调整这个值
 
         List<FlowRule> rules = new ArrayList<>();
         rules.add(rule1);
