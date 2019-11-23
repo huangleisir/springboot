@@ -27,14 +27,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hl.util.GsonUtil;
 
 /**
+ * @author huang
  * @author moss Holmes
  */
 @ComponentScan({ "com.hl", "com.hl.util", "com.hl.entity", "com.hl.filter", "com.hl.service.impl" })
 @ServletComponentScan
 @SpringBootApplication
 @RestController
-/*@EnableApolloConfig*/
-@NacosPropertySource(dataId = "example", autoRefreshed = true)
+/**@EnableApolloConfig*/
+@NacosPropertySource(dataId = "leilei",groupId = "DEFAULT_GROUP", autoRefreshed = true)
 public class Hao123Application {
     static Logger log = LoggerFactory.getLogger(Hao123Application.class);
 
