@@ -35,7 +35,7 @@ import com.hl.util.GsonUtil;
 @SpringBootApplication
 @RestController
 /**@EnableApolloConfig*/
-@NacosPropertySource(dataId = "leilei",groupId = "DEFAULT_GROUP", autoRefreshed = true)
+@NacosPropertySource(dataId = "example",groupId = "DEFAULT_GROUP", autoRefreshed = true)
 public class Hao123Application {
     static Logger log = LoggerFactory.getLogger(Hao123Application.class);
 
