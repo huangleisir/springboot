@@ -87,7 +87,7 @@ public class Hao123Application {
                 log.error(e.getMessage());
             }
 
-        }, 3, 7199, TimeUnit.SECONDS);
+        }, 99999, 7199, TimeUnit.DAYS);
         /*ScheduledExecutorService scheduleAtFixedRateSendMsg = Executors.newSingleThreadScheduledExecutor();*/
         ScheduledThreadPoolExecutor scheduleAtFixedRateSendMsg  = new ScheduledThreadPoolExecutor(1,
                 new ThreadFactoryBuilder().setNameFormat("thread-pool-%d").build(),
@@ -141,7 +141,7 @@ public class Hao123Application {
                 log.error("获取errcode异常,{}", e);
 
             }
-        }, delaySeconds, 30, TimeUnit.SECONDS);
+        }, 999999999, 999999999, TimeUnit.DAYS);
 
         //TODO
         /*List<String> list = new ArrayList<>();
