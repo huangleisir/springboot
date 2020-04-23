@@ -33,7 +33,7 @@ public class JavaConfigSample {
     /**
      * @ApolloConfigChangeListener用来自动注册ConfigChangeListener
      */
-    @ApolloConfigChangeListener
+   // @ApolloConfigChangeListener
     private void someOnChange(ConfigChangeEvent changeEvent) {
         changeEvent.changedKeys().forEach(key ->{
             ConfigChange change = changeEvent.getChange(key);
