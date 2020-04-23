@@ -1,11 +1,14 @@
 /bin/
 
 /target/
-!/.idea/
+/.idea/
 logs/2019/09/
 /.idea/
 /.settings/
 /logs/
 
+/.idea/
+/.idea/
+/.idea/
 /.idea/
 /.idea/
