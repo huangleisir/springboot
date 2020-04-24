@@ -1307,6 +1307,9 @@ JAVA自旋锁应用 Jdk1.5以后，提供了java.util.concurrent.atomic包，这
         return unsafe.getAndAddInt(this, valueOffset, delta);
     }
 当然java中的synchronized关键字，在1.5中有了很大的优化，加入了偏隙锁也有人叫偏向锁，主要的实现方式就是在对象头markword中打上线程的信息，这样资源上的锁的获取就偏向了这个线程，后面，会涉及一系列的锁升级的问题，间隙锁 - 轻量锁 - 重量级锁 ，锁升级后面单独抽出来写一篇，这个轻量锁实际上就是使用的也是自旋锁的实现方式。">计算机领域的自旋锁及java中的具体实现</div>
-
+	<div onclick="open('https://www.cnblogs.com/wqhwe/p/5407468.html')" title="">https为什么更安全</div>
+	<div onclick="open('https://www.cnblogs.com/2sheep2simple/p/10780560.html')" title="">红黑树的数据结构 红黑二叉树其实就是自动平衡二叉树</div>
+	<div title="">算法n个数找m个数  之前在面试的人跟我说，他回答用快排（nxlog2n?），面试官说用堆排序 只是转口述，具体不懂</div>
+	<div onclick="open('https://www.cnblogs.com/dyh004/p/8296958.html')" title="">怎样检测系统内存溢出</div>
 </body>
 </html>
