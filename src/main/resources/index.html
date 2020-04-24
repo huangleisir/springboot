@@ -1296,8 +1296,7 @@ CAS的问题
         3. 对java而言，jdk1.5 提供了AtomicStampedReference，这个reference 就是个对象引用，把多个变量放在这个对象里即可
 JAVA CAS封装
  sun.misc.Unsafe是JDK里面的一个内部类，这个类当中有三个CAS的操作
-JAVA自旋锁应用
-Jdk1.5以后，提供了java.util.concurrent.atomic包，这个包里面提供了一组原子类。基本上就是当前获取锁的线程，执行更新的方法，其他线程自旋等待，比如atomicInteger类中的getAndAdd方法内部实际上使用的就是Unsafe的方法。
+JAVA自旋锁应用 Jdk1.5以后，提供了java.util.concurrent.atomic包，这个包里面提供了一组原子类。基本上就是当前获取锁的线程，执行更新的方法，其他线程自旋等待，比如atomicInteger类中的getAndAdd方法内部实际上使用的就是Unsafe的方法。
     /**
      * Atomically adds the given value to the current value.
      *
